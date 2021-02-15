@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\MenuCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+
+Auth::routes();
+
+Route::get('/admin', 'HomeController@index')->name('admin');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('/admin/menu-categories', 'Api\MenuCategoryController')
+    ->names('admin.menu-categories')
+    ->middleware('auth');;
