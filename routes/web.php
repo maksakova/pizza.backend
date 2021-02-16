@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\MenuCategoryController;
+use App\Http\Controllers\Admin\MenuCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +24,12 @@ Route::get('/admin', 'HomeController@index')->name('admin');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('/admin/menu-categories', 'Api\MenuCategoryController')
+/* Admin */
+
+Route::resource('/admin/menu-categories', 'Admin\MenuCategoryController')
     ->names('admin.menu-categories')
+    ->middleware('auth');;
+
+Route::resource('/admin/menu-products', 'Admin\MenuProductController')
+    ->names('admin.menu-products')
     ->middleware('auth');;

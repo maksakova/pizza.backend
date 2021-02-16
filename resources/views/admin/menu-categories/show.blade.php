@@ -7,24 +7,25 @@
                 <div class="row justify-content-between">
                     <div class="col-sm-6">
                         <h1>
-                            <a href="{{route('admin')}}"><i class="fas fa-chevron-left"></i> Категории меню</a>
+                            <a href="{{route('admin')}}"><i class="fas fa-chevron-left"></i> {{ $menuCategory->name }}</a>
                         </h1>
                     </div>
                     <div class="col-sm-6 text-right">
-                        <a class="btn btn-primary add" href="{{ route('admin.menu-categories.create') }}">Добавить</a>
+                        <a class="btn btn-primary add" href="{{ route('admin.menu-products.create') }}">Добавить</a>
                     </div>
                 </div>
                 <table class="table table-hover">
                     <thead>
                     <tr>
                         <th>№</th>
-                        <th>Иконка</th>
+                        <th>Изображение</th>
                         <th>Название</th>
-                        <th>Слаг</th>
+                        <th>Категория</th>
+                        <th>Цена</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($menuCategories as $key=>$item)
+                    @foreach($menuProducts as $key=>$item)
                         @php /** @var \App\Models\ViewSetting */ @endphp
                         <tr>
                             <td>
@@ -34,10 +35,13 @@
                                 {{ $item->img }}
                             </td>
                             <td>
-                                <a href="{{route('admin.menu-categories.edit', $item->id)}}">{{ $item->name }}</a>
+                                <a href="{{route('admin.menu-products.edit', $item->id)}}">{{ $item->name }}</a>
                             </td>
                             <td>
-                                {{ $item->slug }}
+                                <a href="{{route('admin.menu-categories.show', $item->menuCategory->id)}}">{{ $item->menuCategory->name }}</a>
+                            </td>
+                            <td>
+                                {{ $item->min_price }} BYN
                             </td>
                         </tr>
                     @endforeach

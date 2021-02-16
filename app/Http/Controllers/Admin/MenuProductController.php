@@ -1,14 +1,20 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\MenuCategory;
+use App\Models\MenuProduct;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class MenuCategoryController extends Controller
+class MenuProductController extends Controller
 {
+    private $menuProduct;
+
+    public function __construct(MenuProduct $menuProduct)
+    {
+        $this->menuProduct = $menuProduct;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,10 +22,10 @@ class MenuCategoryController extends Controller
      */
     public function index()
     {
-        $menuCategories = MenuCategory::all();
+        $menuProducts = MenuProduct::with('menuCategory')->get();
 
-        return view('admin.menu-categories.index', [
-            'menuCategories' => $menuCategories,
+        return view('admin.menu-products.index', [
+            'menuProducts' => $menuProducts,
         ]);
     }
 
@@ -30,10 +36,12 @@ class MenuCategoryController extends Controller
      */
     public function create()
     {
-        $menuCategory = new MenuCategory();
+        $menuProduct = new MenuProduct();
+        $menuCategories = MenuCategory::all();
 
-        return view('admin.menu-categories.edit', [
-            'menuCategory' => $menuCategory,
+        return view('admin.menu-products.edit', [
+            'menuProduct' => $menuProduct,
+            'menuCategories' => $menuCategories
         ]);
     }
 
@@ -47,11 +55,11 @@ class MenuCategoryController extends Controller
     {
         $data = $request->all();
 
-        $menuCategory = new MenuCategory($data);
-        $menuCategory->save();
+        $menuProduct = new menuProduct($data);
+        $menuProduct->save();
 
-        if ($menuCategory) {
-            return redirect()->route('admin.menu-categories.edit', [$menuCategory->id])
+        if ($menuProduct) {
+            return redirect()->route('admin.menu-products.edit', [$menuProduct->id])
                 ->with(['success' => 'Успешно сохранено']);
         } else {
             return back()->withErrors(['msg' => 'Ошибка сохранения'])
@@ -67,7 +75,7 @@ class MenuCategoryController extends Controller
      */
     public function show($id)
     {
-        return MenuCategory::findOrFail($id);
+        //
     }
 
     /**
@@ -76,10 +84,13 @@ class MenuCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(MenuCategory $menuCategory)
+    public function edit($id)
     {
-        return view('admin.menu-categories.edit', [
-            'menuCategory' => $menuCategory,
+        $menuCategories = MenuCategory::all();
+
+        return view('admin.menu-products.edit', [
+            'menuProduct' => $this->menuProduct->whereId($id)->firstOrFail(),
+            'menuCategories' => $menuCategories
         ]);
     }
 
@@ -92,7 +103,7 @@ class MenuCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $menuCategory = MenuCategory::find($id);
+        $item = MenuProduct::find($id);
         if (empty($item)) {
             return back()
                 ->withErrors(['msg' => "Запись id=[{$id}] не найдена"])
@@ -101,11 +112,11 @@ class MenuCategoryController extends Controller
 
         $data = $request->all();
 
-        $result = $menuCategory->update($data);
+        $result = $item->update($data);
 
         if ($result) {
             return redirect()
-                ->route('admin.menu-categories.edit', $menuCategory->id)
+                ->route('admin.menu-products.edit', $item->id)
                 ->with(['success' => 'Успешно сохранено']);
         } else {
             return back()
@@ -122,13 +133,13 @@ class MenuCategoryController extends Controller
      */
     public function destroy($id)
     {
-        $menuCategory = MenuCategory::findOrFail($id);
-        $menuCategory->delete();
+        $menuProduct = MenuProduct::findOrFail($id);
+        $menuProduct->delete();
 
-        $menuCategories = MenuCategory::all();
+        $menuProducts = MenuProduct::all();
 
-        return view('admin.menu-categories.index', [
-            'menuCategories' => $menuCategories,
+        return view('admin.menu-products.index', [
+            'menuProducts' => $menuProducts,
         ]);
     }
 }
