@@ -26,6 +26,9 @@
                         <li>
                             <a href="{{route('admin.menu-categories.index')}}">Категории меню</a>
                         </li>
+                        <li>
+                            <a href="{{route('admin.menu-filters.index')}}">Фильтры</a>
+                        </li>
                     </ul>
                 </div>
             </div>

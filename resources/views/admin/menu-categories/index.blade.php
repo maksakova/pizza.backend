@@ -31,7 +31,7 @@
                                 {{ ++$key }}
                             </td>
                             <td>
-                                {{ $item->img }}
+                                <img src="{{ $item->img }}">
                             </td>
                             <td>
                                 <a href="{{route('admin.menu-categories.edit', $item->id)}}">{{ $item->name }}</a>

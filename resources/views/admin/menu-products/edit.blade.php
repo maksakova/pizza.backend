@@ -31,7 +31,12 @@
                         </label>
                         <label>
                             <select name="menu_filter_id">
-                                <option>1</option>
+                                <option value="">Нет</option>
+                                @foreach($menuFilters as $menuFilter)
+                                    <option value="{{$menuFilter->id}}" @if($menuProduct->menu_filter_id === $menuFilter->id) selected @endif>
+                                        {{$menuFilter->name}}
+                                    </option>
+                                @endforeach
                             </select>
                         </label>
                         <label>
@@ -108,7 +113,12 @@
                         </label>
                         <label>
                             <select name="menu_filter_id">
-                                <option>1</option>
+                                <option value="">Нет</option>
+                                @foreach($menuFilters as $menuFilter)
+                                    <option value="{{$menuFilter->id}}">
+                                        {{$menuFilter->name}}
+                                    </option>
+                                @endforeach
                             </select>
                         </label>
                         <label>

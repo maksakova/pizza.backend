@@ -53,6 +53,14 @@ class MenuCategoryController extends Controller
     {
         $data = $request->all();
 
+        if ($request->file('img') != null) {
+
+            $request->file('img')->move(public_path('img/uploads'), $request->file('img')->getClientOriginalName());
+
+            $data['img'] = '/img/uploads/' . $request->file('img')->getClientOriginalName();
+
+        }
+
         $menuCategory = new MenuCategory($data);
         $menuCategory->save();
 
@@ -111,6 +119,14 @@ class MenuCategoryController extends Controller
         }
 
         $data = $request->all();
+
+        if ($request->file('img') != null) {
+
+            $request->file('img')->move(public_path('img/uploads'), $request->file('img')->getClientOriginalName());
+
+            $data['img'] = '/img/uploads/' . $request->file('img')->getClientOriginalName();
+
+        }
 
         $result = $item->update($data);
 

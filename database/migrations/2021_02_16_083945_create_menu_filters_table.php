@@ -15,7 +15,11 @@ class CreateMenuFiltersTable extends Migration
     {
         Schema::create('menu_filters', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('slug');
+            $table->string('img')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

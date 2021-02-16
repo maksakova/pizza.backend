@@ -28,8 +28,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('/admin/menu-categories', 'Admin\MenuCategoryController')
     ->names('admin.menu-categories')
-    ->middleware('auth');;
+    ->middleware('auth');
 
 Route::resource('/admin/menu-products', 'Admin\MenuProductController')
     ->names('admin.menu-products')
-    ->middleware('auth');;
+    ->middleware('auth');
+
+Route::resource('/admin/menu-filters', 'Admin\MenuFilterController')
+    ->names('admin.menu-filters')
+    ->middleware('auth');

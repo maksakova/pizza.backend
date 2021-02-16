@@ -3,18 +3,16 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\MenuProduct;
-use App\Models\MenuCategory;
 use App\Models\MenuFilter;
 use Illuminate\Http\Request;
 
-class MenuProductController extends Controller
+class MenuFilterController extends Controller
 {
-    private $menuProduct;
+    private $menuFilter;
 
-    public function __construct(MenuProduct $menuProduct)
+    public function __construct(MenuFilter $menuFilter)
     {
-        $this->menuProduct = $menuProduct;
+        $this->menuFilter = $menuFilter;
     }
     /**
      * Display a listing of the resource.
@@ -23,10 +21,10 @@ class MenuProductController extends Controller
      */
     public function index()
     {
-        $menuProducts = MenuProduct::with('menuCategory')->get();
+        $menuFilters = MenuFilter::all();
 
-        return view('admin.menu-products.index', [
-            'menuProducts' => $menuProducts,
+        return view('admin.menu-filters.index', [
+            'menuFilters' => $menuFilters,
         ]);
     }
 
@@ -37,14 +35,10 @@ class MenuProductController extends Controller
      */
     public function create()
     {
-        $menuProduct = new MenuProduct();
-        $menuCategories = MenuCategory::all();
-        $menuFilters = MenuFilter::all();
+        $menuFilter = new MenuFilter();
 
-        return view('admin.menu-products.edit', [
-            'menuProduct' => $menuProduct,
-            'menuCategories' => $menuCategories,
-            'menuFilters'    => $menuFilters
+        return view('admin.menu-filters.edit', [
+            'menuFilter' => $menuFilter,
         ]);
     }
 
@@ -66,11 +60,11 @@ class MenuProductController extends Controller
 
         }
 
-        $menuProduct = new menuProduct($data);
-        $menuProduct->save();
+        $menuFilter = new MenuFilter($data);
+        $menuFilter->save();
 
-        if ($menuProduct) {
-            return redirect()->route('admin.menu-products.edit', [$menuProduct->id])
+        if ($menuFilter) {
+            return redirect()->route('admin.menu-filters.edit', [$menuFilter->id])
                 ->with(['success' => 'Успешно сохранено']);
         } else {
             return back()->withErrors(['msg' => 'Ошибка сохранения'])
@@ -97,13 +91,8 @@ class MenuProductController extends Controller
      */
     public function edit($id)
     {
-        $menuCategories = MenuCategory::all();
-        $menuFilters = MenuFilter::all();
-
-        return view('admin.menu-products.edit', [
-            'menuProduct'    => $this->menuProduct->whereId($id)->firstOrFail(),
-            'menuCategories' => $menuCategories,
-            'menuFilters'    => $menuFilters
+        return view('admin.menu-filters.edit', [
+            'menuFilter' => $this->menuFilter->whereId($id)->firstOrFail(),
         ]);
     }
 
@@ -116,7 +105,7 @@ class MenuProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $item = MenuProduct::find($id);
+        $item = MenuFilter::find($id);
         if (empty($item)) {
             return back()
                 ->withErrors(['msg' => "Запись id=[{$id}] не найдена"])
@@ -137,7 +126,7 @@ class MenuProductController extends Controller
 
         if ($result) {
             return redirect()
-                ->route('admin.menu-products.edit', $item->id)
+                ->route('admin.menu-filters.edit', $item->id)
                 ->with(['success' => 'Успешно сохранено']);
         } else {
             return back()
@@ -154,13 +143,6 @@ class MenuProductController extends Controller
      */
     public function destroy($id)
     {
-        $menuProduct = MenuProduct::findOrFail($id);
-        $menuProduct->delete();
-
-        $menuProducts = MenuProduct::all();
-
-        return view('admin.menu-products.index', [
-            'menuProducts' => $menuProducts,
-        ]);
+        //
     }
 }
