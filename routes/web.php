@@ -20,11 +20,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/admin', 'HomeController@index')->name('admin');
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 /* Admin */
+
+Route::get('/admin', 'HomeController@index')->name('admin');
 
 Route::resource('/admin/menu-categories', 'Admin\MenuCategoryController')
     ->names('admin.menu-categories')

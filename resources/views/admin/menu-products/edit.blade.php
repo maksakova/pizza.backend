@@ -60,6 +60,19 @@
                                 @if($menuProduct->img)
                                     <a href="{{ $menuProduct->img }}" data-fancybox="image"><img src="{{ $menuProduct->img }}"></a>
                                 @endif
+
+                                @if($menuProduct->productVariants)
+                                    <h2>Варианты (<a href="#">добавить</a>)</h2>
+                                    <ul>
+                                        @foreach($menuProduct->productVariants as $variant)
+                                            <li>
+                                                <a href="#">
+                                                    {{$variant->name}}
+                                                </a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                @endif
                             </div>
                         </div>
                         @if(!$menuProduct->menuCategory->ingredients)
@@ -84,7 +97,7 @@
                             </div>
                         @endif
                     </form>
-                    <!-- Modal -->
+                <!-- Modal -->
                     <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">

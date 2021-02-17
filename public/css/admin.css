@@ -17,7 +17,7 @@ img {
 }
 
 a {
-  color: #44C373;
+  color: #44c373;
 }
 a:hover {
   color: #008F28;
@@ -25,21 +25,27 @@ a:hover {
 }
 
 .btn-primary {
-  background: #44C373;
-  border-color: #44C373;
+  background: #44c373;
+  border-color: #44c373;
 }
-.btn-primary:hover {
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus, .btn-primary:not(:disabled):not(.disabled):active {
   background: #008F28;
   border-color: #008F28;
 }
+.btn-primary:focus, .btn-primary:not(:disabled):not(.disabled):active {
+  box-shadow: 0 0 0 0.2rem rgba(68, 195, 115, 0.25);
+}
 
 .btn-danger {
-  background: #EB5757;
+  background: #eb5757;
   border-color: #EB5757;
 }
-.btn-danger:hover {
+.btn-danger:hover, .btn-danger:active, .btn-danger:focus, .btn-danger:not(:disabled):not(.disabled):active {
   background: #B71A0A;
   border-color: #B71A0A;
+}
+.btn-danger:focus, .btn-danger:not(:disabled):not(.disabled):active {
+  box-shadow: 0 0 0 0.2rem rgba(235, 87, 87, 0.25);
 }
 
 h1 {
@@ -115,7 +121,7 @@ select {
 input:focus,
 select:focus {
   outline: none;
-  border: 1px solid #44C373;
+  border: 1px solid #44c373;
 }
 
 select {
@@ -162,8 +168,8 @@ input[type=file] {
   opacity: 0;
 }
 .checkbox input:checked + .checkbox__text:before {
-  background: #44C373;
-  border: 1px solid #44C373;
+  background: #44c373;
+  border: 1px solid #44c373;
 }
 .checkbox input:checked + .checkbox__text:after {
   opacity: 1;
@@ -191,7 +197,7 @@ input[type=file] {
   border-radius: 20px;
 }
 .radio input:checked + .radio__text {
-  color: #44C373;
+  color: #44c373;
   background: #FFFFFF;
   box-shadow: 0px 4px 3px rgba(64, 94, 72, 0.1);
 }
@@ -202,6 +208,11 @@ input[type=file] {
 }
 .composition .checkbox {
   width: 25%;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
 }
 
 @media (max-width: 1199px) {

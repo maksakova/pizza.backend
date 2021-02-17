@@ -24,4 +24,9 @@ class MenuProduct extends Model
     {
         return $this->belongsTo('App\Models\MenuCategory', 'menu_category_id');
     }
+
+    public function productVariants()
+    {
+        return $this->hasMany('App\Models\MenuProductVariant', 'menu_product_id');
+    }
 }

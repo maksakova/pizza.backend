@@ -4,7 +4,7 @@ $light: #E0E0E0
 $text: #202020
 $text-secondary: #171717
 $text-light: #828282
-$main: #44C373
+$main: #44c373
 $main-dark: #008F28
 $main-gradient: linear-gradient(279.37deg, $main 4.74%, $main-dark 92.92%)
 $accent-gradient: linear-gradient(89.91deg, #FFC413 0.06%, #E99500 99.9%)
@@ -34,16 +34,28 @@ a
 .btn-primary
     background: $main
     border-color: $main
-    &:hover
+    &:hover,
+    &:active,
+    &:focus,
+    &:not(:disabled):not(.disabled):active
         background: $main-dark
         border-color: $main-dark
+    &:focus,
+    &:not(:disabled):not(.disabled):active
+        box-shadow: 0 0 0 0.2rem rgb(68 195 115 / 25%)
 
 .btn-danger
-    background: #EB5757
+    background: #eb5757
     border-color: #EB5757
-    &:hover
+    &:hover,
+    &:active,
+    &:focus,
+    &:not(:disabled):not(.disabled):active
         background: #B71A0A
         border-color: #B71A0A
+    &:focus,
+    &:not(:disabled):not(.disabled):active
+        box-shadow: 0 0 0 0.2rem rgb(235 87 87 / 25%)
 
 h1
     font-size: 24px
@@ -175,6 +187,10 @@ input[type="file"]
     flex-wrap: wrap
     .checkbox
         width: 25%
+
+ul
+    padding: 0
+    list-style: none
 
 @media (max-width: 1199px)
     .composition
