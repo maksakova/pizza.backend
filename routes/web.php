@@ -42,6 +42,6 @@ Route::resource('/admin/menu-ingredient-groups', 'Admin\MenuIngredientGroupContr
     ->names('admin.menu-ingredient-groups')
     ->middleware('auth');
 
-Route::resource('/admin/menu-ingredients', 'Admin\MenuIngredientGroupController')
+Route::resource('/admin/menu-ingredients', 'Admin\MenuIngredientController')
     ->names('admin.menu-ingredients')
     ->middleware('auth');

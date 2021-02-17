@@ -42,7 +42,7 @@ class MenuProductController extends Controller
         $menuFilters = MenuFilter::all();
 
         return view('admin.menu-products.edit', [
-            'menuProduct' => $menuProduct,
+            'menuProduct'    => $menuProduct,
             'menuCategories' => $menuCategories,
             'menuFilters'    => $menuFilters
         ]);

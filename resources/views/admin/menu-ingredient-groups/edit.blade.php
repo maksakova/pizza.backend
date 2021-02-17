@@ -33,10 +33,19 @@
             </div>
             <div class="card">
                 <div class="card-body">
+                    <div class="row justify-content-between">
+                        <div class="col-sm-6">
+                            <h2>Ингредиенты: {{ $menuIngredientGroup->name }}</h2>
+                        </div>
+                        <div class="col-sm-6 text-right">
+                            <a class="btn btn-primary add" href="{{ route('admin.menu-ingredients.create') }}?menu_ingredient_group_id={{ $menuIngredientGroup->id }}">Добавить</a>
+                        </div>
+                    </div>
                     <table class="table table-hover">
                         <thead>
                         <tr>
                             <th>№</th>
+                            <th>Изображение</th>
                             <th>Название</th>
                         </tr>
                         </thead>
@@ -46,6 +55,9 @@
                             <tr>
                                 <td>
                                     {{ ++$key }}
+                                </td>
+                                <td>
+                                    <img src="{{ $item->img }}">
                                 </td>
                                 <td>
                                     <a href="{{route('admin.menu-ingredients.edit', $item->id)}}">{{ $item->name }}</a>

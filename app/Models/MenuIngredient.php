@@ -15,4 +15,9 @@ class MenuIngredient extends Model
         'menu_ingredient_group_id',
         'img',
     ];
+
+    public function menuIngredientGroup()
+    {
+        return $this->belongsTo('App\Models\MenuIngredientGroup', 'menu_ingredient_group_id');
+    }
 }
