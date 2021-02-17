@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Pizzamarket</title>
+    <link href="{{ asset('fonts/stylesheet.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>
 <body>
 <div id="app">
+    <the-header></the-header>
+    @yield('content')
 </div>
+
 <script src="{{mix('js/app.js')}}"></script>
 </body>
 </html>

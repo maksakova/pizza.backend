@@ -20,11 +20,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/admin', 'HomeController@index')->name('admin');
+
 
 /* Admin */
-
-Route::get('/admin', 'HomeController@index')->name('admin');
 
 Route::resource('/admin/menu-categories', 'Admin\MenuCategoryController')
     ->names('admin.menu-categories')
@@ -45,3 +44,7 @@ Route::resource('/admin/menu-ingredient-groups', 'Admin\MenuIngredientGroupContr
 Route::resource('/admin/menu-ingredients', 'Admin\MenuIngredientController')
     ->names('admin.menu-ingredients')
     ->middleware('auth');
+
+/* Front */
+
+Route::get('/', 'Front\MainController@index');

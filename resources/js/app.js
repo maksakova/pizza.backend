@@ -7,26 +7,126 @@
 require('./bootstrap');
 
 window.Vue = require('vue').default;
+import index from "./store"
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+import VueRouter from 'vue-router';
+import VueScrollactive from 'vue-scrollactive';
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+import YmapPlugin from 'vue-yandex-maps'
+import vmodal from 'vue-js-modal'
+
+import {mapActions, mapGetters, mapMutations} from "vuex";
+
+/* for Ymaps */
+const settings = {
+    apiKey: '035fdfb1-becf-436d-a7a7-6f38a995941e',
+    lang: 'ru_RU',
+    coordorder: 'latlong',
+    version: '2.1',
+}
+
+Vue.use(BootstrapVue)
+Vue.use(IconsPlugin)
+Vue.use(YmapPlugin, settings)
+Vue.use(vmodal)
+
+Vue.use(VueRouter)
+Vue.use(VueScrollactive);
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
+import Index from './components/Index.vue';
+
+
+/*Vue.component('Menu', require('./components/Menu.vue').default);
+Vue.component('CartProductCard', require('./components/CartProductCard.vue').default);
+Vue.component('ProductCard', require('./components/ProductCard.vue').default);
+Vue.component('ProductModal', require('./components/ProductModal.vue').default);
+Vue.component('DiscountCard', require('./components/DiscountCard.vue').default);
+Vue.component('DiscountOther', require('./components/DiscountOther.vue').default);*/
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('the-header', require('./components/Header.vue').default);
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+Vue.directive('scroll', {
+    inserted: function (el, binding) {
+        let f = function (evt) {
+            if (binding.value(evt, el)) {
+                window.removeEventListener('scroll', f)
+            }
+        }
+        window.addEventListener('scroll', f)
+    }
+})
 
-const app = new Vue({
-    el: '#app',
-});
+Vue.directive('click-outside', {
+    bind () {
+        this.event = event => this.vm.$emit(this.expression, event)
+        this.el.addEventListener('click', this.stopProp)
+        document.body.addEventListener('click', this.event)
+    },
+    unbind() {
+        this.el.removeEventListener('click', this.stopProp)
+        document.body.removeEventListener('click', this.event)
+    },
+
+    stopProp(event) { event.stopPropagation() }
+})
+
+Vue.config.productionTip = false
+
+Vue.mixin({
+    methods: {
+        ...mapActions(['getCartTotal']),
+        show (el) {
+            this.$modal.show(el);
+        },
+        hide (el) {
+            this.$modal.hide(el);
+        },
+        formatPrice(value) {
+            let val = (value/1).toFixed(2)
+            return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+        },
+        ...mapMutations(['setCurrentItemId']),
+        ...mapActions(['deleteCartItem']),
+        ...mapMutations(['addCartItem'], ['removeCartItem']),
+        ...mapGetters('cartItemsCount'),
+        changeCurrentItemId(id) {
+            this.setCurrentItemId(id - 1)
+        },
+        addItem(currentItem, currentVariant = 1, price, chooseAdditives = []) {
+            this.addCartItem({
+                product_id: currentItem,
+                count: 1,
+                variants: currentVariant,
+                additives: chooseAdditives,
+                price: price,
+            });
+            this.getCartTotal()
+        },
+        deleteItem(cartItemId) {
+            console.log(cartItemId);
+            this.deleteCartItem(cartItemId)
+            this.getCartTotal()
+        },
+    },
+})
+
+const routes = [
+    {
+        path: '/',
+        name: 'index',
+        component: Index,
+    },
+]
+
+const router = new VueRouter({
+    mode: 'history',
+    routes,
+    store: index,
+})
+
+const app = new Vue({ router }).$mount('#app')
