@@ -31,7 +31,9 @@
                                 {{ ++$key }}
                             </td>
                             <td>
-                                <img src="{{ $item->img }}">
+                                @if($item->img)
+                                    <img src="{{ $item->img }}">
+                                @endif
                             </td>
                             <td>
                                 <a href="{{route('admin.menu-products.edit', $item->id)}}">{{ $item->name }}</a>

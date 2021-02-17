@@ -18,7 +18,7 @@
                     <thead>
                     <tr>
                         <th>№</th>
-                        <th>Изображение</th>
+                        <th>Иконка</th>
                         <th>Название</th>
                         <th>Слаг</th>
                     </tr>
@@ -30,7 +30,9 @@
                                 {{ ++$key }}
                             </td>
                             <td>
-                                <img src="{{ $item->img }}">
+                                @if($item->img)
+                                    <img src="{{ $item->img }}" class="icon">
+                                @endif
                             </td>
                             <td>
                                 <a href="{{route('admin.menu-filters.edit', $item->id)}}">{{ $item->name }}</a>

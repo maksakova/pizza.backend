@@ -17,18 +17,28 @@
                                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Удалить</button>
                             </div>
                         </div>
-                        <label>
-                            <input type="text" name="name" value="{{$menuCategory->name}}">
-                        </label>
-                        <label>
-                            <input type="text" name="slug" value="{{$menuCategory->slug}}">
-                        </label>
-                        <label>
-                            <input type="file" name="img">
-                            @if($menuCategory->img)
-                                <img src="{{ $menuCategory->img }}">
-                            @endif
-                        </label>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>
+                                    Название
+                                    <input type="text" name="name" value="{{$menuCategory->name}}">
+                                </label>
+                                <label>
+                                    Слаг
+                                    <input type="text" name="slug" value="{{$menuCategory->slug}}">
+                                </label>
+                            </div>
+                            <div class="col-md-6">
+                                <label>
+                                    <input type="file" name="img">
+                                </label>
+                                @if($menuCategory->img)
+                                    <a href="{{ $menuCategory->img }}" data-fancybox="image">
+                                        <img src="{{ $menuCategory->img }}">
+                                    </a>
+                                @endif
+                            </div>
+                        </div>
                     </form>
                     <!-- Modal -->
                     <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -69,18 +79,23 @@
                                 <button class="btn btn-primary">Сохранить</button>
                             </div>
                         </div>
-                        <label>
-                            <input type="text" name="name" placeholder="Название">
-                        </label>
-                        <label>
-                            <input type="text" name="slug" placeholder="Слаг">
-                        </label>
-                        <label>
-                            <input type="file" name="img">
-                            @if($menuCategory->img)
-                                <img src="{{ $menuCategory->img }}">
-                            @endif
-                        </label>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>
+                                    Название
+                                    <input type="text" name="name" value="{{$menuCategory->name}}">
+                                </label>
+                                <label>
+                                    Слаг
+                                    <input type="text" name="slug" value="{{$menuCategory->slug}}">
+                                </label>
+                            </div>
+                            <div class="col-md-6">
+                                <label>
+                                    <input type="file" name="img">
+                                </label>
+                            </div>
+                        </div>
                     </form>
                 @endif
             </div>

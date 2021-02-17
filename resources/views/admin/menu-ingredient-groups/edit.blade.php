@@ -16,18 +16,28 @@
                                 <button class="btn btn-primary">Сохранить</button>
                             </div>
                         </div>
-                        <label>
-                            <input type="text" name="name" value="{{$menuIngredientGroup->name}}">
-                        </label>
-                        <label>
-                            <input type="text" name="min_price" value="{{$menuIngredientGroup->min_price}}">
-                        </label>
-                        <label>
-                            <input type="text" name="mid_price" value="{{$menuIngredientGroup->mid_price}}">
-                        </label>
-                        <label>
-                            <input type="text" name="max_price" value="{{$menuIngredientGroup->max_price}}">
-                        </label>
+                        <div  class="row">
+                            <div class="col-lg-6">
+                                <label>
+                                    Название
+                                    <input type="text" name="name" value="{{$menuIngredientGroup->name}}">
+                                </label>
+                            </div>
+                            <div class="col-lg-6">
+                                <label>
+                                    Цена на 25 см
+                                    <input type="text" name="min_price" value="{{$menuIngredientGroup->min_price}}">
+                                </label>
+                                <label>
+                                    Цена на 30 см
+                                    <input type="text" name="mid_price" value="{{$menuIngredientGroup->mid_price}}">
+                                </label>
+                                <label>
+                                    Цена на 35 см
+                                    <input type="text" name="max_price" value="{{$menuIngredientGroup->max_price}}">
+                                </label>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -57,7 +67,9 @@
                                     {{ ++$key }}
                                 </td>
                                 <td>
-                                    <img src="{{ $item->img }}">
+                                    @if($item->img)
+                                        <img src="{{ $item->img }}">
+                                    @endif
                                 </td>
                                 <td>
                                     <a href="{{route('admin.menu-ingredients.edit', $item->id)}}">{{ $item->name }}</a>

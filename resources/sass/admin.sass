@@ -1,0 +1,192 @@
+$bg: #f2f2f2
+$white: #FFFFFF
+$light: #E0E0E0
+$text: #202020
+$text-secondary: #171717
+$text-light: #828282
+$main: #44C373
+$main-dark: #008F28
+$main-gradient: linear-gradient(279.37deg, $main 4.74%, $main-dark 92.92%)
+$accent-gradient: linear-gradient(89.91deg, #FFC413 0.06%, #E99500 99.9%)
+$lilac-gradient: linear-gradient(279.37deg, #7551C1 4.74%, #B19BF1 92.92%)
+
+html, body
+    max-width: 100%
+    overflow-x: hidden
+
+body
+    background: $bg
+    color: $text
+    font-family: 'Inter'
+    font-size: 16px
+    font-weight: 500
+    overflow-y: initial
+
+img
+    max-width: 250px
+
+a
+    color: $main
+    &:hover
+        color: $main-dark
+        text-decoration: none
+
+.btn-primary
+    background: $main
+    border-color: $main
+    &:hover
+        background: $main-dark
+        border-color: $main-dark
+
+.btn-danger
+    background: #EB5757
+    border-color: #EB5757
+    &:hover
+        background: #B71A0A
+        border-color: #B71A0A
+
+h1
+    font-size: 24px
+    line-height: 37px
+    margin-bottom: 0
+
+h2
+    font-size: 20px
+    line-height: 37px
+    margin-bottom: 0
+
+h3
+    font-size: 18px
+
+.table
+    margin: 20px 0 0
+    th:first-child
+        width: 50px
+    th:nth-child(2)
+        width: 85px
+    td
+        vertical-align: middle
+    img
+        width: 100%
+        height: 40px
+        object-fit: cover
+        object-position: center
+        &.icon
+            width: 40px
+            object-fit: contain
+
+.card
+    margin-bottom: 20px
+
+label
+    margin: 20px 0
+    display: block
+    color: $text-light
+    img
+        display: block
+        margin: 20px 0
+
+input,
+select
+    width: 100%
+    border: 1px solid #E0E0E0
+    border-radius: 8px
+    font-size: 14px
+    font-weight: 500
+    height: 40px
+    margin: 4px 0 0
+    padding: 2px 16px
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+    &:focus
+        outline: none
+        border: 1px solid $main
+
+select
+    background-image: url('../img/common/select.svg')
+    background-position: center right 10px
+    background-repeat: no-repeat
+
+input[type="file"]
+    border: none
+    padding: 0
+    border-radius: 0
+
+.checkbox
+    font-size: 14px
+    margin: 0 0 10px
+    input
+        position: absolute
+        z-index: -1
+        opacity: 0
+    &__text
+        position: relative
+        padding: 0 0 0 30px
+        cursor: pointer
+        &:before
+            content: ''
+            position: absolute
+            top: 2px
+            left: 0
+            width: 20px
+            height: 20px
+            border-radius: 5px
+            border: 1px solid #E0E0E0
+        &:after
+            content: url('../img/common/check.svg')
+            position: absolute
+            top: 3px
+            left: 3px
+            opacity: 0
+    input:checked + .checkbox__text:before
+        background: $main
+        border: 1px solid $main
+    input:checked + .checkbox__text:after
+        opacity: 1
+
+
+.radio
+    margin: 0
+    height: 100%
+    input
+        position: absolute
+        z-index: -1
+        opacity: 0
+        margin: 10px 0 0 7px
+        height: auto
+    &__text
+        position: relative
+        cursor: pointer
+        text-align: center
+        height: 100%
+        display: flex
+        justify-content: center
+        align-items: center
+        border-radius: 20px
+    input:checked + .radio__text
+        color: $main
+        background: $white
+        box-shadow: 0px 4px 3px rgba(64, 94, 72, 0.1)
+
+
+.composition
+    display: flex
+    flex-wrap: wrap
+    .checkbox
+        width: 25%
+
+@media (max-width: 1199px)
+    .composition
+        .checkbox
+            width: 33%
+
+@media (max-width: 991px)
+    .composition
+        .checkbox
+            width: 50%
+
+@media (max-width: 575px)
+    .composition
+        .checkbox
+            width: 100%

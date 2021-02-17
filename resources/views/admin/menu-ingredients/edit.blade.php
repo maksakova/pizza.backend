@@ -17,25 +17,46 @@
                                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Удалить</button>
                             </div>
                         </div>
-                        <label>
-                            <input type="text" name="name" value="{{$menuIngredient->name}}">
-                        </label>
-                        <label>
-                            <select name="menu_ingredient_group_id">
-                                @foreach($menuIngredientGroups as $menuIngredientGroup)
-                                    <option value="{{$menuIngredientGroup->id}}" @if($menuIngredient->menu_ingredient_group_id === $menuIngredientGroup->id) selected @endif>
-                                        {{$menuIngredientGroup->name}}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </label>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label>
+                                    Название
+                                    <input type="text" name="name" value="{{$menuIngredient->name}}">
+                                </label>
+                                <label>
+                                    Группа
+                                    <select name="menu_ingredient_group_id">
+                                        @foreach($menuIngredientGroups as $menuIngredientGroup)
+                                            <option value="{{$menuIngredientGroup->id}}" @if($menuIngredient->menu_ingredient_group_id === $menuIngredientGroup->id) selected @endif>
+                                                {{$menuIngredientGroup->name}}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </label>
 
-                        <label>
-                            <input type="file" name="img">
-                            @if($menuIngredient->img)
-                                <img src="{{ $menuIngredient->img }}">
-                            @endif
-                        </label>
+                                @foreach($menuCategories as $menuCategory)
+                                    <label class="checkbox">
+                                        <input
+                                            type="checkbox"
+                                            name="menu_category_id[]" value="{{$menuCategory->id}}"
+                                            @foreach($menu_category_ids as $menu_category_id)
+                                            @if($menu_category_id == $menuCategory->id) checked @endif
+                                            @endforeach>
+                                        <div class="checkbox__text">{{$menuCategory->name}}</div>
+                                    </label>
+                                @endforeach
+                            </div>
+                            <div class="col-lg-6">
+                                <label>
+                                    <input type="file" name="img">
+                                </label>
+                                @if($menuIngredient->img)
+                                    <a href="{{ $menuIngredient->img }}" data-fancybox="image">
+                                        <img src="{{ $menuIngredient->img }}">
+                                    </a>
+                                @endif
+                            </div>
+                        </div>
                     </form>
                     <!-- Modal -->
                     <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -76,24 +97,29 @@
                                 <button class="btn btn-primary">Сохранить</button>
                             </div>
                         </div>
-                        <label>
-                            <input type="text" name="name">
-                        </label>
-                        <label>
-                            <select name="menu_ingredient_group_id">
-                                @foreach($menuIngredientGroups as $menuIngredientGroup)
-                                    <option value="{{$menuIngredientGroup->id}}" @if(app('request')->input('menu_ingredient_group_id') == $menuIngredientGroup->id) selected @endif>
-                                        {{$menuIngredientGroup->name}}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </label>
-                        <label>
-                            <input type="file" name="img">
-                            @if($menuIngredient->img)
-                                <img src="{{ $menuIngredient->img }}">
-                            @endif
-                        </label>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label>
+                                    Название
+                                    <input type="text" name="name">
+                                </label>
+                                <label>
+                                    Группа
+                                    <select name="menu_ingredient_group_id">
+                                        @foreach($menuIngredientGroups as $menuIngredientGroup)
+                                            <option value="{{$menuIngredientGroup->id}}" @if(app('request')->input('menu_ingredient_group_id') == $menuIngredientGroup->id) selected @endif>
+                                                {{$menuIngredientGroup->name}}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </label>
+                            </div>
+                            <div class="col-lg-6">
+                                <label>
+                                    <input type="file" name="img">
+                                </label>
+                            </div>
+                        </div>
                     </form>
                 @endif
             </div>

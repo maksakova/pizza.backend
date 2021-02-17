@@ -16,18 +16,26 @@
                                 <button class="btn btn-primary">Сохранить</button>
                             </div>
                         </div>
-                        <label>
-                            <input type="text" name="name" value="{{$menuFilter->name}}">
-                        </label>
-                        <label>
-                            <input type="text" name="slug" value="{{$menuFilter->slug}}">
-                        </label>
-                        <label>
-                            <input type="file" name="img">
-                            @if($menuFilter->img)
-                                <img src="{{ $menuFilter->img }}">
-                            @endif
-                        </label>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label>
+                                    Название
+                                    <input type="text" name="name" value="{{$menuFilter->name}}">
+                                </label>
+                                <label>
+                                    Слаг
+                                    <input type="text" name="slug" value="{{$menuFilter->slug}}">
+                                </label>
+                            </div>
+                            <div class="col-lg-6">
+                                <label>
+                                    <input type="file" name="img">
+                                </label>
+                                @if($menuFilter->img)
+                                    <img src="{{ $menuFilter->img }}">
+                                @endif
+                            </div>
+                        </div>
                     </form>
                 @else
                     <form method="POST" action="{{ route('admin.menu-filters.store') }}" enctype="multipart/form-data">
@@ -40,18 +48,23 @@
                                 <button class="btn btn-primary">Сохранить</button>
                             </div>
                         </div>
-                        <label>
-                            <input type="text" name="name" value="{{$menuFilter->name}}">
-                        </label>
-                        <label>
-                            <input type="text" name="slug" value="{{$menuFilter->slug}}">
-                        </label>
-                        <label>
-                            <input type="file" name="img">
-                            @if($menuFilter->img)
-                                <img src="{{ $menuFilter->img }}">
-                            @endif
-                        </label>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label>
+                                    Название
+                                    <input type="text" name="name" value="{{$menuFilter->name}}">
+                                </label>
+                                <label>
+                                    Слаг
+                                    <input type="text" name="slug" value="{{$menuFilter->slug}}">
+                                </label>
+                            </div>
+                            <div class="col-lg-6">
+                                <label>
+                                    <input type="file" name="img">
+                                </label>
+                            </div>
+                        </div>
                     </form>
                 @endif
             </div>

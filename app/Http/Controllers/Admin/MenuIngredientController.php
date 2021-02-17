@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\MenuCategory;
 use App\Models\MenuIngredient;
 use App\Models\MenuIngredientGroup;
 use Illuminate\Http\Request;
@@ -94,11 +95,17 @@ class MenuIngredientController extends Controller
      */
     public function edit($id)
     {
+        $menuIngredient = $this->menuIngredient->whereId($id)->firstOrFail();
         $menuIngredientGroups = MenuIngredientGroup::all();
+        $menuCategories = MenuCategory::where('ingredients', 1)->get();
+
+        $menu_category_ids = explode(",", $menuIngredient->menu_category_id);
 
         return view('admin.menu-ingredients.edit', [
-            'menuIngredient'       => $this->menuIngredient->whereId($id)->firstOrFail(),
-            'menuIngredientGroups' => $menuIngredientGroups
+            'menuIngredient'       => $menuIngredient,
+            'menuIngredientGroups' => $menuIngredientGroups,
+            'menuCategories'       => $menuCategories,
+            'menu_category_ids'    => $menu_category_ids
         ]);
     }
 
@@ -119,6 +126,18 @@ class MenuIngredientController extends Controller
         }
 
         $data = $request->all();
+
+        if ($request->menu_category_id != null) {
+
+            for ($i = 0; $i < count($request->menu_category_id); $i++) {
+                $menu_category[] = intval($request->menu_category_id[$i]);
+            }
+
+            $menu_category = implode(",", $menu_category);
+
+            $data['menu_category_id'] = $menu_category;
+
+        }
 
         if ($request->file('img') != null) {
 

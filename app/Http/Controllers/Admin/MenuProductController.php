@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\MenuProduct;
 use App\Models\MenuCategory;
 use App\Models\MenuFilter;
+use App\Models\MenuIngredient;
 use Illuminate\Http\Request;
 
 class MenuProductController extends Controller
@@ -26,7 +27,7 @@ class MenuProductController extends Controller
         $menuProducts = MenuProduct::with('menuCategory')->get();
 
         return view('admin.menu-products.index', [
-            'menuProducts' => $menuProducts,
+            'menuProducts'    => $menuProducts,
         ]);
     }
 
@@ -97,13 +98,31 @@ class MenuProductController extends Controller
      */
     public function edit($id)
     {
+        $menuProduct = $this->menuProduct->whereId($id)->firstOrFail();
         $menuCategories = MenuCategory::all();
         $menuFilters = MenuFilter::all();
+        $menuIngredients = MenuIngredient::all();
+
+        $ingredient_ids = explode(",", $menuProduct->composition);
+
+        $menuIngredientsTrue = $menuIngredients;
+        foreach ($menuIngredients as $menuIngredient) {
+            if ($menuIngredient->menu_category_id !== null) {
+                $value = str_contains($menuIngredient->menu_category_id, $menuProduct->menu_category_id);
+                if (!$value) {
+                    $menuIngredientsTrue = $menuIngredientsTrue->except($menuIngredient->id);
+                }
+            } else {
+                $menuIngredientsTrue = $menuIngredientsTrue->except($menuIngredient->id);
+            }
+        }
 
         return view('admin.menu-products.edit', [
-            'menuProduct'    => $this->menuProduct->whereId($id)->firstOrFail(),
-            'menuCategories' => $menuCategories,
-            'menuFilters'    => $menuFilters
+            'menuProduct'     => $menuProduct,
+            'menuCategories'  => $menuCategories,
+            'menuFilters'     => $menuFilters,
+            'menuIngredients' => $menuIngredientsTrue,
+            'ingredient_ids'  => $ingredient_ids
         ]);
     }
 
@@ -124,6 +143,18 @@ class MenuProductController extends Controller
         }
 
         $data = $request->all();
+
+        if ($request->composition != null) {
+
+            for ($i = 0; $i < count($request->composition); $i++) {
+                $composition[] = intval($request->composition[$i]);
+            }
+
+            $composition = implode(",", $composition);
+
+            $data['composition'] = $composition;
+
+        }
 
         if ($request->file('img') != null) {
 

@@ -17,48 +17,72 @@
                                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Удалить</button>
                             </div>
                         </div>
-                        <label>
-                            <input type="text" name="name" value="{{$menuProduct->name}}">
-                        </label>
-                        <label>
-                            <select name="menu_category_id">
-                                @foreach($menuCategories as $menuCategory)
-                                    <option value="{{$menuCategory->id}}" @if($menuProduct->menu_category_id === $menuCategory->id) selected @endif>
-                                        {{$menuCategory->name}}
-                                    </option>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label>
+                                    Название
+                                    <input type="text" name="name" value="{{$menuProduct->name}}">
+                                </label>
+                                <label>
+                                    Категория
+                                    <select name="menu_category_id">
+                                        @foreach($menuCategories as $menuCategory)
+                                            <option value="{{$menuCategory->id}}" @if($menuProduct->menu_category_id === $menuCategory->id) selected @endif>
+                                                {{$menuCategory->name}}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </label>
+                                <label>
+                                    Фильтр
+                                    <select name="menu_filter_id">
+                                        <option value="">Нет</option>
+                                        @foreach($menuFilters as $menuFilter)
+                                            <option value="{{$menuFilter->id}}" @if($menuProduct->menu_filter_id === $menuFilter->id) selected @endif>
+                                                {{$menuFilter->name}}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </label>
+                                <label>
+                                    Минимальная цена
+                                    <input type="number" name="min_price" value="{{$menuProduct->min_price}}">
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="variants_show" value="{{$menuProduct->variants_show}}" @if($menuProduct->variants_show) checked @endif>
+                                    <div class="checkbox__text">Показывать варианты</div>
+                                </label>
+                            </div>
+                            <div class="col-lg-6">
+                                <label>
+                                    <input type="file" name="img">
+                                </label>
+                                @if($menuProduct->img)
+                                    <a href="{{ $menuProduct->img }}" data-fancybox="image"><img src="{{ $menuProduct->img }}"></a>
+                                @endif
+                            </div>
+                        </div>
+                        @if(!$menuProduct->menuCategory->ingredients)
+                            <label>
+                                Состав
+                                <input type="text" name="composition" value="{{$menuProduct->composition}}">
+                            </label>
+                        @else
+                            <h2>Состав</h2>
+                            <div class="composition">
+                                @foreach($menuIngredients as $menuIngredient)
+                                    <label class="checkbox">
+                                        <input
+                                            type="checkbox"
+                                            name="composition[]" value="{{$menuIngredient->id}}"
+                                            @foreach($ingredient_ids as $ingredient_id)
+                                            @if($ingredient_id == $menuIngredient->id) checked @endif
+                                            @endforeach>
+                                        <div class="checkbox__text">{{$menuIngredient->name}}</div>
+                                    </label>
                                 @endforeach
-                            </select>
-                        </label>
-                        <label>
-                            <select name="menu_filter_id">
-                                <option value="">Нет</option>
-                                @foreach($menuFilters as $menuFilter)
-                                    <option value="{{$menuFilter->id}}" @if($menuProduct->menu_filter_id === $menuFilter->id) selected @endif>
-                                        {{$menuFilter->name}}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </label>
-                        <label>
-                            <input type="checkbox" name="ingredients" value="{{$menuProduct->ingredients}}" @if($menuProduct->ingredients) checked @endif>
-                            Изменение состава
-                        </label>
-                        <label>
-                            <input type="text" name="composition" value="{{$menuProduct->composition}}">
-                        </label>
-                        <label>
-                            <input type="number" name="min_price" value="{{$menuProduct->min_price}}">
-                        </label>
-                        <label>
-                            <input type="checkbox" name="variants_show" value="{{$menuProduct->variants_show}}" @if($menuProduct->variants_show) checked @endif>
-                            Показывать варианты
-                        </label>
-                        <label>
-                            <input type="file" name="img">
-                            @if($menuProduct->img)
-                                <img src="{{ $menuProduct->img }}">
-                            @endif
-                        </label>
+                            </div>
+                        @endif
                     </form>
                     <!-- Modal -->
                     <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -99,48 +123,48 @@
                                 <button class="btn btn-primary">Сохранить</button>
                             </div>
                         </div>
-                        <label>
-                            <input type="text" name="name">
-                        </label>
-                        <label>
-                            <select name="menu_category_id">
-                                @foreach($menuCategories as $menuCategory)
-                                    <option value="{{$menuCategory->id}}">
-                                        {{$menuCategory->name}}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </label>
-                        <label>
-                            <select name="menu_filter_id">
-                                <option value="">Нет</option>
-                                @foreach($menuFilters as $menuFilter)
-                                    <option value="{{$menuFilter->id}}">
-                                        {{$menuFilter->name}}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </label>
-                        <label>
-                            <input type="checkbox" name="ingredients">
-                            Изменение состава
-                        </label>
-                        <label>
-                            <input type="text" name="composition">
-                        </label>
-                        <label>
-                            <input type="number" name="min_price">
-                        </label>
-                        <label>
-                            <input type="checkbox" name="variants_show">
-                            Показывать варианты
-                        </label>
-                        <label>
-                            <input type="file" name="img">
-                            @if($menuProduct->img)
-                                <img src="{{ $menuProduct->img }}">
-                            @endif
-                        </label>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label>
+                                    Название
+                                    <input type="text" name="name" value="{{$menuProduct->name}}">
+                                </label>
+                                <label>
+                                    Категория
+                                    <select name="menu_category_id">
+                                        @foreach($menuCategories as $menuCategory)
+                                            <option value="{{$menuCategory->id}}" @if($menuProduct->menu_category_id === $menuCategory->id) selected @endif>
+                                                {{$menuCategory->name}}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </label>
+                                <label>
+                                    Фильтр
+                                    <select name="menu_filter_id">
+                                        <option value="">Нет</option>
+                                        @foreach($menuFilters as $menuFilter)
+                                            <option value="{{$menuFilter->id}}" @if($menuProduct->menu_filter_id === $menuFilter->id) selected @endif>
+                                                {{$menuFilter->name}}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </label>
+                                <label>
+                                    Минимальная цена
+                                    <input type="number" name="min_price" value="{{$menuProduct->min_price}}">
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="variants_show" value="{{$menuProduct->variants_show}}" @if($menuProduct->variants_show) checked @endif>
+                                    <div class="checkbox__text">Показывать варианты</div>
+                                </label>
+                            </div>
+                            <div class="col-lg-6">
+                                <label>
+                                    <input type="file" name="img">
+                                </label>
+                            </div>
+                        </div>
                     </form>
                 @endif
             </div>
