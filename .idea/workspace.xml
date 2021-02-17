@@ -32,167 +32,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55e38aa4-1e59-486e-b405-03ed58b0efaf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Front/MainController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/cheese-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/cheese-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/cheese-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/cheese-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/cheese-5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/cheese-6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/meat-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/meat-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/meat-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/meat-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/meat-5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/meat-6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/meat-7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/meat-8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/seafood-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/seafood-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/seafood-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/souce-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/souce-10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/souce-11.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/souce-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/souce-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/souce-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/souce-5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/souce-6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/souce-7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/souce-8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/souce-9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/vegetables-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/vegetables-10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/vegetables-11.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/vegetables-12.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/vegetables-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/vegetables-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/vegetables-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/vegetables-5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/vegetables-6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/vegetables-7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/vegetables-8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/additives/vegetables-9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/404.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/404.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/alert.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/allatra.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/allatra.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/allatra2.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/arrow-button.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/cart-black.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/cart-white.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/check.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/clock.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/close-modal.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/close.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/closed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/demand.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/hamburger.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/hot.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/info.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/inst.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/marker.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/minus.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/pay/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/pay/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/pay/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/pay/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/pay/5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/pay/6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/pay/7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/pay/8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/phone.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/plus.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/product-hot-small.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/product-hot.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/product-plus.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/product-veg-small.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/product-veg.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/remove.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/select.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/success.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/time.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/trash.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/veg.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/common/vk.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/contacts/1-phone.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/contacts/2-clock.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/contacts/3-marker.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/contacts/4-email.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/contacts/bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/contacts/check.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/contacts/erip.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/contacts/map.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/contacts/marker.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/contacts/webpay.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/discounts/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/discounts/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/discounts/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/discounts/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/discounts/arrow.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/discounts/clock.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/main/cart-empty.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/main/khachapuri.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/main/pie-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/main/pie-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/main/pie-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/main/pizza-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/main/pizza-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/main/pizza-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/main/slider.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/menu/1-pizza.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/menu/2-sushi.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/menu/3-wok.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/menu/4-dinner.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/menu/5-khachapury.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/menu/6-pie.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/menu/7-cake.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/menu/8-drink.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/store/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/store/modules/cart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/store/modules/curentItem.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/store/modules/delivery.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/404.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Cart.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Contacts.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/DiscountItem.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Discounts.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/ExampleComponent.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Footer.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/HowTo.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Index.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Map.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Order.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Payment.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Success.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/parts/AdditiveCard.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/parts/CartProductCard.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/parts/DiscountCard.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/parts/DiscountOther.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/parts/Menu.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/parts/ProductCard.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/parts/ProductModal.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/parts/Seo.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/admin.sass" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/admin.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main.sass" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/main.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/front.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/front.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -382,7 +224,7 @@
       <workItem from="1613384815168" duration="20000" />
       <workItem from="1613384836395" duration="15486000" />
       <workItem from="1613455879946" duration="14823000" />
-      <workItem from="1613542164075" duration="29556000" />
+      <workItem from="1613542164075" duration="29979000" />
     </task>
     <task id="LOCAL-00001" summary="directories change">
       <created>1613384026570</created>
@@ -468,7 +310,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613565025575</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="trying add store">
+      <created>1613572825413</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1613572825413</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -511,7 +360,8 @@
     <MESSAGE value="Admin CSS" />
     <MESSAGE value="Ingredients to Product, Admin CSS" />
     <MESSAGE value="thinking about Variants" />
-    <option name="LAST_COMMIT_MESSAGE" value="thinking about Variants" />
+    <MESSAGE value="trying add store" />
+    <option name="LAST_COMMIT_MESSAGE" value="trying add store" />
   </component>
   <component name="WindowStateProjectService">
     <state x="780" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1613560669267">
@@ -522,10 +372,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613565622596" />
-    <state x="577" y="87" key="CommitChangelistDialog2" timestamp="1613565025001">
+    <state x="577" y="87" key="CommitChangelistDialog2" timestamp="1613572824209">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="577" y="87" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1613565025001" />
+    <state x="577" y="87" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1613572824209" />
     <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1613384833588">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -562,10 +412,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613384763580" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1613565027744">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1613572827087">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1613565027744" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1613572827087" />
     <state x="720" y="253" key="VcsDiffUtil.ChangesDialog" timestamp="1613384498036">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
