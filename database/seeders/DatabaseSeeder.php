@@ -17,6 +17,8 @@ class DatabaseSeeder extends Seeder
         $this->call(MenuCategoriesSeeder::class);
         $this->call(MenuProductsSeeder::class);
         $this->call(MenuFiltersSeeder::class);
+        $this->call(MenuIngredientsSeeder::class);
+        $this->call(MenuIngredientGroupsSeeder::class);
         // \App\Models\User::factory(10)->create();
     }
 }

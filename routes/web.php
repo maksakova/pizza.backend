@@ -37,3 +37,11 @@ Route::resource('/admin/menu-products', 'Admin\MenuProductController')
 Route::resource('/admin/menu-filters', 'Admin\MenuFilterController')
     ->names('admin.menu-filters')
     ->middleware('auth');
+
+Route::resource('/admin/menu-ingredient-groups', 'Admin\MenuIngredientGroupController')
+    ->names('admin.menu-ingredient-groups')
+    ->middleware('auth');
+
+Route::resource('/admin/menu-ingredients', 'Admin\MenuIngredientGroupController')
+    ->names('admin.menu-ingredients')
+    ->middleware('auth');

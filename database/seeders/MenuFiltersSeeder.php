@@ -18,12 +18,12 @@ class MenuFiltersSeeder extends Seeder
         $inputs[] = [
             'name' => 'Вегетарианские',
             'slug' => 'veg',
-            'img'  => '/img/common/veg.svg',
+            'img'  => '/img/uploads/veg.svg',
         ];
         $inputs[] = [
             'name' => 'Острые',
             'slug' => 'hot',
-            'img'  => '/img/common/hot.svg',
+            'img'  => '/img/uploads/hot.svg',
         ];
         DB::table('menu_filters')->insert($inputs);
     }

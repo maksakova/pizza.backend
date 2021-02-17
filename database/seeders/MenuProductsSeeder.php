@@ -23,7 +23,7 @@ class MenuProductsSeeder extends Seeder
             'composition'      => '',
             'min_price'        => 25.40,
             'variants_show'    => false,
-            'img'              => '/img/main/pizza-1.jpg',
+            'img'              => '/img/uploads/pizza-1.jpg',
         ];
         $inputs[] = [
             'name'             => 'Маргарита',
@@ -33,7 +33,7 @@ class MenuProductsSeeder extends Seeder
             'composition'      => '',
             'min_price'        => 20,
             'variants_show'    => false,
-            'img'              => '/img/main/pizza-2.jpg',
+            'img'              => '/img/uploads/pizza-2.jpg',
         ];
         $inputs[] = [
             'name'             => 'Хачапури по-Аджарски',
@@ -43,7 +43,7 @@ class MenuProductsSeeder extends Seeder
             'composition'      => 'Сыр Адыгейский, сыр Сулугуни, сливки, желток, масло сливочное. ',
             'min_price'        => 2.50,
             'variants_show'    => false,
-            'img'              => '/img/main/khachapuri.jpg',
+            'img'              => '/img/uploads/khachapuri.jpg',
         ];
         DB::table('menu_products')->insert($inputs);
     }

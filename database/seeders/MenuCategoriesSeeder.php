@@ -18,42 +18,42 @@ class MenuCategoriesSeeder extends Seeder
         $inputs[] = [
             'name' => 'Пицца',
             'slug' => 'pizza',
-            'img'  => '/img/menu/1-pizza.svg',
+            'img'  => '/img/uploads/1-pizza.svg',
         ];
         $inputs[] = [
             'name' => 'Суши',
             'slug' => 'sushi',
-            'img'  => '/img/menu/2-sushi.svg',
+            'img'  => '/img/uploads/2-sushi.svg',
         ];
         $inputs[] = [
             'name' => 'WOK',
             'slug' => 'wok',
-            'img'  => '/img/menu/3-wok.svg',
+            'img'  => '/img/uploads/3-wok.svg',
         ];
         $inputs[] = [
             'name' => 'Обеды',
             'slug' => 'dinner',
-            'img'  => '/img/menu/4-dinner.svg',
+            'img'  => '/img/uploads/4-dinner.svg',
         ];
         $inputs[] = [
             'name' => 'Хачапури',
             'slug' => 'khachapuri',
-            'img'  => '/img/menu/5-khachapury.svg',
+            'img'  => '/img/uploads/5-khachapury.svg',
         ];
         $inputs[] = [
             'name' => 'Пирожки',
             'slug' => 'pies',
-            'img'  => '/img/menu/6-pie.svg',
+            'img'  => '/img/uploads/6-pie.svg',
         ];
         $inputs[] = [
             'name' => 'Десерты',
             'slug' => 'cake',
-            'img'  => '/img/menu/7-cake.svg',
+            'img'  => '/img/uploads/7-cake.svg',
         ];
         $inputs[] = [
             'name' => 'Напитки',
             'slug' => 'drink',
-            'img'  => '/img/menu/8-drink.svg',
+            'img'  => '/img/uploads/8-drink.svg',
         ];
         DB::table('menu_categories')->insert($inputs);
     }
