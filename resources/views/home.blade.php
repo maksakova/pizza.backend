@@ -21,6 +21,9 @@
                         <li>
                             <a href="{{route('admin.menu-ingredient-groups.index')}}">Ингредиенты</a>
                         </li>
+                        <li>
+                            <a href="{{route('admin.main-banners.index')}}">Баннеры</a>
+                        </li>
                     </ul>
                 </div>
             </div>

@@ -152,6 +152,8 @@ export default {
     .menu
         margin: -90px 0 65px
         background: transparent
+        position: relative
+        z-index: 1
         &__outer
             margin: 0
             box-shadow: 0px 15px 50px rgba(34, 39, 41, 0.05)

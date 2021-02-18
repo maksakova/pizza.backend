@@ -45,6 +45,10 @@ Route::resource('/admin/menu-ingredients', 'Admin\MenuIngredientController')
     ->names('admin.menu-ingredients')
     ->middleware('auth');
 
+Route::resource('/admin/main-banners', 'Admin\MainBannerController')
+    ->names('admin.main-banners')
+    ->middleware('auth');
+
 /* Front */
 
 Route::resource('/', 'Front\MainController');

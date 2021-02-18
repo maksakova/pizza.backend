@@ -1,39 +1,18 @@
 <template>
     <div>
         <swiper class="swiper" :options="swiperOptions">
-            <!--<swiper-slide class="swiper-item"
-                          v-for="image in images"
+            <swiper-slide class="swiper-item"
+                          v-for="image in mainBanners"
                           v-bind:key="image.id"
-                          :style="{ backgroundImage: 'url(' + image.url + ')' }">
+                          :style="{ backgroundImage: 'url(' + image.img + ')' }">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-6 offset-xl-1">
-                            <div class="text1">
-                                asd <span>ad</span>
-                            </div>
-                            <div class="text3">
-                                ad
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </swiper-slide>-->
-            <swiper-slide class="swiper-item">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-6 offset-xl-1">
-                            <div class="text1">
-                                asd <span>ad</span>
-                            </div>
-                            <div class="text3">
-                                ad
-                            </div>
+                            <a :href="image.link" v-html="image.text"></a>
                         </div>
                     </div>
                 </div>
             </swiper-slide>
-            <swiper-slide>2</swiper-slide>
-            <swiper-slide>3</swiper-slide>
         </swiper>
         <Menu/>
     </div>
@@ -44,6 +23,7 @@ import Menu from '../components/parts/Menu'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
+import axios from "axios";
 
 export default {
     name: "Index",
@@ -58,12 +38,18 @@ export default {
                 pagination: {
                     el: '.swiper-pagination'
                 },
-            }
+            },
+            mainBanners: []
         }
     },
     directives: {
         swiper: directive
-    }
+    },
+    mounted() {
+        axios
+            .post('/api/mainBanners')
+            .then(response => (this.mainBanners = response.data));
+    },
 }
 </script>
 
@@ -206,8 +192,11 @@ export default {
         height: 300px
         .text1
             font-size: 50px
+            line-height: 1.3
+            padding: 8px 18px
         .text3
-            font-size: 35px
+            font-size: 46px
+            text-transform: uppercase
 
     .main
         &__filter
@@ -220,15 +209,12 @@ export default {
 
     .swiper-container
         height: 420px
-        z-index: -1
 
     .swiper-item
         height: 420px
         display: flex
         align-items: center
         padding-bottom: 24px
-        .text1
-            margin-bottom: 20px
 
     .main
         &__filter
@@ -241,5 +227,12 @@ export default {
                     transform: translateY(-5px)
         &__menu
             margin-bottom: 82px
+
+@media (min-width: 1600px)
+    .swiper-container
+        height: 560px
+
+    .swiper-item
+        height: 560px
 
 </style>

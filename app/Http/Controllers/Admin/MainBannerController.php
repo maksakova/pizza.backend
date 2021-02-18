@@ -3,16 +3,16 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\MenuFilter;
+use App\Models\MainBanner;
 use Illuminate\Http\Request;
 
-class MenuFilterController extends Controller
+class MainBannerController extends Controller
 {
-    private $menuFilter;
+    private $mainBanner;
 
-    public function __construct(MenuFilter $menuFilter)
+    public function __construct(MainBanner $mainBanner)
     {
-        $this->menuFilter = $menuFilter;
+        $this->mainBanner = $mainBanner;
     }
     /**
      * Display a listing of the resource.
@@ -21,10 +21,10 @@ class MenuFilterController extends Controller
      */
     public function index()
     {
-        $menuFilters = MenuFilter::all();
+        $mainBanners = MainBanner::all();
 
-        return view('admin.menu-filters.index', [
-            'menuFilters' => $menuFilters,
+        return view('admin.main-banners.index', [
+            'mainBanners' => $mainBanners,
         ]);
     }
 
@@ -35,10 +35,10 @@ class MenuFilterController extends Controller
      */
     public function create()
     {
-        $menuFilter = new MenuFilter();
+        $mainBanner = new MainBanner();
 
-        return view('admin.menu-filters.edit', [
-            'menuFilter' => $menuFilter,
+        return view('admin.main-banners.edit', [
+            'mainBanner' => $mainBanner,
         ]);
     }
 
@@ -60,11 +60,11 @@ class MenuFilterController extends Controller
 
         }
 
-        $menuFilter = new MenuFilter($data);
-        $menuFilter->save();
+        $mainBanner = new MainBanner($data);
+        $mainBanner->save();
 
-        if ($menuFilter) {
-            return redirect()->route('admin.menu-filters.edit', [$menuFilter->id])
+        if ($mainBanner) {
+            return redirect()->route('admin.main-banners.edit', [$mainBanner->id])
                 ->with(['success' => 'Успешно сохранено']);
         } else {
             return back()->withErrors(['msg' => 'Ошибка сохранения'])
@@ -80,8 +80,8 @@ class MenuFilterController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.menu-filters.edit', [
-            'menuFilter' => $this->menuFilter->whereId($id)->firstOrFail(),
+        return view('admin.main-banners.edit', [
+            'mainBanner' => $this->mainBanner->whereId($id)->firstOrFail(),
         ]);
     }
 
@@ -94,7 +94,7 @@ class MenuFilterController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $item = MenuFilter::find($id);
+        $item = MainBanner::find($id);
         if (empty($item)) {
             return back()
                 ->withErrors(['msg' => "Запись id=[{$id}] не найдена"])
@@ -115,7 +115,7 @@ class MenuFilterController extends Controller
 
         if ($result) {
             return redirect()
-                ->route('admin.menu-filters.edit', $item->id)
+                ->route('admin.main-banners.edit', $item->id)
                 ->with(['success' => 'Успешно сохранено']);
         } else {
             return back()
@@ -132,6 +132,13 @@ class MenuFilterController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $mainBanner = MainBanner::findOrFail($id);
+        $mainBanner->delete();
+
+        $mainBanners = MainBanner::all();
+
+        return view('admin.main-banners.index', [
+            'mainBanners' => $mainBanners,
+        ]);
     }
 }

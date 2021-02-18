@@ -31,12 +31,32 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55e38aa4-1e59-486e-b405-03ed58b0efaf" name="Default Changelist" comment="">
+    <list default="true" id="55e38aa4-1e59-486e-b405-03ed58b0efaf" name="Default Changelist" comment="add banners crud">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MainBannerController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/MainBanner.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_18_092853_create_main_banners_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/MainBannersSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/uploads/banner1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/uploads/banner2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/uploads/banner3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/app.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/main-banners/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/main-banners/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/MenuFilterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MenuFilterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Front/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Front/MainController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/parts/Menu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/parts/Menu.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/front.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/front.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,18 +209,18 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2020.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OSPanel\domains\pizza.loc\resources\views\admin" />
+      <recent name="C:\OSPanel\domains\pizza.loc\database\seeders" />
+      <recent name="C:\OSPanel\domains\pizza.loc\public\img\uploads" />
       <recent name="C:\OSPanel\domains\pizza.loc\resources\js\components" />
       <recent name="C:\OSPanel\domains\pizza.loc\resources\js" />
-      <recent name="C:\OSPanel\domains\pizza.loc\public" />
-      <recent name="C:\OSPanel\domains\pizza.loc\resources\views\layouts" />
-      <recent name="C:\OSPanel\domains\pizza.loc\database\seeders" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\OSPanel\domains\pizza.loc\resources\views\front" />
@@ -232,9 +252,20 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="production" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="production" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.production" />
         <item itemvalue="npm.development" />
       </list>
     </recent_temporary>
@@ -253,7 +284,7 @@
       <workItem from="1613384836395" duration="15486000" />
       <workItem from="1613455879946" duration="14823000" />
       <workItem from="1613542164075" duration="30021000" />
-      <workItem from="1613628369986" duration="9726000" />
+      <workItem from="1613628369986" duration="15639000" />
     </task>
     <task id="LOCAL-00001" summary="directories change">
       <created>1613384026570</created>
@@ -360,7 +391,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613637042718</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="add swiper">
+      <created>1613638715021</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1613638715022</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -406,21 +444,23 @@
     <MESSAGE value="trying add store" />
     <MESSAGE value="added store" />
     <MESSAGE value="axios works!" />
-    <option name="LAST_COMMIT_MESSAGE" value="axios works!" />
+    <MESSAGE value="add swiper" />
+    <MESSAGE value="add banners crud" />
+    <option name="LAST_COMMIT_MESSAGE" value="add banners crud" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="780" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1613560669267">
+    <state x="780" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1613642769877">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="780" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613560669267" />
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1613565622596">
+    <state x="780" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613642769877" />
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1613643269854">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613565622596" />
-    <state x="577" y="87" key="CommitChangelistDialog2" timestamp="1613637041301">
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613643269854" />
+    <state x="577" y="87" key="CommitChangelistDialog2" timestamp="1613644078999">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="577" y="87" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1613637041301" />
+    <state x="577" y="87" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1613644078999" />
     <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1613384833588">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -433,22 +473,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="732" y="224" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613384920376" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1613638067856">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1613644083204">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1613638067856" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1613638067856">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1613644083204" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1613644083204">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1613638067856" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1613638067856">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1613644083204" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1613644083204">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1613638067856" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1613638067856">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1613644083204" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1613644083204">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1613638067856" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1613644083204" />
     <state x="692" y="242" key="NewPhpClassDialog" timestamp="1613396873507">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -461,18 +501,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613384763580" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1613637045259">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1613638718562">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1613637045259" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1613638718562" />
     <state x="720" y="253" key="VcsDiffUtil.ChangesDialog" timestamp="1613384498036">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="720" y="253" key="VcsDiffUtil.ChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613384498036" />
-    <state x="667" y="253" width="585" height="534" key="find.popup" timestamp="1613633181455">
+    <state x="667" y="253" width="585" height="534" key="find.popup" timestamp="1613645253408">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613633181455" />
+    <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613645253408" />
     <state x="749" y="421" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1613632493204">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

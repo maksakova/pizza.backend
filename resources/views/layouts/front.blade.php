@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Pizzamarket</title>
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('fonts/stylesheet.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>

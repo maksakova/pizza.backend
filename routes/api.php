@@ -18,4 +18,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('menuCategories', '\App\Http\Controllers\Front\MainController@test');
+Route::post('menuCategories', '\App\Http\Controllers\Front\MainController@menuCategories');
+
+Route::post('mainBanners', '\App\Http\Controllers\Front\MainController@mainBanners');

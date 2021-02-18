@@ -11,9 +11,6 @@ import index from "./store"
 
 import VueRouter from 'vue-router';
 import VueScrollactive from 'vue-scrollactive';
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
 import YmapPlugin from 'vue-yandex-maps'
 import vmodal from 'vue-js-modal'
 
@@ -27,8 +24,6 @@ const settings = {
     version: '2.1',
 }
 
-Vue.use(BootstrapVue)
-Vue.use(IconsPlugin)
 Vue.use(YmapPlugin, settings)
 Vue.use(vmodal)
 
