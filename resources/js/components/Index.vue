@@ -1,25 +1,74 @@
 <template>
-    <div style="margin-top: 170px;">
+    <div>
+        <swiper class="swiper" :options="swiperOptions">
+            <!--<swiper-slide class="swiper-item"
+                          v-for="image in images"
+                          v-bind:key="image.id"
+                          :style="{ backgroundImage: 'url(' + image.url + ')' }">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 offset-xl-1">
+                            <div class="text1">
+                                asd <span>ad</span>
+                            </div>
+                            <div class="text3">
+                                ad
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </swiper-slide>-->
+            <swiper-slide class="swiper-item">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 offset-xl-1">
+                            <div class="text1">
+                                asd <span>ad</span>
+                            </div>
+                            <div class="text3">
+                                ad
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </swiper-slide>
+            <swiper-slide>2</swiper-slide>
+            <swiper-slide>3</swiper-slide>
+        </swiper>
         <Menu/>
     </div>
 </template>
 
 <script>
 import Menu from '../components/parts/Menu'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/css/swiper.css'
+import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
 
 export default {
     name: "Index",
     components: {
         Menu,
+        Swiper,
+        SwiperSlide
     },
+    data() {
+        return {
+            swiperOptions: {
+                pagination: {
+                    el: '.swiper-pagination'
+                },
+            }
+        }
+    },
+    directives: {
+        swiper: directive
+    }
 }
 </script>
 
 <style lang="sass">
 @import "resources/sass/main"
-
-.swiper-container
-    z-index: -1px
 
 .swiper-item
     width: 100%
