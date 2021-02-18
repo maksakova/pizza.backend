@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(MenuVariantsSeeder::class);
         $this->call(MenuProductVariantsSeeder::class);
         $this->call(MainBannersSeeder::class);
+        $this->call(DiscountsSeeder::class);
         // \App\Models\User::factory(10)->create();
     }
 }

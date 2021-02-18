@@ -14,7 +14,7 @@
                 </div>
             </swiper-slide>
         </swiper>
-        <Menu/>
+        <Menu simple="no"/>
     </div>
 </template>
 

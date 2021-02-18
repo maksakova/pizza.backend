@@ -24,6 +24,9 @@
                         <li>
                             <a href="{{route('admin.main-banners.index')}}">Баннеры</a>
                         </li>
+                        <li>
+                            <a href="{{route('admin.discounts.index')}}">Акции</a>
+                        </li>
                     </ul>
                 </div>
             </div>

@@ -49,6 +49,21 @@ Route::resource('/admin/main-banners', 'Admin\MainBannerController')
     ->names('admin.main-banners')
     ->middleware('auth');
 
+Route::resource('/admin/discounts', 'Admin\DiscountController')
+    ->names('admin.discounts')
+    ->middleware('auth');
+
+
 /* Front */
 
-Route::resource('/', 'Front\MainController');
+Route::get('/', 'Front\MainController@index');
+
+Route::get('discounts', 'Front\DiscountController@index')->name('discounts');
+
+/* Discounts */
+
+/*Discount::all()->each(function ($page) {
+    Route::get('page/' . $page->slug, function () use ($page) {
+        return view('page', ['page' => $page]);
+    })->name('page.' . $page->slug);
+});*/
