@@ -26,7 +26,7 @@ name: "Seo"
 </script>
 
 <style lang="sass">
-@import "@/assets/sass/main.sass"
+@import "resources/sass/main"
 
 .seo
   font-size: 12px

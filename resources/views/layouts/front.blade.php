@@ -13,6 +13,7 @@
 <div id="app">
     <the-header></the-header>
     @yield('content')
+    <seo></seo>
     <the-footer></the-footer>
 </div>
 

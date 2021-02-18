@@ -11,11 +11,7 @@ class MainController extends Controller
 {
     public function index()
     {
-        $menuCategories = MenuCategory::all();
-
-        return view('front.index', [
-            'menuCategories' => $menuCategories,
-        ]);
+        return view('front.index');
     }
 
     public function create()

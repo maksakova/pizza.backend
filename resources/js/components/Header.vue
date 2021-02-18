@@ -133,16 +133,25 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
 
 export default {
-  name: "Header",
+    name: "Header",
     data() {
         return {
             logo: '/img/common/logo.png',
             isActive: false,
         }
     },
+
+    mounted() {
+
+        console.log(this.store)
+
+    },
+    ...mapGetters(['cartItemsCount']),
 }
+
 </script>
 
 <style lang="sass">

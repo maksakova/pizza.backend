@@ -94,11 +94,13 @@
           </div>
         </div>
         <div class="footer__menu">
-          <div class="footer__menu__item"
-               v-for="item in menu"
-               v-bind:key="item.id">
-            <h3>{{item.name}}</h3>
-          </div>
+            <router-link
+                :to="{name: 'index', hash: '#' + item.slug}"
+                class="footer__menu__item"
+                v-for="item in menuCategories"
+                v-bind:key="item.id">
+                <h3>{{item.name}}</h3>
+            </router-link>
         </div>
       </div>
     </div>
@@ -137,7 +139,55 @@ export default {
     data() {
         return {
             logo: '/img/common/logo.png',
+            menuCategories: [],
+            pay: [
+                {
+                    id: 1,
+                    url: '/img/common/pay/1.png',
+                    name: 'Webpay',
+                },
+                {
+                    id: 2,
+                    url: '/img/common/pay/2.png',
+                    name: 'Visa',
+                },
+                {
+                    id: 3,
+                    url: '/img/common/pay/3.png',
+                    name: 'Verified by Visa',
+                },
+                {
+                    id: 4,
+                    url: '/img/common/pay/4.png',
+                    name: 'Mastercard',
+                },
+                {
+                    id: 5,
+                    url: '/img/common/pay/5.png',
+                    name: 'Mastercard SecureCode',
+                },
+                {
+                    id: 6,
+                    url: '/img/common/pay/6.png',
+                    name: 'Белкарт',
+                },
+                {
+                    id: 7,
+                    url: '/img/common/pay/7.png',
+                    name: 'Белкарт Интернет-пароль',
+                },
+                {
+                    id: 8,
+                    url: '/img/common/pay/8.png',
+                    name: 'ЕРИП',
+                },
+            ],
         }
+    },
+    mounted() {
+        axios
+            .post('/api/menuCategories')
+            .then(response => (this.menuCategories = response.data));
     },
 }
 </script>
