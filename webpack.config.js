@@ -32,5 +32,6 @@ module.exports = {
     devServer: {
         inline: false,
         contentBase: "./dist",
+        proxy: 'http://127.0.0.1:8000/'
     },
 }

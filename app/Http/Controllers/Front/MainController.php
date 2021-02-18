@@ -22,6 +22,13 @@ class MainController extends Controller
         ]);
     }
 
+    public function test()
+    {
+        $menuCategories = MenuCategory::all();
+
+        return $menuCategories;
+    }
+
     /**
      * Show the form for creating a new resource.
      *

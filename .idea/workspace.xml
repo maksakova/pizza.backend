@@ -32,9 +32,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55e38aa4-1e59-486e-b405-03ed58b0efaf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/js/components/Footer.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/Index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/parts/AdditiveCard.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/parts/CartProductCard.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/parts/DiscountCard.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/parts/DiscountOther.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/parts/Menu.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/parts/ProductCard.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/parts/ProductModal.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/parts/Seo.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Front/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Front/MainController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/front.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/front.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,29 +206,55 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/components" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2020.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OSPanel\domains\pizza.loc\resources\js\components" />
+      <recent name="C:\OSPanel\domains\pizza.loc\resources\js" />
+      <recent name="C:\OSPanel\domains\pizza.loc\public" />
+      <recent name="C:\OSPanel\domains\pizza.loc\resources\views\layouts" />
+      <recent name="C:\OSPanel\domains\pizza.loc\database\seeders" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\OSPanel\domains\pizza.loc\resources\views\front" />
       <recent name="C:\OSPanel\domains\pizza.loc\resources\views\admin" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\OSPanel\domains\pizza.loc\resources\js" />
-      <recent name="C:\OSPanel\domains\pizza.loc\public" />
-      <recent name="C:\OSPanel\domains\pizza.loc\resources\js\components" />
-      <recent name="C:\OSPanel\domains\pizza.loc\resources\views\layouts" />
-      <recent name="C:\OSPanel\domains\pizza.loc\database\seeders" />
-    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="development" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="development" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.dev" />
+        <item itemvalue="npm.development" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -224,7 +269,8 @@
       <workItem from="1613384815168" duration="20000" />
       <workItem from="1613384836395" duration="15486000" />
       <workItem from="1613455879946" duration="14823000" />
-      <workItem from="1613542164075" duration="29979000" />
+      <workItem from="1613542164075" duration="30021000" />
+      <workItem from="1613628369986" duration="8014000" />
     </task>
     <task id="LOCAL-00001" summary="directories change">
       <created>1613384026570</created>
@@ -317,7 +363,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613572825413</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="added store">
+      <created>1613573165226</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1613573165226</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -361,7 +414,8 @@
     <MESSAGE value="Ingredients to Product, Admin CSS" />
     <MESSAGE value="thinking about Variants" />
     <MESSAGE value="trying add store" />
-    <option name="LAST_COMMIT_MESSAGE" value="trying add store" />
+    <MESSAGE value="added store" />
+    <option name="LAST_COMMIT_MESSAGE" value="added store" />
   </component>
   <component name="WindowStateProjectService">
     <state x="780" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1613560669267">
@@ -372,10 +426,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613565622596" />
-    <state x="577" y="87" key="CommitChangelistDialog2" timestamp="1613572824209">
+    <state x="577" y="87" key="CommitChangelistDialog2" timestamp="1613573164119">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="577" y="87" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1613572824209" />
+    <state x="577" y="87" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1613573164119" />
     <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1613384833588">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -388,42 +442,50 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="732" y="224" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613384920376" />
-    <state width="938" height="282" key="GridCell.Tab.0.bottom" timestamp="1613400351653">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1613633031224">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1613400351653" />
-    <state width="938" height="282" key="GridCell.Tab.0.center" timestamp="1613400351653">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1613633031224" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1613633031224">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1613400351653" />
-    <state width="938" height="282" key="GridCell.Tab.0.left" timestamp="1613400351653">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1613633031224" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1613633031224">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1613400351653" />
-    <state width="938" height="282" key="GridCell.Tab.0.right" timestamp="1613400351653">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1613633031224" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1613633031224">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="938" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1613400351653" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1613633031224" />
     <state x="692" y="242" key="NewPhpClassDialog" timestamp="1613396873507">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="692" y="242" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613396873507" />
+    <state x="789" y="240" key="RollbackChangesDialog" timestamp="1613632519345">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="789" y="240" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613632519345" />
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog" timestamp="1613384763580">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613384763580" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1613572827087">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1613573175824">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1613572827087" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1613573175824" />
     <state x="720" y="253" key="VcsDiffUtil.ChangesDialog" timestamp="1613384498036">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="720" y="253" key="VcsDiffUtil.ChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613384498036" />
-    <state x="667" y="253" width="585" height="534" key="find.popup" timestamp="1613571000533">
+    <state x="667" y="253" width="585" height="534" key="find.popup" timestamp="1613633181455">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613571000533" />
+    <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613633181455" />
+    <state x="749" y="421" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1613632493204">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="749" y="421" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613632493204" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1613568564020">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -12,6 +12,7 @@
 <div id="app">
     <the-header></the-header>
     @yield('content')
+    <the-footer></the-footer>
 </div>
 
 <script src="{{mix('js/app.js')}}"></script>

@@ -47,4 +47,4 @@ Route::resource('/admin/menu-ingredients', 'Admin\MenuIngredientController')
 
 /* Front */
 
-Route::get('/', 'Front\MainController@index');
+Route::resource('/', 'Front\MainController');

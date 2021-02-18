@@ -38,8 +38,6 @@ Vue.use(VueScrollactive);
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-import Index from './components/Index.vue';
-
 
 /*Vue.component('Menu', require('./components/Menu.vue').default);
 Vue.component('CartProductCard', require('./components/CartProductCard.vue').default);
@@ -47,8 +45,11 @@ Vue.component('ProductCard', require('./components/ProductCard.vue').default);
 Vue.component('ProductModal', require('./components/ProductModal.vue').default);
 Vue.component('DiscountCard', require('./components/DiscountCard.vue').default);
 Vue.component('DiscountOther', require('./components/DiscountOther.vue').default);*/
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+
 Vue.component('the-header', require('./components/Header.vue').default);
+Vue.component('the-footer', require('./components/Footer.vue').default);
+Vue.component('index', require('./components/Index.vue').default);
+Vue.component('menu', require('./components/parts/Menu.vue').default);
 
 Vue.directive('scroll', {
     inserted: function (el, binding) {
@@ -119,7 +120,6 @@ const routes = [
     {
         path: '/',
         name: 'index',
-        component: Index,
     },
 ]
 
