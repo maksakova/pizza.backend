@@ -1450,3 +1450,31 @@ header .close {
   }
 }
 
+.error {
+  background: url("/../img/common/404.png") center right;
+  text-align: center;
+  min-height: 500px;
+}
+
+.error__img {
+  margin: 30px 0 20px;
+}
+
+@media (min-width: 992px) {
+  .error {
+    height: calc(100vh - 106px - 409px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .error {
+    height: calc(100vh - 91px - 305px);
+  }
+  .error p {
+    font-size: 16px;
+  }
+  .error__img {
+    margin: 30px 0;
+  }
+}
+
