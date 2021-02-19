@@ -42,6 +42,11 @@ class MainController extends Controller
         return Contact::where('key', 'time')->pluck('value')->first();
     }
 
+    public function email()
+    {
+        return Contact::where('key', 'email')->pluck('value')->first();
+    }
+
     public function links()
     {
         $links = [];

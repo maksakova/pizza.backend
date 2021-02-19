@@ -29,3 +29,5 @@ Route::post('phone', '\App\Http\Controllers\Front\MainController@phone');
 Route::post('time', '\App\Http\Controllers\Front\MainController@time');
 
 Route::post('links', '\App\Http\Controllers\Front\MainController@links');
+
+Route::post('email', '\App\Http\Controllers\Front\MainController@email');
