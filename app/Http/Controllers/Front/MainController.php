@@ -19,36 +19,36 @@ class MainController extends Controller
 
     public function menuCategories()
     {
-        $menuCategories = MenuCategory::all();
-
-        return $menuCategories;
+        return MenuCategory::all();
     }
 
     public function mainBanners()
     {
-        $mainBanners = MainBanner::all();
-
-        return $mainBanners;
+        return MainBanner::all();
     }
 
     public function logo()
     {
-        $logo = Contact::where('key', 'logo')->pluck('img')->first();
-
-        return $logo;
+        return Contact::where('key', 'logo')->pluck('img')->first();
     }
 
     public function phone()
     {
-        $phone = Contact::where('key', 'phone')->pluck('value')->first();
-
-        return $phone;
+        return Contact::where('key', 'phone')->pluck('value')->first();
     }
 
     public function time()
     {
-        $time = Contact::where('key', 'time')->pluck('value')->first();
+        return Contact::where('key', 'time')->pluck('value')->first();
+    }
 
-        return $time;
+    public function links()
+    {
+        $links = [];
+        $links['allatra'] = Contact::where('key', 'allatra')->pluck('value')->first();
+        $links['vk'] = Contact::where('key', 'vk')->pluck('value')->first();
+        $links['instagram'] = Contact::where('key', 'instagram')->pluck('value')->first();
+
+        return $links;
     }
 }

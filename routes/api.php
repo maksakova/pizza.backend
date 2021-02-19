@@ -27,3 +27,5 @@ Route::post('logo', '\App\Http\Controllers\Front\MainController@logo');
 Route::post('phone', '\App\Http\Controllers\Front\MainController@phone');
 
 Route::post('time', '\App\Http\Controllers\Front\MainController@time');
+
+Route::post('links', '\App\Http\Controllers\Front\MainController@links');

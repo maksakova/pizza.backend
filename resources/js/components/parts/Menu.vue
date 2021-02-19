@@ -171,7 +171,7 @@ export default {
                 max-width: 40px
                 max-height: 40px
         &.simple
-            margin: 17px 0 60px
+            margin: 0 0 60px
         &.fixed
             top: 69px
             margin: 0

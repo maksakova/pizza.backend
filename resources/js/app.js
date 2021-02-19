@@ -54,6 +54,7 @@ Vue.component('the-footer', require('./components/Footer.vue').default);
 Vue.component('the-logo', require('./components/parts/Logo.vue').default);
 Vue.component('the-phone', require('./components/parts/Phone.vue').default);
 Vue.component('the-time', require('./components/parts/Time.vue').default);
+Vue.component('the-links', require('./components/parts/Links.vue').default);
 
 
 Vue.component('the-menu', require('./components/parts/Menu.vue').default);
