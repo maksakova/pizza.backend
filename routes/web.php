@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\MenuCategoryController;
+use App\Models\Discount;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,12 +59,17 @@ Route::resource('/admin/discounts', 'Admin\DiscountController')
 
 Route::get('/', 'Front\MainController@index');
 
-Route::get('discounts', 'Front\DiscountController@index')->name('discounts');
-
 /* Discounts */
 
-/*Discount::all()->each(function ($page) {
-    Route::get('page/' . $page->slug, function () use ($page) {
-        return view('page', ['page' => $page]);
-    })->name('page.' . $page->slug);
-});*/
+Route::get('discounts', 'Front\DiscountController@index')->name('discounts');
+
+Discount::all()->each(function ($discount) {
+    Route::get('discounts/' . $discount->slug, function () use ($discount) {
+        $discounts = Discount::where('id', '!=' , $discount->id)->orderBy('id', 'DESC')->take(3)->get();
+
+        return view('front.discount-item', [
+            'discount' => $discount,
+            'discounts' => $discounts,
+        ]);
+    })->name('discount.' . $discount->slug);
+});

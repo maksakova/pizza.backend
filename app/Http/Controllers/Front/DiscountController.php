@@ -16,4 +16,13 @@ class DiscountController extends Controller
             'discounts' => $discounts,
         ]);
     }
+
+    public function show($id)
+    {
+        $discounts = Discount::where('id', $id)->get();
+
+        return view('front.discounts.show', [
+            'discounts' => $discounts,
+        ]);
+    }
 }

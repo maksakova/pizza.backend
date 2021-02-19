@@ -6,7 +6,7 @@
                 <h2>{{ $discount->name }}</h2>
                 <p class="discount-item__time">{{ $discount->time }}</p>
             </div>
-            <a href="/{{ $discount->slug }}" class="button">Подробнее</a>
+            <a href="/discounts/{{ $discount->slug }}" class="button">Подробнее</a>
         </div>
     </div>
 </div>
