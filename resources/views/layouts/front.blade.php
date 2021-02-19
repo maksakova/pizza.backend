@@ -11,7 +11,7 @@
 </head>
 <body>
 <div id="app">
-    <the-header></the-header>
+    @include('front.parts.header')
     @yield('content')
     <the-footer></the-footer>
 </div>

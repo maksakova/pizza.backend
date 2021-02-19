@@ -826,6 +826,313 @@ textarea:focus {
   }
 }
 
+header {
+  padding: 10px 0;
+  background: #f2f2f2;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+
+header .custom-logo {
+  display: block;
+  margin: 5px 0 3px;
+}
+
+header .custom-logo img {
+  max-height: 100%;
+}
+
+header .nav__mobile {
+  display: none;
+}
+
+header ul {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 16px 16px 0 0;
+}
+
+header ul span {
+  color: #828282;
+}
+
+header ul a.active,
+header ul .router-link-active {
+  color: #44C373;
+}
+
+header ul .router-link-exact-active span {
+  color: #44C373;
+}
+
+header p {
+  margin-bottom: 0;
+}
+
+header .phone {
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  margin: 5px 0 0;
+}
+
+header .phone svg {
+  margin-right: 8px;
+}
+
+header .address {
+  font-size: 13px;
+  color: #828282;
+}
+
+header .address span {
+  color: #202020;
+}
+
+header .button-cart {
+  border-radius: 43px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 5px 20px 5px 16px;
+  white-space: nowrap;
+}
+
+header .button-cart svg {
+  margin-right: 2px;
+}
+
+header .button-cart__count {
+  background: #FFFFFF;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 13px;
+  color: #202020;
+  font-weight: 700;
+  padding: 3px 7px;
+  display: inline-block;
+}
+
+header .button-cart__price {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+header .close {
+  display: none;
+  opacity: 1;
+  position: relative;
+  right: -25px;
+  cursor: pointer;
+}
+
+@media (max-width: 575px) {
+  header {
+    padding: 7px 0 2px;
+    border-bottom: 1px solid #E0E0E0;
+  }
+  header .hamburger {
+    margin-left: -5px;
+    position: relative;
+  }
+  header .custom-logo {
+    height: 30px;
+    text-align: center;
+    margin: -2px 0 3px 14px;
+  }
+  header .nav {
+    position: absolute;
+    top: 40px;
+    left: -100%;
+    height: calc(100vh - 40px);
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 0;
+    transition: .3s;
+    z-index: 2;
+  }
+  header .nav ul {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 20px;
+  }
+  header .nav ul li {
+    margin-bottom: 5px;
+  }
+  header .nav ul span {
+    color: #202020;
+  }
+  header .nav__mobile {
+    text-align: center;
+  }
+  header .nav__mobile__phone, header .nav__mobile__address {
+    margin-bottom: 14px;
+  }
+  header .nav__mobile__phone a, header .nav__mobile__address a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  header .nav__mobile__phone svg, header .nav__mobile__address svg {
+    margin-right: 5px;
+  }
+  header .nav__mobile__address span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #828282;
+    display: block;
+  }
+  header .nav.active {
+    left: 0;
+  }
+  header .nav.active .nav__mobile {
+    display: block;
+  }
+  header .phone {
+    display: block;
+    margin: -1px 0 0 -2px;
+    position: relative;
+  }
+  header .phone span {
+    display: none;
+  }
+  header .address {
+    display: none;
+  }
+  header .button-cart {
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+    display: block;
+    position: relative;
+  }
+  header .button-cart svg {
+    margin: 0 0 0 3px;
+  }
+  header .button-cart svg path {
+    fill: #202020;
+  }
+  header .button-cart__count {
+    position: absolute;
+    font-size: 10px;
+    color: #202020;
+    background: #44C373;
+    top: -2px;
+    right: -32px;
+    padding: 0 5px;
+  }
+  header .button-cart__price {
+    display: none;
+  }
+  header.active .hamburger {
+    display: none;
+  }
+  header.active .phone {
+    display: none;
+  }
+  header.active .button-cart {
+    display: none;
+  }
+  header.active .close {
+    display: block;
+  }
+}
+
+@media (max-width: 400px) {
+  header .hamburger:after {
+    content: '';
+    width: 1px;
+    height: 40px;
+    background: #E0E0E0;
+    position: absolute;
+    top: -7px;
+    right: -2px;
+  }
+  header .phone:after {
+    content: '';
+    width: 1px;
+    height: 40px;
+    background: #E0E0E0;
+    position: absolute;
+    top: -7px;
+    left: -13px;
+  }
+  header .button-cart:after,
+  header .close:after {
+    content: '';
+    width: 1px;
+    height: 40px;
+    background: #E0E0E0;
+    position: absolute;
+    top: -7px;
+    left: -6px;
+  }
+  header .close:after {
+    left: -12px;
+  }
+}
+
+@media (min-width: 576px) {
+  header ul {
+    margin: 4px 0 0 0;
+    flex-wrap: wrap;
+  }
+  header ul li:first-child {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  header ul {
+    margin: 16px 0 0 0;
+  }
+}
+
+@media (min-width: 992px) {
+  header .phone {
+    justify-content: flex-end;
+  }
+  header .address {
+    text-align: right;
+  }
+}
+
+@media (min-width: 1200px) {
+  header .button-cart__price {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1400px) {
+  header {
+    padding: 10px 0 12px;
+  }
+  header ul {
+    margin: 16px 16px 0 14px;
+  }
+  header ul li:first-child {
+    display: block;
+  }
+  header .phone {
+    justify-content: flex-start;
+  }
+  header .address {
+    text-align: left;
+  }
+  header .button-cart__price {
+    font-size: 18px;
+  }
+}
+
 .discounts {
   padding-bottom: 60px;
 }

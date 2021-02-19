@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Contact;
 use App\Models\MainBanner;
 use App\Models\MenuCategory;
 use Illuminate\Http\Request;
@@ -12,36 +13,6 @@ class MainController extends Controller
     public function index()
     {
         return view('front.index');
-    }
-
-    public function create()
-    {
-        //
-    }
-
-    public function store(Request $request)
-    {
-        //
-    }
-
-    public function show($id)
-    {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
     }
 
     /* API functions */
@@ -58,5 +29,12 @@ class MainController extends Controller
         $mainBanners = MainBanner::all();
 
         return $mainBanners;
+    }
+
+    public function logo()
+    {
+        $logo = Contact::where('key', 'logo')->pluck('img')->first();
+
+        return $logo;
     }
 }

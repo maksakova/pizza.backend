@@ -52,6 +52,7 @@ Vue.component('DiscountOther', require('./components/DiscountOther.vue').default
 
 Vue.component('the-header', require('./components/Header.vue').default);
 Vue.component('the-footer', require('./components/Footer.vue').default);
+Vue.component('the-logo', require('./components/parts/Logo.vue').default);
 Vue.component('the-menu', require('./components/parts/Menu.vue').default);
 Vue.component('index', require('./components/Index.vue').default);
 Vue.component('seo', require('./components/parts/Seo.vue').default);

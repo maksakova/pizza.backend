@@ -21,3 +21,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('menuCategories', '\App\Http\Controllers\Front\MainController@menuCategories');
 
 Route::post('mainBanners', '\App\Http\Controllers\Front\MainController@mainBanners');
+
+Route::post('logo', '\App\Http\Controllers\Front\MainController@logo');

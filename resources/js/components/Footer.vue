@@ -4,9 +4,7 @@
       <div class="container">
         <div class="row">
           <div class="col-xl-2 col-lg-4">
-            <router-link to="/" class="custom-logo">
-              <img :src=logo>
-            </router-link>
+              <the-logo></the-logo>
           </div>
           <div class="col-xl-2 col-lg-4 col-md-6 col-sm-5">
             <p class="footer__phone">
