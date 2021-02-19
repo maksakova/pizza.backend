@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\MenuCategoryController;
 use App\Models\Discount;
 
 /*
@@ -54,13 +53,16 @@ Route::resource('/admin/discounts', 'Admin\DiscountController')
     ->names('admin.discounts')
     ->middleware('auth');
 
+Route::resource('/admin/contacts', 'Admin\ContactController')
+    ->names('admin.contacts')
+    ->middleware('auth');
+
 
 /* Front */
 
 Route::get('/', 'Front\MainController@index');
-Route::get('/map', function () {
-    return view('front.map', );
-})->name('profile');
+Route::get('/map', function () {return view('front.map', );})->name('map');
+Route::get('/howto', function () {return view('front.howto', );})->name('howto');
 
 /* Discounts */
 

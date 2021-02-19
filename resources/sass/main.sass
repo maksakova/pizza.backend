@@ -11,632 +11,726 @@ $accent-gradient: linear-gradient(89.91deg, #FFC413 0.06%, #E99500 99.9%)
 $lilac-gradient: linear-gradient(279.37deg, #7551C1 4.74%, #B19BF1 92.92%)
 
 html, body
-	max-width: 100%
-	overflow-x: hidden
+    max-width: 100%
+    overflow-x: hidden
 
 body
-	background: $bg
-	color: $text
-	font-family: 'Inter'
-	font-size: 14px
-	font-weight: 500
-	overflow-y: initial
+    background: $bg
+    color: $text
+    font-family: 'Inter'
+    font-size: 14px
+    font-weight: 500
+    overflow-y: initial
 
 #app
     padding-top: 71px
 
 @media (min-width: 1400px)
-	.container
-		max-width: 1310px
+    .container
+        max-width: 1310px
 
 h1
-	font-size: 18px
-	font-weight: 800
-	line-height: 22px
+    font-size: 18px
+    font-weight: 800
+    line-height: 22px
 
 h2
-	font-size: 18px
-	font-weight: 700
-	line-height: 22px
-	margin-bottom: 16px
+    font-size: 18px
+    font-weight: 700
+    line-height: 22px
+    margin-bottom: 16px
 
 
 a
-	color: inherit
-	outline: none
-	&:focus
-		outline: none
-		-moz-outline-style: none
-	&:hover
-		text-decoration: none
-		color: $main
+    color: inherit
+    outline: none
+
+    &:focus
+        outline: none
+        -moz-outline-style: none
+
+    &:hover
+        text-decoration: none
+        color: $main
 
 ul
-	list-style: none
-	padding: 0
+    list-style: none
+    padding: 0
 
 button,
 .button,
 .link
-	&:focus
-		outline: none
+    &:focus
+        outline: none
 
 .button
-	font-weight: 600
-	display: inline-block
-	background: $main
-	box-shadow: inset 0px 2px 2px #8FEAB1, inset 0px -2px 2px rgba(0, 99, 28, 0.31)
-	color: $white
-	border: none
-	border-radius: 38px
-	padding: 7px 18px
-	transition: .3s
-	&:hover
-		color: $white
-		transform: scale(1.05)
-	&.disabled
-		pointer-events: none
-		background-color: #E6E6E6
-		box-shadow: none
-		color: $text-light
-		filter: grayscale(1)
-		span
-			&:after
-				background: #BDBDBD
-		svg path
-			fill: $text-light
+    font-weight: 600
+    display: inline-block
+    background: $main
+    box-shadow: inset 0px 2px 2px #8FEAB1, inset 0px -2px 2px rgba(0, 99, 28, 0.31)
+    color: $white
+    border: none
+    border-radius: 38px
+    padding: 7px 18px
+    transition: .3s
+
+    &:hover
+        color: $white
+        transform: scale(1.05)
+
+    &.disabled
+        pointer-events: none
+        background-color: #E6E6E6
+        box-shadow: none
+        color: $text-light
+        filter: grayscale(1)
+
+        span
+            &:after
+                background: #BDBDBD
+
+        svg path
+            fill: $text-light
 
 .button-red
-	background: #EB5757
-	box-shadow: inset 0px 2px 2px #FFC4BB, inset 0px -2px 2px #B71A0A
+    background: #EB5757
+    box-shadow: inset 0px 2px 2px #FFC4BB, inset 0px -2px 2px #B71A0A
 
 .button-red-contour
-	box-shadow: inset 0 0 0 3px #EB5757
-	color: $text
-	background: transparent
-	&:hover
-		color: $text
+    box-shadow: inset 0 0 0 3px #EB5757
+    color: $text
+    background: transparent
+
+    &:hover
+        color: $text
 
 .button-order
-	width: 100%
-	display: flex
-	justify-content: center
-	align-items: center
-	font-weight: 700
-	padding: 20px 0
-	span
-		position: relative
-		font-size: 12px
-		padding-right: 20px
-		margin-right: 20px
-		display: flex
-		align-items: center
-		&:after
-			content: ''
-			width: 1px
-			height: 19px
-			background: #3FA765
-			position: absolute
-			top: 0
-			right: 0
-	svg
-		margin-right: 7px
+    width: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    font-weight: 700
+    padding: 20px 0
+
+    span
+        position: relative
+        font-size: 12px
+        padding-right: 20px
+        margin-right: 20px
+        display: flex
+        align-items: center
+
+        &:after
+            content: ''
+            width: 1px
+            height: 19px
+            background: #3FA765
+            position: absolute
+            top: 0
+            right: 0
+
+    svg
+        margin-right: 7px
 
 .button-cart-arrow
-	width: calc(100% - 30px)
-	display: block
-	margin: 0 15px 6px
-	background-position: center right 9px
-	background-repeat: no-repeat
-	text-align: center
+    background-image: url('/../img/common/arrow-button.svg')
+    background-position: center right 9px
+    background-repeat: no-repeat
+    text-align: center
+    width: calc(100% - 30px)
+    display: block
+    margin: 0 15px 6px
 
 .link
-	color: $main
-	font-weight: 600
-	&-collapse
-		&[aria-expanded="false"]
-			&:before
-				content: 'Подробнее'
-		&[aria-expanded="true"]
-			&:before
-				content: 'Скрыть'
+    color: $main
+    font-weight: 600
+
+    &-collapse
+        &[aria-expanded="false"]
+            &:before
+                content: 'Подробнее'
+
+        &[aria-expanded="true"]
+            &:before
+                content: 'Скрыть'
 
 .links
-	display: flex
-	justify-content: center
-	margin-bottom: 16px
-	a
-		background: $main
-		display: inline-flex
-		justify-content: center
-		align-items: center
-		width: 30px
-		height: 30px
-		border-radius: 50%
-		margin: 0 5px
-		svg
-			max-width: 24px
-		&:hover
-			svg path
-				fill: $white !important
+    display: flex
+    justify-content: center
+    margin-bottom: 16px
+
+    a
+        background: $main
+        display: inline-flex
+        justify-content: center
+        align-items: center
+        width: 30px
+        height: 30px
+        border-radius: 50%
+        margin: 0 5px
+
+        svg
+            max-width: 24px
+
+        &:hover
+            svg path
+                fill: $white !important
 
 img
-	max-width: 100%
+    max-width: 100%
 
 table
-	width: 100%
-	td
-		padding: 0 0 15px
-		color: #4F4F4F
-		font-weight: 400
-		&:last-child
-			text-align: right
-			color: $text
-			font-weight: 700
-			white-space: nowrap
-	th
-		border-top: 1px solid #E0E0E0
-		padding: 10px 0 0
-		&:first-child
-			color: #4F4F4F
-			font-weight: 400
-		&:last-child
-			text-align: right
-			font-size: 20px
-			white-space: nowrap
+    width: 100%
+
+    td
+        padding: 0 0 15px
+        color: #4F4F4F
+        font-weight: 400
+
+        &:last-child
+            text-align: right
+            color: $text
+            font-weight: 700
+            white-space: nowrap
+
+    th
+        border-top: 1px solid #E0E0E0
+        padding: 10px 0 0
+
+        &:first-child
+            color: #4F4F4F
+            font-weight: 400
+
+        &:last-child
+            text-align: right
+            font-size: 20px
+            white-space: nowrap
 
 .info
-	display: inline-block
-	position: relative
-	img
-		cursor: pointer
-	&__item
-		position: absolute
-		top: 0
-		left: -306px
-		display: none
-		padding: 6px 64px 0 0
-		&__inner
-			width: 287px
-			background: $white
-			border: 1px dashed $main
-			box-shadow: 1px 5px 13px rgba(0, 0, 0, 0.1)
-			border-radius: 8px
-			padding: 15px
-			font-size: 12px
-			line-height: 130%
-	&:hover
-		.info__item
-			display: block
+    display: inline-block
+    position: relative
+
+    img
+        cursor: pointer
+
+    &__item
+        position: absolute
+        top: 0
+        left: -306px
+        display: none
+        padding: 6px 64px 0 0
+
+        &__inner
+            width: 287px
+            background: $white
+            border: 1px dashed $main
+            box-shadow: 1px 5px 13px rgba(0, 0, 0, 0.1)
+            border-radius: 8px
+            padding: 15px
+            font-size: 12px
+            line-height: 130%
+
+    &:hover
+        .info__item
+            display: block
 
 label
-	margin: 0 0 16px
-	width: 100%
-	color: $text-light
+    margin: 0 0 16px
+    width: 100%
+    color: $text-light
 
 .label-flex
-	display: flex
-	flex-wrap: wrap
-	justify-content: space-between
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
 
 .label-30
-	width: calc(30% - 15px /2)
+    width: calc(30% - 15px / 2)
+
 .label-50
-	width: calc(50% - 15px /2)
+    width: calc(50% - 15px / 2)
+
 .label-70
-	width: calc(70% - 15px /2)
+    width: calc(70% - 15px / 2)
 
 input
-	width: 100%
-	border: 1px solid #E0E0E0
-	border-radius: 8px
-	font-size: 14px
-	font-weight: 500
-	height: 40px
-	margin: 4px 0 0
-	padding: 2px 16px
-	-webkit-appearance: none
-	-moz-appearance: none
-	appearance: none
-	&:focus
-		outline: none
-		border: 1px solid $main
+    width: 100%
+    border: 1px solid #E0E0E0
+    border-radius: 8px
+    font-size: 14px
+    font-weight: 500
+    height: 40px
+    margin: 4px 0 0
+    padding: 2px 16px
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+
+    &:focus
+        outline: none
+        border: 1px solid $main
 
 .checkbox
-	font-size: 14px
-	width: 150px
-	input
-		position: absolute
-		z-index: -1
-		opacity: 0
-	&__text
-		position: relative
-		padding: 0 0 0 30px
-		cursor: pointer
-		&:before
-			content: ''
-			position: absolute
-			top: 2px
-			left: 0
-			width: 20px
-			height: 20px
-			border-radius: 5px
-			border: 1px solid #E0E0E0
-		&:after
-			position: absolute
-			top: 3px
-			left: 3px
-			opacity: 0
-	input:checked + .checkbox__text:before
-		background: $main
-		border: 1px solid $main
-	input:checked + .checkbox__text:after
-		opacity: 1
+    font-size: 14px
+    width: 150px
+
+    input
+        position: absolute
+        z-index: -1
+        opacity: 0
+
+    &__text
+        position: relative
+        padding: 0 0 0 30px
+        cursor: pointer
+
+        &:before
+            content: ''
+            position: absolute
+            top: 2px
+            left: 0
+            width: 20px
+            height: 20px
+            border-radius: 5px
+            border: 1px solid #E0E0E0
+
+        &:after
+            background-image: url('/../img/common/check.svg')
+            position: absolute
+            top: 3px
+            left: 3px
+            opacity: 0
+
+    input:checked + .checkbox__text:before
+        background: $main
+        border: 1px solid $main
+
+    input:checked + .checkbox__text:after
+        opacity: 1
 
 .radio
-	margin: 0
-	height: 100%
-	input
-		position: absolute
-		z-index: -1
-		opacity: 0
-		margin: 10px 0 0 7px
-		height: auto
-	&__text
-		position: relative
-		cursor: pointer
-		text-align: center
-		height: 100%
-		display: flex
-		justify-content: center
-		align-items: center
-		border-radius: 20px
-	input:checked + .radio__text
-		color: $main
-		background: $white
-		box-shadow: 0px 4px 3px rgba(64, 94, 72, 0.1)
+    margin: 0
+    height: 100%
+
+    input
+        position: absolute
+        z-index: -1
+        opacity: 0
+        margin: 10px 0 0 7px
+        height: auto
+
+    &__text
+        position: relative
+        cursor: pointer
+        text-align: center
+        height: 100%
+        display: flex
+        justify-content: center
+        align-items: center
+        border-radius: 20px
+
+    input:checked + .radio__text
+        color: $main
+        background: $white
+        box-shadow: 0px 4px 3px rgba(64, 94, 72, 0.1)
 
 .vue-numeric-input
-	width: 98px !important
-	height: 34px
-	border-radius: 37px
-	background: $bg
-	padding: 6px
-	.numeric-input
-		border: none !important
-		background: transparent
-		text-align: center !important
-		height: 22px
-		margin: 0
-	.btn
-		width: 22px !important
-		height: 22px !important
-		border-radius: 50% !important
-		background: $main !important
-		border: none !important
-		top: 6px !important
-		display: flex
-		justify-content: center
-		align-items: center
-		padding: 0 0 0 1px
-		box-shadow: none !important
-		transition: .3s
-		i
-			display: none !important
-		&:hover
-			transform: scale(1.1)
-	.btn-decrement
-		left: 6px !important
-		&:before
-			height: 100%
-	.btn-increment
-		right: 6px !important
-		&:before
-			height: 100%
+    width: 98px !important
+    height: 34px
+    border-radius: 37px
+    background: $bg
+    padding: 6px
+
+    .numeric-input
+        border: none !important
+        background: transparent
+        text-align: center !important
+        height: 22px
+        margin: 0
+
+    .btn
+        width: 22px !important
+        height: 22px !important
+        border-radius: 50% !important
+        background: $main !important
+        border: none !important
+        top: 6px !important
+        display: flex
+        justify-content: center
+        align-items: center
+        padding: 0 0 0 1px
+        box-shadow: none !important
+        transition: .3s
+
+        i
+            display: none !important
+
+        &:hover
+            transform: scale(1.1)
+
+    .btn-decrement
+        left: 6px !important
+
+        &:before
+            content: url('/../img/common/minus.svg')
+            height: 100%
+
+            .btn-increment
+                right: 6px !important
+
+                &:before
+                    content: url('/../img/common/plus.svg')
+            height: 100%
 
 
 select
-	width: 100%
-	border: 1px solid #E0E0E0
-	border-radius: 8px
-	font-size: 14px
-	font-weight: 500
-	height: 40px
-	margin: 4px 0 0
-	padding: 2px 16px
-	-webkit-appearance: none
-	-moz-appearance: none
-	appearance: none
-	background-position: center right 10px
-	background-repeat: no-repeat
-	&:focus
-		outline: none
-		border: 1px solid $main
+    width: 100%
+    border: 1px solid #E0E0E0
+    border-radius: 8px
+    font-size: 14px
+    font-weight: 500
+    height: 40px
+    margin: 4px 0 0
+    padding: 2px 16px
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+        background-image: url('/../img/common/select.svg')
+    background-position: center right 10px
+    background-repeat: no-repeat
+
+    &:focus
+        outline: none
+        border: 1px solid $main
 
 textarea
-	width: 100%
-	height: 128px
-	resize: none
-	border: 1px solid #E0E0E0
-	border-radius: 8px
-	font-size: 14px
-	font-weight: 500
-	margin: 4px 0 0
-	padding: 2px 16px
-	-webkit-appearance: none
-	-moz-appearance: none
-	appearance: none
-	&:focus
-		outline: none
-		border: 1px solid $main
+    width: 100%
+    height: 128px
+    resize: none
+    border: 1px solid #E0E0E0
+    border-radius: 8px
+    font-size: 14px
+    font-weight: 500
+    margin: 4px 0 0
+    padding: 2px 16px
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+
+    &:focus
+        outline: none
+        border: 1px solid $main
 
 .steps-order
-	justify-content: space-between
-	margin: 20px 0 40px
-	&__item
-		max-width: 95px
-		font-size: 12px
-		line-height: 15px
-		color: $text-light
-		display: flex
-		flex-direction: column
-		align-items: center
-		text-align: center
-		position: relative
-		&__number
-			background: $bg
-			border: 2px dashed #E0E0E0
-			color: #BDBDBD
-			width: 60px
-			height: 60px
-			font-size: 20px
-			font-weight: 700
-			display: flex
-			justify-content: center
-			align-items: center
-			border-radius: 15px
-			margin-bottom: 10px
-		&.active
-			color: $text
-			.steps-order__item__number
-				background: $main
-				border: none
-				box-shadow: inset 0px 2px 2px #8FEAB1, inset 0px -2px 2px rgba(0, 99, 28, 0.3)
-				color: $white
-				text-shadow: 0px 2px 2px rgba(0, 99, 28, 0.25)
-		&:not(:first-child)
-			&:before
-				content: ''
-				width: 76px
-				border-top: 2px dashed #E0E0E0
-				position: absolute
-				top: 30px
-				left: -50px
-				z-index: -1
-			&.active
-				&:before
-					border-top: 2px solid $main
+    justify-content: space-between
+    margin: 20px 0 40px
+
+    &__item
+        max-width: 95px
+        font-size: 12px
+        line-height: 15px
+        color: $text-light
+        display: flex
+        flex-direction: column
+        align-items: center
+        text-align: center
+        position: relative
+
+        &__number
+            background: $bg
+            border: 2px dashed #E0E0E0
+            color: #BDBDBD
+            width: 60px
+            height: 60px
+            font-size: 20px
+            font-weight: 700
+            display: flex
+            justify-content: center
+            align-items: center
+            border-radius: 15px
+            margin-bottom: 10px
+
+        &.active
+            color: $text
+
+            .steps-order__item__number
+                background: $main
+                border: none
+                box-shadow: inset 0px 2px 2px #8FEAB1, inset 0px -2px 2px rgba(0, 99, 28, 0.3)
+                color: $white
+                text-shadow: 0px 2px 2px rgba(0, 99, 28, 0.25)
+
+        &:not(:first-child)
+            &:before
+                content: ''
+                width: 76px
+                border-top: 2px dashed #E0E0E0
+                position: absolute
+                top: 30px
+                left: -50px
+                z-index: -1
+
+            &.active
+                &:before
+                    border-top: 2px solid $main
 
 .alert
-	border: 1px solid #FFA402
-	box-sizing: border-box
-	border-radius: 8px
-	position: relative
-	padding: 15px 15px 15px 47px
-	font-size: 12px
-	margin-bottom: 20px
-	&:before
-		content: ''
-		background: #FFA402
-		width: 9px
-		height: 100%
-		border-radius: 8px 0px 0px 8px
-		position: absolute
-		top: 0
-		left: 0
+    background: #FFF4C5 url('/../img/common/alert.svg') center left 17px no-repeat
+    border: 1px solid #FFA402
+    box-sizing: border-box
+    border-radius: 8px
+    position: relative
+    padding: 15px 15px 15px 47px
+    font-size: 12px
+    margin-bottom: 20px
+
+    &:before
+        content: ''
+        background: #FFA402
+        width: 9px
+        height: 100%
+        border-radius: 8px 0px 0px 8px
+        position: absolute
+        top: 0
+        left: 0
 
 .text-page
-	color: #333333
-	padding-bottom: 30px
-	font-size: 12px
-	line-height: 15px
-	h2
-		position: relative
-		padding-left: 30px
-		font-size: 16px
-		line-height: 19px
-		font-weight: 700
-		margin-bottom: 15px
-		&:before
-			position: absolute
-			top: 4px
-			left: 0
-	h3
-		font-size: 16px
-		line-height: 19px
-		font-weight: 700
-		margin-bottom: 15px
-	ol
-		list-style: none
-		counter-reset: list 0
-		padding: 0
-		margin-bottom: 30px
-		li
-			margin-bottom: 15px
-			&:before
-				content: counter(list) ". "
-				counter-increment: list
-				font-weight: 700
-				margin-right: 2px
-	ul
-		li
-			position: relative
-			padding-left: 30px
-			margin-bottom: 15px
-			&:before
-				position: absolute
-				top: 4px
-				left: 0
+    color: #333333
+    padding-bottom: 30px
+    font-size: 12px
+    line-height: 15px
+
+    h2
+        position: relative
+        padding-left: 30px
+        font-size: 16px
+        line-height: 19px
+        font-weight: 700
+        margin-bottom: 15px
+
+        &:before
+            content: url('/../img/common/marker.svg')
+            position: absolute
+            top: 4px
+            left: 0
+
+    h3
+        font-size: 16px
+        line-height: 19px
+        font-weight: 700
+        margin-bottom: 15px
+
+    ol
+        list-style: none
+        counter-reset: list 0
+        padding: 0
+        margin-bottom: 30px
+
+        li
+            margin-bottom: 15px
+
+            &:before
+                content: counter(list) ". "
+                counter-increment: list
+                font-weight: 700
+                margin-right: 2px
+
+    ul
+        li
+            position: relative
+            padding-left: 30px
+            margin-bottom: 15px
+
+            &:before
+                content: url('/../img/common/marker.svg')
+                position: absolute
+                top: 4px
+                left: 0
 
 .vm--modal
-	border-radius: 8px
+    border-radius: 8px
 
 .modalinfo
-	.vm--modal
-		text-align: center
-		border-radius: 20px
-		padding: 44px 20px
-		img
-			margin-bottom: 20px
-		h2
-			margin-bottom: 20px
-		p
-			color: $text-light
-			font-size: 16px
-			line-height: 19px
-		.button
-			margin: 14px 0
-		.buttons
-			.button
-				margin: 14px 10px
+    .vm--modal
+        text-align: center
+        border-radius: 20px
+        padding: 44px 20px
+
+        img
+            margin-bottom: 20px
+
+        h2
+            margin-bottom: 20px
+
+        p
+            color: $text-light
+            font-size: 16px
+            line-height: 19px
+
+        .button
+            margin: 14px 0
+
+        .buttons
+            .button
+                margin: 14px 10px
 
 .modaladdress
-	.vm--modal
-		padding: 15px
-		position: relative
-	h3
-		font-size: 16px
-		font-weight: 700
-		line-height: 19px
-	.product-item__variants
-		width: 258px
-	.modal-close
-		position: absolute
-		top: 0
-		right: 0
-		width: 35px
-		height: 35px
-		background: $bg
-		border-radius: 0px 8px
-		display: flex
-		justify-content: center
-		align-items: center
-		border: none
-		&:hover
-			background: $main
-			svg path
-				fill: $text
-	button
-		margin-bottom: 20px
-	p
-		font-size: 14px
-		line-height: 17px
-		color: $text-light
+    .vm--modal
+        padding: 15px
+        position: relative
+
+    h3
+        font-size: 16px
+        font-weight: 700
+        line-height: 19px
+
+    .product-item__variants
+        width: 258px
+
+    .modal-close
+        position: absolute
+        top: 0
+        right: 0
+        width: 35px
+        height: 35px
+        background: $bg
+        border-radius: 0px 8px
+        display: flex
+        justify-content: center
+        align-items: center
+        border: none
+
+        &:hover
+            background: $main
+
+            svg path
+                fill: $text
+
+    button
+        margin-bottom: 20px
+
+    p
+        font-size: 14px
+        line-height: 17px
+        color: $text-light
 
 .suggestion__suggestions
-	background: $white
-	box-shadow: 0px 4px 3px rgba(64, 94, 72, 0.5)
-	max-height: 140px
-	overflow-y: auto
-	border-radius: 8px
-	&::-webkit-scrollbar
-		width: 4px
-		background: $bg
-		border-radius: 4px
-	&::-webkit-scrollbar-thumb
-		background: #BDBDBD
-		border-radius: 4px
-	&-item
-		padding: 4px 10px
-		cursor: pointer
-		display: block
-		&:hover
-			background: $main
-			color: $white
+    background: $white
+    box-shadow: 0px 4px 3px rgba(64, 94, 72, 0.5)
+    max-height: 140px
+    overflow-y: auto
+    border-radius: 8px
+
+    &::-webkit-scrollbar
+        width: 4px
+        background: $bg
+        border-radius: 4px
+
+    &::-webkit-scrollbar-thumb
+        background: #BDBDBD
+        border-radius: 4px
+
+    &-item
+        padding: 4px 10px
+        cursor: pointer
+        display: block
+
+        &:hover
+            background: $main
+            color: $white
 
 
 @media (min-width: 992px)
-	h1
-		font-size: 25px
-		line-height: 30px
-		margin-bottom: 20px
-	h2
-		font-size: 25px
-		line-height: 30px
-		margin-bottom: 26px
+    h1
+        font-size: 25px
+        line-height: 30px
+        margin-bottom: 20px
+    h2
+        font-size: 25px
+        line-height: 30px
+        margin-bottom: 26px
 
-	label
-		width: 260px
-		&:not(:last-child)
-			margin-right: 30px
+    label
+        width: 260px
 
-	.label-flex
-		justify-content: flex-start
-	.label-30
-		width: 130px
-	.label-50
-		width: 130px
-	.label-70
-		width: 290px
+        &:not(:last-child)
+            margin-right: 30px
 
-	.label-textarea
-		width: 600px
+    .label-flex
+        justify-content: flex-start
+    .label-30
+        width: 130px
+    .label-50
+        width: 130px
+    .label-70
+        width: 290px
 
-	.checkbox
-		margin: 30px 0 16px
+    .label-textarea
+        width: 600px
 
-	.modaladdress
-		.vm--modal
-			padding: 35px 40px
+    .checkbox
+        margin: 30px 0 16px
+
+    .modaladdress
+        .vm--modal
+            padding: 35px 40px
 
 @media (min-width: 1200px)
-	body
-		overflow-x: unset
+    body
+        overflow-x: unset
 
-	.button
-		padding: 9px 22px
-	.button-order
-		padding: 20px 10px
-		span
-			padding-right: 7px
-			margin-right: 7px
-	.button-cart-arrow
-		padding: 14px 66px 14px 22px
+    .button
+        padding: 9px 22px
+    .button-order
+        padding: 20px 10px
 
-	label
-		font-size: 16px
+        span
+            padding-right: 7px
+            margin-right: 7px
+    .button-cart-arrow
+        padding: 14px 66px 14px 22px
 
-	input,
-	select
-		height: 50px
-		font-size: 16px
+    label
+        font-size: 16px
 
-	textarea
-		font-size: 16px
+    input,
+    select
+        height: 50px
+        font-size: 16px
 
-	.text-page
-		padding-bottom: 90px
-		font-size: 16px
-		line-height: 130%
-		h2
-			font-size: 18px
-			line-height: 22px
-			&:before
-				top: 4px
-				left: 0
-		h3
-			font-size: 18px
-			line-height: 22px
-		ol
-			margin-bottom: 44px
-			li
-				margin-bottom: 22px
-		ul
-			li
-				margin-bottom: 30px
-				&:before
-					top: 4px
-					left: 0
+    textarea
+        font-size: 16px
+
+    .text-page
+        padding-bottom: 90px
+        font-size: 16px
+        line-height: 130%
+
+        h2
+            font-size: 18px
+            line-height: 22px
+
+            &:before
+                top: 4px
+                left: 0
+
+        h3
+            font-size: 18px
+            line-height: 22px
+
+        ol
+            margin-bottom: 44px
+
+            li
+                margin-bottom: 22px
+
+        ul
+            li
+                margin-bottom: 30px
+
+                &:before
+                    top: 4px
+                    left: 0
 
 .discounts
     padding-bottom: 60px
@@ -647,22 +741,27 @@ textarea
     margin-bottom: 30px
     height: calc(100% - 30px)
     transition: .3s
+
     h2
         font-size: 14px
         line-height: 130%
         margin-bottom: 10px
+
     &__img
         border-radius: 8px
         width: 100%
+
     &__text
         padding: 15px
+
     &__time
         color: $text-light
-        //background: url('../img/discounts/clock.svg') left center no-repeat
+        background: url('/../img/discounts/clock.svg') left center no-repeat
         font-size: 12px
         font-weight: 400
         padding-left: 20px
         margin-bottom: 20px
+
     &:hover
         transform: translateY(-5px)
 
@@ -676,6 +775,7 @@ textarea
         h2
             font-size: 16px
             line-height: 19px
+
 @media (min-width: 1200px)
     .discount-item
         &__text
@@ -683,13 +783,16 @@ textarea
 
 .discountsitem
     padding: 0 0 40px
+
     h1
         font-size: 16px
         line-height: 19px
         color: $text
+
     h2
         font-size: 16px
         line-height: 19px
+
     &__back
         color: $text-light
         font-size: 12px
@@ -697,24 +800,31 @@ textarea
         display: flex
         align-items: center
         margin-bottom: 10px
+
         svg
             margin-right: 6px
+
         &:hover
             color: $main
+
             svg path
                 stroke: $main
+
     &__item
         background: $white
         border-radius: 10px
         margin-bottom: 30px
+
     &__img
         width: 100%
         border-radius: 10px
+
     &__text
         padding: 10px 10px 20px
         font-size: 12px
         line-height: 15px
         color: #4F4F4F
+
     .time
         margin-bottom: 0
 
@@ -726,25 +836,32 @@ textarea
 @media (min-width: 1200px)
     .discountsitem
         padding: 0 0 90px
+
         h1
             font-size: 20px
             line-height: 24px
             margin-bottom: 10px
+
         &__back
             font-size: 16px
             line-height: 19px
             color: #4F4F4F
             margin-bottom: 46px
+
             svg
                 margin-right: 10px
+
                 path
                     stroke: #4F4F4F
+
         &__text
             padding: 40px
             font-size: 16px
             line-height: 19px
+
         &__description
             margin-bottom: 22px
+
         .time
             background-size: 20px
             font-size: 14px
@@ -759,39 +876,49 @@ textarea
     border-radius: 8px
     margin-bottom: 15px
     transition: .3s
+
     h3
         font-size: 14px
         font-weight: 700
         line-height: 17px
         margin-bottom: 10px
+
     &__img
         width: 118px
         margin-right: 10px
         border-radius: 4px
+
     &__text
         width: calc(100% - 128px)
+
     &__time
         color: $text-light
+    background: url('/../img/discounts/clock.svg') left center no-repeat
         font-size: 11px
         font-weight: 400
         padding-left: 20px
         margin-bottom: 0
+
     &:hover
         transform: translateY(-5px)
 
 @media (min-width: 768px)
     .discount-other
         flex-wrap: wrap
+
         &__img
             width: 100%
+
         &__text
             width: 100%
 
 @media (min-width: 992px)
     .discount-other
         margin-bottom: 15px
+
         &__img
             width: 110px
+
         &__text
             width: calc(100% - 120px)
 
@@ -799,15 +926,18 @@ textarea
     .discount-other
         padding: 15px
         margin-bottom: 30px
+
         &__img
             width: 167px
             margin-right: 15px
+
         &__text
             width: calc(100% - 182px)
 
 .map
     &__info
         margin-bottom: 30px
+
     &__map
         height: 628px
         margin-bottom: 60px
@@ -816,15 +946,59 @@ textarea
     .map
         h1
             margin-bottom: 4px
+
         p
             font-size: 18px
             font-weight: 400
             margin-bottom: 20px
+
         &__info
             display: flex
             justify-content: space-between
             align-items: center
+
         &__alert
             font-size: 14px
+
         &__map
             margin-bottom: 120px
+
+.howto
+    h2
+        font-weight: 800
+        color: $main
+        margin-bottom: 0
+    &__map
+        background: url('/../img/contacts/map.jpg') center
+        background-size: cover
+        height: 120px
+        display: flex
+        justify-content: center
+        align-items: center
+        border-radius: 20px
+        margin-bottom: 30px
+    &__item
+        background: #FCFCFC
+        border: 3px solid $bg
+        border-radius: 10px
+        text-align: center
+        padding: 20px 15px 0
+        margin-bottom: 15px
+
+@media (min-width: 768px)
+    .howto
+        &__map
+            height: 280px
+
+@media (min-width: 1200px)
+    .howto
+        h2
+            font-size: 25px
+            line-height: 30px
+            margin-bottom: 8px
+        &__item
+            padding: 44px 14px 24px
+            margin-bottom: 46px
+            p
+                font-size: 16px
+                line-height: 19px

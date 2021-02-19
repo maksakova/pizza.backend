@@ -27,6 +27,9 @@
                         <li>
                             <a href="{{route('admin.discounts.index')}}">Акции</a>
                         </li>
+                        <li>
+                            <a href="{{route('admin.contacts.index')}}">Контакты</a>
+                        </li>
                     </ul>
                 </div>
             </div>
