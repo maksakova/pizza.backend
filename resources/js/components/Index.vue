@@ -15,12 +15,13 @@
             </swiper-slide>
         </swiper>
         <Menu simple="no"/>
+        <Seo/>
     </div>
 </template>
 
 <script>
 import Menu from '../components/parts/Menu'
-import VueAwesomeSwiper from 'vue-awesome-swiper'
+import Seo from '../components/parts/Seo'
 import 'swiper/css/swiper.css'
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
 import axios from "axios";
@@ -29,6 +30,7 @@ export default {
     name: "Index",
     components: {
         Menu,
+        Seo,
         Swiper,
         SwiperSlide
     },

@@ -30,7 +30,6 @@ export default {
       let data = []
       if (this.additives.length) {
         data = this.additives
-        console.log(data)
       }
       return data
     },

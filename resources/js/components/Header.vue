@@ -12,9 +12,9 @@
           </div>
         </div>
           <div class="col-xl-2 col-lg-3 col-sm-4 col-7" v-on:click="isActive = false">
-            <router-link to="/" class="custom-logo">
+            <a href="/" class="custom-logo">
               <img :src=logo>
-            </router-link>
+            </a>
           </div>
           <div class="col-xl-5 col-lg-5 col-sm-8 nav" v-bind:class="{ active: isActive }">
             <ul>

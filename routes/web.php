@@ -58,6 +58,9 @@ Route::resource('/admin/discounts', 'Admin\DiscountController')
 /* Front */
 
 Route::get('/', 'Front\MainController@index');
+Route::get('/map', function () {
+    return view('front.map', );
+})->name('profile');
 
 /* Discounts */
 
