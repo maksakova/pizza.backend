@@ -23,3 +23,7 @@ Route::post('menuCategories', '\App\Http\Controllers\Front\MainController@menuCa
 Route::post('mainBanners', '\App\Http\Controllers\Front\MainController@mainBanners');
 
 Route::post('logo', '\App\Http\Controllers\Front\MainController@logo');
+
+Route::post('phone', '\App\Http\Controllers\Front\MainController@phone');
+
+Route::post('time', '\App\Http\Controllers\Front\MainController@time');

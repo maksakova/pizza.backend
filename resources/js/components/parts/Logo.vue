@@ -8,10 +8,10 @@
 import axios from "axios";
 
 export default {
-    name: "Дogo",
+    name: "Logo",
     data() {
         return {
-            logo: '1'
+            logo: ''
         }
     },
     mounted() {
@@ -21,7 +21,3 @@ export default {
     },
 }
 </script>
-
-<style scoped>
-
-</style>

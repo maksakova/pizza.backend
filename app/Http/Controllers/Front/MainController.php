@@ -37,4 +37,18 @@ class MainController extends Controller
 
         return $logo;
     }
+
+    public function phone()
+    {
+        $phone = Contact::where('key', 'phone')->pluck('value')->first();
+
+        return $phone;
+    }
+
+    public function time()
+    {
+        $time = Contact::where('key', 'time')->pluck('value')->first();
+
+        return $time;
+    }
 }
