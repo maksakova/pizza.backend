@@ -15,6 +15,47 @@
             </swiper-slide>
         </swiper>
         <Menu simple="no"/>
+        <main class="main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-9">
+                        <div v-for="(products, menu_category_slug) in catProducts" v-bind:key="products.id">
+                            <h2 :id="menu_category_slug">{{ products['menu_category_name'] }}</h2>
+
+                            <div class="main__filter" v-if="menu_category_slug == 'pizza'">
+                                <div class="main__filter__inner">
+                                    <button class="main__filter__button"
+                                            @click="activeFilters = []"
+                                            v-bind:class="{active: activeFilters.length === 0}"
+                                    >Все</button>
+                                    <label class="checkbox"
+                                           v-for="item in filters"
+                                           v-bind:key="item.name">
+                                        <input type="checkbox" :value="item.id" v-model="activeFilters" />
+                                        <div class="checkbox__text">
+                      <span class="main__filter__button">
+                        <img :src=item.url>
+                        {{item.name}}
+                      </span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="row main__menu" v-if="menu_category_slug === 'pizza'">
+                                <product-card v-for="product in filterData" v-bind:key="product.id" v-bind:item="product"/>
+                            </div>
+
+                            <div class="row main__menu" v-else>
+                                <product-card v-for="product in products" v-bind:key="product.id" v-bind:item="product"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 d-none d-xl-block">
+                    </div>
+                </div>
+            </div>
+        </main>
         <Seo/>
     </div>
 </template>
@@ -41,7 +82,10 @@ export default {
                     el: '.swiper-pagination'
                 },
             },
-            mainBanners: []
+            activeFilters: [],
+            mainBanners: [],
+            filters: [],
+            products: [],
         }
     },
     directives: {
@@ -51,6 +95,38 @@ export default {
         axios
             .post('/api/mainBanners')
             .then(response => (this.mainBanners = response.data));
+        axios
+            .post('/api/filters')
+            .then(response => (this.filters = response.data));
+        axios
+            .post('/api/products')
+            .then(response => (this.products = response.data));
+    },
+    methods: {
+        activeFilter: function () {
+            this.isActive = !this.isActive;
+        },
+    },
+    computed: {
+        catProducts() {
+            return this.products.reduce((p,c) => {
+                const menu_category_name = c.menu_category.name;
+                const menu_category_slug = c.menu_category.slug;
+                p[menu_category_slug] = p[menu_category_slug] || [];
+                p[menu_category_slug]['menu_category_name'] = menu_category_name;
+                p[menu_category_slug].push(c);
+                return p;
+            }, {});
+        },
+        filterData() {
+            let data = []
+            if (this.activeFilters.length) {
+                data = this.products.filter(x => this.activeFilters.indexOf(x.menu_filter_id) + '' != -1)
+            } else {
+                data = this.catProducts['pizza']
+            }
+            return data
+        },
     },
 }
 </script>
