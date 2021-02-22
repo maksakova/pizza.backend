@@ -38,7 +38,7 @@
             </span>
                             <button class="button"
                                     @click="addItem(item.id - 1, currentVariant - 1, item.variants[currentVariant - 1].price);
-                      changeCurrentItemId(item.id)">
+                      changeCurrentItem(item)">
                                 Выбрать
                             </button>
                         </template>
@@ -48,8 +48,8 @@
               {{ item.min_price }} руб.
             </span>
                             <button class="button"
-                                    @click="addItem(item.id - 1, false, item.min_price);
-                                    currentItem(item.id)">
+                                    @click="addToCart(item);
+                                    currentItem(item)">
                                 Выбрать
                             </button>
                         </template>
@@ -60,8 +60,8 @@
             </span>
                             <button class="button"
                                     @click="show('product-modal');
-                                    currentItem(item.id)">
-                                Выбрать {{item.id}}
+                                    currentItem(item)">
+                                Выбрать
                             </button>
                         </template>
                     </div>
@@ -87,8 +87,11 @@ export default {
         }
     },
     methods: {
-        currentItem(id) {
-            this.$store.commit('currentItem', id);
+        currentItem(item) {
+            this.$store.commit('currentItem', item);
+        },
+        addToCart(item) {
+            this.$store.commit('addToCart', item);
         }
     }
 }

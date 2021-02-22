@@ -24,7 +24,7 @@ export default {
         updateCartItems(state, cartItems) {
             state.cartItems = cartItems
         },
-        addCartItem(state, newCartItem) {
+        addToCart(state, newCartItem) {
             state.cartItems.unshift(newCartItem)
         },
         removeCartItem(state, cartItemId) {

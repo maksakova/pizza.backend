@@ -1,127 +1,127 @@
 <template>
   <div class="product-modal">
-      {{ $store.state.currentItemId }}
     <span class="product-modal__back" @click="hide('product-modal')">
       <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M9.375 3.75L5.625 7.5L9.375 11.25" stroke="#828282" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
       Вернуться в меню
     </span>
-    <!--<div class="product-modal__inner">
-      <div class="product-modal__image">
-        <img :src="products[currentItem].img">
-      </div>
-      <div class="product-modal__text">
-        <div class="product-modal__text__inner">
-          <h2>{{products[currentItem].name}}</h2>
-          <h4>{{products[currentItem].description}} 25 см, традиционное тесто, 420 г</h4>
-          <p>{{products[currentItem].composition}} <span v-if="products[currentItem].weight">{{products[currentItem].weight}}</span></p>
-
-          <div v-if="products[currentItem].variants">
-            <div class="product-item__variants" v-for="(variants, key) in variantsList" v-bind:key="variants.id">
-              <div class="product-item__variants__item"
-                   v-for="variant in variants"
-                   v-bind:key="variant.id"
-                   :style="{ width: 'calc(100% / ' + variants.length + ')' }">
-                <label class="radio">
-                  <input type="radio"
-                         v-if="key == 1"
-                         :name="key"
-                         :data-price="variant.price"
-                         :value="variant.id"
-                         :checked="variant.id === 1"
-                         v-model="currentVariant1"
-                  />
-                  <input type="radio"
-                         v-if="key == 2"
-                         :name="key"
-                         :data-price="variant.price"
-                         :value="variant.id"
-                         :checked="variant.id === 3"
-                         v-model="currentVariant2"
-                  />
-                  <div class="radio__text">{{variant.name}}</div>
-                </label>
-              </div>
-            </div>
+      <div class="product-modal__inner">
+          <div class="product-modal__image">
+              <img :src="currentItem.img">
           </div>
+          <div class="product-modal__text">
+              <div class="product-modal__text__inner">
+                  <h2>{{currentItem.name}}</h2>
+                  <h4>{{currentItem.description}} 25 см, традиционное тесто, 420 г</h4>
+                  <p>{{currentItem.composition}} <span v-if="currentItem.weight">{{currentItem.weight}}</span></p>
 
-          <div class="product-modal__add" v-if="products[currentItem].menucat_id === 1">
-            <h3>Добавить в пиццу</h3>
-
-            <b-tabs>
-              <b-tab v-for="(additives, cat_name) in catAdditives" v-bind:key="additives.id" :title="cat_name">
-                <label class="checkbox" v-for="additiveItem in additives" v-bind:key="additiveItem.id">
-                  <input type="checkbox"
-                         :value="additiveItem.id"
-                         v-model="chooseAdditives"/>
-                  <div class="checkbox__text">
-                    <img :src="additiveItem.img">
-                    <h4>{{additiveItem.name}}</h4>
-                    <span>{{additiveItem.price[products[currentItem].variants[currentVariant2 - 1].size]}} руб.</span>
+                  <!--<div v-if="currentItem.variants">
+                      <div class="product-item__variants" v-for="(variants, key) in variantsList" v-bind:key="variants.id">
+                          <div class="product-item__variants__item"
+                               v-for="variant in variants"
+                               v-bind:key="variant.id"
+                               :style="{ width: 'calc(100% / ' + variants.length + ')' }">
+                              <label class="radio">
+                                  <input type="radio"
+                                         v-if="key == 1"
+                                         :name="key"
+                                         :data-price="variant.price"
+                                         :value="variant.id"
+                                         :checked="variant.id === 1"
+                                         v-model="currentVariant1"
+                                  />
+                                  <input type="radio"
+                                         v-if="key == 2"
+                                         :name="key"
+                                         :data-price="variant.price"
+                                         :value="variant.id"
+                                         :checked="variant.id === 3"
+                                         v-model="currentVariant2"
+                                  />
+                                  <div class="radio__text">{{variant.name}}</div>
+                              </label>
+                          </div>
+                      </div>
                   </div>
-                </label>
-              </b-tab>
-            </b-tabs>
-          </div>
-        </div>
-        <div class="product-modal__button">
-            <template v-for="thisVariant in chooseCurrentVariant">
-              <template v-if="products[currentItem].variants[thisVariant - 1].price">
-                <button class="button"
-                        @click="addItem(currentItem, chooseCurrentVariant, products[currentItem].variants[thisVariant - 1].price * 1 + pizzaSum, chooseAdditives);
+
+                  <div class="product-modal__add" v-if="currentItem.menucat_id === 1">
+                      <h3>Добавить в пиццу</h3>
+
+                      <b-tabs>
+                          <b-tab v-for="(additives, cat_name) in catAdditives" v-bind:key="additives.id" :title="cat_name">
+                              <label class="checkbox" v-for="additiveItem in additives" v-bind:key="additiveItem.id">
+                                  <input type="checkbox"
+                                         :value="additiveItem.id"
+                                         v-model="chooseAdditives"/>
+                                  <div class="checkbox__text">
+                                      <img :src="additiveItem.img">
+                                      <h4>{{additiveItem.name}}</h4>
+                                      <span>{{additiveItem.price[currentItem.variants[currentVariant2 - 1].size]}} руб.</span>
+                                  </div>
+                              </label>
+                          </b-tab>
+                      </b-tabs>
+                  </div>-->
+              </div>
+              <!--<div class="product-modal__button">
+                  <template v-for="thisVariant in chooseCurrentVariant">
+                      <template v-if="currentItem.variants[thisVariant - 1].price">
+                          <button class="button"
+                                  @click="addItem(currentItem, chooseCurrentVariant, currentItem.variants[thisVariant - 1].price * 1 + pizzaSum, chooseAdditives);
                   hide('product-modal');" v-bind:key="thisVariant">
-                  Добавить в корзину за
-                {{formatPrice(products[currentItem].variants[thisVariant - 1].price * 1 + pizzaSum)}}
-                руб.</button>
-              </template>
-            </template>
-        </div>
+                              Добавить в корзину за
+                              {{formatPrice(currentItem.variants[thisVariant - 1].price * 1 + pizzaSum)}}
+                              руб.</button>
+                      </template>
+                  </template>
+              </div>-->
+          </div>
       </div>
-    </div>-->
   </div>
 </template>
 
 <script>
 export default {
-  name: "ProductModal",
-  data() {
-    return {
-      currentVariant1: 1,
-      currentVariant2: 3,
-      chooseAdditives: [],
-    }
-  },
-  computed: {
-    variantsList() {
-      var vars = this.products[this.currentItem].variants;
-      return vars.reduce((p,c) => {
-        const type_id = c.type_id;
-        p[type_id] = p[type_id] || [];
-        p[type_id].push(c);
-        return p;
-      }, {});
+    name: "ProductModal",
+    data() {
+        return {
+            currentVariant1: 1,
+            currentVariant2: 3,
+            chooseAdditives: [],
+            currentItem: this.$store.state.currentItem
+        }
     },
-    catAdditives() {
-      return this.additives.reduce((p,c) => {
-        const cat_name = c.cat_name;
-        p[cat_name] = p[cat_name] || [];
-        p[cat_name].push(c);
-        return p;
-      }, {});
+    computed: {
+        variantsList() {
+            var vars = this.products[this.currentItem].variants;
+            return vars.reduce((p,c) => {
+                const type_id = c.type_id;
+                p[type_id] = p[type_id] || [];
+                p[type_id].push(c);
+                return p;
+            }, {});
+        },
+        catAdditives() {
+            return this.additives.reduce((p,c) => {
+                const cat_name = c.cat_name;
+                p[cat_name] = p[cat_name] || [];
+                p[cat_name].push(c);
+                return p;
+            }, {});
+        },
+        chooseCurrentVariant() {
+            return [this.currentVariant1, this.currentVariant2]
+        },
+        pizzaSum() {
+            var totalPizzaSum = 0;
+            for (let i = 0; i < this.chooseAdditives.length; i += 1) {
+                totalPizzaSum += additives[this.chooseAdditives[i] - 1].price[products[this.currentItem].variants[this.currentVariant2 - 1].size] * 1
+            }
+            totalPizzaSum = totalPizzaSum * 1
+            return totalPizzaSum
+        }
     },
-    chooseCurrentVariant() {
-      return [this.currentVariant1, this.currentVariant2]
-    },
-    pizzaSum() {
-      var totalPizzaSum = 0;
-      for (let i = 0; i < this.chooseAdditives.length; i += 1) {
-        totalPizzaSum += additives[this.chooseAdditives[i] - 1].price[products[this.currentItem].variants[this.currentVariant2 - 1].size] * 1
-      }
-      totalPizzaSum = totalPizzaSum * 1
-      return totalPizzaSum
-    }
-  },
 }
 </script>
 
