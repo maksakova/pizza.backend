@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\MainBanner;
 use App\Models\MenuCategory;
 use App\Models\MenuFilter;
+use App\Models\MenuIngredient;
 use App\Models\MenuProduct;
 
 class MainController extends Controller
@@ -35,5 +36,10 @@ class MainController extends Controller
     public function products()
     {
         return MenuProduct::with('menuCategory')->with('menuFilter')->get();
+    }
+
+    public function ingredients()
+    {
+        return MenuIngredient::all();
     }
 }

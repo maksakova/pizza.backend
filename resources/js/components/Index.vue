@@ -43,11 +43,11 @@
                             </div>
 
                             <div class="row main__menu" v-if="menu_category_slug === 'pizza'">
-                                <product-card v-for="product in filterData" v-bind:key="product.id" v-bind:item="product"/>
+                                <product-card v-for="product in filterData" v-bind:key="product.id" v-bind:item="product" v-bind:ingredients="ingredients"/>
                             </div>
 
                             <div class="row main__menu" v-else>
-                                <product-card v-for="product in products" v-bind:key="product.id" v-bind:item="product"/>
+                                <product-card v-for="product in products" v-bind:key="product.id" v-bind:item="product" v-bind:ingredients="ingredients"/>
                             </div>
                         </div>
                     </div>
@@ -86,6 +86,7 @@ export default {
             mainBanners: [],
             filters: [],
             products: [],
+            ingredients: []
         }
     },
     directives: {
@@ -101,6 +102,9 @@ export default {
         axios
             .post('/api/products')
             .then(response => (this.products = response.data));
+        axios
+            .post('/api/ingredients')
+            .then(response => (this.ingredients = response.data));
     },
     methods: {
         activeFilter: function () {

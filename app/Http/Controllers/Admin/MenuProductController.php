@@ -147,10 +147,12 @@ class MenuProductController extends Controller
         if ($request->composition != null) {
 
             for ($i = 0; $i < count($request->composition); $i++) {
-                $composition[] = intval($request->composition[$i]);
+                $composition[] = $request->composition[$i];
+                /*fo ids*/
+                /*$composition[] = intval($request->composition[$i]);*/
             }
 
-            $composition = implode(",", $composition);
+            $composition = implode(", ", $composition);
 
             $data['composition'] = $composition;
 

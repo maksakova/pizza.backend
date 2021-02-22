@@ -25,3 +25,5 @@ Route::post('mainBanners', '\App\Http\Controllers\Front\MainController@mainBanne
 Route::post('filters', '\App\Http\Controllers\Front\MainController@filters');
 
 Route::post('products', '\App\Http\Controllers\Front\MainController@products');
+
+Route::post('ingredients', '\App\Http\Controllers\Front\MainController@ingredients');

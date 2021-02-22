@@ -87,7 +87,7 @@
                                     <label class="checkbox">
                                         <input
                                             type="checkbox"
-                                            name="composition[]" value="{{$menuIngredient->id}}"
+                                            name="composition[]" value="{{$menuIngredient->name}}"
                                             @foreach($ingredient_ids as $ingredient_id)
                                             @if($ingredient_id == $menuIngredient->id) checked @endif
                                             @endforeach>
