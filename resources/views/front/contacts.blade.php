@@ -13,7 +13,7 @@
                         <div class="col-xl-12 col-lg-4 col-sm-6">
                             <div class="contacts__block">
                                 <h2><img src="/../img/contacts/1-phone.svg"> Телефон</h2>
-                                <p><a href="{{$contacts['phone']->value}}">{{$contacts['phone']->value}}</a></p>
+                                <p><a href="tel:{{$contacts['phone']->value}}">{{$contacts['phone']->value}}</a></p>
                             </div>
                         </div>
                         <div class="col-xl-12 col-lg-4 col-sm-6">

@@ -61,9 +61,14 @@ Route::resource('/admin/contacts', 'Admin\ContactController')
 /* Front */
 
 Route::get('/', 'Front\MainController@index');
+
 Route::get('/map', function () {return view('front.map', );})->name('map');
+
 Route::get('/howto', function () {return view('front.howto', );})->name('howto');
+
 Route::get('/contacts', function () {return view('front.contacts', );})->name('contacts');
+
+Route::get('/payment', function () {return view('front.payment', );})->name('payment');
 
 /* Discounts */
 
