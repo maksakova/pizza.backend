@@ -80,5 +80,11 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script src="https://cdn.tiny.cloud/1/ef7cuwjey0nzcp1h6d50hie2rqksq9raq2gqyhchwunviujq/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector:'textarea'
+        });
+    </script>
 </body>
 </html>

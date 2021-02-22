@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Discount;
+use App\Models\Page;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,18 +58,31 @@ Route::resource('/admin/contacts', 'Admin\ContactController')
     ->names('admin.contacts')
     ->middleware('auth');
 
+Route::resource('/admin/pages', 'Admin\PageController')
+    ->names('admin.pages')
+    ->middleware('auth');
+
 
 /* Front */
 
 Route::get('/', 'Front\MainController@index');
 
-Route::get('/map', function () {return view('front.map', );})->name('map');
+/*Route::get('/map', function () {return view('front.map', );})->name('map');
 
 Route::get('/howto', function () {return view('front.howto', );})->name('howto');
 
+Route::get('/payment', function () {return view('front.payment', );})->name('payment');*/
+
 Route::get('/contacts', function () {return view('front.contacts', );})->name('contacts');
 
-Route::get('/payment', function () {return view('front.payment', );})->name('payment');
+Page::all()->each(function ($page) {
+    Route::get($page->slug, function () use ($page) {
+
+        return view('front.' . $page->slug, [
+            'page' => $page,
+        ]);
+    })->name($page->slug);
+});
 
 /* Discounts */
 

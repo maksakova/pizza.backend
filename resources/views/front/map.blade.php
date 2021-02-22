@@ -5,11 +5,11 @@
         <the-menu simple="simple"></the-menu>
         <Menu simple="simple"/>
         <div class="container">
-            <h1>Карта доставки</h1>
+            <h1>{{ $page->name }}</h1>
             <div class="map__info">
-                <p>Кликните на зону, чтобы узнать условия доставки.</p>
+                {!! $page->content !!}
                 <div class="map__alert alert">
-                    В часы пик, выходные, праздничные, предпраздничные дни заказы могут нами не приниматься.
+                    {!! $page->add !!}
                 </div>
             </div>
             <div id="map" class="map__map"></div>

@@ -30,6 +30,9 @@
                         <li>
                             <a href="{{route('admin.contacts.index')}}">Контакты</a>
                         </li>
+                        <li>
+                            <a href="{{route('admin.pages.index')}}">Страницы</a>
+                        </li>
                     </ul>
                 </div>
             </div>

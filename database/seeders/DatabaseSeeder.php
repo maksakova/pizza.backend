@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
         $this->call(MainBannersSeeder::class);
         $this->call(DiscountsSeeder::class);
         $this->call(ContactsSeeder::class);
+        $this->call(PagesSeeder::class);
         // \App\Models\User::factory(10)->create();
     }
 }

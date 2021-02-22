@@ -24,10 +24,6 @@
                                     <input type="text" name="name" value="{{$discount->name}}">
                                 </label>
                                 <label>
-                                    Описание
-                                    <textarea name="content">{{$discount->content}}</textarea>
-                                </label>
-                                <label>
                                     Ссылка на акцию
                                     <input type="text" name="slug" value="{{$discount->slug}}">
                                 </label>
@@ -43,6 +39,10 @@
                                 @endif
                             </div>
                         </div>
+                        <label>
+                            Описание
+                            <textarea name="content">{{$discount->content}}</textarea>
+                        </label>
                     </form>
                     <!-- Modal -->
                     <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -90,10 +90,6 @@
                                     <input type="text" name="name" value="{{$discount->name}}">
                                 </label>
                                 <label>
-                                    Описание
-                                    <textarea name="content">{{$discount->content}}</textarea>
-                                </label>
-                                <label>
                                     Ссылка на акцию
                                     <input type="text" name="slug" value="{{$discount->slug}}">
                                 </label>
@@ -104,6 +100,10 @@
                                 </label>
                             </div>
                         </div>
+                        <label>
+                            Описание
+                            <textarea name="content">{{$discount->content}}</textarea>
+                        </label>
                     </form>
                 @endif
             </div>

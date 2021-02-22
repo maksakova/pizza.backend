@@ -31,7 +31,7 @@
                             <td>
                                 <a href="{{route('admin.contacts.edit', $item->id)}}">
                                     @if($item->img)
-                                        <img src="{{ $item->img }}"">
+                                        <img src="{{ $item->img }}">
                                     @else
                                         {{$item->value}}
                                     @endif

@@ -26,7 +26,7 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer(['front.parts.header', 'front.parts.footer', 'front.contacts'], function($view) {
+        View::composer(['front.parts.header', 'front.parts.footer', 'front.contacts', 'front.howto'], function($view) {
             $view->with(['contacts' => Contact::all()->keyBy('key')]);
         });
     }

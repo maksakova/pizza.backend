@@ -1381,9 +1381,6 @@ header .close {
 }
 
 @media (min-width: 1200px) {
-  .map h1 {
-    margin-bottom: 4px;
-  }
   .map p {
     font-size: 18px;
     font-weight: 400;
@@ -1553,6 +1550,10 @@ header .close {
   }
 }
 
+.payment img {
+  margin-bottom: 20px;
+}
+
 .error {
   background: url("/../img/common/404.png") center right;
   text-align: center;
@@ -1668,7 +1669,10 @@ footer .custom-logo {
 @media (min-width: 1200px) {
   footer {
     text-align: left;
-    padding: 25px 0;
+    padding: 0 0 25px;
+  }
+  .footer__info {
+    padding-top: 25px;
   }
   .footer__outer {
     flex-direction: row;
