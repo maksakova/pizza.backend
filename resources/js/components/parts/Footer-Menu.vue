@@ -29,12 +29,6 @@ export default {
             }
         },
     },
-    props: {
-        simple: {
-            type: String,
-            required: true
-        }
-    },
     mounted() {
         axios
             .post('/api/menuCategories')

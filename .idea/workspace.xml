@@ -32,21 +32,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55e38aa4-1e59-486e-b405-03ed58b0efaf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Providers/ComposerServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/parts/Footer-Menu.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/parts/Footer-Pay.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/parts/Map.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Front/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Front/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/marker.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/marker.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main.sass" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/main.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/parts/Email.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/parts/Footer-Menu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/parts/Footer-Menu.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/parts/Links.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/parts/Logo.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/parts/Phone.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/parts/Time.vue" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/front/contacts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/contacts.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/parts/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/parts/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/parts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/parts/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/front.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/front.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -279,7 +277,7 @@
       <workItem from="1613649056241" duration="10478000" />
       <workItem from="1613714889010" duration="17512000" />
       <workItem from="1613734146109" duration="7278000" />
-      <workItem from="1613974503150" duration="2047000" />
+      <workItem from="1613974503150" duration="2712000" />
     </task>
     <task id="LOCAL-00001" summary="directories change">
       <created>1613384026570</created>
@@ -477,7 +475,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613741427335</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="refactor getting contacts, header&amp;footer blade">
+      <created>1613976601929</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1613976601929</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -509,7 +514,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="User Seeder" />
     <MESSAGE value="Menu Products CRUD" />
     <MESSAGE value="Filters CRUD + image downloading" />
     <MESSAGE value="Ingredient Groups CRUD" />
@@ -534,7 +538,8 @@
     <MESSAGE value="fix contacts CRUD" />
     <MESSAGE value="add 404" />
     <MESSAGE value="add contacts page" />
-    <option name="LAST_COMMIT_MESSAGE" value="add contacts page" />
+    <MESSAGE value="refactor getting contacts, header&amp;footer blade" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor getting contacts, header&amp;footer blade" />
   </component>
   <component name="WindowStateProjectService">
     <state x="780" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1613726572319">
@@ -545,10 +550,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613739549230" />
-    <state x="577" y="87" key="CommitChangelistDialog2" timestamp="1613741426266">
+    <state x="577" y="87" key="CommitChangelistDialog2" timestamp="1613976600546">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="577" y="87" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1613741426266" />
+    <state x="577" y="87" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1613976600546" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1613723760475">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -593,10 +598,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613384763580" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1613741430212">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1613976603633">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1613741430212" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1613976603633" />
     <state x="720" y="253" key="VcsDiffUtil.ChangesDialog" timestamp="1613384498036">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

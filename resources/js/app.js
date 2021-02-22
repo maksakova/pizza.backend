@@ -56,6 +56,7 @@ Vue.component('footer-menu', require('./components/parts/Footer-Menu.vue').defau
 Vue.component('footer-pay', require('./components/parts/Footer-Pay.vue').default);
 Vue.component('index', require('./components/Index.vue').default);
 Vue.component('seo', require('./components/parts/Seo.vue').default);
+Vue.component('map-address', require('./components/parts/Map.vue').default);
 
 Vue.directive('scroll', {
     inserted: function (el, binding) {

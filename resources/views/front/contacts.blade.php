@@ -85,15 +85,7 @@
                     </div>
                 </div>
                 <div class="col-xl-9">
-                    <yandex-map class="contacts__map"
-                                :coords="coords"
-                                :zoom="16" >
-                        <ymap-marker
-                            :coords="coords"
-                            marker-id="1"
-                            :icon="markerIcon"
-                        />
-                    </yandex-map>
+                    <map-address/>
                 </div>
             </div>
         </div>
