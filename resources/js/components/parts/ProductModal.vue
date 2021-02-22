@@ -1,12 +1,13 @@
 <template>
   <div class="product-modal">
+      {{ $store.state.currentItemId }}
     <span class="product-modal__back" @click="hide('product-modal')">
       <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M9.375 3.75L5.625 7.5L9.375 11.25" stroke="#828282" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
       Вернуться в меню
     </span>
-    <div class="product-modal__inner">
+    <!--<div class="product-modal__inner">
       <div class="product-modal__image">
         <img :src="products[currentItem].img">
       </div>
@@ -77,19 +78,13 @@
             </template>
         </div>
       </div>
-    </div>
+    </div>-->
   </div>
 </template>
 
 <script>
 export default {
   name: "ProductModal",
-  props: {
-    currentItem: {
-      type: Number,
-      required: true
-    },
-  },
   data() {
     return {
       currentVariant1: 1,

@@ -1,16 +1,33 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import currentItem from "./modules/curentItem";
-import cart from "./modules/cart";
-import delivery from "./modules/delivery";
+import createPersistedState from "vuex-persistedstate";
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
-    modules: {
-        currentItem,
-        cart,
-        delivery
+let store = {
+    plugins: [createPersistedState()],
+    state: {
+        cartItems: [],
+        cartTotal: 0,
+
+        currentItemId: 0,
+
+        cart: [],
+        cartCount: 0,
+    },
+
+    mutations: {
+        currentItem(state, id) {
+            state.currentItemId = id
+        },
+
+        addCartItem(state, item) {
+            state.cart.push(item);
+
+            state.cartTotal++;
+        }
     }
-})
+};
+
+export default store;
 

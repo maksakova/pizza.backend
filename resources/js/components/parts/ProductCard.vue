@@ -49,7 +49,7 @@
             </span>
                             <button class="button"
                                     @click="addItem(item.id - 1, false, item.min_price);
-                      changeCurrentItemId(item.id)">
+                                    currentItem(item.id)">
                                 Выбрать
                             </button>
                         </template>
@@ -59,7 +59,8 @@
               от {{ item.min_price }} руб.
             </span>
                             <button class="button"
-                                    @click="changeCurrentItemId(item.id)">
+                                    @click="show('product-modal');
+                                    currentItem(item.id)">
                                 Выбрать {{item.id}}
                             </button>
                         </template>
@@ -85,6 +86,11 @@ export default {
             currentVariant: 1,
         }
     },
+    methods: {
+        currentItem(id) {
+            this.$store.commit('currentItem', id);
+        }
+    }
 }
 </script>
 
