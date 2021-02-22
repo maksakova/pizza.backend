@@ -35,6 +35,17 @@ let store = {
             }
 
             state.cartCount++;
+        },
+
+        removeFromCart(state, item) {
+            let index = state.cart.indexOf(item);
+
+            if (index > -1) {
+                let product = state.cart[index];
+                state.cartCount -= product.quantity;
+
+                state.cart.splice(index, 1);
+            }
         }
     }
 };

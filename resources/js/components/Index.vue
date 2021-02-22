@@ -60,21 +60,21 @@
                                     </svg>
                                     <h3>Корзина <span>(<cart-sum/>)</span></h3>
                                 </div>
-                                <!--<button class="main__cart__button" v-if="cartItems.length > 0" @click="show('clear-modal');">Очистить</button>-->
+                                <button class="main__cart__button" v-if="cartCount > 0" @click="show('clear-modal');">Очистить</button>
                             </div>
-                            <!--<div class="main__cart__empty" v-if="cartItems.length === 0">
+                            <div class="main__cart__empty" v-if="cartCount === 0">
                                 <img src="/img/main/cart-empty.svg">
                                 <p>Добавьте товар в корзину.<br>
                                     У нас все очень вкусное.</p>
-                            </div>-->
-                            <!--<div class="main__cart__items">
-                                <CartProductCard v-for="(product, key) in cartItems" v-bind:key="key" v-bind:item="product" v-bind:cartItemId="key"></CartProductCard>
+                            </div>
+                            <div class="main__cart__items">
+                                <cart-product-card v-for="(product, key) in cart" v-bind:key="key" v-bind:item="product"/>
                             </div>
                             <div class="main__cart__total">
                                 Сумма заказа:
-                                <span>{{ formatPrice(cartTotal) }} руб.</span>
-                            </div>-->
-                            <!--<a href="/cart" class="button button-cart-arrow"  v-bind:class="{ disabled: cartItems.length === 0 }">Оформить заказ</a>-->
+                                <span>{{ formatPrice(total) }} руб.</span>
+                            </div>
+                            <a href="/cart" class="button button-cart-arrow"  v-bind:class="{ disabled: cartCount === 0 }">Оформить заказ</a>
                         </div>
                     </div>
                 </div>
@@ -120,7 +120,9 @@ export default {
             mainBanners: [],
             filters: [],
             products: [],
-            ingredients: []
+            ingredients: [],
+            cartCount: this.$store.state.cartCount,
+            cart: this.$store.state.cart
         }
     },
     directives: {
@@ -166,6 +168,15 @@ export default {
             }
             return data
         },
+        totalPrice() {
+            let total = 0;
+
+            for (let item of this.$store.state.cart) {
+                total += item.totalPrice;
+            }
+
+            return total.toFixed(2);
+        }
     },
 }
 </script>

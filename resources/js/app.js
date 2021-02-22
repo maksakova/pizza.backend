@@ -46,8 +46,9 @@ Vue.component('seo', require('./components/parts/Seo.vue').default);
 Vue.component('map-address', require('./components/parts/Map.vue').default);
 Vue.component('product-card', require('./components/parts/ProductCard.vue').default);
 Vue.component('product-modal', require('./components/parts/ProductModal.vue').default);
-Vue.component('cart-count', require('./components/parts/Cart-Count.vue').default);
-Vue.component('cart-sum', require('./components/parts/Cart-Sum.vue').default);
+Vue.component('cart-count', require('./components/parts/CartCount.vue').default);
+Vue.component('cart-sum', require('./components/parts/CartSum.vue').default);
+Vue.component('cart-product-card', require('./components/parts/CartProductCard.vue').default);
 
 Vue.directive('scroll', {
     inserted: function (el, binding) {
