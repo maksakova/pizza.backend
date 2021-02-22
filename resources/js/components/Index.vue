@@ -64,7 +64,7 @@
             :adaptive="true"
             class="pr"
             name="product-modal">
-            <ProductModal v-bind:currentItem="currentItem"/>
+            <product-modal v-bind:currentItem="currentItem"/>
         </modal>
     </div>
 </template>
@@ -75,6 +75,7 @@ import Seo from '../components/parts/Seo'
 import 'swiper/css/swiper.css'
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
 import axios from "axios";
+import {mapGetters, mapActions, mapMutations} from 'vuex'
 
 export default {
     name: "Index",
@@ -119,6 +120,7 @@ export default {
         activeFilter: function () {
             this.isActive = !this.isActive;
         },
+        ...mapActions(['getCurrentItemId']),
     },
     computed: {
         catProducts() {

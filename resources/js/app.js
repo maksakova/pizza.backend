@@ -10,7 +10,7 @@ window.Vue = require('vue').default;
 
 
 import Vuex from 'vuex';
-import index from "./store"
+import store from "./store/store"
 import VueRouter from 'vue-router';
 import VueScrollactive from 'vue-scrollactive';
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
@@ -21,8 +21,6 @@ import vmodal from 'vue-js-modal'
 
 window.Vuex = Vuex;
 Vue.use(Vuex);
-
-import {mapActions, mapGetters, mapMutations} from "vuex";
 
 /* for Ymaps */
 const settings = {
@@ -39,17 +37,6 @@ Vue.use(vmodal)
 
 Vue.use(VueRouter)
 Vue.use(VueScrollactive);
-
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-
-/*
-Vue.component('CartProductCard', require('./components/CartProductCard.vue').default);
-Vue.component('ProductCard', require('./components/ProductCard.vue').default);
-Vue.component('ProductModal', require('./components/ProductModal.vue').default);
-Vue.component('DiscountCard', require('./components/DiscountCard.vue').default);
-Vue.component('DiscountOther', require('./components/DiscountOther.vue').default);*/
-
 
 Vue.component('the-menu', require('./components/parts/Menu.vue').default);
 Vue.component('footer-menu', require('./components/parts/Footer-Menu.vue').default);
@@ -89,7 +76,6 @@ Vue.config.productionTip = false
 
 Vue.mixin({
     methods: {
-        ...mapActions(['getCartTotal']),
         show (el) {
             this.$modal.show(el);
         },
@@ -100,10 +86,6 @@ Vue.mixin({
             let val = (value/1).toFixed(2)
             return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
         },
-        ...mapMutations(['setCurrentItemId']),
-        ...mapActions(['deleteCartItem']),
-        ...mapMutations(['addCartItem'], ['removeCartItem']),
-        ...mapGetters('cartItemsCount'),
         changeCurrentItemId(id) {
             this.setCurrentItemId(id - 1)
         },
@@ -126,12 +108,15 @@ Vue.mixin({
 })
 
 const routes = [
+    {
+        path: '/',
+    },
 ]
 
 const router = new VueRouter({
     mode: 'history',
     routes,
-    store: index,
+    store: store,
 })
 
 const app = new Vue({ router }).$mount('#app')

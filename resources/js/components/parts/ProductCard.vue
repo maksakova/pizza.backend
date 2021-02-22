@@ -59,7 +59,9 @@
               от {{ item.min_price }} руб.
             </span>
                             <button class="button"
-                                    @click="show('product-modal'); changeCurrentItemId(item.id)">Выбрать</button>
+                                    @click="changeCurrentItemId(item.id)">
+                                Выбрать {{item.id}}
+                            </button>
                         </template>
                     </div>
                 </div>
