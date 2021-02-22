@@ -57,6 +57,15 @@
             </div>
         </main>
         <Seo/>
+
+        <modal
+            :width="1000"
+            :height="550"
+            :adaptive="true"
+            class="pr"
+            name="product-modal">
+            <ProductModal v-bind:currentItem="currentItem"/>
+        </modal>
     </div>
 </template>
 
