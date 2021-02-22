@@ -50,15 +50,10 @@ Vue.component('ProductModal', require('./components/ProductModal.vue').default);
 Vue.component('DiscountCard', require('./components/DiscountCard.vue').default);
 Vue.component('DiscountOther', require('./components/DiscountOther.vue').default);*/
 
-Vue.component('the-footer', require('./components/Footer.vue').default);
-Vue.component('the-logo', require('./components/parts/Logo.vue').default);
-Vue.component('the-phone', require('./components/parts/Phone.vue').default);
-Vue.component('the-time', require('./components/parts/Time.vue').default);
-Vue.component('the-links', require('./components/parts/Links.vue').default);
-Vue.component('the-email', require('./components/parts/Email.vue').default);
-
 
 Vue.component('the-menu', require('./components/parts/Menu.vue').default);
+Vue.component('footer-menu', require('./components/parts/Footer-Menu.vue').default);
+Vue.component('footer-pay', require('./components/parts/Footer-Pay.vue').default);
 Vue.component('index', require('./components/Index.vue').default);
 Vue.component('seo', require('./components/parts/Seo.vue').default);
 

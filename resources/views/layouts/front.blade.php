@@ -13,7 +13,7 @@
 <div id="app">
     @include('front.parts.header')
     @yield('content')
-    <the-footer></the-footer>
+    @include('front.parts.footer')
 </div>
 
 <script src="{{mix('js/app.js')}}"></script>

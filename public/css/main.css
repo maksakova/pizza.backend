@@ -1581,3 +1581,146 @@ header .close {
   }
 }
 
+footer {
+  background: #FFFFFF;
+  padding: 18px 0;
+  text-align: center;
+}
+
+footer .custom-logo {
+  margin-bottom: 18px;
+  display: inline-block;
+}
+
+.footer__phone, .footer__address {
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.footer__phone svg, .footer__address svg {
+  margin-right: 5px;
+}
+
+.footer__phone .text-l, .footer__address .text-l {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  color: #828282;
+}
+
+.footer__outer {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.footer__nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.footer__nav li {
+  margin: 0 5px 10px;
+}
+
+.footer__nav a {
+  color: #828282;
+  font-weight: 400;
+}
+
+.footer__menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.footer__menu h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 5px 16px;
+}
+
+.footer__copyright {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  color: #828282;
+}
+
+.footer__copyright p {
+  margin-bottom: 0;
+}
+
+.footer__pay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 15px 0 20px;
+}
+
+.footer__pay img {
+  margin: 0 5px 10px;
+}
+
+@media (min-width: 1200px) {
+  footer {
+    text-align: left;
+    padding: 25px 0;
+  }
+  .footer__outer {
+    flex-direction: row;
+  }
+  .footer__phone svg, .footer__address svg {
+    margin: 0;
+  }
+  .footer__menu {
+    justify-content: space-between;
+  }
+  .footer__pay {
+    justify-content: flex-start;
+  }
+  .footer__pay img {
+    margin: 0 5px 10px 0;
+  }
+}
+
+@media (min-width: 1400px) {
+  .footer__info {
+    box-shadow: 0px 15px 30px rgba(34, 39, 41, 0.05);
+  }
+  .footer__phone, .footer__address {
+    font-size: 16px;
+  }
+  .footer__phone svg, .footer__address svg {
+    margin-right: 5px;
+  }
+  .footer__phone .text-l, .footer__address .text-l {
+    font-size: 14px;
+  }
+  .footer__outer {
+    justify-content: space-between;
+  }
+  .footer__nav {
+    margin-top: 5px;
+  }
+  .footer__nav li {
+    margin: 0 21px 0 0;
+  }
+  .footer__links a {
+    margin: 0 0 0 10px;
+  }
+  .footer__menu {
+    margin: 20px 0 10px;
+  }
+  .footer__copyright {
+    padding: 20px 0;
+  }
+  .footer__pay {
+    padding: 10px 0 20px;
+    justify-content: space-between;
+  }
+}
+

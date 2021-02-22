@@ -26,34 +26,4 @@ class MainController extends Controller
     {
         return MainBanner::all();
     }
-
-    public function logo()
-    {
-        return Contact::where('key', 'logo')->pluck('img')->first();
-    }
-
-    public function phone()
-    {
-        return Contact::where('key', 'phone')->pluck('value')->first();
-    }
-
-    public function time()
-    {
-        return Contact::where('key', 'time')->pluck('value')->first();
-    }
-
-    public function email()
-    {
-        return Contact::where('key', 'email')->pluck('value')->first();
-    }
-
-    public function links()
-    {
-        $links = [];
-        $links['allatra'] = Contact::where('key', 'allatra')->pluck('value')->first();
-        $links['vk'] = Contact::where('key', 'vk')->pluck('value')->first();
-        $links['instagram'] = Contact::where('key', 'instagram')->pluck('value')->first();
-
-        return $links;
-    }
 }

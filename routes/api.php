@@ -21,13 +21,3 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('menuCategories', '\App\Http\Controllers\Front\MainController@menuCategories');
 
 Route::post('mainBanners', '\App\Http\Controllers\Front\MainController@mainBanners');
-
-Route::post('logo', '\App\Http\Controllers\Front\MainController@logo');
-
-Route::post('phone', '\App\Http\Controllers\Front\MainController@phone');
-
-Route::post('time', '\App\Http\Controllers\Front\MainController@time');
-
-Route::post('links', '\App\Http\Controllers\Front\MainController@links');
-
-Route::post('email', '\App\Http\Controllers\Front\MainController@email');
