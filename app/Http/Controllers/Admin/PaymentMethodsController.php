@@ -3,33 +3,33 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Discount;
+use App\Models\PaymentMethod;
 use Illuminate\Http\Request;
 
-class DiscountController extends Controller
+class PaymentMethodsController extends Controller
 {
-    private $discount;
+    private $paymentMethod;
 
-    public function __construct(Discount $discount)
+    public function __construct(PaymentMethod $paymentMethod)
     {
-        $this->discount = $discount;
+        $this->paymentMethod = $paymentMethod;
     }
 
     public function index()
     {
-        $discounts = Discount::orderBy('id', 'DESC')->get();
+        $paymentMethods = PaymentMethod::orderBy('id', 'DESC')->get();
 
-        return view('admin.discounts.index', [
-            'discounts' => $discounts,
+        return view('admin.payment-methods.index', [
+            'paymentMethods' => $paymentMethods,
         ]);
     }
 
     public function create()
     {
-        $discount = new Discount();
+        $paymentMethod = new PaymentMethod();
 
-        return view('admin.discounts.edit', [
-            'discount' => $discount,
+        return view('admin.payment-methods.edit', [
+            'paymentMethod' => $paymentMethod,
         ]);
     }
 
@@ -45,11 +45,11 @@ class DiscountController extends Controller
 
         }
 
-        $discount = new Discount($data);
-        $discount->save();
+        $paymentMethod = new PaymentMethod($data);
+        $paymentMethod->save();
 
-        if ($discount) {
-            return redirect()->route('admin.discounts.edit', [$discount->id])
+        if ($paymentMethod) {
+            return redirect()->route('admin.payment-methods.edit', [$paymentMethod->id])
                 ->with(['success' => 'Успешно сохранено']);
         } else {
             return back()->withErrors(['msg' => 'Ошибка сохранения'])
@@ -59,14 +59,14 @@ class DiscountController extends Controller
 
     public function edit($id)
     {
-        return view('admin.discounts.edit', [
-            'discount' => $this->discount->whereId($id)->firstOrFail(),
+        return view('admin.payment-methods.edit', [
+            'paymentMethod' => $this->paymentMethod->whereId($id)->firstOrFail(),
         ]);
     }
 
     public function update(Request $request, $id)
     {
-        $item = Discount::find($id);
+        $item = PaymentMethod::find($id);
         if (empty($item)) {
             return back()
                 ->withErrors(['msg' => "Запись id=[{$id}] не найдена"])
@@ -87,7 +87,7 @@ class DiscountController extends Controller
 
         if ($result) {
             return redirect()
-                ->route('admin.discounts.edit', $item->id)
+                ->route('admin.payment-methods.edit', $item->id)
                 ->with(['success' => 'Успешно сохранено']);
         } else {
             return back()
@@ -98,13 +98,13 @@ class DiscountController extends Controller
 
     public function destroy($id)
     {
-        $discount = Discount::findOrFail($id);
-        $discount->delete();
+        $paymentMethod = PaymentMethod::findOrFail($id);
+        $paymentMethod->delete();
 
-        $discounts = Discount::all();
+        $paymentMethods = PaymentMethod::all();
 
-        return view('admin.discounts.index', [
-            'discounts' => $discounts,
+        return view('admin.payment-methods.index', [
+            'paymentMethods' => $paymentMethods,
         ]);
     }
 }

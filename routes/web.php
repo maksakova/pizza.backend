@@ -62,6 +62,14 @@ Route::resource('/admin/pages', 'Admin\PageController')
     ->names('admin.pages')
     ->middleware('auth');
 
+Route::resource('/admin/delivery-methods', 'Admin\DeliveryMethodsController')
+    ->names('admin.delivery-methods')
+    ->middleware('auth');
+
+Route::resource('/admin/payment-methods', 'Admin\PaymentMethodsController')
+    ->names('admin.payment-methods')
+    ->middleware('auth');
+
 
 /* Front */
 

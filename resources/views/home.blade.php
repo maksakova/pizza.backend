@@ -33,6 +33,12 @@
                         <li>
                             <a href="{{route('admin.pages.index')}}">Страницы</a>
                         </li>
+                        <li>
+                            <a href="{{route('admin.delivery-methods.index')}}">Способы доставки</a>
+                        </li>
+                        <li>
+                            <a href="{{route('admin.payment-methods.index')}}">Способы оплаты</a>
+                        </li>
                     </ul>
                 </div>
             </div>

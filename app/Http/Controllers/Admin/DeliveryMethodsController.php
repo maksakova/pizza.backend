@@ -3,33 +3,33 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Discount;
+use App\Models\DeliveryMethod;
 use Illuminate\Http\Request;
 
-class DiscountController extends Controller
+class DeliveryMethodsController extends Controller
 {
-    private $discount;
+    private $deliveryMethod;
 
-    public function __construct(Discount $discount)
+    public function __construct(DeliveryMethod $deliveryMethod)
     {
-        $this->discount = $discount;
+        $this->deliveryMethod = $deliveryMethod;
     }
 
     public function index()
     {
-        $discounts = Discount::orderBy('id', 'DESC')->get();
+        $deliveryMethods = DeliveryMethod::orderBy('id', 'DESC')->get();
 
-        return view('admin.discounts.index', [
-            'discounts' => $discounts,
+        return view('admin.delivery-methods.index', [
+            'deliveryMethods' => $deliveryMethods,
         ]);
     }
 
     public function create()
     {
-        $discount = new Discount();
+        $deliveryMethod = new DeliveryMethod();
 
-        return view('admin.discounts.edit', [
-            'discount' => $discount,
+        return view('admin.delivery-methods.edit', [
+            'deliveryMethod' => $deliveryMethod,
         ]);
     }
 
@@ -45,11 +45,11 @@ class DiscountController extends Controller
 
         }
 
-        $discount = new Discount($data);
-        $discount->save();
+        $deliveryMethod = new DeliveryMethod($data);
+        $deliveryMethod->save();
 
-        if ($discount) {
-            return redirect()->route('admin.discounts.edit', [$discount->id])
+        if ($deliveryMethod) {
+            return redirect()->route('admin.delivery-methods.edit', [$deliveryMethod->id])
                 ->with(['success' => 'Успешно сохранено']);
         } else {
             return back()->withErrors(['msg' => 'Ошибка сохранения'])
@@ -59,14 +59,14 @@ class DiscountController extends Controller
 
     public function edit($id)
     {
-        return view('admin.discounts.edit', [
-            'discount' => $this->discount->whereId($id)->firstOrFail(),
+        return view('admin.delivery-methods.edit', [
+            'deliveryMethod' => $this->deliveryMethod->whereId($id)->firstOrFail(),
         ]);
     }
 
     public function update(Request $request, $id)
     {
-        $item = Discount::find($id);
+        $item = DeliveryMethod::find($id);
         if (empty($item)) {
             return back()
                 ->withErrors(['msg' => "Запись id=[{$id}] не найдена"])
@@ -87,7 +87,7 @@ class DiscountController extends Controller
 
         if ($result) {
             return redirect()
-                ->route('admin.discounts.edit', $item->id)
+                ->route('admin.delivery-methods.edit', $item->id)
                 ->with(['success' => 'Успешно сохранено']);
         } else {
             return back()
@@ -98,13 +98,13 @@ class DiscountController extends Controller
 
     public function destroy($id)
     {
-        $discount = Discount::findOrFail($id);
-        $discount->delete();
+        $deliveryMethod = DeliveryMethod::findOrFail($id);
+        $deliveryMethod->delete();
 
-        $discounts = Discount::all();
+        $deliveryMethods = DeliveryMethod::all();
 
-        return view('admin.discounts.index', [
-            'discounts' => $discounts,
+        return view('admin.delivery-methods.index', [
+            'deliveryMethods' => $deliveryMethods,
         ]);
     }
 }
