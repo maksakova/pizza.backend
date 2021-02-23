@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
         $this->call(DiscountsSeeder::class);
         $this->call(ContactsSeeder::class);
         $this->call(PagesSeeder::class);
-        // \App\Models\User::factory(10)->create();
+        $this->call(DeliveryMethodsSeeder::class);
+        $this->call(PaymentMethodsSeeder::class);
     }
 }
