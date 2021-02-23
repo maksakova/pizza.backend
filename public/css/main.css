@@ -423,15 +423,15 @@ input:focus {
 .vue-numeric-input .btn-decrement:before {
   content: url("/../img/common/minus.svg");
   height: 100%;
-  height: 100%;
 }
 
-.vue-numeric-input .btn-decrement:before .btn-increment {
+.vue-numeric-input .btn-increment {
   right: 6px !important;
 }
 
-.vue-numeric-input .btn-decrement:before .btn-increment:before {
+.vue-numeric-input .btn-increment:before {
   content: url("/../img/common/plus.svg");
+  height: 100%;
 }
 
 select {

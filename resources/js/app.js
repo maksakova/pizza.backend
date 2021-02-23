@@ -38,6 +38,11 @@ Vue.use(vmodal)
 Vue.use(VueRouter)
 Vue.use(VueScrollactive);
 
+
+import Index from "./components/Index";
+import Cart from "./components/Cart";
+import Order from "./components/Order";
+
 Vue.component('the-menu', require('./components/parts/Menu.vue').default);
 Vue.component('footer-menu', require('./components/parts/Footer-Menu.vue').default);
 Vue.component('footer-pay', require('./components/parts/Footer-Pay.vue').default);
@@ -89,27 +94,24 @@ Vue.mixin({
             let val = (value/1).toFixed(2)
             return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
         },
-        addItem(currentItem, currentVariant = 1, price, chooseAdditives = []) {
-            this.addCartItem({
-                product_id: currentItem,
-                count: 1,
-                variants: currentVariant,
-                additives: chooseAdditives,
-                price: price,
-            });
-            this.getCartTotal()
-        },
-        deleteItem(cartItemId) {
-            console.log(cartItemId);
-            this.deleteCartItem(cartItemId)
-            this.getCartTotal()
-        },
     },
 })
 
 const routes = [
     {
         path: '/',
+        name: 'index',
+        component: Index,
+    },
+    {
+        path: '/cart',
+        name: 'cart',
+        component: Cart,
+    },
+    {
+        path: '/order',
+        name: 'order',
+        component: Order,
     },
 ]
 

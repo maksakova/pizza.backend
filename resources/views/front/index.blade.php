@@ -1,5 +1,5 @@
 @extends('layouts.front')
 
 @section('content')
-<index></index>
+    <router-view></router-view>
 @endsection

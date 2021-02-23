@@ -67,12 +67,6 @@ Route::resource('/admin/pages', 'Admin\PageController')
 
 Route::get('/', 'Front\MainController@index');
 
-/*Route::get('/map', function () {return view('front.map', );})->name('map');
-
-Route::get('/howto', function () {return view('front.howto', );})->name('howto');
-
-Route::get('/payment', function () {return view('front.payment', );})->name('payment');*/
-
 Route::get('/contacts', function () {return view('front.contacts', );})->name('contacts');
 
 Page::all()->each(function ($page) {
@@ -97,4 +91,9 @@ Discount::all()->each(function ($discount) {
             'discounts' => $discounts,
         ]);
     })->name('discount.' . $discount->slug);
+});
+
+
+Route::get('/cart', function(){
+    return view('front.index');
 });

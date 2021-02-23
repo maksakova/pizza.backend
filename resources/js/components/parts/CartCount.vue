@@ -1,5 +1,5 @@
 <template>
-    <span>{{ $store.state.cartTotal }}</span>
+    <span>{{ $store.state.cartCount }}</span>
 </template>
 
 <script>

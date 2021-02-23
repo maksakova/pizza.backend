@@ -1,10 +1,11 @@
 <template>
-    <span>{{ $store.state.cartTotal }} руб.</span>
+    <span>{{ formatPrice($store.state.cartTotal) }} руб.</span>
 </template>
 
 <script>
 export default {
-    name: "Cart-Sum"
+    name: "Cart-Sum",
+    computed: {}
 }
 </script>
 

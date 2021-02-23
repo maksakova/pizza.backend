@@ -26,19 +26,19 @@
           {{products[this.item.product_id].variants[this.item.variants].price}}
         </span>
         <div class="cart-item__bottom">
-          <vue-numeric-input v-model="item.quantity" :min="1" :max="100" :step="1" @input="changeCount(item.product_id)"></vue-numeric-input>
+          <vue-numeric-input v-model="item.quantity" :min="1" :max="100" :step="1" @change="cartCount(item, item.quantity)"></vue-numeric-input>
           <span class="cart-item__price">{{formatPrice(products[this.item.product_id].variants[this.item.variants].price * item.quantity)}} руб.</span>
         </div>
       </template>
 
       <template v-else-if="typeof(this.item.variants) === 'object' || !this.item.variants">
         <span class="cart-item__price cart-item__price-one">
-          {{formatPrice(this.item.price)}}
+          {{formatPrice(this.item.min_price)}}
         </span>
         <div class="cart-item__bottom">
-          <vue-numeric-input v-model="item.quantity" :min="1" :max="100" :step="1" @input="changeCount(item.product_id)"></vue-numeric-input>
+          <vue-numeric-input v-model="item.quantity" :min="1" :max="100" :step="1" @change="cartCount(item, item.quantity)"></vue-numeric-input>
           <span class="cart-item__price">
-          {{formatPrice(this.item.price * item.quantity)}} руб.
+          {{formatPrice(this.item.min_price * item.quantity)}} руб.
           </span>
         </div>
       </template>
@@ -70,18 +70,12 @@ export default {
             type: Object,
             required: true
         },
-        cartItemId: {
-            type: Number,
-            required: true
-        }
     },
     methods: {
-        ...mapActions(['getCartTotal']),
-
         removeFromCart(item) {
             this.$store.commit('removeFromCart', item);
         }
-    },
+    }
 }
 </script>
 

@@ -7,13 +7,10 @@ Vue.use(Vuex)
 let store = {
     plugins: [createPersistedState()],
     state: {
-        cartItems: [],
-        cartTotal: 0,
-
         currentItem: [],
-
         cart: [],
         cartCount: 0,
+        cartTotal: 0
     },
 
     mutations: {
@@ -26,15 +23,23 @@ let store = {
 
             if (found) {
                 found.quantity ++;
-                found.totalPrice = found.quantity * found.price;
+                found.totalPrice = found.quantity * found.min_price;
+                state.cartTotal += found.min_price;
             } else {
                 state.cart.push(item);
 
                 Vue.set(item, 'quantity', 1);
-                Vue.set(item, 'totalPrice', item.price);
+                Vue.set(item, 'totalPrice', item.min_price);
+
+                state.cartTotal += item.min_price;
             }
 
             state.cartCount++;
+        },
+
+        cartCount(state, item, quantity) {
+            state.item.quantity = quantity;
+            console.log(state.item.quantity);
         },
 
         removeFromCart(state, item) {
@@ -46,6 +51,9 @@ let store = {
 
                 state.cart.splice(index, 1);
             }
+
+            state.cartCount = state.cart.length;
+            state.cartTotal = 0;
         }
     }
 };
