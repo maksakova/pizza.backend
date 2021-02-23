@@ -15,6 +15,7 @@ class Order extends Model
         'delivery_method',
         'delivery_price',
         'payment_method',
+        'cashback',
         'user_id',
         'name',
         'phone',
@@ -26,6 +27,11 @@ class Order extends Model
         'floor',
         'code',
         'comment',
-        'status',
+        'status_id',
     ];
+
+    public function status()
+    {
+        return $this->belongsTo('App\Models\OrderStatus', 'status_id');
+    }
 }

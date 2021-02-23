@@ -27,14 +27,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55e38aa4-1e59-486e-b405-03ed58b0efaf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/DeliveryMethodsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PaymentMethodsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/delivery-methods/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/delivery-methods/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/payment-methods/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/payment-methods/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/OrderController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/OrderStatus.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_23_111438_create_order_statuses_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/OrderStatusesSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/orders/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/orders/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/DiscountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/DiscountController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_23_085302_create_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_02_23_085302_create_orders_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -273,7 +276,8 @@
       <workItem from="1613734146109" duration="7278000" />
       <workItem from="1613974503150" duration="3363000" />
       <workItem from="1613980768364" duration="21771000" />
-      <workItem from="1614060506854" duration="11963000" />
+      <workItem from="1614060506854" duration="15561000" />
+      <workItem from="1614083497811" duration="2812000" />
     </task>
     <task id="LOCAL-00001" summary="directories change">
       <created>1613384026570</created>
@@ -576,7 +580,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614071389026</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="payment&amp;delivery methods CRUD">
+      <created>1614072610904</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1614072610904</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -608,7 +619,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="discounts" />
     <MESSAGE value="discounts in front done" />
     <MESSAGE value="add map page" />
     <MESSAGE value="sass images solved" />
@@ -633,21 +643,22 @@
     <MESSAGE value="order routes" />
     <MESSAGE value="projecting orders db" />
     <MESSAGE value="add orders logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="add orders logic" />
+    <MESSAGE value="payment&amp;delivery methods CRUD" />
+    <option name="LAST_COMMIT_MESSAGE" value="payment&amp;delivery methods CRUD" />
   </component>
   <component name="WindowStateProjectService">
     <state x="780" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1613726572319">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="780" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613726572319" />
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614072254687">
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614084714436">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614072254687" />
-    <state x="577" y="87" key="CommitChangelistDialog2" timestamp="1614071388551">
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614084714436" />
+    <state x="577" y="87" key="CommitChangelistDialog2" timestamp="1614072610478">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="577" y="87" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1614071388551" />
+    <state x="577" y="87" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1614072610478" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1613723760475">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -696,10 +707,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613384763580" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1614071390630">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1614072612966">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614071390630" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614072612966" />
     <state x="720" y="253" key="VcsDiffUtil.ChangesDialog" timestamp="1613384498036">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -708,10 +719,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613723466856" />
-    <state x="667" y="253" width="585" height="558" key="find.popup" timestamp="1614071869588">
+    <state x="667" y="253" width="585" height="558" key="find.popup" timestamp="1614084742547">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="667" y="253" width="585" height="558" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1614071869588" />
+    <state x="667" y="253" width="585" height="558" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1614084742547" />
     <state x="749" y="421" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1613632493204">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

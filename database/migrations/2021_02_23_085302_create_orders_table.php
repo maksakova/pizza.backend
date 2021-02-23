@@ -15,23 +15,24 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->text('products');
-            $table->double('cart_total');
-            $table->integer('delivery_method');
-            $table->double('delivery_price');
-            $table->integer('payment_method');
-            $table->integer('user_id');
+            $table->string('products');
+            $table->float('cart_total')->default(0);
+            $table->integer('delivery_method')->default(1);
+            $table->float('delivery_price')->default(0);
+            $table->integer('payment_method')->default(1);
+            $table->float('cashback')->nullable();
+            $table->integer('user_id')->nullable();
             $table->text('name');
             $table->text('phone');
-            $table->text('email');
+            $table->text('email')->nullable();
             $table->text('street');
             $table->text('building');
-            $table->text('flat');
-            $table->text('entrance');
-            $table->text('floor');
-            $table->text('code');
-            $table->text('comment');
-            $table->integer('status');
+            $table->text('flat')->nullable();
+            $table->text('entrance')->nullable();
+            $table->text('floor')->nullable();
+            $table->text('code')->nullable();
+            $table->text('comment')->nullable();
+            $table->integer('status_id');
             $table->timestamps();
             $table->softDeletes();
         });

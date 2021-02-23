@@ -70,6 +70,10 @@ Route::resource('/admin/payment-methods', 'Admin\PaymentMethodsController')
     ->names('admin.payment-methods')
     ->middleware('auth');
 
+Route::resource('/admin/orders', 'Admin\OrderController')
+    ->names('admin.orders')
+    ->middleware('auth');
+
 
 /* Front */
 

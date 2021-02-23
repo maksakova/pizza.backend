@@ -39,6 +39,9 @@
                         <li>
                             <a href="{{route('admin.payment-methods.index')}}">Способы оплаты</a>
                         </li>
+                        <li>
+                            <a href="{{route('admin.orders.index')}}">Заказы ({{$ordersCount}})</a>
+                        </li>
                     </ul>
                 </div>
             </div>
