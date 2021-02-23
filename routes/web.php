@@ -97,3 +97,7 @@ Discount::all()->each(function ($discount) {
 Route::get('/cart', function(){
     return view('front.index');
 });
+
+Route::get('/order', function(){
+    return view('front.index');
+});

@@ -21,7 +21,7 @@
             <h2>Не забудьте заказать</h2>
             <div class="cart__products scroll">
               <div class="row">
-                <ProductCard v-for="product in products" v-bind:key="product.id" v-bind:item="product"></ProductCard>
+                <product-card v-for="product in products" v-bind:key="product.id" v-bind:item="product"/>
               </div>
             </div>
           </template>
@@ -53,7 +53,7 @@
           <table class="cart__order">
             <tr>
               <td>Сумма заказа:</td>
-              <td>{{ formatPrice(cartTotal) }} руб.</td>
+              <td>{{ formatPrice($store.state.cartTotal) }} руб.</td>
             </tr>
             <tr>
               <td>Адрес доставки:</td>
@@ -75,7 +75,7 @@
             </tr>
             <tr>
               <th>Итого:</th>
-              <th>{{ formatPrice(cartTotal) }} руб.</th>
+              <th>{{ formatPrice($store.state.cartTotal) }} руб.</th>
             </tr>
           </table>
           <div class="cart__alert alert">
@@ -99,15 +99,23 @@
 
 <script>
 
+import axios from "axios";
+
 export default {
-  name: "Cart",
-  data() {
-    return {
-        currentItem: this.$store.state.currentItem,
-        cartCount: this.$store.state.cartCount,
-        cart: this.$store.state.cart
-    }
-  },
+    name: "Cart",
+    data() {
+        return {
+            products: [],
+            currentItem: this.$store.state.currentItem,
+            cartCount: this.$store.state.cartCount,
+            cart: this.$store.state.cart
+        }
+    },
+    mounted() {
+        axios
+            .post('/api/products')
+            .then(response => (this.products = response.data));
+    },
 }
 </script>
 

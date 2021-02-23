@@ -119,6 +119,10 @@ const router = new VueRouter({
     mode: 'history',
     routes,
     store: store,
+    scrollBehavior () {
+        window.scrollTo(0, 0)
+        return { x: 0, y: 0 }
+    }
 })
 
 new Vue({

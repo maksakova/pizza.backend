@@ -37,7 +37,7 @@ let store = {
             state.cartCount++;
         },
 
-        cartCount(state, item, quantity) {
+        cartQuantity(state, item, quantity) {
             state.item.quantity = quantity;
             console.log(state.item.quantity);
         },

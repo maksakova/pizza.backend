@@ -99,7 +99,6 @@ import Seo from '../components/parts/Seo'
 import 'swiper/css/swiper.css'
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
 import axios from "axios";
-import {mapGetters, mapActions, mapMutations} from 'vuex'
 
 export default {
     name: "Index",
