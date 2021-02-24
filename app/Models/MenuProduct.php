@@ -15,6 +15,7 @@ class MenuProduct extends Model
         'menu_filter_id',
         'ingredients' => 'boolean',
         'composition',
+        'weight',
         'min_price',
         'variants_show' => 'boolean',
         'img'

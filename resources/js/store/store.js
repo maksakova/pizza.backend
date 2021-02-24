@@ -19,12 +19,11 @@ let store = {
         },
 
         addToCart(state, {item, currentVariant = 0}) {
-            console.log(item);
-            console.log(currentVariant);
             let price;
 
             if (item.product_variants.length > 0) {
                 price = item.product_variants[currentVariant].price
+                console.log(price)
 
                 let found = state.cart.find(product => product.id == item.id && currentVariant == item.variant);
 
@@ -65,7 +64,7 @@ let store = {
 
         cartQuantity(state, item, quantity) {
             state.item.quantity = quantity;
-            console.log(state.item.quantity);
+            state.cartCount = state.cart.length;
         },
 
         removeFromCart(state, item) {
@@ -80,6 +79,12 @@ let store = {
 
             state.cartCount = state.cart.length;
             state.cartTotal = 0;
+        },
+
+        cleanCart(state) {
+            state.cart = []
+            state.cartCount = 0
+            state.cartTotal = 0
         }
     }
 };

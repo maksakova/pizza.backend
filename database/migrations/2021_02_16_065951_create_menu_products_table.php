@@ -19,6 +19,7 @@ class CreateMenuProductsTable extends Migration
             $table->integer('menu_category_id');
             $table->integer('menu_filter_id')->nullable();
             $table->string('composition')->nullable();
+            $table->string('weight')->nullable();
             $table->float('min_price')->nullable();
             $table->boolean('variants_show')->default(0);
             $table->string('img')->nullable();

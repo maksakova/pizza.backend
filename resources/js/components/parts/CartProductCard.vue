@@ -5,6 +5,14 @@
       <div class="cart-item__description">
         <h3>{{ item.name }}</h3>
 
+          <template v-if="item.variants_show === 1 && item.product_variants.length > 0">
+              {{item.product_variants[item.variant].weight}}
+          </template>
+
+          <template v-else-if="!item.variants_show && item.weight">
+              {{item.weight}}
+          </template>
+
         <!--<h4 v-if="typeof(this.item.variants) === 'number'">{{ products[item.product_id].variants[item.variants].name }}</h4>
 
         <h4 v-else-if="typeof(this.item.variants) === 'object'">

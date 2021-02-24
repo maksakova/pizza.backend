@@ -34,6 +34,8 @@
                     </div>
 
                     <div class="product-item__bottom">
+
+                        <!--One type of variants Product-->
                         <template v-if="item.variants_show === 1 && item.product_variants.length > 0">
             <span class="product-item__price">
               {{ item.product_variants[currentVariant].price }} руб.
@@ -43,18 +45,8 @@
                             </button>
                         </template>
 
-                        <!--<template v-else-if="!item.variants && item.variants_show">
-            <span class="product-item__price">
-              {{ item.min_price }} руб.
-            </span>
-                            <button class="button"
-                                    @click="addToCart(item);
-                                    currentItem(item)">
-                                Выбрать
-                            </button>
-                        </template>-->
-
-                        <!--<template v-else-if="!item.variants_show">
+                        <!--Product with Modal-->
+                        <template v-else-if="!item.variants_show && item.product_variants.length > 0">
             <span class="product-item__price">
               от {{ item.min_price }} руб.
             </span>
@@ -63,7 +55,17 @@
                                     currentItem(item)">
                                 Выбрать
                             </button>
-                        </template>-->
+                        </template>
+
+                        <!--Simple Product-->
+                        <template v-else>
+            <span class="product-item__price">
+              {{ item.min_price }} руб.
+            </span>
+                            <button class="button" @click="addToCart(item)">
+                                Выбрать
+                            </button>
+                        </template>
                     </div>
                 </div>
             </div>

@@ -60,7 +60,7 @@
                                     </svg>
                                     <h3>Корзина <span>(<cart-count/>)</span></h3>
                                 </div>
-                                <button class="main__cart__button" v-if="$store.state.cartCount > 0" @click="show('clear-modal');">Очистить</button>
+                                <button class="main__cart__button" v-if="$store.state.cartCount > 0" @click="cleanCart()">Очистить</button>
                             </div>
                             <div class="main__cart__empty" v-if="$store.state.cartCount === 0">
                                 <img src="/img/main/cart-empty.svg">
@@ -68,7 +68,7 @@
                                     У нас все очень вкусное.</p>
                             </div>
                             <div class="main__cart__items">
-                                <cart-product-card v-for="(product, key) in cart" v-bind:key="key" v-bind:item="product"/>
+                                <cart-product-card v-for="(product, key) in $store.state.cart" v-bind:key="key" v-bind:item="product"/>
                             </div>
                             <div class="main__cart__total">
                                 Сумма заказа:
@@ -145,6 +145,9 @@ export default {
     methods: {
         activeFilter: function () {
             this.isActive = !this.isActive;
+        },
+        cleanCart() {
+            this.$store.commit('cleanCart');
         },
     },
     computed: {

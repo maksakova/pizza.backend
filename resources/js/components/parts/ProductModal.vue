@@ -13,37 +13,39 @@
           <div class="product-modal__text">
               <div class="product-modal__text__inner">
                   <h2>{{currentItem.name}}</h2>
-                  <h4>{{currentItem.description}} 25 см, традиционное тесто, 420 г</h4>
+                  <h4>
+                      {{currentItem.product_variants[currentVariant1].name}}
+                      {{currentItem.product_variants[currentVariant2].name}}
+                  </h4>
+
                   <p>{{currentItem.composition}} <span v-if="currentItem.weight">{{currentItem.weight}}</span></p>
 
-                  <!--<div v-if="currentItem.variants">
-                      <div class="product-item__variants" v-for="(variants, key) in variantsList" v-bind:key="variants.id">
+                  <div v-if="currentItem.product_variants">
+                      <div class="product-item__variants" v-for="variants in variantsList" v-bind:key="variants.id">
                           <div class="product-item__variants__item"
-                               v-for="variant in variants"
+                               v-for="(variant, key) in variants"
                                v-bind:key="variant.id"
                                :style="{ width: 'calc(100% / ' + variants.length + ')' }">
                               <label class="radio">
                                   <input type="radio"
-                                         v-if="key == 1"
-                                         :name="key"
+                                         v-if="variant.menu_variant_id == 1"
+                                         :name="variant.menu_variant_id"
                                          :data-price="variant.price"
-                                         :value="variant.id"
-                                         :checked="variant.id === 1"
+                                         :value="variant.id - 1"
                                          v-model="currentVariant1"
                                   />
                                   <input type="radio"
-                                         v-if="key == 2"
-                                         :name="key"
+                                         v-if="variant.menu_variant_id == 2"
+                                         :name="variant.menu_variant_id"
                                          :data-price="variant.price"
-                                         :value="variant.id"
-                                         :checked="variant.id === 3"
+                                         :value="variant.id - 1"
                                          v-model="currentVariant2"
                                   />
                                   <div class="radio__text">{{variant.name}}</div>
                               </label>
                           </div>
                       </div>
-                  </div>-->
+                  </div>
 
                   <div class="product-modal__add" v-if="currentItem.menu_category_id === 1">
                       <h3>Добавить в пиццу</h3>
@@ -64,18 +66,15 @@
                       </b-tabs>
                   </div>
               </div>
-              <!--<div class="product-modal__button">
-                  <template v-for="thisVariant in chooseCurrentVariant">
-                      <template v-if="currentItem.variants[thisVariant - 1].price">
-                          <button class="button"
-                                  @click="addItem(currentItem, chooseCurrentVariant, currentItem.variants[thisVariant - 1].price * 1 + pizzaSum, chooseAdditives);
-                  hide('product-modal');" v-bind:key="thisVariant">
-                              Добавить в корзину за
-                              {{formatPrice(currentItem.variants[thisVariant - 1].price * 1 + pizzaSum)}}
-                              руб.</button>
-                      </template>
-                  </template>
-              </div>-->
+              <div class="product-modal__button">
+                  <button class="button"
+                          @click="addToCart(currentItem, currentVariant2);
+                          hide('product-modal');">
+                      {{currentVariant2}}
+                      Добавить в корзину за
+                      {{formatPrice(currentItem.product_variants[currentVariant2].price)}}
+                      руб.</button>
+              </div>
           </div>
       </div>
   </div>
@@ -86,6 +85,7 @@ export default {
     name: "ProductModal",
     data() {
         return {
+            currentVariant: 0,
             currentVariant1: 1,
             currentVariant2: 3,
             chooseAdditives: [],
@@ -99,15 +99,15 @@ export default {
         },
     },
     computed: {
-        /*variantsList() {
-            var vars = this.products[this.currentItem].variants;
+        variantsList() {
+            var vars = this.currentItem.product_variants;
             return vars.reduce((p,c) => {
-                const type_id = c.type_id;
+                const type_id = c.menu_variant_id;
                 p[type_id] = p[type_id] || [];
                 p[type_id].push(c);
                 return p;
             }, {});
-        },*/
+        },
         catAdditives() {
             return this.ingredients.reduce((p,c) => {
                 const cat_name = c.menu_ingredient_group.name;
@@ -116,15 +116,21 @@ export default {
                 return p;
             }, {});
         },
-        /*pizzaSum() {
-            var totalPizzaSum = 0;
+        pizzaSum() {
+            var additivesSum = 0;
             for (let i = 0; i < this.chooseAdditives.length; i += 1) {
-                totalPizzaSum += ingredients[this.chooseAdditives[i] - 1].price[products[this.currentItem].variants[this.currentVariant2 - 1].size] * 1
+                additivesSum += ingredients[this.chooseAdditives[i] - 1].price[products[this.currentItem].variants[this.currentVariant2 - 1].size] * 1
             }
-            totalPizzaSum = totalPizzaSum * 1
-            return totalPizzaSum
-        }*/
+            additivesSum = additivesSum * 1
+            return additivesSum
+        }
     },
+    methods: {
+        addToCart(item, currentVariant) {
+
+            this.$store.commit('addToCart', {item, currentVariant});
+        }
+    }
 }
 </script>
 
@@ -251,7 +257,7 @@ export default {
         line-height: 15px
         margin-bottom: 6px
         height: 30px
-        display: flex
+        display: inline-table
         justify-content: center
         align-items: flex-end
       span
