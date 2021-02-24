@@ -31,19 +31,19 @@
                     <div class="footer__outer">
                         <ul class="footer__nav">
                             <li>
-                                <router-link to="/map">Карта доставки</router-link>
+                                <a href="/map">Карта доставки</a>
                             </li>
                             <li>
-                                <router-link to="/howto">Как заказать</router-link>
+                                <a href="/howto">Как заказать</a>
                             </li>
                             <li>
-                                <router-link to="/payment">Оплата</router-link>
+                                <a href="/payment">Оплата</a>
                             </li>
                             <li>
-                                <router-link to="/discounts">Акции</router-link>
+                                <a href="/discounts">Акции</a>
                             </li>
                             <li>
-                                <router-link to="/contacts">Контакты</router-link>
+                                <a href="/contacts">Контакты</a>
                             </li>
                         </ul>
                         <div class="footer__links links">

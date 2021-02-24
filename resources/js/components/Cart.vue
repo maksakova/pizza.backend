@@ -81,7 +81,7 @@
           <div class="cart__alert alert">
             Минимальная сумма заказа - <strong>15 руб.</strong>
           </div>
-          <router-link to="/order" class="button button-order " v-bind:class="{ disabled: $store.state.cartCount < 1 }">
+          <a href="/order" class="button button-order " v-bind:class="{ disabled: $store.state.cartCount < 1 }">
             <span>
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M9.00004 2.20459C5.25287 2.20459 2.20459 5.25287 2.20459 9.00004C2.20459 12.7472 5.25287 15.7955 9.00004 15.7955C12.7472 15.7955 15.7955 12.7472 15.7955 9.00004C15.7955 5.25287 12.7472 2.20459 9.00004 2.20459ZM9.00004 14.4773C5.98004 14.4773 3.52278 12.02 3.52278 9.00004C3.52278 5.98004 5.98004 3.52278 9.00004 3.52278C12.02 3.52278 14.4773 5.98004 14.4773 9.00004C14.4773 12.02 12.02 14.4773 9.00004 14.4773Z" fill="white" stroke="white" stroke-width="0.5"/>
@@ -90,7 +90,7 @@
             60-90 мин.
             </span>
             Оформить заказ
-          </router-link>
+          </a>
         </div>
       </div>
     </div>

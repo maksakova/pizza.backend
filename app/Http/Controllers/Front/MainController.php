@@ -40,6 +40,6 @@ class MainController extends Controller
 
     public function ingredients()
     {
-        return MenuIngredient::all();
+        return MenuIngredient::with('menuIngredientGroup')->get();
     }
 }

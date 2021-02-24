@@ -43,9 +43,9 @@
                               </label>
                           </div>
                       </div>
-                  </div>
+                  </div>-->
 
-                  <div class="product-modal__add" v-if="currentItem.menucat_id === 1">
+                  <div class="product-modal__add" v-if="currentItem.menu_category_id === 1">
                       <h3>Добавить в пиццу</h3>
 
                       <b-tabs>
@@ -57,12 +57,12 @@
                                   <div class="checkbox__text">
                                       <img :src="additiveItem.img">
                                       <h4>{{additiveItem.name}}</h4>
-                                      <span>{{additiveItem.price[currentItem.variants[currentVariant2 - 1].size]}} руб.</span>
+                                      <!--<span>{{additiveItem.price[currentItem.variants[currentVariant2 - 1].size]}} руб.</span>-->
                                   </div>
                               </label>
                           </b-tab>
                       </b-tabs>
-                  </div>-->
+                  </div>
               </div>
               <!--<div class="product-modal__button">
                   <template v-for="thisVariant in chooseCurrentVariant">
@@ -92,8 +92,14 @@ export default {
             currentItem: this.$store.state.currentItem
         }
     },
+    props: {
+        ingredients: {
+            type: Array,
+            required: true
+        },
+    },
     computed: {
-        variantsList() {
+        /*variantsList() {
             var vars = this.products[this.currentItem].variants;
             return vars.reduce((p,c) => {
                 const type_id = c.type_id;
@@ -101,26 +107,23 @@ export default {
                 p[type_id].push(c);
                 return p;
             }, {});
-        },
+        },*/
         catAdditives() {
-            return this.additives.reduce((p,c) => {
-                const cat_name = c.cat_name;
+            return this.ingredients.reduce((p,c) => {
+                const cat_name = c.menu_ingredient_group.name;
                 p[cat_name] = p[cat_name] || [];
                 p[cat_name].push(c);
                 return p;
             }, {});
         },
-        chooseCurrentVariant() {
-            return [this.currentVariant1, this.currentVariant2]
-        },
-        pizzaSum() {
+        /*pizzaSum() {
             var totalPizzaSum = 0;
             for (let i = 0; i < this.chooseAdditives.length; i += 1) {
-                totalPizzaSum += additives[this.chooseAdditives[i] - 1].price[products[this.currentItem].variants[this.currentVariant2 - 1].size] * 1
+                totalPizzaSum += ingredients[this.chooseAdditives[i] - 1].price[products[this.currentItem].variants[this.currentVariant2 - 1].size] * 1
             }
             totalPizzaSum = totalPizzaSum * 1
             return totalPizzaSum
-        }
+        }*/
     },
 }
 </script>

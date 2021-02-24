@@ -34,7 +34,7 @@
                                         <input type="checkbox" :value="item.id" v-model="activeFilters" />
                                         <div class="checkbox__text">
                       <span class="main__filter__button">
-                        <img :src=item.url>
+                        <img :src=item.img>
                         {{item.name}}
                       </span>
                                         </div>
@@ -88,7 +88,7 @@
             :adaptive="true"
             class="pr"
             name="product-modal">
-            <product-modal v-bind:currentItem="currentItem"/>
+            <product-modal v-bind:currentItem="currentItem" v-bind:ingredients="ingredients"/>
         </modal>
     </div>
 </template>
