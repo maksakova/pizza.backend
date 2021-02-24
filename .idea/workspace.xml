@@ -28,11 +28,10 @@
   <component name="ChangeListManager">
     <list default="true" id="55e38aa4-1e59-486e-b405-03ed58b0efaf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/MenuProductVariantsSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/MenuProductVariantsSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/parts/CartProductCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/parts/CartProductCard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/parts/ProductCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/parts/ProductCard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/parts/ProductModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/parts/ProductModal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/parts/CartSum.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/parts/CartSum.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -273,14 +272,7 @@
       <workItem from="1614060506854" duration="15561000" />
       <workItem from="1614083497811" duration="5421000" />
       <workItem from="1614146977429" duration="18055000" />
-      <workItem from="1614168491705" duration="4321000" />
-    </task>
-    <task id="LOCAL-00001" summary="directories change">
-      <created>1613384026570</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1613384026571</updated>
+      <workItem from="1614168491705" duration="7958000" />
     </task>
     <task id="LOCAL-00002" summary="successful build">
       <created>1613394714231</created>
@@ -618,7 +610,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614166599666</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="number input changing quantity">
+      <created>1614172873179</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1614172873180</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -650,7 +649,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add links" />
     <MESSAGE value="fix contacts CRUD" />
     <MESSAGE value="add 404" />
     <MESSAGE value="add contacts page" />
@@ -675,7 +673,8 @@
     <MESSAGE value="product with 1 type of variants" />
     <MESSAGE value="choosing variants" />
     <MESSAGE value="improved choosing variants" />
-    <option name="LAST_COMMIT_MESSAGE" value="improved choosing variants" />
+    <MESSAGE value="number input changing quantity" />
+    <option name="LAST_COMMIT_MESSAGE" value="number input changing quantity" />
   </component>
   <component name="WindowStateProjectService">
     <state x="780" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1613726572319">
@@ -686,10 +685,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614084714436" />
-    <state x="577" y="87" key="CommitChangelistDialog2" timestamp="1614166598324">
+    <state x="577" y="87" key="CommitChangelistDialog2" timestamp="1614172871900">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="577" y="87" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1614166598324" />
+    <state x="577" y="87" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1614172871900" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1613723760475">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -738,10 +737,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613384763580" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1614166602818">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1614172874460">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614166602818" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614172874460" />
     <state x="720" y="253" key="VcsDiffUtil.ChangesDialog" timestamp="1613384498036">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

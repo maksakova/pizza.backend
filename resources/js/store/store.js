@@ -10,7 +10,7 @@ let store = {
         currentItem: [],
         cart: [],
         cartCount: 0,
-        cartTotal: 0
+        cartSum: 0
     },
 
     mutations: {
@@ -24,8 +24,6 @@ let store = {
 
                 let found = state.cart.find(product => product === item);
 
-                console.log(currentVariant1)
-
                 if (found) {
                     found.quantity ++;
                     found.totalPrice = found.quantity * price;
@@ -38,8 +36,6 @@ let store = {
                     Vue.set(item, 'totalPrice', price);
 
                     state.cartTotal += price;
-
-                    console.log(state.cart)
                 }
             } else {
                 price = item.min_price
@@ -70,16 +66,15 @@ let store = {
                     Vue.set(item, 'quantity', 1)
                     Vue.set(item, 'price', item.min_price)
                 }
-                console.log(item)
             }
 
             state.cartCount = 0
-            state.cartTotal = 0
+            state.cartSum = 0
 
-            state.cart.forEach(item =>
-                    state.cartCount += item.quantity,
-                state.cartTotal += item.price * item.quantity
-            );
+            state.cart.forEach(el => {
+                state.cartCount += el.quantity,
+                state.cartSum += el.price * el.quantity
+            });
 
         },
 
@@ -90,12 +85,14 @@ let store = {
             }
 
             state.cartCount = 0
-            state.cartTotal = 0
+            state.cartSum = 0
 
-            state.cart.forEach(item =>
-                    state.cartCount += item.quantity,
-                state.cartTotal += item.price * item.quantity
-            );
+            state.cart.forEach(el => {
+                state.cartCount += el.quantity,
+                state.cartSum += el.price * el.quantity
+            });
+
+            console.log(state.cartSum)
         },
 
         removeFromCart(state, item) {
@@ -108,26 +105,20 @@ let store = {
                 state.cart.splice(index, 1);
             }
 
-            state.cartCount = state.cart.length;
+            state.cartCount = 0
+            state.cartSum = 0
+
+            state.cart.forEach(el => {
+                state.cartCount += el.quantity,
+                state.cartSum += el.price * el.quantity
+            });
         },
 
         cleanCart(state) {
             state.cart = []
             state.cartCount = 0
-            state.cartTotal = 0
+            state.cartSum = 0
         },
-
-        updateCart(state) {
-            state.cartCount = 0
-            state.cartTotal = 0
-
-            state.cart.forEach(item =>
-                    state.cartCount += item.quantity,
-                state.cartTotal += item.price * item.quantity
-            );
-
-            console.log(state.cartCount)
-        }
     },
 };
 

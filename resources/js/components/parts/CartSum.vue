@@ -1,5 +1,5 @@
 <template>
-    <span>{{ formatPrice($store.state.cartTotal) }} руб.</span>
+    <span>{{ formatPrice($store.state.cartSum) }} руб.</span>
 </template>
 
 <script>

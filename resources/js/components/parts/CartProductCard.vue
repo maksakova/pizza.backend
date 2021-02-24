@@ -84,7 +84,6 @@ export default {
             this.$store.commit('removeFromCart', item);
         },
         cartItemQuantity(item, quantity) {
-            console.log(quantity);
             this.$store.commit('cartItemQuantity', {item, quantity});
         }
     }

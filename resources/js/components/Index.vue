@@ -72,7 +72,7 @@
                             </div>
                             <div class="main__cart__total">
                                 Сумма заказа:
-                                <span>{{ formatPrice($store.state.cartTotal) }} руб.</span>
+                                <cart-sum/>
                             </div>
                             <router-link to="/cart" class="button button-cart-arrow" v-bind:class="{ disabled: $store.state.cartCount === 0 }">Оформить заказ</router-link>
                         </div>
