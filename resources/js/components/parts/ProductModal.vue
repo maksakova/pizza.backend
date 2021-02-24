@@ -125,9 +125,9 @@ export default {
         }
     },
     methods: {
-        addToCart(item, currentVariant) {
+        addToCart(item, currentVariant1, currentVariant2) {
 
-            this.$store.commit('addToCart', {item, currentVariant});
+            this.$store.commit('addToCart', {item, currentVariant1, currentVariant2});
         }
     }
 }

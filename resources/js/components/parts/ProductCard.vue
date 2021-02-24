@@ -26,7 +26,7 @@
                                        :name="item.id"
                                        :data-price="variant.price"
                                        :value="key"
-                                       v-model="currentVariant"
+                                       v-model="currentVariant1"
                                 />
                                 <div class="radio__text">{{variant.name}}</div>
                             </label>
@@ -38,9 +38,9 @@
                         <!--One type of variants Product-->
                         <template v-if="item.variants_show === 1 && item.product_variants.length > 0">
             <span class="product-item__price">
-              {{ item.product_variants[currentVariant].price }} руб.
+              {{ item.product_variants[currentVariant1].price }} руб.
             </span>
-                            <button class="button" @click="addToCart(item, currentVariant)">
+                            <button class="button" @click="addToCart(item, currentVariant1)">
                                 Выбрать
                             </button>
                         </template>
@@ -85,16 +85,16 @@ export default {
     },
     data() {
         return {
-            currentVariant: 0,
+            currentVariant1: 0,
         }
     },
     methods: {
         currentItem(item) {
             this.$store.commit('currentItem', item);
         },
-        addToCart(item, currentVariant) {
+        addToCart(item, currentVariant1) {
 
-            this.$store.commit('addToCart', {item, currentVariant});
+            this.$store.commit('addToCart', {item, currentVariant1});
         }
     }
 }

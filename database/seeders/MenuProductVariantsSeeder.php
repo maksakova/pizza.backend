@@ -85,6 +85,27 @@ class MenuProductVariantsSeeder extends Seeder
             'price'           => 23.50,
             'weight'          => '560,620',
         ];
+        $inputs[] = [
+            'name'            => '250г',
+            'menu_product_id' => 7,
+            'menu_variant_id' => 3,
+            'price'           => 7.90,
+            'weight'          => '250',
+        ];
+        $inputs[] = [
+            'name'            => '350г',
+            'menu_product_id' => 7,
+            'menu_variant_id' => 3,
+            'price'           => 10.50,
+            'weight'          => '350',
+        ];
+        $inputs[] = [
+            'name'            => '530г',
+            'menu_product_id' => 7,
+            'menu_variant_id' => 3,
+            'price'           => 15.50,
+            'weight'          => '530',
+        ];
         DB::table('menu_product_variants')->insert($inputs);
     }
 }

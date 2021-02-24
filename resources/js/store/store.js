@@ -18,14 +18,13 @@ let store = {
             state.currentItem = item
         },
 
-        addToCart(state, {item, currentVariant = 0}) {
-            let price;
+        addToCart(state, {item, currentVariant1 = 0, currentVariant2 = 0}) {
+            /*if (item.product_variants.length > 0) {
+                price = item.product_variants[currentVariant1].price
 
-            if (item.product_variants.length > 0) {
-                price = item.product_variants[currentVariant].price
-                console.log(price)
+                let found = state.cart.find(product => product === item);
 
-                let found = state.cart.find(product => product.id == item.id && currentVariant == item.variant);
+                console.log(currentVariant1)
 
                 if (found) {
                     found.quantity ++;
@@ -35,10 +34,12 @@ let store = {
                     state.cart.push(item);
 
                     Vue.set(item, 'quantity', 1);
-                    Vue.set(item, 'variant', currentVariant);
+                    Vue.set(item, 'variant', currentVariant1);
                     Vue.set(item, 'totalPrice', price);
 
                     state.cartTotal += price;
+
+                    console.log(state.cart)
                 }
             } else {
                 price = item.min_price
@@ -57,14 +58,44 @@ let store = {
 
                     state.cartTotal += price;
                 }
+            }*/
+
+            if (item.product_variants.length === 0) {
+                let found = state.cart.find(product => product === item);
+                if (found) {
+                    found.quantity ++;
+                    found.totalPrice = found.quantity * found.price;
+                } else {
+                    state.cart.push(item);
+                    Vue.set(item, 'quantity', 1)
+                    Vue.set(item, 'price', item.min_price)
+                }
+                console.log(item)
             }
 
-            state.cartCount++;
+            state.cartCount = 0
+            state.cartTotal = 0
+
+            state.cart.forEach(item =>
+                    state.cartCount += item.quantity,
+                state.cartTotal += item.price * item.quantity
+            );
+
         },
 
-        cartQuantity(state, item, quantity) {
-            state.item.quantity = quantity;
-            state.cartCount = state.cart.length;
+        cartItemQuantity(state, {item, quantity}) {
+            let found = state.cart.find(product => product === item);
+            if (found) {
+                found.quantity = quantity;
+            }
+
+            state.cartCount = 0
+            state.cartTotal = 0
+
+            state.cart.forEach(item =>
+                    state.cartCount += item.quantity,
+                state.cartTotal += item.price * item.quantity
+            );
         },
 
         removeFromCart(state, item) {
@@ -78,15 +109,26 @@ let store = {
             }
 
             state.cartCount = state.cart.length;
-            state.cartTotal = 0;
         },
 
         cleanCart(state) {
             state.cart = []
             state.cartCount = 0
             state.cartTotal = 0
+        },
+
+        updateCart(state) {
+            state.cartCount = 0
+            state.cartTotal = 0
+
+            state.cart.forEach(item =>
+                    state.cartCount += item.quantity,
+                state.cartTotal += item.price * item.quantity
+            );
+
+            console.log(state.cartCount)
         }
-    }
+    },
 };
 
 export default store;

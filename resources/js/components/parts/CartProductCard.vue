@@ -44,9 +44,9 @@
           {{formatPrice(this.item.min_price)}}
         </span>
         <div class="cart-item__bottom">
-          <vue-numeric-input v-model="item.quantity" :min="1" :max="100" :step="1" @change="cartQuantity(item, item.quantity)"></vue-numeric-input>
+          <vue-numeric-input v-model="item.quantity" :min="1" :max="100" :step="1" @input="cartItemQuantity(item, item.quantity)"></vue-numeric-input>
           <span class="cart-item__price">
-          {{formatPrice(this.item.min_price * item.quantity)}} руб.
+          {{formatPrice(this.item.price * item.quantity)}} руб.
           </span>
         </div>
       </template>
@@ -83,8 +83,9 @@ export default {
         removeFromCart(item) {
             this.$store.commit('removeFromCart', item);
         },
-        cartQuantity(item) {
-            this.$store.commit('cartQuantity', item);
+        cartItemQuantity(item, quantity) {
+            console.log(quantity);
+            this.$store.commit('cartItemQuantity', {item, quantity});
         }
     }
 }
