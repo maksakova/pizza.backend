@@ -18,20 +18,46 @@ let store = {
             state.currentItem = item
         },
 
-        addToCart(state, item) {
-            let found = state.cart.find(product => product.id == item.id);
+        addToCart(state, {item, currentVariant = 0}) {
+            console.log(item);
+            console.log(currentVariant);
+            let price;
 
-            if (found) {
-                found.quantity ++;
-                found.totalPrice = found.quantity * found.min_price;
-                state.cartTotal += found.min_price;
+            if (item.product_variants.length > 0) {
+                price = item.product_variants[currentVariant].price
+
+                let found = state.cart.find(product => product.id == item.id && currentVariant == item.variant);
+
+                if (found) {
+                    found.quantity ++;
+                    found.totalPrice = found.quantity * price;
+                    state.cartTotal += price;
+                } else {
+                    state.cart.push(item);
+
+                    Vue.set(item, 'quantity', 1);
+                    Vue.set(item, 'variant', currentVariant);
+                    Vue.set(item, 'totalPrice', price);
+
+                    state.cartTotal += price;
+                }
             } else {
-                state.cart.push(item);
+                price = item.min_price
 
-                Vue.set(item, 'quantity', 1);
-                Vue.set(item, 'totalPrice', item.min_price);
+                let found = state.cart.find(product => product.id == item.id);
 
-                state.cartTotal += item.min_price;
+                if (found) {
+                    found.quantity ++;
+                    found.totalPrice = found.quantity * price;
+                    state.cartTotal += price;
+                } else {
+                    state.cart.push(item);
+
+                    Vue.set(item, 'quantity', 1);
+                    Vue.set(item, 'totalPrice', price);
+
+                    state.cartTotal += price;
+                }
             }
 
             state.cartCount++;

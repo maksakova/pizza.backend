@@ -13,37 +13,37 @@
                     <h3>{{item.name}}</h3>
                     <p>{{item.composition}} <span v-if="item.weight">{{item.weight}}</span></p>
                 </div>
+
                 <div>
-                    <div class="product-item__variants" v-if="item.variants && item.variants_show">
+                    <div class="product-item__variants" v-if="item.variants_show === 1 && item.product_variants.length > 0">
+
                         <div class="product-item__variants__item"
-                             v-for="variant in item.variants"
+                             v-for="(variant, key) in item.product_variants"
                              v-bind:key="variant.id"
-                             :style="{ width: 'calc(100% / ' + item.variants.length + ')' }">
+                             :style="{ width: 'calc(100% / ' + item.product_variants.length + ')' }">
                             <label class="radio">
                                 <input type="radio"
                                        :name="item.id"
                                        :data-price="variant.price"
-                                       :value="variant.id"
-                                       :checked="variant.id === 1"
+                                       :value="key"
                                        v-model="currentVariant"
                                 />
                                 <div class="radio__text">{{variant.name}}</div>
                             </label>
                         </div>
                     </div>
+
                     <div class="product-item__bottom">
-                        <template v-if="item.variants && item.variants_show">
+                        <template v-if="item.variants_show === 1 && item.product_variants.length > 0">
             <span class="product-item__price">
-              {{ item.variants[currentVariant - 1].price }} руб.
+              {{ item.product_variants[currentVariant].price }} руб.
             </span>
-                            <button class="button"
-                                    @click="addItem(item.id - 1, currentVariant - 1, item.variants[currentVariant - 1].price);
-                      changeCurrentItem(item)">
+                            <button class="button" @click="addToCart(item, currentVariant)">
                                 Выбрать
                             </button>
                         </template>
 
-                        <template v-else-if="!item.variants && item.variants_show">
+                        <!--<template v-else-if="!item.variants && item.variants_show">
             <span class="product-item__price">
               {{ item.min_price }} руб.
             </span>
@@ -52,9 +52,9 @@
                                     currentItem(item)">
                                 Выбрать
                             </button>
-                        </template>
+                        </template>-->
 
-                        <template v-else-if="!item.variants_show">
+                        <!--<template v-else-if="!item.variants_show">
             <span class="product-item__price">
               от {{ item.min_price }} руб.
             </span>
@@ -63,7 +63,7 @@
                                     currentItem(item)">
                                 Выбрать
                             </button>
-                        </template>
+                        </template>-->
                     </div>
                 </div>
             </div>
@@ -83,15 +83,16 @@ export default {
     },
     data() {
         return {
-            currentVariant: 1,
+            currentVariant: 0,
         }
     },
     methods: {
         currentItem(item) {
             this.$store.commit('currentItem', item);
         },
-        addToCart(item) {
-            this.$store.commit('addToCart', item);
+        addToCart(item, currentVariant) {
+
+            this.$store.commit('addToCart', {item, currentVariant});
         }
     }
 }

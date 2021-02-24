@@ -35,7 +35,7 @@ class MainController extends Controller
 
     public function products()
     {
-        return MenuProduct::with('menuCategory')->with('menuFilter')->get();
+        return MenuProduct::with('menuCategory')->with('menuFilter')->with('productVariants')->get();
     }
 
     public function ingredients()
