@@ -2,7 +2,7 @@
     <div class="col-lg-4 col-sm-6 product-item__outer">
         <div class="product-item">
             <div class="product-item__image"
-                 v-if="item.menu_category.id === 1"
+                 v-if="item.menu_filter_id"
                  v-bind:class="item.menu_filter.slug"
                  :style="{ backgroundImage: 'url(' + item.img + ')' }"></div>
             <div class="product-item__image"

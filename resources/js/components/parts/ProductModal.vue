@@ -31,14 +31,14 @@
                                          v-if="variant.menu_variant_id == 1"
                                          :name="variant.menu_variant_id"
                                          :data-price="variant.price"
-                                         :value="variant.id - 1"
+                                         :value="key"
                                          v-model="currentVariant1"
                                   />
                                   <input type="radio"
                                          v-if="variant.menu_variant_id == 2"
                                          :name="variant.menu_variant_id"
                                          :data-price="variant.price"
-                                         :value="variant.id - 1"
+                                         :value="key+2"
                                          v-model="currentVariant2"
                                   />
                                   <div class="radio__text">{{variant.name}}</div>
@@ -70,7 +70,6 @@
                   <button class="button"
                           @click="addToCart(currentItem, currentVariant2);
                           hide('product-modal');">
-                      {{currentVariant2}}
                       Добавить в корзину за
                       {{formatPrice(currentItem.product_variants[currentVariant2].price)}}
                       руб.</button>
