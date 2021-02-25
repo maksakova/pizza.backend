@@ -24,21 +24,7 @@ class PagesSeeder extends Seeder
         $inputs[] = [
             'name'    => 'Условия заказа',
             'slug'    => 'howto',
-            'content' => '<div class="row">
-                        <div class="col-sm-6">
-                            <div class="howto__item">
-                                <h2>15.00 руб.</h2>
-                                <p>Минимальная сумма заказа</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="howto__item">
-                                <h2>с 10:00 до 22:00</h2>
-                                <p>Доставка (только в г. Минске)</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text-page">
+            'content' => '<div class="text-page">
                         <h3>Порядок действий при оформлении заказа на сайте:</h3>
                         <ol>
                             <li>Добавить нужные товары в корзину путем нажатия на кнопку купить в уменьшенной карточке товара;</li>

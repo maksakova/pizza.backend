@@ -57,7 +57,10 @@
             </tr>
             <tr>
               <td>Адрес доставки:</td>
-              <td><span class="cart__order__link" @click="show('address-modal')">Укажите адрес</span></td>
+              <td>
+                  <span class="cart__order__link" v-if="deliveryMethod === true" @click="show('address-modal')">Укажите адрес</span>
+                  <span class="cart__order__link" v-else @click="show('address-modal')">Самовывоз</span>
+              </td>
             </tr>
             <tr>
               <td>
@@ -78,10 +81,11 @@
               <th>{{ formatPrice($store.state.cartSum + $store.state.deliveryPrice) }} руб.</th>
             </tr>
           </table>
-          <div class="cart__alert alert">
+          <div class="cart__alert alert" v-if="$store.state.cartSum < $store.state.minDeliverySum">
             Минимальная сумма заказа - <strong>15 руб.</strong>
           </div>
-          <a href="/order" class="button button-order " v-bind:class="{ disabled: $store.state.cartCount < 1 }">
+          <a href="/order" class="button button-order "
+             v-bind:class="{ disabled: $store.state.cartCount < 1 || $store.state.cartSum < $store.state.minDeliverySum || (deliveryMethod === true && !$store.state.deliveryZone) }">
             <span>
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M9.00004 2.20459C5.25287 2.20459 2.20459 5.25287 2.20459 9.00004C2.20459 12.7472 5.25287 15.7955 9.00004 15.7955C12.7472 15.7955 15.7955 12.7472 15.7955 9.00004C15.7955 5.25287 12.7472 2.20459 9.00004 2.20459ZM9.00004 14.4773C5.98004 14.4773 3.52278 12.02 3.52278 9.00004C3.52278 5.98004 5.98004 3.52278 9.00004 3.52278C12.02 3.52278 14.4773 5.98004 14.4773 9.00004C14.4773 12.02 12.02 14.4773 9.00004 14.4773Z" fill="white" stroke="white" stroke-width="0.5"/>
@@ -94,26 +98,128 @@
         </div>
       </div>
     </div>
+
+      <modal class="modaladdress"
+             :width="623"
+             :height="406"
+             :adaptive="true"
+             name="address-modal">
+          <button class="modal-close" @click="hide('address-modal')">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5.91628 5.00007L9.81017 1.10608C10.0636 0.852787 10.0636 0.443255 9.81017 0.189966C9.55688 -0.0633221 9.14735 -0.0633221 8.89406 0.189966L5.00005 4.08396L1.10617 0.189966C0.852759 -0.0633221 0.443344 -0.0633221 0.190056 0.189966C-0.0633519 0.443255 -0.0633519 0.852787 0.190056 1.10608L4.08394 5.00007L0.190056 8.89407C-0.0633519 9.14736 -0.0633519 9.55689 0.190056 9.81018C0.316285 9.93653 0.482257 10 0.648111 10C0.813965 10 0.979819 9.93653 1.10617 9.81018L5.00005 5.91618L8.89406 9.81018C9.0204 9.93653 9.18626 10 9.35211 10C9.51797 10 9.68382 9.93653 9.81017 9.81018C10.0636 9.55689 10.0636 9.14736 9.81017 8.89407L5.91628 5.00007Z" fill="#828282"/>
+              </svg>
+          </button>
+          <h2>Подтвердите адрес</h2>
+          <div class="product-item__variants">
+              <div class="product-item__variants__item"
+                   :style="{ width: 'calc(100% / 2)' }">
+                  <label class="radio">
+                      <input type="radio"
+                             :name="'Адрес'"
+                             :value="true"
+                             v-model="deliveryMethod"
+                             checked
+                      />
+                      <div class="radio__text">Привезите</div>
+                  </label>
+              </div>
+              <div class="product-item__variants__item"
+                   :style="{ width: 'calc(100% / 2)' }">
+                  <label class="radio">
+                      <input type="radio"
+                             :name="'Адрес'"
+                             :value="false"
+                             v-model="deliveryMethod"
+                      />
+                      <div class="radio__text">Заберу сам</div>
+                  </label>
+              </div>
+          </div>
+
+          <template v-if="deliveryMethod === true">
+              <h3>Пожалуйста, укажите адрес, куда доставить еду:</h3>
+
+              <div class="label-flex">
+                  <label class="label-70">
+                      Улица
+                      <vue-dadata
+                          token="dbb8b9afdebf2975f316810b2ba4b9ab066674cd"
+                          placeholder="Введите адрес"
+                          defaultClass="suggestion"
+                          :locationOptions="streetOptions"
+                          :fromBound="'street'"
+                          :toBound="'street'"
+                          :onChange="checkStreet(street)"
+                      ></vue-dadata>
+                  </label>
+                  <label class="label-30">
+                      Дом
+                      <vue-dadata
+                          token="dbb8b9afdebf2975f316810b2ba4b9ab066674cd"
+                          placeholder="Дом"
+                          defaultClass="suggestion"
+                          :locationOptions="houseOptions"
+                          :fromBound="'house'"
+                          :toBound="'house'"
+                      ></vue-dadata>
+                  </label>
+              </div>
+              <button class="button">Подтвердить</button>
+              <p>Ознакомьтесь с <router-link to="/map" class="link">Картой доставки</router-link>. Если Вашего адреса нет в списке, но он относится к зоне бесплатной доставки, сообщите об этом оператору и совершите заказ по телефону. Либо воспользуйтель услугой Самовывоз.</p>
+          </template>
+
+          <template v-else>
+              <h3>Прижайте к нам за едой по адресу:</h3>
+              <p>г. Минск, Ложинская, 5</p>
+              <map-address/>
+          </template>
+
+      </modal>
   </main>
 </template>
 
 <script>
 
 import axios from "axios";
+import VueDadata from 'vue-dadata'
 
 export default {
     name: "Cart",
+    components: {
+        VueDadata
+    },
     data() {
         return {
             products: [],
             currentItem: this.$store.state.currentItem,
             cartCount: this.$store.state.cartCount,
-            cart: this.$store.state.cart
+            cart: this.$store.state.cart,
+            deliveryMethod: true,
+            SuggestView: null,
+            addressStreet: null,
+            street: null,
+            streetOptions: {
+                locations:
+                    {
+                        "country": "Беларусь",
+                        "city": 'Минск',
+                    },
+            },
         }
+    },
+    methods: {
+        checkStreet(street) {
+            console.log(street)
+        },
+    },
+    computed: {
+        currentRouteName() {
+            return this.$route.name;
+        },
     },
     mounted() {
         axios
-            .post('/api/products')
+            .post('/api/randomProducts')
             .then(response => (this.products = response.data));
     },
 }

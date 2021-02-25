@@ -30,7 +30,7 @@ class ContactsSeeder extends Seeder
         $inputs[] = [
             'name'  => 'Минимальная сумма заказа',
             'key'   => 'min',
-            'value' => '15.00 руб.',
+            'value' => '15.00',
             'img'   => null
         ];
         $inputs[] = [

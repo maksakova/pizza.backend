@@ -11,7 +11,7 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="howto__item">
-                                <h2>{{$contacts['min']->value}}</h2>
+                                <h2>{{$contacts['min']->value}} руб.</h2>
                                 <p>Минимальная сумма заказа</p>
                             </div>
                         </div>

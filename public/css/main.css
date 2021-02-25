@@ -696,6 +696,10 @@ textarea:focus {
   color: #828282;
 }
 
+.modaladdress .contacts__map {
+  height: 170px;
+}
+
 .suggestion__suggestions {
   background: #FFFFFF;
   box-shadow: 0px 4px 3px rgba(64, 94, 72, 0.5);

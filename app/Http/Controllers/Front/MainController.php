@@ -38,6 +38,11 @@ class MainController extends Controller
         return MenuProduct::with('menuCategory')->with('menuFilter')->with('productVariants')->get();
     }
 
+    public function randomProducts()
+    {
+        return MenuProduct::with('menuCategory')->with('menuFilter')->with('productVariants')->inRandomOrder()->limit(3)->get();
+    }
+
     public function ingredients()
     {
         return MenuIngredient::with('menuIngredientGroup')->get();

@@ -26,4 +26,6 @@ Route::post('filters', '\App\Http\Controllers\Front\MainController@filters');
 
 Route::post('products', '\App\Http\Controllers\Front\MainController@products');
 
+Route::post('randomProducts', '\App\Http\Controllers\Front\MainController@randomProducts');
+
 Route::post('ingredients', '\App\Http\Controllers\Front\MainController@ingredients');

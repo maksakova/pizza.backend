@@ -11,7 +11,9 @@ let store = {
         cart: [],
         cartCount: 0,
         cartSum: 0,
-        deliveryPrice: 5
+        minDeliverySum: 15,
+        deliveryPrice: 5,
+        deliveryZone: null
     },
 
     mutations: {
