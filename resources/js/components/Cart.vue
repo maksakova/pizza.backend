@@ -58,8 +58,12 @@
             <tr>
               <td>Адрес доставки:</td>
               <td>
-                  <span class="cart__order__link" v-if="deliveryMethod === true" @click="show('address-modal')">Укажите адрес</span>
-                  <span class="cart__order__link" v-else @click="show('address-modal')">Самовывоз</span>
+                  <span class="cart__order__link"  @click="show('address-modal')">
+                      <template v-if="$store.state.deliveryStreet">{{$store.state.deliveryStreet}}, {{$store.state.deliveryBuilding}}</template>
+                      <template v-else-if="deliveryMethod === true">Укажите адрес</template>
+                      <template v-else-if="deliveryMethod === false">Самовывоз адрес</template>
+
+                  </span>
               </td>
             </tr>
             <tr>
@@ -142,29 +146,41 @@
               <div class="label-flex">
                   <label class="label-70">
                       Улица
-                      <vue-dadata
+                      <input
+                          type="text"
+                          placeholder="Введите адрес"
+                          v-model="deliveryStreet"
+                      >
+                      <!--<vue-dadata
                           token="dbb8b9afdebf2975f316810b2ba4b9ab066674cd"
                           placeholder="Введите адрес"
                           defaultClass="suggestion"
+                          v-model="deliveryStreet"
                           :locationOptions="streetOptions"
                           :fromBound="'street'"
                           :toBound="'street'"
+                          :query="$store.state.deliveryStreet"
                           :onChange="checkStreet(street)"
-                      ></vue-dadata>
+                      ></vue-dadata>-->
                   </label>
                   <label class="label-30">
                       Дом
-                      <vue-dadata
+                      <select v-model="deliveryBuilding">
+                          <option>1</option>
+                          <option>2</option>
+                      </select>
+                      <!--<vue-dadata
                           token="dbb8b9afdebf2975f316810b2ba4b9ab066674cd"
                           placeholder="Дом"
                           defaultClass="suggestion"
-                          :locationOptions="houseOptions"
+                          v-model="deliveryBuilding"
                           :fromBound="'house'"
                           :toBound="'house'"
-                      ></vue-dadata>
+                          :query="$store.state.deliveryBuilding"
+                      ></vue-dadata>-->
                   </label>
               </div>
-              <button class="button">Подтвердить</button>
+              <button class="button" @click="addStreet(deliveryStreet, deliveryBuilding); hide('address-modal');">Подтвердить</button>
               <p>Ознакомьтесь с <router-link to="/map" class="link">Картой доставки</router-link>. Если Вашего адреса нет в списке, но он относится к зоне бесплатной доставки, сообщите об этом оператору и совершите заказ по телефону. Либо воспользуйтель услугой Самовывоз.</p>
           </template>
 
@@ -195,6 +211,8 @@ export default {
             cartCount: this.$store.state.cartCount,
             cart: this.$store.state.cart,
             deliveryMethod: true,
+            deliveryStreet: null,
+            deliveryBuilding: null,
             SuggestView: null,
             addressStreet: null,
             street: null,
@@ -211,6 +229,10 @@ export default {
         checkStreet(street) {
             console.log(street)
         },
+        addStreet(deliveryStreet, deliveryBuilding) {
+
+            this.$store.commit('addStreet', {deliveryStreet, deliveryBuilding});
+        }
     },
     computed: {
         currentRouteName() {

@@ -13,7 +13,13 @@ let store = {
         cartSum: 0,
         minDeliverySum: 15,
         deliveryPrice: 5,
-        deliveryZone: null
+        deliveryZone: null,
+        deliveryStreet: null,
+        deliveryBuilding: null,
+        deliveryFlat: null,
+        deliveryEntrance: null,
+        deliveryFloor: null,
+        deliveryCode: null,
     },
 
     mutations: {
@@ -99,6 +105,12 @@ let store = {
             state.cart = []
             state.cartCount = 0
             state.cartSum = 0
+        },
+
+        addStreet(state, {deliveryStreet, deliveryBuilding}) {
+            console.log(deliveryStreet, deliveryBuilding);
+            state.deliveryStreet = deliveryStreet
+            state.deliveryBuilding = deliveryBuilding
         },
     },
 };
