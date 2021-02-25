@@ -26,40 +26,30 @@
               <div class="col-lg-10">
                 <h2>2. Доставка </h2>
                 <div class="order__block-delivery">
-                  <div class="product-item__variants">
-                    <div class="product-item__variants__item"
-                         :style="{ width: 'calc(100% / 2)' }">
-                      <label class="radio">
-                        <input type="radio"
-                               :name="'Доставка'"
-                               :value="true"
-                               v-model="deliveryMethod"
-                               checked
-                        />
-                        <div class="radio__text">Привезите</div>
-                      </label>
+                    <div class="product-item__variants">
+                        <div class="product-item__variants__item"
+                             v-for="item in deliveryMethods"
+                             :style="{ width: 'calc(100% / ' + deliveryMethods.length + ')' }">
+                            <label class="radio">
+                                <input type="radio"
+                                       name="delivery_method"
+                                       :value="item.id"
+                                       v-model="deliveryMethod"
+                                       v-on:change="changeDeliveryMethod(item.id)"
+                                />
+                                <div class="radio__text">{{item.name}}</div>
+                            </label>
+                        </div>
                     </div>
-                    <div class="product-item__variants__item"
-                         :style="{ width: 'calc(100% / 2)' }">
-                      <label class="radio">
-                        <input type="radio"
-                               :name="'Доставка'"
-                               :value="false"
-                               v-model="deliveryMethod"
-                        />
-                        <div class="radio__text">Заберу сам</div>
-                      </label>
-                    </div>
-                  </div>
-                  <div class="order__delivery" v-if="deliveryMethod === true">
+                  <div class="order__delivery" v-if="deliveryMethod === 1">
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M11 2.75C6.45081 2.75 2.75 6.45081 2.75 11C2.75 15.5492 6.45081 19.25 11 19.25C15.5492 19.25 19.25 15.5492 19.25 11C19.25 6.45081 15.5492 2.75 11 2.75ZM11 17.75C7.2782 17.75 4.25 14.7218 4.25 11C4.25 7.2782 7.2782 4.25 11 4.25C14.7218 4.25 17.75 7.2782 17.75 11C17.75 14.7218 14.7218 17.75 11 17.75Z" fill="#44C373" stroke="#44C373" stroke-width="0.5"/>
                       <path d="M10.2499 11.207V11.3105L10.3232 11.3837L13.1161 14.1767C13.409 14.4696 13.8838 14.4696 14.1767 14.1767C14.4696 13.8838 14.4696 13.409 14.1767 13.1161L11.7499 10.6893V6.49994C11.7499 6.08573 11.4142 5.74994 10.9999 5.74994C10.5857 5.74994 10.2499 6.08573 10.2499 6.49994V11.207Z" fill="#44C373" stroke="#44C373" stroke-width="0.5"/>
                     </svg>
-                    Привезем за 60-90 мин.
+                    Привезем за {{ $store.state.deliveryTime }}
                   </div>
                 </div>
-                <template v-if="deliveryMethod === true">
+                <template v-if="deliveryMethod === 1">
                   <h2>Адрес доставки</h2>
                   <div class="label-flex">
                     <label class="label-70">
@@ -123,43 +113,22 @@
             <div class="row">
               <div class="col-lg-10">
                 <h2>3. Оплата</h2>
-                <div class="product-item__variants">
-                  <div class="product-item__variants__item"
-                       :style="{ width: 'calc(100% / 3' }">
-                    <label class="radio">
-                      <input type="radio"
-                             :name="'Оплата'"
-                             :value="'cash'"
-                             v-model="paymentMethod"
-                             checked
-                      />
-                      <div class="radio__text">Наличными</div>
-                    </label>
+                  <div class="product-item__variants">
+                      <div class="product-item__variants__item"
+                           v-for="item in paymentMethods"
+                           :style="{ width: 'calc(100% / ' + paymentMethods.length + ')' }">
+                          <label class="radio">
+                              <input type="radio"
+                                     name="payment_method"
+                                     :value="item.id"
+                                     v-model="paymentMethod"
+                                     v-on:change="changePaymentMethod(item.id)"
+                              />
+                              <div class="radio__text">{{item.name}}</div>
+                          </label>
+                      </div>
                   </div>
-                  <div class="product-item__variants__item"
-                       :style="{ width: 'calc(100% / 3' }">
-                    <label class="radio">
-                      <input type="radio"
-                             :name="Оплата"
-                             :value="'erip'"
-                             v-model="paymentMethod"
-                      />
-                      <div class="radio__text">'Ерип'</div>
-                    </label>
-                  </div>
-                  <div class="product-item__variants__item"
-                       :style="{ width: 'calc(100% / 3' }">
-                    <label class="radio">
-                      <input type="radio"
-                             :name="Оплата"
-                             :value="'webpay'"
-                             v-model="paymentMethod"
-                      />
-                      <div class="radio__text">'WebPay'</div>
-                    </label>
-                  </div>
-                </div>
-                <template v-if="paymentMethod === 'cash'">
+                <template v-if="paymentMethod === 1">
                   <label v-if="cashBack === false">
                     Нужна сдача
                     <input type="text" name="cashback" placeholder="Сдача с">
@@ -173,11 +142,7 @@
                     <textarea name="comment"></textarea>
                   </label>
                 </template>
-                <template v-else-if="paymentMethod === 'erip'">
-                  <p>После нажатия кнопки Оформить, не будет
-                    возможности изменить заказ или способ оплаты.</p>
-                </template>
-                <template v-else-if="paymentMethod === 'webpay'">
+                <template v-else>
                   <p>После нажатия кнопки Оформить, не будет
                     возможности изменить заказ или способ оплаты.</p>
                 </template>
@@ -218,13 +183,13 @@
               <th>{{ formatPrice($store.state.cartSum + $store.state.deliveryPrice) }} руб.</th>
             </tr>
           </table>
-          <button class="button button-order" type="submit">
+          <button class="button button-order" type="submit" @click="newOrder()">
             <span>
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M9.00004 2.20459C5.25287 2.20459 2.20459 5.25287 2.20459 9.00004C2.20459 12.7472 5.25287 15.7955 9.00004 15.7955C12.7472 15.7955 15.7955 12.7472 15.7955 9.00004C15.7955 5.25287 12.7472 2.20459 9.00004 2.20459ZM9.00004 14.4773C5.98004 14.4773 3.52278 12.02 3.52278 9.00004C3.52278 5.98004 5.98004 3.52278 9.00004 3.52278C12.02 3.52278 14.4773 5.98004 14.4773 9.00004C14.4773 12.02 12.02 14.4773 9.00004 14.4773Z" fill="white" stroke="white" stroke-width="0.5"/>
               <path d="M8.34082 9.16947V9.27302L8.41404 9.34624L10.6992 11.6314C10.9566 11.8888 11.3739 11.8888 11.6312 11.6314C11.8886 11.374 11.8886 10.9567 11.6312 10.6994L9.659 8.72713V5.31827C9.659 4.95427 9.36392 4.65918 8.99991 4.65918C8.63591 4.65918 8.34082 4.95427 8.34082 5.31827V9.16947Z" fill="white" stroke="white" stroke-width="0.5"/>
             </svg>
-            60-90 мин.
+            {{ $store.state.deliveryTime }}
             </span>
             Оформить заказ
           </button>
@@ -241,8 +206,10 @@ export default {
     name: "Order",
     data() {
         return {
-            deliveryMethod: true,
-            paymentMethod: 'cash',
+            deliveryMethods: [],
+            deliveryMethod: this.$store.state.deliveryMethod,
+            paymentMethods: [],
+            paymentMethod: this.$store.state.paymentMethod,
             cashBack: false,
             products: [],
             currentItem: this.$store.state.currentItem,
@@ -256,10 +223,32 @@ export default {
             deliveryCode: this.$store.state.deliveryCode,
         }
     },
+    methods: {
+        changeDeliveryMethod(id) {
+            this.$store.commit('changeDeliveryMethod', id);
+        },
+        changePaymentMethod(id) {
+            this.$store.commit('changePaymentMethod', id);
+        },
+        newOrder() {
+            console.log('ff')
+            axios({
+                method: 'post',
+                url: '/api/newOrder',
+                data: {
+                    firstName: 'Fred',
+                    lastName: 'Flintstone'
+                }
+            })
+        }
+    },
     mounted() {
         axios
-            .post('/api/products')
-            .then(response => (this.products = response.data));
+            .post('/api/deliveryMethods')
+            .then(response => (this.deliveryMethods = response.data));
+        axios
+            .post('/api/paymentMethods')
+            .then(response => (this.paymentMethods = response.data));
     }
 }
 </script>

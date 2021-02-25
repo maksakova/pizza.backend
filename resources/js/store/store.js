@@ -11,8 +11,11 @@ let store = {
         cart: [],
         cartCount: 0,
         cartSum: 0,
+        paymentMethod: 1,
+        deliveryMethod: 1,
         minDeliverySum: 15,
         deliveryPrice: 5,
+        deliveryTime: '60-90 мин.',
         deliveryZone: null,
         deliveryStreet: null,
         deliveryBuilding: null,
@@ -111,6 +114,12 @@ let store = {
             console.log(deliveryStreet, deliveryBuilding);
             state.deliveryStreet = deliveryStreet
             state.deliveryBuilding = deliveryBuilding
+        },
+        changeDeliveryMethod(state, id) {
+            state.deliveryMethod = id
+        },
+        changePaymentMethod(state, id) {
+            state.paymentMethod = id
         },
     },
 };

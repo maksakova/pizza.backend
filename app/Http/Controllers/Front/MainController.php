@@ -3,11 +3,14 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\DeliveryMethod;
 use App\Models\MainBanner;
 use App\Models\MenuCategory;
 use App\Models\MenuFilter;
 use App\Models\MenuIngredient;
 use App\Models\MenuProduct;
+use App\Models\Order;
+use App\Models\PaymentMethod;
 
 class MainController extends Controller
 {
@@ -46,5 +49,26 @@ class MainController extends Controller
     public function ingredients()
     {
         return MenuIngredient::with('menuIngredientGroup')->get();
+    }
+
+    public function deliveryMethods()
+    {
+        return DeliveryMethod::all();
+    }
+
+    public function paymentMethods()
+    {
+        return PaymentMethod::all();
+    }
+
+    public function newOrder()
+    {
+        $order = new Order();
+
+        dd($order);
+
+        return view('front.index', [
+            'order' => $order,
+        ]);
     }
 }

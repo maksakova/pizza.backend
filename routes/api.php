@@ -29,3 +29,10 @@ Route::post('products', '\App\Http\Controllers\Front\MainController@products');
 Route::post('randomProducts', '\App\Http\Controllers\Front\MainController@randomProducts');
 
 Route::post('ingredients', '\App\Http\Controllers\Front\MainController@ingredients');
+
+Route::post('deliveryMethods', '\App\Http\Controllers\Front\MainController@deliveryMethods');
+
+Route::post('paymentMethods', '\App\Http\Controllers\Front\MainController@paymentMethods');
+
+Route::post('newOrder', '\App\Http\Controllers\Front\MainController@newOrder');
+

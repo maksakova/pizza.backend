@@ -59,9 +59,9 @@
               <td>Адрес доставки:</td>
               <td>
                   <span class="cart__order__link"  @click="show('address-modal')">
-                      <template v-if="$store.state.deliveryStreet">{{$store.state.deliveryStreet}}, {{$store.state.deliveryBuilding}}</template>
-                      <template v-else-if="deliveryMethod === true">Укажите адрес</template>
-                      <template v-else-if="deliveryMethod === false">Самовывоз адрес</template>
+                      <template v-if="$store.state.deliveryStreet && deliveryMethod === 1">{{$store.state.deliveryStreet}}, {{$store.state.deliveryBuilding}}</template>
+                      <template v-else-if="deliveryMethod === 1">Укажите адрес</template>
+                      <template v-else-if="deliveryMethod === 2">Самовывоз</template>
 
                   </span>
               </td>
@@ -89,13 +89,13 @@
             Минимальная сумма заказа - <strong>15 руб.</strong>
           </div>
           <a href="/order" class="button button-order "
-             v-bind:class="{ disabled: $store.state.cartCount < 1 || $store.state.cartSum < $store.state.minDeliverySum || (deliveryMethod === true && !$store.state.deliveryStreet) }">
+             v-bind:class="{ disabled: $store.state.cartCount < 1 || $store.state.cartSum < $store.state.minDeliverySum || (deliveryMethod === 1 && !$store.state.deliveryStreet) }">
             <span>
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M9.00004 2.20459C5.25287 2.20459 2.20459 5.25287 2.20459 9.00004C2.20459 12.7472 5.25287 15.7955 9.00004 15.7955C12.7472 15.7955 15.7955 12.7472 15.7955 9.00004C15.7955 5.25287 12.7472 2.20459 9.00004 2.20459ZM9.00004 14.4773C5.98004 14.4773 3.52278 12.02 3.52278 9.00004C3.52278 5.98004 5.98004 3.52278 9.00004 3.52278C12.02 3.52278 14.4773 5.98004 14.4773 9.00004C14.4773 12.02 12.02 14.4773 9.00004 14.4773Z" fill="white" stroke="white" stroke-width="0.5"/>
               <path d="M8.34082 9.16947V9.27302L8.41404 9.34624L10.6992 11.6314C10.9566 11.8888 11.3739 11.8888 11.6312 11.6314C11.8886 11.374 11.8886 10.9567 11.6312 10.6994L9.659 8.72713V5.31827C9.659 4.95427 9.36392 4.65918 8.99991 4.65918C8.63591 4.65918 8.34082 4.95427 8.34082 5.31827V9.16947Z" fill="white" stroke="white" stroke-width="0.5"/>
             </svg>
-            60-90 мин.
+            {{ $store.state.deliveryTime }}
             </span>
             Оформить заказ
           </a>
@@ -115,32 +115,23 @@
           </button>
           <h2>Подтвердите адрес</h2>
           <div class="product-item__variants">
+
               <div class="product-item__variants__item"
-                   :style="{ width: 'calc(100% / 2)' }">
+                   v-for="item in deliveryMethods"
+                   :style="{ width: 'calc(100% / ' + deliveryMethods.length + ')' }">
                   <label class="radio">
                       <input type="radio"
-                             :name="'Адрес'"
-                             :value="true"
+                             :name="delivery_method"
+                             :value="item.id"
                              v-model="deliveryMethod"
-                             checked
+                             v-on:change="changeDeliveryMethod(item.id)"
                       />
-                      <div class="radio__text">Привезите</div>
-                  </label>
-              </div>
-              <div class="product-item__variants__item"
-                   :style="{ width: 'calc(100% / 2)' }">
-                  <label class="radio">
-                      <input type="radio"
-                             :name="'Адрес'"
-                             :value="false"
-                             v-model="deliveryMethod"
-                      />
-                      <div class="radio__text">Заберу сам</div>
+                      <div class="radio__text">{{item.name}}</div>
                   </label>
               </div>
           </div>
 
-          <template v-if="deliveryMethod === true">
+          <template v-if="deliveryMethod === 1">
               <h3>Пожалуйста, укажите адрес, куда доставить еду:</h3>
 
               <div class="label-flex">
@@ -207,10 +198,11 @@ export default {
     data() {
         return {
             products: [],
+            deliveryMethods: [],
+            deliveryMethod: this.$store.state.deliveryMethod,
             currentItem: this.$store.state.currentItem,
             cartCount: this.$store.state.cartCount,
             cart: this.$store.state.cart,
-            deliveryMethod: true,
             deliveryStreet: this.$store.state.deliveryStreet,
             deliveryBuilding: this.$store.state.deliveryBuilding,
             SuggestView: null,
@@ -228,8 +220,10 @@ export default {
             console.log(street)
         },
         addStreet(deliveryStreet, deliveryBuilding) {
-
             this.$store.commit('addStreet', {deliveryStreet, deliveryBuilding});
+        },
+        changeDeliveryMethod(id) {
+            this.$store.commit('changeDeliveryMethod', id);
         }
     },
     computed: {
@@ -241,6 +235,9 @@ export default {
         axios
             .post('/api/randomProducts')
             .then(response => (this.products = response.data));
+        axios
+            .post('/api/deliveryMethods')
+            .then(response => (this.deliveryMethods = response.data));
     },
 }
 </script>
