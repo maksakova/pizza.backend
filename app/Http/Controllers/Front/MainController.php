@@ -11,6 +11,7 @@ use App\Models\MenuIngredient;
 use App\Models\MenuProduct;
 use App\Models\Order;
 use App\Models\PaymentMethod;
+use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
@@ -61,14 +62,4 @@ class MainController extends Controller
         return PaymentMethod::all();
     }
 
-    public function newOrder()
-    {
-        $order = new Order();
-
-        dd($order);
-
-        return view('front.index', [
-            'order' => $order,
-        ]);
-    }
 }

@@ -1558,6 +1558,41 @@ header .close {
   margin-bottom: 20px;
 }
 
+.success {
+  text-align: center;
+  min-height: 460px;
+}
+
+.success p {
+  color: #828282;
+}
+
+.success p span {
+  color: #202020;
+}
+
+.success__img {
+  margin: 30px 0 20px;
+}
+
+@media (min-width: 992px) {
+  .success {
+    height: calc(100vh - 106px - 409px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .success {
+    height: calc(100vh - 91px - 305px);
+  }
+  .success p {
+    font-size: 16px;
+  }
+  .success__img {
+    margin: 30px 0;
+  }
+}
+
 .error {
   background: url("/../img/common/404.png") center right;
   text-align: center;

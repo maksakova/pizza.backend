@@ -34,5 +34,9 @@ Route::post('deliveryMethods', '\App\Http\Controllers\Front\MainController@deliv
 
 Route::post('paymentMethods', '\App\Http\Controllers\Front\MainController@paymentMethods');
 
-Route::post('newOrder', '\App\Http\Controllers\Front\MainController@newOrder');
+Route::any('newOrder', '\App\Http\Controllers\Front\MainController@newOrder');
 
+/*Route::resource('/orders', '\App\Http\Controllers\Front\OrderController', [
+    'except' => ['edit', 'show', 'store']
+]);*/
+Route::post('/orders/create','\App\Http\Controllers\Front\OrderController@create');

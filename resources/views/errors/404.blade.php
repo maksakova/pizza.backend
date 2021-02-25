@@ -2,7 +2,7 @@
 
 @section('content')
     <main class="error">
-        <the-menu simple="simple"></the-menu>
+        <Menu simple="simple"/>
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 offset-lg-4 col-sm-8 offset-sm-2">

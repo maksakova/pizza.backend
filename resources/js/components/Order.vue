@@ -2,7 +2,7 @@
   <main class="order">
     <Menu simple="simple"/>
     <div class="container">
-      <form class="row">
+      <div class="row">
         <div class="col-xl-9">
           <h1>Оформление заказа</h1>
             <input type="hidden" name="status_id" value="1">
@@ -21,7 +21,7 @@
               <input type="email" name="email" placeholder="Email">
             </label>
           </div>
-          <div class="order__block">
+          <!--<div class="order__block">
             <div class="row">
               <div class="col-lg-10">
                 <h2>2. Доставка </h2>
@@ -148,7 +148,7 @@
                 </template>
               </div>
             </div>
-          </div>
+          </div>-->
         </div>
         <div class="col-xl-3 offset-xl-0 col-lg-6 offset-lg-3">
           <div class="steps-order d-none d-xl-flex">
@@ -183,7 +183,7 @@
               <th>{{ formatPrice($store.state.cartSum + $store.state.deliveryPrice) }} руб.</th>
             </tr>
           </table>
-          <button class="button button-order" type="submit" @click="newOrder()">
+          <button class="button button-order" @click.prevent="newOrder()">
             <span>
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M9.00004 2.20459C5.25287 2.20459 2.20459 5.25287 2.20459 9.00004C2.20459 12.7472 5.25287 15.7955 9.00004 15.7955C12.7472 15.7955 15.7955 12.7472 15.7955 9.00004C15.7955 5.25287 12.7472 2.20459 9.00004 2.20459ZM9.00004 14.4773C5.98004 14.4773 3.52278 12.02 3.52278 9.00004C3.52278 5.98004 5.98004 3.52278 9.00004 3.52278C12.02 3.52278 14.4773 5.98004 14.4773 9.00004C14.4773 12.02 12.02 14.4773 9.00004 14.4773Z" fill="white" stroke="white" stroke-width="0.5"/>
@@ -194,7 +194,7 @@
             Оформить заказ
           </button>
         </div>
-      </form>
+      </div>
     </div>
   </main>
 </template>
@@ -230,7 +230,7 @@ export default {
         changePaymentMethod(id) {
             this.$store.commit('changePaymentMethod', id);
         },
-        newOrder() {
+        /*newOrder() {
             console.log('ff')
             axios({
                 method: 'post',
@@ -240,6 +240,19 @@ export default {
                     lastName: 'Flintstone'
                 }
             })
+        }*/
+        newOrder() {
+            this.order()
+        },
+        async order() {
+            let data = JSON.stringify({
+                name: 'gg',
+                active: 1,
+            });
+            console.log(data);
+            await axios
+                .post('/api/orders/create', data)
+                .then(response => {console.log(response.data)});
         }
     },
     mounted() {
