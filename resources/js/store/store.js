@@ -10,7 +10,8 @@ let store = {
         currentItem: [],
         cart: [],
         cartCount: 0,
-        cartSum: 0
+        cartSum: 0,
+        deliveryPrice: 5
     },
 
     mutations: {
@@ -18,43 +19,7 @@ let store = {
             state.currentItem = item
         },
 
-        addToCart(state, {item, currentVariant1 = 0, currentVariant2 = 0}) {
-            /*if (item.product_variants.length > 0) {
-                price = item.product_variants[currentVariant1].price
-
-                let found = state.cart.find(product => product === item);
-
-                if (found) {
-                    found.quantity ++;
-                    found.totalPrice = found.quantity * price;
-                    state.cartTotal += price;
-                } else {
-                    state.cart.push(item);
-
-                    Vue.set(item, 'quantity', 1);
-                    Vue.set(item, 'variant', currentVariant1);
-                    Vue.set(item, 'totalPrice', price);
-
-                    state.cartTotal += price;
-                }
-            } else {
-                price = item.min_price
-
-                let found = state.cart.find(product => product.id == item.id);
-
-                if (found) {
-                    found.quantity ++;
-                    found.totalPrice = found.quantity * price;
-                    state.cartTotal += price;
-                } else {
-                    state.cart.push(item);
-
-                    Vue.set(item, 'quantity', 1);
-                    Vue.set(item, 'totalPrice', price);
-
-                    state.cartTotal += price;
-                }
-            }*/
+        addToCart(state, {item, currentVariant1, currentVariant2}) {
 
             if (item.product_variants.length === 0) {
                 let found = state.cart.find(product => product === item);
@@ -66,6 +31,23 @@ let store = {
                     Vue.set(item, 'quantity', 1)
                     Vue.set(item, 'price', item.min_price)
                 }
+            } else {
+                let found = state.cart.find(product => (product.currentVariant1 === currentVariant1));
+                if (found) {
+                    console.log(found)
+                    found.quantity ++;
+                    found.totalPrice = found.quantity * found.price;
+                } else {
+                    let index = state.cart.length
+                    state.cart.push(item)
+                    console.log(index);
+                    console.log(state.cart[index]);
+                    Vue.set(state.cart[index], 'quantity', 1)
+                    Vue.set(state.cart[index], 'price', item.product_variants[currentVariant1].price)
+                    Vue.set(state.cart[index], 'currentVariant1', currentVariant1)
+                    Vue.set(state.cart[index], 'currentVariant2', currentVariant2)
+                }
+
             }
 
             state.cartCount = 0
@@ -79,10 +61,7 @@ let store = {
         },
 
         cartItemQuantity(state, {item, quantity}) {
-            let found = state.cart.find(product => product === item);
-            if (found) {
-                found.quantity = quantity;
-            }
+            item.quantity = quantity;
 
             state.cartCount = 0
             state.cartSum = 0

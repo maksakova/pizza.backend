@@ -53,7 +53,7 @@
           <table class="cart__order">
             <tr>
               <td>Сумма заказа:</td>
-              <td>{{ formatPrice($store.state.cartTotal) }} руб.</td>
+              <td>{{ formatPrice($store.state.cartSum) }} руб.</td>
             </tr>
             <tr>
               <td>Адрес доставки:</td>
@@ -75,7 +75,7 @@
             </tr>
             <tr>
               <th>Итого:</th>
-              <th>{{ formatPrice($store.state.cartTotal) }} руб.</th>
+              <th>{{ formatPrice($store.state.cartSum + $store.state.deliveryPrice) }} руб.</th>
             </tr>
           </table>
           <div class="cart__alert alert">

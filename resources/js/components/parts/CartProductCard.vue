@@ -5,15 +5,21 @@
       <div class="cart-item__description">
         <h3>{{ item.name }}</h3>
 
-          <template v-if="item.variants_show === 1 && item.product_variants.length > 0">
+          <h4>
+              <template v-if="item.currentVariant1">{{item.product_variants[item.currentVariant1].name}}</template>
+              <template v-if="item.currentVariant2">{{item.product_variants[item.currentVariant2].name}}</template>
+          </h4>
+
+
+          <!--<template v-if="item.variants_show === 1 && item.product_variants.length > 0">
               {{item.product_variants[item.variant].weight}}
           </template>
 
           <template v-else-if="!item.variants_show && item.weight">
               {{item.weight}}
-          </template>
+          </template>-->
 
-        <!--<h4 v-if="typeof(this.item.variants) === 'number'">{{ products[item.product_id].variants[item.variants].name }}</h4>
+        <!--
 
         <h4 v-else-if="typeof(this.item.variants) === 'object'">
           <span v-for="thisVariant in this.item.variants" v-bind:key="thisVariant - 1">
@@ -29,27 +35,15 @@
         </p>-->
       </div>
 
-      <template v-if="typeof(this.item.variants) === 'number'">
-        <span class="cart-item__price cart-item__price-one" >
-          {{products[this.item.product_id].variants[this.item.variants].price}}
-        </span>
-        <div class="cart-item__bottom">
-          <vue-numeric-input v-model="item.quantity" :min="1" :max="100" :step="1" @change="cartQuantity(item, item.quantity)"></vue-numeric-input>
-          <span class="cart-item__price">{{formatPrice(products[this.item.product_id].variants[this.item.variants].price * item.quantity)}} руб.</span>
-        </div>
-      </template>
-
-      <template v-else-if="typeof(this.item.variants) === 'object' || !this.item.variants">
         <span class="cart-item__price cart-item__price-one">
           {{formatPrice(this.item.min_price)}}
         </span>
         <div class="cart-item__bottom">
-          <vue-numeric-input v-model="item.quantity" :min="1" :max="100" :step="1" @input="cartItemQuantity(item, item.quantity)"></vue-numeric-input>
-          <span class="cart-item__price">
-          {{formatPrice(this.item.price * item.quantity)}} руб.
+            <vue-numeric-input v-model="item.quantity" :min="1" :max="100" :step="1" @input="cartItemQuantity(item, item.quantity)"></vue-numeric-input>
+            <span class="cart-item__price">
+          {{formatPrice(item.price * item.quantity)}} руб.
           </span>
         </div>
-      </template>
 
       <div class="cart-item__close" @click.prevent="removeFromCart(item)">
         <img :src=remove>
