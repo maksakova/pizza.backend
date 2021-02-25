@@ -5,19 +5,20 @@
       <form class="row">
         <div class="col-xl-9">
           <h1>Оформление заказа</h1>
+            <input type="hidden" name="status_id" value="1">
           <div class="order__block">
             <h2>1. Личные данные</h2>
             <label>
               Имя
-              <input type="text" placeholder="Имя">
+              <input type="text" name="name" placeholder="Имя" required>
             </label>
             <label>
               Телефон
-              <input type="tel" placeholder="+375 ( ) ">
+              <input type="tel" name="phone" placeholder="+375 ( ) " required>
             </label>
             <label>
               Почта
-              <input type="email" placeholder="Email">
+              <input type="email" name="email" placeholder="Email">
             </label>
           </div>
           <div class="order__block">
@@ -63,30 +64,49 @@
                   <div class="label-flex">
                     <label class="label-70">
                       Улица
-                      <input type="text" value="Слободская">
+                      <input
+                          type="text"
+                          name="street"
+                          v-model="deliveryStreet"
+                          required>
                     </label>
                     <label class="label-30">
                       Дом
-                      <select>
+                      <select
+                          name="building"
+                          v-model="deliveryBuilding"
+                          required>
                         <option>1</option>
                         <option>2</option>
                       </select>
                     </label>
                     <label class="label-50">
                       Квартира / офис
-                      <input type="text">
+                      <input
+                          type="text"
+                          name="flat"
+                          v-model="deliveryFlat">
                     </label>
                     <label class="label-50">
                       Подъезд
-                      <input type="text">
+                      <input
+                          type="text"
+                          name="entrance"
+                          v-model="deliveryEntrance">
                     </label>
                     <label class="label-50">
                       Этаж
-                      <input type="text">
+                      <input
+                          type="text"
+                          name="floor"
+                          v-model="deliveryFloor">
                     </label>
                     <label class="label-50">
                       Код домофона
-                      <input type="text">
+                      <input
+                          type="text"
+                          name="code"
+                          v-model="deliveryCode">
                     </label>
                   </div>
                 </template>
@@ -142,7 +162,7 @@
                 <template v-if="paymentMethod === 'cash'">
                   <label v-if="cashBack === false">
                     Нужна сдача
-                    <input type="text" placeholder="Сдача с">
+                    <input type="text" name="cashback" placeholder="Сдача с">
                   </label>
                   <label class="checkbox">
                     <input type="checkbox" v-model="cashBack" />
@@ -150,7 +170,7 @@
                   </label>
                   <label class="label-textarea">
                     Комментарий к заказу
-                    <textarea></textarea>
+                    <textarea name="comment"></textarea>
                   </label>
                 </template>
                 <template v-else-if="paymentMethod === 'erip'">
@@ -182,20 +202,20 @@
           </div>
           <h2>Мой заказ</h2>
           <table class="order__order">
-            <tr v-for="(product, key) in cartItems" v-bind:key="key" v-bind:item="product" v-bind:cartItemId="key">
-              <td>{{ products[product.product_id].name }}</td>
-              <td>×{{ product.count }}</td>
-              <td>{{formatPrice(product.price * product.count)}} руб.</td>
+            <tr v-for="(product, key) in cart" v-bind:key="key" v-bind:item="product" v-bind:cartItemId="key">
+              <td>{{ product.name }}</td>
+              <td>×{{ product.quantity }}</td>
+              <td>{{formatPrice(product.price * product.quantity)}} руб.</td>
             </tr>
             <tr>
               <td colspan="2">
                 Доставка:
               </td>
-              <td>5 руб.</td>
+              <td>{{$store.state.deliveryPrice}} руб.</td>
             </tr>
             <tr>
               <th colspan="2">Итого:</th>
-              <th>{{ formatPrice(cartTotal) }} руб.</th>
+              <th>{{ formatPrice($store.state.cartSum + $store.state.deliveryPrice) }} руб.</th>
             </tr>
           </table>
           <button class="button button-order" type="submit">
@@ -225,6 +245,15 @@ export default {
             paymentMethod: 'cash',
             cashBack: false,
             products: [],
+            currentItem: this.$store.state.currentItem,
+            cartCount: this.$store.state.cartCount,
+            cart: this.$store.state.cart,
+            deliveryStreet: this.$store.state.deliveryStreet,
+            deliveryBuilding: this.$store.state.deliveryBuilding,
+            deliveryFlat: this.$store.state.deliveryFlat,
+            deliveryEntrance: this.$store.state.deliveryEntrance,
+            deliveryFloor: this.$store.state.deliveryFloor,
+            deliveryCode: this.$store.state.deliveryCode,
         }
     },
     mounted() {
