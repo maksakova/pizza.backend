@@ -58,9 +58,10 @@ a
         box-shadow: 0 0 0 0.2rem rgba(235, 87, 87, .25)
 
 h1
-    font-size: 24px
-    line-height: 37px
-    margin-bottom: 0
+    font-size: 30px
+    line-height: 36px
+    font-weight: 700
+    margin-bottom: 26px
 
 h2
     font-size: 20px
@@ -69,6 +70,97 @@ h2
 
 h3
     font-size: 18px
+
+.col-form-label
+    margin: 0
+
+.button-logout
+    padding: 3px 16px
+    background: rgba(68, 195, 115, 0.2)
+    box-shadow: inset 0px -2px 2px rgba(68, 195, 115, 0.3)
+    border: none
+    border-radius: 38px
+    transition: .3s
+    &:hover
+        background: rgba(68, 195, 115, 0.5)
+
+
+.user-logout
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+.admin-navbar
+    position: fixed
+    top: 0
+    left: 0
+    width: 270px
+    height: 100vh
+    overflow-y: auto
+    background: $white
+    padding: 38px 0
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.05))
+    .custom-logo
+        margin: 0 auto 27px
+        display: block
+        width: 100%
+        text-align: center
+    &__menu
+        padding: 0 19px
+    &__link
+        display: flex
+        justify-content: flex-start
+        align-items: center
+        background-image: url('../img/common/admin-arrow.svg')
+        background-position: center right 20px
+        background-repeat: no-repeat
+        position: relative
+        padding: 15px 15px 15px 52px
+        border-radius: 8px
+        color: $text
+        font-weight: 600
+        font-size: 14px
+        line-height: 17px
+        svg
+            position: absolute
+            left: 19px
+        span
+            position: absolute
+            right: 40px
+            background: rgba(252, 143, 0, 0.2)
+            color: #FC8F00
+            border-radius: 4px
+            padding: 2px 8px
+        &.active
+            background-color: $main
+            background-image: url('../img/common/admin-arrow-active.svg')
+            color: $white
+            svg path
+                fill: $white
+                opacity: 1
+    &__user
+        border-top: 1px solid #00000010
+        padding: 35px 35px 0
+
+
+.admin-panel
+    padding: 0 0 20px 270px
+
+.admin-navigation
+    background: $white
+    margin-bottom: 30px
+    padding: 106px 0 0
+    ul
+        display: flex
+        a
+            font-weight: 600
+            opacity: 0.5
+            color: $text
+            &.active
+                opacity: 1
 
 .table
     margin: 20px 0 0

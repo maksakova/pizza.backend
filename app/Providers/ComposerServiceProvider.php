@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Contact;
+use App\Models\Order;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -28,6 +29,10 @@ class ComposerServiceProvider extends ServiceProvider
     {
         View::composer(['front.parts.header', 'front.parts.footer', 'front.contacts', 'front.howto'], function($view) {
             $view->with(['contacts' => Contact::all()->keyBy('key')]);
+        });
+
+        View::composer('layouts.app', function($view) {
+            $view->with(['ordersCount' => Order::orderBy('id', 'DESC')->where('status_id', 1)->count()]);
         });
     }
 }

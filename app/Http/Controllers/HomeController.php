@@ -24,10 +24,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $ordersCount = Order::orderBy('id', 'DESC')->where('status_id', 1)->count();
-
-        return view('home', [
-            'ordersCount' => $ordersCount,
-        ]);
+        return view('home');
     }
 }

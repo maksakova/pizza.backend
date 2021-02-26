@@ -138,6 +138,7 @@
                   <label class="label-70">
                       Улица
                       <input
+                          id="street"
                           type="text"
                           placeholder="Введите адрес"
                           v-model="deliveryStreet"
@@ -156,7 +157,7 @@
                   </label>
                   <label class="label-30">
                       Дом
-                      <select v-model="deliveryBuilding">
+                      <select v-model="deliveryBuilding" id="house">
                           <option>1</option>
                           <option>2</option>
                       </select>
@@ -186,7 +187,6 @@
 </template>
 
 <script>
-
 import axios from "axios";
 import VueDadata from 'vue-dadata'
 
@@ -238,6 +238,8 @@ export default {
         axios
             .post('/api/deliveryMethods')
             .then(response => (this.deliveryMethods = response.data));
+
+
     },
 }
 </script>

@@ -54,9 +54,10 @@ a:hover {
 }
 
 h1 {
-  font-size: 24px;
-  line-height: 37px;
-  margin-bottom: 0;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+  margin-bottom: 26px;
 }
 
 h2 {
@@ -67,6 +68,125 @@ h2 {
 
 h3 {
   font-size: 18px;
+}
+
+.col-form-label {
+  margin: 0;
+}
+
+.button-logout {
+  padding: 3px 16px;
+  background: rgba(68, 195, 115, 0.2);
+  box-shadow: inset 0px -2px 2px rgba(68, 195, 115, 0.3);
+  border: none;
+  border-radius: 38px;
+  transition: .3s;
+}
+
+.button-logout:hover {
+  background: rgba(68, 195, 115, 0.5);
+}
+
+.user-logout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 270px;
+  height: 100vh;
+  overflow-y: auto;
+  background: #FFFFFF;
+  padding: 38px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.05));
+}
+
+.admin-navbar .custom-logo {
+  margin: 0 auto 27px;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.admin-navbar__menu {
+  padding: 0 19px;
+}
+
+.admin-navbar__link {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-image: url(/images/admin-arrow.svg?b4d718298744e135776df199c820fc3a);
+  background-position: center right 20px;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 15px 15px 15px 52px;
+  border-radius: 8px;
+  color: #202020;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.admin-navbar__link svg {
+  position: absolute;
+  left: 19px;
+}
+
+.admin-navbar__link span {
+  position: absolute;
+  right: 40px;
+  background: rgba(252, 143, 0, 0.2);
+  color: #FC8F00;
+  border-radius: 4px;
+  padding: 2px 8px;
+}
+
+.admin-navbar__link.active {
+  background-color: #44c373;
+  background-image: url(/images/admin-arrow-active.svg?3f876a0bd0816e20fb0eb52ea56d7a04);
+  color: #FFFFFF;
+}
+
+.admin-navbar__link.active svg path {
+  fill: #FFFFFF;
+  opacity: 1;
+}
+
+.admin-navbar__user {
+  border-top: 1px solid #00000010;
+  padding: 35px 35px 0;
+}
+
+.admin-panel {
+  padding: 0 0 20px 270px;
+}
+
+.admin-navigation {
+  background: #FFFFFF;
+  margin-bottom: 30px;
+  padding: 106px 0 0;
+}
+
+.admin-navigation ul {
+  display: flex;
+}
+
+.admin-navigation ul a {
+  font-weight: 600;
+  opacity: 0.5;
+  color: #202020;
+}
+
+.admin-navigation ul a.active {
+  opacity: 1;
 }
 
 .table {
@@ -148,7 +268,7 @@ textarea {
   border-radius: 8px;
   font-size: 14px;
   font-weight: 500;
-  height: 140px;
+  height: 300px;
   margin: 4px 0 0;
   padding: 2px 16px;
   -webkit-appearance: none;
