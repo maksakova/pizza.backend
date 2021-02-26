@@ -6,8 +6,8 @@
         <h3>{{ item.name }}</h3>
 
           <h4>
-              <template v-if="item.currentVariant1">{{item.product_variants[item.currentVariant1].name}}</template>
-              <template v-if="item.currentVariant2">{{item.product_variants[item.currentVariant2].name}}</template>
+              <template v-if="item.currentVariant1 !== undefined">{{item.product_variants[item.currentVariant1].name}}</template>
+              <template v-if="item.currentVariant2 !== undefined">{{item.product_variants[item.currentVariant2].name}}</template>
           </h4>
 
 
@@ -25,14 +25,14 @@
           <span v-for="thisVariant in this.item.variants" v-bind:key="thisVariant - 1">
             {{products[item.product_id].variants[thisVariant - 1].name}}
           </span>
-        </h4>
+        </h4>-->
 
-        <p v-if="this.item.additives.length && this.item.additives.length > 0">
+        <p v-if="item.additives && item.additives.length > 0">
           <span class="added">Добавлено: </span>
-          <template v-for="add in this.item.additives">
+          <template v-for="add in item.additives">
             <span class="additive" :key="add - 1">{{additives[add - 1].name}}</span>
           </template>
-        </p>-->
+        </p>
       </div>
 
         <span class="cart-item__price cart-item__price-one">
@@ -54,7 +54,6 @@
 
 <script>
 import VueNumericInput from 'vue-numeric-input'
-import {mapActions} from 'vuex';
 
 export default {
     name: "CartProductCard",
@@ -134,6 +133,7 @@ export default {
     justify-content: space-between
     align-items: center
   &__price
+    white-space: nowrap
     font-weight: 700
     &-one
       display: none

@@ -59,7 +59,15 @@
                                   <div class="checkbox__text">
                                       <img :src="additiveItem.img">
                                       <h4>{{additiveItem.name}}</h4>
-                                      <!--<span>{{additiveItem.price[currentItem.variants[currentVariant2 - 1].size]}} руб.</span>-->
+                                      <span v-if="currentVariant2 === 2">
+                                          {{additiveItem.menu_ingredient_group.min_price}} руб.
+                                      </span>
+                                      <span v-else-if="currentVariant2 === 3">
+                                          {{additiveItem.menu_ingredient_group.mid_price}} руб.
+                                      </span>
+                                      <span v-else-if="currentVariant2 === 4">
+                                          {{additiveItem.menu_ingredient_group.max_price}} руб.
+                                      </span>
                                   </div>
                               </label>
                           </b-tab>
@@ -68,10 +76,10 @@
               </div>
               <div class="product-modal__button">
                   <button class="button"
-                          @click="addToCart(currentItem, currentVariant2);
+                          @click="addToCart(currentItem, currentVariant1, currentVariant2, chooseAdditives);
                           hide('product-modal');">
                       Добавить в корзину за
-                      {{formatPrice(currentItem.product_variants[currentVariant2].price)}}
+                      {{formatPrice(currentItem.product_variants[currentVariant2].price + additivesSum)}}
                       руб.</button>
               </div>
           </div>
@@ -115,10 +123,16 @@ export default {
                 return p;
             }, {});
         },
-        pizzaSum() {
-            var additivesSum = 0;
+        additivesSum() {
+            var additivesSum = 0
             for (let i = 0; i < this.chooseAdditives.length; i += 1) {
-                additivesSum += ingredients[this.chooseAdditives[i] - 1].price[products[this.currentItem].variants[this.currentVariant2 - 1].size] * 1
+                if (this.currentVariant2 === 2) {
+                    additivesSum += this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.min_price
+                } else if (this.currentVariant2 === 3) {
+                    additivesSum += this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.mid_price
+                } else if (this.currentVariant2 === 4) {
+                    additivesSum += this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.max_price
+                }
             }
             additivesSum = additivesSum * 1
             return additivesSum
@@ -256,11 +270,12 @@ export default {
         line-height: 15px
         margin-bottom: 6px
         height: 30px
-        display: inline-table
+        display: flex
         justify-content: center
         align-items: flex-end
       span
         font-weight: 700
+        display: block
       &__text
         padding: 6px
         border: 2px solid $white

@@ -88,7 +88,6 @@ Vue.mixin({
     data() {
         return {
             isActive: false,
-            show: false,
         }
     },
     methods: {
