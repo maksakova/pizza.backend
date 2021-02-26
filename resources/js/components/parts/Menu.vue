@@ -75,7 +75,6 @@ export default {
     &__outer
         overflow-x: auto
         background: $white
-        box-shadow: 0px 15px 50px rgba(34, 39, 41, 0.05)
         margin: 0 -15px
         padding: 10px 15px 6px
         -ms-overflow-style: none

@@ -85,6 +85,12 @@ Vue.directive('click-outside', {
 Vue.config.productionTip = false
 
 Vue.mixin({
+    data() {
+        return {
+            isActive: false,
+            show: false,
+        }
+    },
     methods: {
         show (el) {
             this.$modal.show(el);
