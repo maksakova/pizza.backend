@@ -26,16 +26,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55e38aa4-1e59-486e-b405-03ed58b0efaf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Front/OrderController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/front/success.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/parts/DeliveryTime.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Front/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Front/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Front/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Front/OrderController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/Order.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Order.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/main.sass" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/main.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/errors/404.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/errors/404.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/success.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/success.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,23 +190,23 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/front" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/components/parts" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2020.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\OSPanel\domains\pizza.loc\resources\views\front" />
-      <recent name="C:\OSPanel\domains\pizza.loc\resources\js\components\parts" />
-      <recent name="C:\OSPanel\domains\pizza.loc\resources\views\admin" />
-      <recent name="C:\OSPanel\domains\pizza.loc\database\seeders" />
-      <recent name="C:\OSPanel\domains\pizza.loc\app\Models" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\OSPanel\domains\pizza.loc\resources\views\errors" />
       <recent name="C:\OSPanel\domains\pizza.loc\resources\views\front" />
       <recent name="C:\OSPanel\domains\pizza.loc\resources\views\admin" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OSPanel\domains\pizza.loc\resources\js\components\parts" />
+      <recent name="C:\OSPanel\domains\pizza.loc\resources\views\front" />
+      <recent name="C:\OSPanel\domains\pizza.loc\resources\views\admin" />
+      <recent name="C:\OSPanel\domains\pizza.loc\database\seeders" />
+      <recent name="C:\OSPanel\domains\pizza.loc\app\Models" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -278,14 +277,8 @@
       <workItem from="1614146977429" duration="18055000" />
       <workItem from="1614168491705" duration="8963000" />
       <workItem from="1614232831587" duration="32000" />
-      <workItem from="1614232884696" duration="25795000" />
-    </task>
-    <task id="LOCAL-00009" summary="Ingredients to Product, Admin CSS">
-      <created>1613560190126</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1613560190126</updated>
+      <workItem from="1614232884696" duration="28267000" />
+      <workItem from="1614319769436" duration="3539000" />
     </task>
     <task id="LOCAL-00010" summary="thinking about Variants">
       <created>1613564318610</created>
@@ -623,7 +616,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614253049190</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="sometimes works">
+      <created>1614262047772</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1614262047772</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -654,8 +654,9 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="products with filter on front page" />
     <MESSAGE value="product cards on front page" />
     <MESSAGE value="add call to ProductModal" />
     <MESSAGE value="before Test saving" />
@@ -680,7 +681,8 @@
     <MESSAGE value="beautify order" />
     <MESSAGE value="cart and order almost done" />
     <MESSAGE value="images" />
-    <option name="LAST_COMMIT_MESSAGE" value="images" />
+    <MESSAGE value="sometimes works" />
+    <option name="LAST_COMMIT_MESSAGE" value="sometimes works" />
   </component>
   <component name="WindowStateProjectService">
     <state x="780" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1613726572319">
@@ -691,10 +693,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614257858940" />
-    <state x="577" y="87" key="CommitChangelistDialog2" timestamp="1614253048746">
+    <state x="577" y="87" key="CommitChangelistDialog2" timestamp="1614262046611">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="577" y="87" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1614253048746" />
+    <state x="577" y="87" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1614262046611" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1613723760475">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -743,10 +745,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613384763580" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1614253032693">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1614262049073">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614253032693" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614262049073" />
     <state x="720" y="253" key="VcsDiffUtil.ChangesDialog" timestamp="1613384498036">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

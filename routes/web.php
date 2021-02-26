@@ -113,3 +113,7 @@ Route::get('/cart', function(){
 Route::get('/order', function(){
     return view('front.index');
 });
+
+Route::get('/success', function(){
+    return view('front.success');
+});

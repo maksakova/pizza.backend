@@ -36,7 +36,6 @@ Route::post('paymentMethods', '\App\Http\Controllers\Front\MainController@paymen
 
 Route::any('newOrder', '\App\Http\Controllers\Front\MainController@newOrder');
 
-/*Route::resource('/orders', '\App\Http\Controllers\Front\OrderController', [
-    'except' => ['edit', 'show', 'store']
-]);*/
-Route::post('/orders/create','\App\Http\Controllers\Front\OrderController@create');
+Route::resource('/orders', '\App\Http\Controllers\Front\OrderController', [
+    'only' => ['create']
+]);

@@ -10,18 +10,18 @@
             <h2>1. Личные данные</h2>
             <label>
               Имя
-              <input type="text" name="name" placeholder="Имя" required>
+              <input type="text" name="name" placeholder="Имя" v-model="deliveryName" required>
             </label>
             <label>
               Телефон
-              <input type="tel" name="phone" placeholder="+375 ( ) " required>
+              <input type="tel" name="phone" placeholder="+375 ( ) " v-model="deliveryPhone" required>
             </label>
             <label>
               Почта
-              <input type="email" name="email" placeholder="Email">
+              <input type="email" name="email" v-model="deliveryEmail" placeholder="Email">
             </label>
           </div>
-          <!--<div class="order__block">
+          <div class="order__block">
             <div class="row">
               <div class="col-lg-10">
                 <h2>2. Доставка </h2>
@@ -135,11 +135,11 @@
                   </label>
                   <label class="checkbox">
                     <input type="checkbox" v-model="cashBack" />
-                    <div class="checkbox__text">Без сдачи</div>
+                    <div class="checkbox__text" v-model="cashBackValue">Без сдачи</div>
                   </label>
                   <label class="label-textarea">
                     Комментарий к заказу
-                    <textarea name="comment"></textarea>
+                    <textarea name="comment" v-model="comment"></textarea>
                   </label>
                 </template>
                 <template v-else>
@@ -148,7 +148,7 @@
                 </template>
               </div>
             </div>
-          </div>-->
+          </div>
         </div>
         <div class="col-xl-3 offset-xl-0 col-lg-6 offset-lg-3">
           <div class="steps-order d-none d-xl-flex">
@@ -211,10 +211,15 @@ export default {
             paymentMethods: [],
             paymentMethod: this.$store.state.paymentMethod,
             cashBack: false,
+            cashBackValue: null,
             products: [],
             currentItem: this.$store.state.currentItem,
             cartCount: this.$store.state.cartCount,
             cart: this.$store.state.cart,
+            comment: null,
+            deliveryName: null,
+            deliveryPhone: null,
+            deliveryEmail: null,
             deliveryStreet: this.$store.state.deliveryStreet,
             deliveryBuilding: this.$store.state.deliveryBuilding,
             deliveryFlat: this.$store.state.deliveryFlat,
@@ -230,29 +235,33 @@ export default {
         changePaymentMethod(id) {
             this.$store.commit('changePaymentMethod', id);
         },
-        /*newOrder() {
-            console.log('ff')
-            axios({
-                method: 'post',
-                url: '/api/newOrder',
-                data: {
-                    firstName: 'Fred',
-                    lastName: 'Flintstone'
-                }
-            })
-        }*/
         newOrder() {
             this.order()
         },
         async order() {
-            let data = JSON.stringify({
-                name: 'gg',
-                active: 1,
-            });
-            console.log(data);
-            await axios
-                .post('/api/orders/create', data)
-                .then(response => {console.log(response.data)});
+            await window.axios({
+                method: 'get',
+                url: '/api/orders/create',
+                params: {
+                    products: this.$store.state.cart,
+                    cart_total: this.$store.state.cartSum,
+                    delivery_method: this.deliveryMethod,
+                    delivery_price: this.$store.state.deliveryPrice,
+                    payment_method: this.paymentMethod,
+                    cashback: this.cashBackValue,
+                    name: this.deliveryName,
+                    phone: this.deliveryPhone,
+                    email: this.deliveryEmail,
+                    street: this.deliveryStreet,
+                    building: this.deliveryBuilding,
+                    flat: this.deliveryFlat,
+                    entrance: this.deliveryEntrance,
+                    floor: this.deliveryFloor,
+                    code: this.deliveryCode,
+                    comment: this.comment
+                }
+            }).then(response => (window.location.href = "/success?order=" + response.data));
+
         }
     },
     mounted() {

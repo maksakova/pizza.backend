@@ -54,6 +54,7 @@ Vue.component('product-card', require('./components/parts/ProductCard.vue').defa
 Vue.component('product-modal', require('./components/parts/ProductModal.vue').default);
 Vue.component('cart-count', require('./components/parts/CartCount.vue').default);
 Vue.component('cart-sum', require('./components/parts/CartSum.vue').default);
+Vue.component('delivery-time', require('./components/parts/DeliveryTime.vue').default);
 Vue.component('cart-product-card', require('./components/parts/CartProductCard.vue').default);
 
 Vue.directive('scroll', {
