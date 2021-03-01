@@ -13,11 +13,11 @@ class MenuProduct extends Model
         'name',
         'menu_category_id',
         'menu_filter_id',
-        'ingredients' => 'boolean',
+        'ingredients',
         'composition',
         'weight',
         'min_price',
-        'variants_show' => 'boolean',
+        'variants_show',
         'img'
     ];
 

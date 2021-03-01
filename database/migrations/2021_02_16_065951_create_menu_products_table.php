@@ -21,7 +21,7 @@ class CreateMenuProductsTable extends Migration
             $table->string('composition')->nullable();
             $table->string('weight')->nullable();
             $table->float('min_price')->nullable();
-            $table->boolean('variants_show')->default(0);
+            $table->boolean('variants_show')->default(false);
             $table->string('img')->nullable();
             $table->timestamps();
             $table->softDeletes();

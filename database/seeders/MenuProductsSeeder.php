@@ -39,7 +39,7 @@ class MenuProductsSeeder extends Seeder
             'name'             => 'Цыпленок Песто',
             'menu_category_id' => 1,
             'menu_filter_id'   => 0,
-            'composition'      => 'Соус чесночный Ранч, сыр Моцарелла, Филе куриное, Бекон, Ветчина, Шампиньоны, соус Песто',
+            'composition'      => 'Чесночный ранч, сыр Моцарелла, Курица, Бекон, Ветчина, Шампиньоны, соус Песто',
             'weight'           => '450 г',
             'min_price'        => 14.50,
             'variants_show'    => false,

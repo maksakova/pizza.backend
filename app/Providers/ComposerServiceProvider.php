@@ -31,7 +31,7 @@ class ComposerServiceProvider extends ServiceProvider
             $view->with(['contacts' => Contact::all()->keyBy('key')]);
         });
 
-        View::composer('layouts.app', function($view) {
+        View::composer(['layouts.app', 'home'], function($view) {
             $view->with(['ordersCount' => Order::orderBy('id', 'DESC')->where('status_id', 1)->count()]);
         });
     }

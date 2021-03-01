@@ -103,7 +103,7 @@ class MenuProductController extends Controller
         $menuFilters = MenuFilter::all();
         $menuIngredients = MenuIngredient::all();
 
-        $ingredient_ids = explode(",", $menuProduct->composition);
+        $ingredient_ids = explode(", ", $menuProduct->composition);
 
         $menuIngredientsTrue = $menuIngredients;
         foreach ($menuIngredients as $menuIngredient) {
@@ -164,6 +164,12 @@ class MenuProductController extends Controller
 
             $data['img'] = '/img/uploads/' . $request->file('img')->getClientOriginalName();
 
+        }
+
+        if ($request->variants_show !== null) {
+            $data['variants_show'] = true;
+        } else {
+            $data['variants_show'] = 0;
         }
 
         $result = $item->update($data);

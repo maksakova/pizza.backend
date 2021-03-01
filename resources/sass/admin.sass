@@ -23,7 +23,7 @@ body
     overflow-y: initial
 
 img
-    max-width: 250px
+    max-width: 100%
 
 a
     color: $main
@@ -31,9 +31,15 @@ a
         color: $main-dark
         text-decoration: none
 
+.btn
+    padding: 9px 20px
+    margin-left: 16px
+
 .btn-primary
     background: $main
     border-color: $main
+    box-shadow: inset 0px 2px 2px #8FEAB1, inset 0px -2px 2px rgba(0, 99, 28, 0.3)
+    border-radius: 38px
     &:hover,
     &:active,
     &:focus,
@@ -47,6 +53,8 @@ a
 .btn-danger
     background: #eb5757
     border-color: #EB5757
+    box-shadow: inset 0px 2px 2px rgba(255, 255, 255, 0.25), inset 0px -2px 2px #C93D2E
+    border-radius: 38px
     &:hover,
     &:active,
     &:focus,
@@ -65,8 +73,16 @@ h1
 
 h2
     font-size: 20px
-    line-height: 37px
+    font-weight: 600
+    line-height: 2.2
     margin-bottom: 0
+    a
+        color: $text
+        &:hover
+            color: $main
+    i
+        color: $main
+        margin-right: 8px
 
 h3
     font-size: 18px
@@ -159,8 +175,40 @@ h3
             font-weight: 600
             opacity: 0.5
             color: $text
+            position: relative
+            display: inline-block
+            margin: 0 80px 12px 0
+            &:hover
+                color: $main
+                opacity: 1
             &.active
                 opacity: 1
+                &:after
+                    content: ''
+                    width: 100%
+                    height: 5px
+                    border-radius: 19px
+                    background: $main
+                    position: absolute
+                    left: 0
+                    bottom: -12px
+
+
+.card
+    border: none
+
+.card-header
+    padding: 0
+    background: #F8F8F8
+    border-radius: 8px 8px 0px 0px
+    border: none
+    padding: 20px
+
+.card-body
+    padding: 20px
+    border: none
+    img
+        border-radius: 8px
 
 .table
     margin: 20px 0 0
@@ -183,9 +231,10 @@ h3
     margin-bottom: 20px
 
 label
-    margin: 20px 0
+    margin: 0 0 20px
     display: block
     color: $text-light
+    font-size: 14px
     img
         display: block
         margin: 20px 0
