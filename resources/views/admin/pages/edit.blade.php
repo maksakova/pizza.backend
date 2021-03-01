@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    @include('admin.parts.navigation-pages')
     <div class="container">
         <div class="card">
             <div class="card-body">
@@ -10,7 +11,7 @@
                         @csrf
                         <div class="row justify-content-between">
                             <div class="col-sm-6">
-                                <h1><a href="{{route('admin.pages.index')}}"><i class="fas fa-chevron-left"></i> {{ $page->name }}</a></h1>
+                                <h2><a href="{{route('admin.pages.index')}}"><i class="fas fa-chevron-left"></i> {{ $page->name }}</a></h2>
                             </div>
                             <div class="col-sm-6 text-right">
                                 <button class="btn btn-primary">Сохранить</button>

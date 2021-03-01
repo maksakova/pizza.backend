@@ -1,14 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+    @include('admin.parts.navigation-contacts')
     <div class="container">
         <div class="card">
             <div class="card-body">
                 <div class="row justify-content-between">
                     <div class="col-sm-6">
-                        <h1>
-                            <a href="{{route('admin')}}"><i class="fas fa-chevron-left"></i> Фильтры</a>
-                        </h1>
+                        <h2>
+                            <a href="{{route('admin')}}"><i class="fas fa-chevron-left"></i> Контакты</a>
+                        </h2>
                     </div>
                 </div>
                 <table class="table table-hover">

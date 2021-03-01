@@ -1,16 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
+    @include('admin.parts.navigation-orders')
     <div class="container">
         <div class="card">
-            <div class="card-body">
-                @if($order->exists)
-                    <form class="js-validation-form" action="{{route('admin.orders.update', ['order' => $order])}}" enctype="multipart/form-data" method="POST">
-                        @method('PATCH')
-                        @csrf
+            @if($order->exists)
+                <form class="js-validation-form" action="{{route('admin.orders.update', ['order' => $order])}}" enctype="multipart/form-data" method="POST">
+                    @method('PATCH')
+                    @csrf
+                    <div class="card-header">
                         <div class="row justify-content-between">
                             <div class="col-sm-6">
-                                <h1><a href="{{route('admin.orders.index')}}"><i class="fas fa-chevron-left"></i> {{ $order->name }}</a></h1>
+                                <h2><a href="{{route('admin.orders.index')}}"><i class="fas fa-chevron-left"></i> {{ $order->name }}</a></h2>
                             </div>
                             @if($order->status_id < 4)
                                 <div class="col-sm-6 text-right">
@@ -18,6 +19,8 @@
                                 </div>
                             @endif
                         </div>
+                    </div>
+                    <div class="card-body">
                         @if($order->status_id === 1)
                             <div class="row">
                                 <div class="col-lg-6">
@@ -112,7 +115,7 @@
                                             Статус
                                             <select name="status_id">
                                                 @foreach($orderStatuses as $status)
-                                                    <option value="{{ $status->id }}">{{ $status->name }}</option>
+                                                    <option value="{{ $status->id }}" @if($order->status_id === $status->id) selected @endif>{{ $status->name }}</option>
                                                 @endforeach
                                             </select>
                                         </label>
@@ -122,10 +125,12 @@
                                 <p>Статус: {{ $order->status->name }}</p>
                             @endif
                             <p>Товары: {{ $order->products }}</p>
-                            <p>Сумма: {{ $order->cart_total }}</p>
-                            <p>Способ доставки: {{ $order->delivery_method }}</p>
-                            <p>Способ оплаты: {{ $order->delivery_price }}</p>
-                            <p>Сдача с: {{ $order->cashback }}</p>
+                            <p>Сумма: {{ $order->cart_total }} BYN</p>
+                            <p>Способ доставки: {{ $order->deliveryMethod->name }}</p>
+                            <p>Способ оплаты: {{ $order->paymentMethod->name }}</p>
+                            @if($order->cashback)
+                                <p>Сдача с: {{ $order->cashback }}</p>
+                            @endif
                             <p>Контакты: {{ $order->name }}
                                 {{ $order->phone }}
                                 {{ $order->email }}</p>
@@ -135,20 +140,26 @@
                                 {{ $order->entrance }}
                                 {{ $order->floor }}
                                 {{ $order->code }}</p>
-                            <p>Комментарий: {{ $order->comment }}</p>
+                            @if($order->comment)
+                                <p>Комментарий: {{ $order->comment }}</p>
+                            @endif
                         @endif
-                    </form>
-                @else
-                    <form method="POST" action="{{ route('admin.orders.store') }}" enctype="multipart/form-data">
-                        @csrf
+                    </div>
+                </form>
+            @else
+                <form method="POST" action="{{ route('admin.orders.store') }}" enctype="multipart/form-data">
+                    @csrf
+                    <div class="card-header">
                         <div class="row justify-content-between">
                             <div class="col-sm-6">
-                                <h1><a href="{{route('admin.orders.index')}}"><i class="fas fa-chevron-left"></i> Новый заказ</a></h1>
+                                <h2><a href="{{route('admin.orders.index')}}"><i class="fas fa-chevron-left"></i> Новый заказ</a></h2>
                             </div>
                             <div class="col-sm-6 text-right">
                                 <button class="btn btn-primary">Сохранить</button>
                             </div>
                         </div>
+                    </div>
+                    <div class="card-body">
                         <div class="row">
                             <div class="col-lg-6">
                                 <label>
@@ -234,9 +245,9 @@
                                 </label>
                             @endforeach
                         </div>
-                    </form>
-                @endif
-            </div>
+                    </div>
+                </form>
+            @endif
         </div>
     </div>
 @endsection

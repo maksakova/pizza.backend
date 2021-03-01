@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    @include('admin.parts.navigation-discounts')
     <div class="container">
         <div class="card">
             <div class="card-body">
@@ -10,23 +11,28 @@
                         @csrf
                         <div class="row justify-content-between">
                             <div class="col-sm-6">
-                                <h1><a href="{{route('admin.main-banners.index')}}"><i class="fas fa-chevron-left"></i> Редактировать баннер</a></h1>
+                                <h2><a href="{{route('admin.main-banners.index')}}"><i class="fas fa-chevron-left"></i> Редактировать баннер</a></h2>
                             </div>
                             <div class="col-sm-6 text-right">
                                 <button class="btn btn-primary">Сохранить</button>
-                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Удалить</button>
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Удалить</button>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-6">
+                                <label>
+                                    Текст
+                                    <input type="text" name="text" value="{{$mainBanner->text}}">
+                                </label>
                                 <label>
                                     Ссылка на акцию
                                     <input type="text" name="link" value="{{$mainBanner->link}}">
                                 </label>
                             </div>
                             <div class="col-lg-6">
-                                <label>
+                                <label class="input-file">
                                     <input type="file" name="img">
+                                    <span id="file-name">Файл не выбран</span>
                                 </label>
                                 @if($mainBanner->img)
                                     <a href="{{ $mainBanner->img }}" data-fancybox="image">
@@ -69,7 +75,7 @@
                         @csrf
                         <div class="row justify-content-between">
                             <div class="col-sm-6">
-                                <h1><a href="{{route('admin.main-banners.index')}}"><i class="fas fa-chevron-left"></i> Новый баннер</a></h1>
+                                <h2><a href="{{route('admin.main-banners.index')}}"><i class="fas fa-chevron-left"></i> Новый баннер</a></h2>
                             </div>
                             <div class="col-sm-6 text-right">
                                 <button class="btn btn-primary">Сохранить</button>
@@ -78,13 +84,18 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <label>
+                                    Текст
+                                    <input type="text" name="text" value="{{$mainBanner->text}}">
+                                </label>
+                                <label>
                                     Ссылка на акцию
                                     <input type="text" name="link" value="{{$mainBanner->link}}">
                                 </label>
                             </div>
                             <div class="col-lg-6">
-                                <label>
+                                <label class="input-file">
                                     <input type="file" name="img">
+                                    <span id="file-name">Файл не выбран</span>
                                 </label>
                             </div>
                         </div>

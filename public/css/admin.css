@@ -29,13 +29,13 @@ a:hover {
 .btn {
   padding: 9px 20px;
   margin-left: 16px;
+  border-radius: 38px;
 }
 
 .btn-primary {
   background: #44c373;
   border-color: #44c373;
   box-shadow: inset 0px 2px 2px #8FEAB1, inset 0px -2px 2px rgba(0, 99, 28, 0.3);
-  border-radius: 38px;
 }
 
 .btn-primary:hover, .btn-primary:active, .btn-primary:focus, .btn-primary:not(:disabled):not(.disabled):active {
@@ -51,7 +51,6 @@ a:hover {
   background: #eb5757;
   border-color: #EB5757;
   box-shadow: inset 0px 2px 2px rgba(255, 255, 255, 0.25), inset 0px -2px 2px #C93D2E;
-  border-radius: 38px;
 }
 
 .btn-danger:hover, .btn-danger:active, .btn-danger:focus, .btn-danger:not(:disabled):not(.disabled):active {
@@ -184,9 +183,28 @@ h3 {
   opacity: 1;
 }
 
+.admin-navbar__link.active svg g {
+  opacity: 1;
+}
+
+.admin-navbar__link.active span {
+  color: #FFFFFF;
+}
+
 .admin-navbar__user {
   border-top: 1px solid #00000010;
   padding: 35px 35px 0;
+}
+
+.admin-navbar::-webkit-scrollbar {
+  width: 4px;
+  background: #f2f2f2;
+  border-radius: 4px;
+}
+
+.admin-navbar::-webkit-scrollbar-thumb {
+  background: #44c373;
+  border-radius: 4px;
 }
 
 .admin-panel {
@@ -267,10 +285,12 @@ h3 {
 
 .table td {
   vertical-align: middle;
+  white-space: nowrap;
 }
 
 .table img {
   width: 100%;
+  max-width: 150px;
   height: 40px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -355,7 +375,7 @@ input[type="file"] {
 
 .input-file {
   position: relative;
-  padding: 0 0 0 46px;
+  cursor: pointer;
 }
 
 .input-file:before {
@@ -367,10 +387,12 @@ input[type="file"] {
   position: absolute;
   left: 0;
   padding: 9px 22px;
+  cursor: pointer;
 }
 
 .input-file input[type="file"] {
   opacity: 0;
+  cursor: pointer;
 }
 
 .input-file #file-name {

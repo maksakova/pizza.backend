@@ -15,7 +15,7 @@
                             </div>
                             <div class="col-sm-6 text-right">
                                 <button class="btn btn-primary">Сохранить</button>
-                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Удалить</button>
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Удалить</button>
                             </div>
                         </div>
                     </div>
@@ -108,7 +108,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">Подтверждение</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
@@ -124,7 +124,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="submit" class="btn btn-danger">Удалить</button>
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
                                 </div>
                             </form>
                         </div>
@@ -136,7 +136,7 @@
                     <div class="card-header">
                         <div class="row justify-content-between">
                             <div class="col-sm-6">
-                                <h1><a href="{{route('admin.menu-products.index')}}"><i class="fas fa-chevron-left"></i> Новая позиция</a></h1>
+                                <h2><a href="{{route('admin.menu-products.index')}}"><i class="fas fa-chevron-left"></i> Новая позиция</a></h2>
                             </div>
                             <div class="col-sm-6 text-right">
                                 <button class="btn btn-primary">Сохранить</button>
@@ -181,8 +181,9 @@
                                 </label>
                             </div>
                             <div class="col-lg-6">
-                                <label>
+                                <label class="input-file">
                                     <input type="file" name="img">
+                                    <span id="file-name">Файл не выбран</span>
                                 </label>
                             </div>
                         </div>

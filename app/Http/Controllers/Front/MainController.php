@@ -54,12 +54,12 @@ class MainController extends Controller
 
     public function deliveryMethods()
     {
-        return DeliveryMethod::all();
+        return DeliveryMethod::where('active', 1)->get();
     }
 
     public function paymentMethods()
     {
-        return PaymentMethod::all();
+        return PaymentMethod::where('active', 1)->get();
     }
 
 }

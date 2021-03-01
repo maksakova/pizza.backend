@@ -83,6 +83,12 @@ class PaymentMethodsController extends Controller
 
         }
 
+        if ($request->active !== null) {
+            $data['active'] = true;
+        } else {
+            $data['active'] = 0;
+        }
+
         $result = $item->update($data);
 
         if ($result) {

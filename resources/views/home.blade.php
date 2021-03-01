@@ -5,44 +5,17 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Админ-панель</div>
+                <div class="card-header">Добро пожаловать!</div>
 
                 <div class="card-body">
-                    <ul>
-                        <li>
-                            <a href="{{route('admin.menu-products.index')}}">Меню</a>
-                        </li>
-                        <li>
-                            <a href="{{route('admin.menu-categories.index')}}">Категории меню</a>
-                        </li>
-                        <li>
-                            <a href="{{route('admin.menu-filters.index')}}">Фильтры</a>
-                        </li>
-                        <li>
-                            <a href="{{route('admin.menu-ingredient-groups.index')}}">Ингредиенты</a>
-                        </li>
-                        <li>
-                            <a href="{{route('admin.main-banners.index')}}">Баннеры</a>
-                        </li>
-                        <li>
-                            <a href="{{route('admin.discounts.index')}}">Акции</a>
-                        </li>
-                        <li>
-                            <a href="{{route('admin.contacts.index')}}">Контакты</a>
-                        </li>
-                        <li>
-                            <a href="{{route('admin.pages.index')}}">Страницы</a>
-                        </li>
-                        <li>
-                            <a href="{{route('admin.delivery-methods.index')}}">Способы доставки</a>
-                        </li>
-                        <li>
-                            <a href="{{route('admin.payment-methods.index')}}">Способы оплаты</a>
-                        </li>
-                        <li>
-                            <a href="{{route('admin.orders.index')}}">Заказы ({{$ordersCount}})</a>
-                        </li>
-                    </ul>
+                    <p>У вас <a href="{{route('admin.orders.index')}}">
+                            @if($ordersCount > 0)
+                                <span>{{$ordersCount}}</span> новых заказа
+                            @else
+                                нет новых заказов
+                            @endif
+                            </a>
+                    </p>
                 </div>
             </div>
         </div>

@@ -1,14 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+    @include('admin.parts.navigation-menu')
     <div class="container">
         <div class="card">
             <div class="card-body">
                 <div class="row justify-content-between">
                     <div class="col-sm-6">
-                        <h1>
+                        <h2>
                             <a href="{{route('admin')}}"><i class="fas fa-chevron-left"></i> {{ $menuCategory->name }}</a>
-                        </h1>
+                        </h2>
                     </div>
                     <div class="col-sm-6 text-right">
                         <a class="btn btn-primary add" href="{{ route('admin.menu-products.create') }}">Добавить</a>

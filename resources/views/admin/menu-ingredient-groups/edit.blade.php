@@ -1,21 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
+    @include('admin.parts.navigation-menu')
     @if($menuIngredientGroup->exists)
         <div class="container">
             <div class="card">
-                <div class="card-body">
-                    <form class="js-validation-form" action="{{route('admin.menu-ingredient-groups.update', ['menu_ingredient_group' => $menuIngredientGroup])}}" enctype="multipart/form-data" method="POST">
-                        @method('PATCH')
-                        @csrf
+                <form class="js-validation-form" action="{{route('admin.menu-ingredient-groups.update', ['menu_ingredient_group' => $menuIngredientGroup])}}" enctype="multipart/form-data" method="POST">
+                    @method('PATCH')
+                    @csrf
+                    <div class="card-header">
                         <div class="row justify-content-between">
                             <div class="col-sm-6">
-                                <h1><a href="{{route('admin.menu-ingredient-groups.index')}}"><i class="fas fa-chevron-left"></i> {{ $menuIngredientGroup->name }}</a></h1>
+                                <h2><a href="{{route('admin.menu-ingredient-groups.index')}}"><i class="fas fa-chevron-left"></i> {{ $menuIngredientGroup->name }}</a></h2>
                             </div>
                             <div class="col-sm-6 text-right">
                                 <button class="btn btn-primary">Сохранить</button>
                             </div>
                         </div>
+                    </div>
+                    <div class="card-body">
                         <div  class="row">
                             <div class="col-lg-6">
                                 <label>
@@ -38,11 +41,11 @@
                                 </label>
                             </div>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
             <div class="card">
-                <div class="card-body">
+                <div class="card-header">
                     <div class="row justify-content-between">
                         <div class="col-sm-6">
                             <h2>Ингредиенты: {{ $menuIngredientGroup->name }}</h2>
@@ -51,6 +54,8 @@
                             <a class="btn btn-primary add" href="{{ route('admin.menu-ingredients.create') }}?menu_ingredient_group_id={{ $menuIngredientGroup->id }}">Добавить</a>
                         </div>
                     </div>
+                </div>
+                <div class="card-body">
                     <table class="table table-hover">
                         <thead>
                         <tr>

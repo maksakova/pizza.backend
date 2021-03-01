@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/fontawesome.min.css">
 
     <!-- Styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
@@ -27,9 +28,26 @@
                 <a href="{{ url('/') }}" class="custom-logo">
                     <img src="/img/common/logo.png">
                 </a>
+                @auth
                 <ul>
                     <li>
-                        <a href="{{route('admin.menu-products.index')}}" class="admin-navbar__link">
+                        <a href="{{route('admin.menu-products.index')}}"
+                           class="admin-navbar__link
+                    {{ (request()->is('admin/menu-products') ||
+                        request()->is('admin/menu-products/*/edit') ||
+                        request()->is('admin/menu-products/create') ||
+                        request()->is('admin/menu-categories') ||
+                        request()->is('admin/menu-categories/*/edit') ||
+                        request()->is('admin/menu-filters') ||
+                        request()->is('admin/menu-filters/*/edit') ||
+                        request()->is('admin/menu-filters/create') ||
+                        request()->is('admin/menu-ingredient-groups') ||
+                        request()->is('admin/menu-ingredient-groups/*/edit') ||
+                        request()->is('admin/menu-ingredient-groups/create') ||
+                        request()->is('admin/menu-ingredients') ||
+                        request()->is('admin/menu-ingredients/*/edit') ||
+                        request()->is('admin/menu-ingredients/create'))
+                        ? 'active' : '' }}">
                             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5.15842 3.79114C4.04393 3.79114 3.24283 5.10025 3.24283 6.35466C3.24283 7.39381 3.81197 8.22002 4.63108 8.46959V13.6814C4.63108 13.9727 4.86719 14.2088 5.15842 14.2088C5.44966 14.2088 5.68577 13.9727 5.68577 13.6814V8.46963C6.50487 8.22002 7.07402 7.39384 7.07402 6.3547C7.07402 5.09108 6.26563 3.79114 5.15842 3.79114ZM5.15842 7.49313C4.65154 7.49313 4.29752 7.02499 4.29752 6.3547C4.29752 5.55626 4.77895 4.84586 5.15842 4.84586C5.5379 4.84586 6.01933 5.5563 6.01933 6.3547C6.01933 7.02499 5.66531 7.49313 5.15842 7.49313Z" fill="black" opacity="0.4"/>
                                 <path d="M1.31686 18H16.6831C16.9743 18 17.2104 17.7639 17.2104 17.4727V0.527344C17.2104 0.236109 16.9743 0 16.6831 0H11.4718C10.4471 0 9.54121 0.516832 8.99998 1.30321C8.45875 0.516832 7.55281 0 6.52814 0H1.31686C1.02563 0 0.78952 0.236109 0.78952 0.527344V17.4727C0.78952 17.7639 1.02563 18 1.31686 18ZM11.4718 1.05469H16.1558V16.9453H9.52732V2.99918C9.52732 1.92698 10.3996 1.05469 11.4718 1.05469ZM1.84421 1.05469H6.52814C7.60034 1.05469 8.47264 1.92698 8.47264 2.99918V16.9453H1.84421V1.05469Z" fill="black" opacity="0.4"/>
@@ -42,7 +60,11 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{route('admin.orders.index')}}" class="admin-navbar__link">
+                        <a href="{{route('admin.orders.index')}}" class="admin-navbar__link
+                        {{ (request()->is('admin/orders') ||
+                        request()->is('admin/orders/*/edit') ||
+                        request()->is('admin/orders/create'))
+                        ? 'active' : '' }}">
                             <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g opacity="0.4" clip-path="url(#clip0)">
                                     <path d="M11.523 11.4764L14.3472 9.84596C14.5995 9.70034 14.6859 9.37785 14.5403 9.12561C14.3947 8.8734 14.0722 8.78688 13.8199 8.9326L10.9957 10.563C10.7435 10.7087 10.6571 11.0311 10.8027 11.2834C10.9252 11.4957 11.233 11.6439 11.523 11.4764Z" fill="black"/>
@@ -62,7 +84,14 @@
                         </a>
                     </li>
                     <li>
-                        <a href="" class="admin-navbar__link">
+                        <a href="{{route('admin.discounts.index')}}" class="admin-navbar__link
+                        {{ (request()->is('admin/discounts') ||
+                        request()->is('admin/discounts/*/edit') ||
+                        request()->is('admin/discounts/create') ||
+                        request()->is('admin/main-banners') ||
+                        request()->is('admin/main-banners/*/edit') ||
+                        request()->is('admin/main-banners/create'))
+                        ? 'active' : '' }}">
                             <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g opacity="0.4">
                                     <path d="M3.99997 1.50006C2.34578 1.50006 1 2.84585 1 4.50003C1 6.15421 2.34578 7.49999 3.99997 7.49999C5.65415 7.49999 6.99993 6.15421 6.99993 4.50003C6.99993 2.84585 5.65415 1.50006 3.99997 1.50006ZM3.99997 5.50002C3.44857 5.50002 2.99998 5.05142 2.99998 4.50003C2.99998 3.94863 3.44857 3.50004 3.99997 3.50004C4.55136 3.50004 4.99995 3.94863 4.99995 4.50003C4.99995 5.05142 4.55136 5.50002 3.99997 5.50002Z" fill="#202020"/>
@@ -74,7 +103,11 @@
                         </a>
                     </li>
                     <li>
-                        <a href="" class="admin-navbar__link">
+                        <a href="{{route('admin.pages.index')}}" class="admin-navbar__link
+                        {{ (request()->is('admin/pages') ||
+                        request()->is('admin/pages/*/edit') ||
+                        request()->is('admin/pages/create'))
+                        ? 'active' : '' }}">
                             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g opacity="0.4" clip-path="url(#clip0)">
                                     <path d="M16.2052 11.9879V8.99999C16.2052 8.61165 15.8904 8.29686 15.5021 8.29686H9.70312V6.01209C10.7391 5.70761 11.4979 4.74882 11.4979 3.6156C11.4979 2.23825 10.3774 1.11768 9 1.11768C7.62265 1.11768 6.50208 2.23825 6.50208 3.6156C6.50208 4.74879 7.26086 5.70757 8.29688 6.01209V8.29686H2.49792C2.10959 8.29686 1.7948 8.61165 1.7948 8.99999V11.9879C0.758777 12.2924 0 13.2512 0 14.3843C0 15.7617 1.12057 16.8823 2.49792 16.8823C3.87527 16.8823 4.99584 15.7617 4.99584 14.3843C4.99584 13.2512 4.23707 12.2924 3.20105 11.9878V9.70311H8.29688V11.9879C7.26089 12.2924 6.50208 13.2512 6.50208 14.3844C6.50208 15.7617 7.62265 16.8823 9 16.8823C10.3774 16.8823 11.4979 15.7617 11.4979 14.3844C11.4979 13.2512 10.7391 12.2924 9.70312 11.9879V9.70311H14.799V11.9879C13.763 12.2924 13.0042 13.2512 13.0042 14.3844C13.0042 15.7617 14.1247 16.8823 15.5021 16.8823C16.8794 16.8823 18 15.7617 18 14.3843C18 13.2512 17.2412 12.2924 16.2052 11.9879ZM7.90833 3.61563C7.90833 3.01369 8.39806 2.52396 9 2.52396C9.60194 2.52396 10.0917 3.01369 10.0917 3.61563C10.0917 4.21758 9.60194 4.7073 9 4.7073C8.39806 4.7073 7.90833 4.21758 7.90833 3.61563ZM3.58959 14.3843C3.58959 14.9863 3.09987 15.476 2.49792 15.476C1.89598 15.476 1.40625 14.9863 1.40625 14.3843C1.40625 13.7824 1.89598 13.2927 2.49792 13.2927C3.09987 13.2927 3.58959 13.7824 3.58959 14.3843ZM10.0917 14.3843C10.0917 14.9863 9.60194 15.476 9 15.476C8.39806 15.476 7.90833 14.9863 7.90833 14.3843C7.90833 13.8042 8.36332 13.3284 8.93521 13.2948C8.95655 13.2967 8.9781 13.2981 8.99996 13.2981C9.02183 13.2981 9.04338 13.2967 9.06472 13.2948C9.63664 13.3284 10.0917 13.8042 10.0917 14.3843ZM15.5021 15.476C14.9001 15.476 14.4104 14.9863 14.4104 14.3843C14.4104 13.7824 14.9001 13.2927 15.5021 13.2927C16.104 13.2927 16.5938 13.7824 16.5938 14.3843C16.5938 14.9863 16.104 15.476 15.5021 15.476Z" fill="black"/>
@@ -89,7 +122,14 @@
                         </a>
                     </li>
                     <li>
-                        <a href="" class="admin-navbar__link">
+                        <a href="{{route('admin.payment-methods.index')}}" class="admin-navbar__link
+                        {{ (request()->is('admin/payment-methods') ||
+                        request()->is('admin/payment-methods/*/edit') ||
+                        request()->is('admin/payment-methods/create') ||
+                        request()->is('admin/delivery-methods') ||
+                        request()->is('admin/delivery-methods/*/edit') ||
+                        request()->is('admin/delivery-methods/create'))
+                        ? 'active' : '' }}">
                             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g opacity="0.4" clip-path="url(#clip0)">
                                     <path d="M13.5945 10.7017C12.3434 10.7017 11.3256 11.7195 11.3256 12.9706C11.3256 14.2217 12.3434 15.2395 13.5945 15.2395C14.8459 15.2395 15.8635 14.2217 15.8635 12.9706C15.8635 11.7195 14.8456 10.7017 13.5945 10.7017ZM13.5945 14.105C12.9689 14.105 12.4601 13.5962 12.4601 12.9706C12.4601 12.3449 12.9689 11.8361 13.5945 11.8361C14.2202 11.8361 14.729 12.3449 14.729 12.9706C14.729 13.5962 14.2202 14.105 13.5945 14.105Z" fill="black"/>
@@ -112,7 +152,10 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{route('admin.contacts.index')}}" class="admin-navbar__link">
+                        <a href="{{route('admin.contacts.index')}}" class="admin-navbar__link
+                        {{ (request()->is('admin/contacts') ||
+                        request()->is('admin/contacts/*/edit'))
+                        ? 'active' : '' }}">
                             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g opacity="0.4" clip-path="url(#clip0)">
                                     <path d="M9.00092 0C4.03836 0 0.00100708 4.03735 0.00100708 8.99991C0.00100708 13.9627 4.03836 18.0001 9.00092 18.0001C9.37228 18.0001 9.67318 17.6991 9.67318 17.3278C9.67318 16.9566 9.37228 16.6556 9.00092 16.6556C4.77973 16.6556 1.34554 13.2213 1.34554 8.99991C1.34553 4.77872 4.77973 1.34453 9.00092 1.34453C13.2221 1.34453 16.6563 4.77872 16.6563 8.99991V11.0821C16.6563 11.8595 16.0238 12.4918 15.2464 12.4918C14.4691 12.4918 13.8367 11.8595 13.8367 11.0821V8.99991C13.8367 6.33326 11.6674 4.16382 9.00083 4.16382C6.33418 4.16382 4.16474 6.33326 4.16474 8.99991C4.16474 11.6667 6.33418 13.8364 9.00083 13.8364C10.4808 13.8364 11.8069 13.1674 12.6946 12.1167C13.1044 13.124 14.0935 13.8364 15.2464 13.8364C16.7651 13.8364 18.0008 12.6008 18.0008 11.0821V8.99991C18.0008 4.03735 13.9635 0 9.00092 0ZM9.00092 12.4918C7.07564 12.4918 5.50936 10.9254 5.50936 8.99991C5.50936 7.07464 7.07573 5.50835 9.00092 5.50835C10.9261 5.50835 12.4923 7.07464 12.4923 8.99991C12.4923 10.9254 10.9261 12.4918 9.00092 12.4918Z" fill="#202020"/>
@@ -127,6 +170,7 @@
                         </a>
                     </li>
                 </ul>
+                @endauth
             </div>
             <div class="admin-navbar__user">
                 <ul>
@@ -137,11 +181,11 @@
                             </li>
                         @endif
 
-                        @if (Route::has('register'))
+                        {{--@if (Route::has('register'))
                             <li class="nav-item">
                                 <a href="{{ route('register') }}">Зарегистрироваться</a>
                             </li>
-                        @endif
+                        @endif--}}
                     @else
                         <div class="user-logout">
                             {{ Auth::user()->name }}
@@ -164,6 +208,7 @@
         </main>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     <script src="https://cdn.tiny.cloud/1/ef7cuwjey0nzcp1h6d50hie2rqksq9raq2gqyhchwunviujq/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script src="/js/admin.js"></script>

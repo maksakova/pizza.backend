@@ -34,4 +34,14 @@ class Order extends Model
     {
         return $this->belongsTo('App\Models\OrderStatus', 'status_id');
     }
+
+    public function deliveryMethod()
+    {
+        return $this->belongsTo('App\Models\DeliveryMethod', 'delivery_method');
+    }
+
+    public function paymentMethod()
+    {
+        return $this->belongsTo('App\Models\PaymentMethod', 'payment_method');
+    }
 }

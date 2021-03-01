@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    @include('admin.parts.navigation-delivery')
     <div class="container">
         <div class="card">
             <div class="card-body">
@@ -10,11 +11,11 @@
                         @csrf
                         <div class="row justify-content-between">
                             <div class="col-sm-6">
-                                <h1><a href="{{route('admin.payment-methods.index')}}"><i class="fas fa-chevron-left"></i> {{$paymentMethod->name}}</a></h1>
+                                <h2><a href="{{route('admin.payment-methods.index')}}"><i class="fas fa-chevron-left"></i> {{$paymentMethod->name}}</a></h2>
                             </div>
                             <div class="col-sm-6 text-right">
                                 <button class="btn btn-primary">Сохранить</button>
-                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Удалить</button>
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Удалить</button>
                             </div>
                         </div>
                         <div class="row">
@@ -26,8 +27,8 @@
                                 <label class="checkbox">
                                     <input
                                         type="checkbox"
-                                        name="composition[]" value="{{$paymentMethod->show}}"
-                                        @if($paymentMethod->show == 1) checked @endif>
+                                        name="active" value="1"
+                                        @if($paymentMethod->active == 1) checked @endif>
                                     <div class="checkbox__text">Доступен</div>
                                 </label>
                             </div>
@@ -66,7 +67,7 @@
                         @csrf
                         <div class="row justify-content-between">
                             <div class="col-sm-6">
-                                <h1><a href="{{route('admin.payment-methods.index')}}"><i class="fas fa-chevron-left"></i> Новая акция</a></h1>
+                                <h2><a href="{{route('admin.payment-methods.index')}}"><i class="fas fa-chevron-left"></i> Новая акция</a></h2>
                             </div>
                             <div class="col-sm-6 text-right">
                                 <button class="btn btn-primary">Сохранить</button>
@@ -81,8 +82,8 @@
                                 <label class="checkbox">
                                     <input
                                         type="checkbox"
-                                        name="composition[]" value="{{$paymentMethod->show}}"
-                                        @if($paymentMethod->show == 1) checked @endif>
+                                        name="active" value="1"
+                                        @if($paymentMethod->active == 1) checked @endif>
                                     <div class="checkbox__text">Доступен</div>
                                 </label>
                             </div>
