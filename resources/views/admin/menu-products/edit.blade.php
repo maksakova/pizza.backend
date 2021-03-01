@@ -57,8 +57,9 @@
                                 </label>
                             </div>
                             <div class="col-lg-6">
-                                <label>
+                                <label class="input-file">
                                     <input type="file" name="img">
+                                    <span id="file-name">Файл не выбран</span>
                                 </label>
                                 @if($menuProduct->img)
                                     <a href="{{ $menuProduct->img }}" data-fancybox="image"><img src="{{ $menuProduct->img }}"></a>
