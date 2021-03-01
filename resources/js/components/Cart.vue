@@ -183,6 +183,15 @@
           </template>
 
       </modal>
+
+      <modal
+          :width="1000"
+          :height="550"
+          :adaptive="true"
+          class="pr"
+          name="product-modal">
+          <product-modal v-bind:currentItem="currentItem" v-bind:ingredients="ingredients"/>
+      </modal>
   </main>
 </template>
 

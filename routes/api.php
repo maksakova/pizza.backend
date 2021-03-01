@@ -39,3 +39,5 @@ Route::any('newOrder', '\App\Http\Controllers\Front\MainController@newOrder');
 Route::resource('/orders', '\App\Http\Controllers\Front\OrderController', [
     'only' => ['create']
 ]);
+
+/*Route::post('/orders', '\App\Http\Controllers\Front\OrderController@create');*/

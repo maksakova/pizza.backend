@@ -212,7 +212,6 @@ export default {
             paymentMethod: this.$store.state.paymentMethod,
             cashBack: false,
             cashBackValue: null,
-            products: [],
             currentItem: this.$store.state.currentItem,
             cartCount: this.$store.state.cartCount,
             cart: this.$store.state.cart,
@@ -241,9 +240,12 @@ export default {
         async order() {
             await window.axios({
                 method: 'get',
+                headers: { // объект в котором передаются заголовки запроса
+                    'X-CSRF-TOKEN': document.getElementById("post_token").getAttribute("content") // запрос который содержит ваш токен
+                },
                 url: '/api/orders/create',
-                params: {
-                    products: this.$store.state.cart,
+                data: {
+                    products: 'ggf',
                     cart_total: this.$store.state.cartSum,
                     delivery_method: this.deliveryMethod,
                     delivery_price: this.$store.state.deliveryPrice,

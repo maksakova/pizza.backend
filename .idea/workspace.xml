@@ -26,44 +26,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55e38aa4-1e59-486e-b405-03ed58b0efaf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/parts/navigation-contacts.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/parts/navigation-delivery.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/parts/navigation-discounts.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/parts/navigation-orders.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/parts/navigation-pages.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Apache_2.4-PHP_7.2-7.4_vhost.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ssl/rootCA.crt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ssl/rootCA.key" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ssl/rootCA.srl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ssl/server.crt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ssl/server.csr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ssl/server.key" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/DeliveryMethodsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/DeliveryMethodsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PaymentMethodsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PaymentMethodsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Front/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Front/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/admin.sass" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/admin.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/contacts/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/contacts/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/contacts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/contacts/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/delivery-methods/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/delivery-methods/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/delivery-methods/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/delivery-methods/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/discounts/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/discounts/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/discounts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/discounts/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/main-banners/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/main-banners/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/main-banners/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/main-banners/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/menu-categories/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/menu-categories/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/menu-categories/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/menu-categories/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/menu-filters/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/menu-filters/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/menu-filters/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/menu-filters/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/menu-ingredient-groups/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/menu-ingredient-groups/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/menu-ingredient-groups/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/menu-ingredient-groups/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/menu-ingredients/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/menu-ingredients/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/menu-ingredients/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/menu-ingredients/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/menu-products/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/menu-products/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/orders/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/orders/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/orders/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/orders/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/parts/navigation-menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/parts/navigation-menu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/payment-methods/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/payment-methods/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/payment-methods/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/payment-methods/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Cart.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Order.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Order.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/parts/ProductCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/parts/ProductCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/front.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/front.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -312,14 +290,7 @@
       <workItem from="1614330141940" duration="6190000" />
       <workItem from="1614339118830" duration="25000" />
       <workItem from="1614339165107" duration="7071000" />
-      <workItem from="1614578911940" duration="9729000" />
-    </task>
-    <task id="LOCAL-00017" summary="banners done">
-      <created>1613645827009</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1613645827009</updated>
+      <workItem from="1614578911940" duration="18482000" />
     </task>
     <task id="LOCAL-00018" summary="add seo block. no success with store.">
       <created>1613652732424</created>
@@ -657,7 +628,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614582911525</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="admin design">
+      <created>1614588727374</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1614588727374</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -691,7 +669,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="cart partially works, add cart page and order page" />
     <MESSAGE value="order routes" />
     <MESSAGE value="projecting orders db" />
     <MESSAGE value="add orders logic" />
@@ -716,7 +693,8 @@
     <MESSAGE value="doing admin panel design" />
     <MESSAGE value="product variants &amp; ingredients" />
     <MESSAGE value="admin file input" />
-    <option name="LAST_COMMIT_MESSAGE" value="admin file input" />
+    <MESSAGE value="admin design" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin design" />
   </component>
   <component name="WindowStateProjectService">
     <state x="780" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1613726572319">
@@ -727,10 +705,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614345035274" />
-    <state x="662" y="89" key="CommitChangelistDialog2" timestamp="1614582911066">
+    <state x="662" y="89" key="CommitChangelistDialog2" timestamp="1614588726755">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="662" y="89" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1614582911066" />
+    <state x="662" y="89" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1614588726755" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1613723760475">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -779,10 +757,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613384763580" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1614582912743">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1614588729455">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614582912743" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614588729455" />
     <state x="720" y="253" key="VcsDiffUtil.ChangesDialog" timestamp="1613384498036">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import createPersistedState from "vuex-persistedstate";
+import {forEach} from "vue-scrollactive/src/utils";
 
 Vue.use(Vuex)
 
@@ -33,7 +34,7 @@ let store = {
         addToCart(state, {item, currentVariant1, currentVariant2, additives}) {
 
             if (item.product_variants.length === 0) {
-                let found = state.cart.find(product => product === item);
+                let found = state.cart.find(product => product.id === item.id && product.currentVariant1 === item.currentVariant1);
                 if (found) {
                     found.quantity ++;
                     found.totalPrice = found.quantity * found.price;
@@ -44,27 +45,30 @@ let store = {
                 }
             } else {
                 let found = state.cart.find(product => (product.id === item.id && product.currentVariant1 === currentVariant1));
-                if (found) {
-                    console.log(found)
-                    found.quantity ++;
-                    found.totalPrice = found.quantity * found.price;
-                } else {
-                    let index = state.cart.length
-                    state.cart.push(item)
 
-                    console.log(index);
-                    console.log(state.cart[index]);
-                    Vue.set(state.cart[index], 'quantity', 1)
+                if (found) {
+
+                    console.log(found)
+
+                    found.quantity ++;
+
+                    found.totalPrice = found.quantity * found.price;
+
+                } else {
+
+                    item.quantity = 1
+                    item.currentVariant1 = currentVariant1
+
                     if (!currentVariant2) {
-                        Vue.set(state.cart[index], 'price', item.product_variants[currentVariant1].price)
+                        item.price = item.product_variants[currentVariant1].price
                     } else {
-                        Vue.set(state.cart[index], 'price', item.product_variants[currentVariant2].price)
+                        item.price = item.product_variants[currentVariant2].price
                         if (additives) {
-                            Vue.set(state.cart[index], 'additives', additives)
+                            item.additives = additives
                         }
                     }
-                    Vue.set(state.cart[index], 'currentVariant1', currentVariant1)
-                    Vue.set(state.cart[index], 'currentVariant2', currentVariant2)
+
+                    state.cart.push(item)
                 }
 
             }
@@ -89,8 +93,6 @@ let store = {
                 state.cartCount += el.quantity,
                 state.cartSum += el.price * el.quantity
             });
-
-            console.log(state.cartSum)
         },
 
         removeFromCart(state, item) {
@@ -119,7 +121,6 @@ let store = {
         },
 
         addStreet(state, {deliveryStreet, deliveryBuilding}) {
-            console.log(deliveryStreet, deliveryBuilding);
             state.deliveryStreet = deliveryStreet
             state.deliveryBuilding = deliveryBuilding
         },
