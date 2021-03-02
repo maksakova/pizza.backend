@@ -32,11 +32,7 @@
                                 </a>
                             </td>
                             <td>
-                                @if($item->img)
-                                    <img src="{{ $item->img }}">
-                                @else
-                                    {{$item->value}}
-                                @endif
+                                {{$item->value}}
                             </td>
                         </tr>
                     @endforeach

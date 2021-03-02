@@ -122,10 +122,9 @@
                    :style="{ width: 'calc(100% / ' + deliveryMethods.length + ')' }">
                   <label class="radio">
                       <input type="radio"
-                             :name="delivery_method"
+                             name="delivery_method"
                              :value="item.id"
                              v-model="deliveryMethod"
-                             v-on:change="changeDeliveryMethod(item.id)"
                       />
                       <div class="radio__text">{{item.name}}</div>
                   </label>

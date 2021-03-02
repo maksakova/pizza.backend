@@ -285,6 +285,9 @@ h3 {
 
 .table td {
   vertical-align: middle;
+}
+
+.table td:nth-child(2) {
   white-space: nowrap;
 }
 
