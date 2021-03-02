@@ -26,15 +26,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55e38aa4-1e59-486e-b405-03ed58b0efaf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MenuProductVariantController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/menu-product-variants/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SettingController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Setting.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_03_02_122247_create_settings_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/SettingsSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/menu/admin-7.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/parts/navigation-settings.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/settings/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/settings/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/MenuProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MenuProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Front/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Front/MainController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/ComposerServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/ComposerServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Cart.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/menu-products/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/menu-products/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/parts/navigation-menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/parts/navigation-menu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/contacts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/contacts/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -191,7 +199,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/parts" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2020.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -204,11 +212,11 @@
       <recent name="C:\OSPanel\domains\pizza.loc\resources\views\admin" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\OSPanel\domains\pizza.loc\resources\views\admin" />
       <recent name="C:\OSPanel\domains\pizza.loc\resources\views\admin\parts" />
+      <recent name="C:\OSPanel\domains\pizza.loc\app\Http\Controllers\Admin" />
+      <recent name="C:\OSPanel\domains\pizza.loc\resources\views\admin" />
+      <recent name="C:\OSPanel\domains\pizza.loc\database\seeders" />
       <recent name="C:\OSPanel\domains\pizza.loc\resources\img\common" />
-      <recent name="C:\OSPanel\domains\pizza.loc\resources\js\components" />
-      <recent name="C:\OSPanel\domains\pizza.loc\resources\js\components\parts" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -287,14 +295,7 @@
       <workItem from="1614578911940" duration="20336000" />
       <workItem from="1614665233604" duration="54000" />
       <workItem from="1614680385350" duration="170000" />
-      <workItem from="1614682064858" duration="4410000" />
-    </task>
-    <task id="LOCAL-00019" summary="discounts">
-      <created>1613659597296</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1613659597296</updated>
+      <workItem from="1614682064858" duration="10640000" />
     </task>
     <task id="LOCAL-00020" summary="discounts in front done">
       <created>1613719977639</created>
@@ -632,7 +633,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614604746002</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="product variants CRUD">
+      <created>1614686541956</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1614686541957</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -666,7 +674,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="projecting orders db" />
     <MESSAGE value="add orders logic" />
     <MESSAGE value="payment&amp;delivery methods CRUD" />
     <MESSAGE value="order CRUD admin" />
@@ -691,21 +698,22 @@
     <MESSAGE value="admin file input" />
     <MESSAGE value="admin design" />
     <MESSAGE value="products" />
-    <option name="LAST_COMMIT_MESSAGE" value="products" />
+    <MESSAGE value="product variants CRUD" />
+    <option name="LAST_COMMIT_MESSAGE" value="product variants CRUD" />
   </component>
   <component name="WindowStateProjectService">
     <state x="780" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1613726572319">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="780" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613726572319" />
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614686421968">
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614690079701">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614686421968" />
-    <state x="662" y="89" key="CommitChangelistDialog2" timestamp="1614604744865">
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614690079701" />
+    <state x="662" y="89" key="CommitChangelistDialog2" timestamp="1614686538758">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="662" y="89" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1614604744865" />
+    <state x="662" y="89" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1614686538758" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1613723760475">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -754,10 +762,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613384763580" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1614604747673">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1614686543562">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614604747673" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614686543562" />
     <state x="720" y="253" key="VcsDiffUtil.ChangesDialog" timestamp="1613384498036">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -778,6 +786,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="749" y="421" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613632493204" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1614690549712">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1614690549712" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1613568564020">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

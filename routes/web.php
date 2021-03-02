@@ -78,6 +78,10 @@ Route::resource('/admin/orders', 'Admin\OrderController')
     ->names('admin.orders')
     ->middleware('auth');
 
+Route::resource('/admin/settings', 'Admin\SettingController')
+    ->names('admin.settings')
+    ->middleware('auth');
+
 
 /* Front */
 

@@ -27,16 +27,19 @@
                                 {{ ++$key }}
                             </td>
                             <td>
-                                {{ $item->name }}
+                                <a href="{{route('admin.contacts.edit', $item->id)}}">
+                                    {{ $item->name }}
+                                </a>
+                                <a href="{{route('admin.contacts.edit', $item->id)}}">
+                                    {{ $item->name }}
+                                </a>
                             </td>
                             <td>
-                                <a href="{{route('admin.contacts.edit', $item->id)}}">
-                                    @if($item->img)
-                                        <img src="{{ $item->img }}">
-                                    @else
-                                        {{$item->value}}
-                                    @endif
-                                </a>
+                                @if($item->img)
+                                    <img src="{{ $item->img }}">
+                                @else
+                                    {{$item->value}}
+                                @endif
                             </td>
                         </tr>
                     @endforeach

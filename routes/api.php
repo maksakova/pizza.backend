@@ -34,6 +34,8 @@ Route::post('deliveryMethods', '\App\Http\Controllers\Front\MainController@deliv
 
 Route::post('paymentMethods', '\App\Http\Controllers\Front\MainController@paymentMethods');
 
+Route::post('settings', '\App\Http\Controllers\Front\MainController@settings');
+
 Route::any('newOrder', '\App\Http\Controllers\Front\MainController@newOrder');
 
 Route::resource('/orders', '\App\Http\Controllers\Front\OrderController', [

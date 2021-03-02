@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Contact;
 use App\Models\Order;
+use App\Models\Setting;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 

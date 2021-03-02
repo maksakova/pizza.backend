@@ -11,6 +11,7 @@ use App\Models\MenuIngredient;
 use App\Models\MenuProduct;
 use App\Models\Order;
 use App\Models\PaymentMethod;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -60,6 +61,11 @@ class MainController extends Controller
     public function paymentMethods()
     {
         return PaymentMethod::where('active', 1)->get();
+    }
+
+    public function settings()
+    {
+        return Setting::all()->keyBy('key');
     }
 
 }

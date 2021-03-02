@@ -90,6 +90,29 @@
             name="product-modal">
             <product-modal v-bind:currentItem="currentItem" v-bind:ingredients="ingredients"/>
         </modal>
+
+        <modal class="modalinfo"
+               :width="403"
+               :height="343"
+               :adaptive="true"
+               name="demand-modal">
+            <img src="/img/common/demand.png">
+            <h2>Повышенный спрос</h2>
+            <p>Заказов сейчас очень много, и время доставки может быть увеличено</p>
+            <button class="button" @click="hide('demand-modal')">Хорошо</button>
+        </modal>
+
+        <modal class="modalinfo"
+               :width="403"
+               :height="371"
+               :adaptive="true"
+               name="closed-modal">
+            <img src="/img/common/closed.png">
+            <h2>Сейчас доставка не работает</h2>
+            <p>Мы открываемся завтра в 10:00.<br>
+                Вы можете сделать заказ на завтра</p>
+            <button class="button" @click="hide('closed-modal')">Хорошо</button>
+        </modal>
     </div>
 </template>
 
@@ -120,6 +143,7 @@ export default {
             filters: [],
             products: [],
             ingredients: [],
+            settings: [],
             currentItem: this.$store.state.currentItem,
             cartCount: this.$store.state.cartCount,
             cart: this.$store.state.cart
@@ -141,6 +165,11 @@ export default {
         axios
             .post('/api/ingredients')
             .then(response => (this.ingredients = response.data));
+        axios
+            .post('/api/settings')
+            .then(response => (this.settings = response.data));
+        this.show('demand-modal');
+        this.modals();
     },
     methods: {
         activeFilter: function () {
@@ -149,6 +178,9 @@ export default {
         cleanCart() {
             this.$store.commit('cleanCart');
         },
+        modals() {
+            console.log(this.settings)
+        }
     },
     computed: {
         catProducts() {
