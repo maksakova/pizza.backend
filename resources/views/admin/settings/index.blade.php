@@ -18,7 +18,7 @@
                         <th>№</th>
                         <th>Название</th>
                         <th>Значение</th>
-                        <th>Активно</th>
+                        <th>Состояние </th>
                     </tr>
                     </thead>
                     <tbody>
@@ -34,6 +34,13 @@
                             </td>
                             <td>
                                 {{$item->value}}
+                            </td>
+                            <td>
+                                @if($item->state === 1)
+                                    активно
+                                @else
+                                    неак5тивно
+                                @endif
                             </td>
                         </tr>
                     @endforeach
