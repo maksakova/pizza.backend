@@ -34,6 +34,10 @@ Route::resource('/admin/menu-products', 'Admin\MenuProductController')
     ->names('admin.menu-products')
     ->middleware('auth');
 
+Route::resource('/admin/menu-product-variants', 'Admin\MenuProductVariantController')
+    ->names('admin.menu-product-variants')
+    ->middleware('auth');
+
 Route::resource('/admin/menu-filters', 'Admin\MenuFilterController')
     ->names('admin.menu-filters')
     ->middleware('auth');

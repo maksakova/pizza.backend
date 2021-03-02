@@ -26,22 +26,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55e38aa4-1e59-486e-b405-03ed58b0efaf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Apache_2.4-PHP_7.2-7.4_vhost.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssl/rootCA.crt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssl/rootCA.key" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssl/rootCA.srl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssl/server.crt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssl/server.csr" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssl/server.key" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MenuProductVariantController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/menu-product-variants/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/MenuProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MenuProductController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Cart.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Order.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Order.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/parts/ProductCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/parts/ProductCard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/front.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/front.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/menu-products/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/menu-products/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/parts/navigation-menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/parts/navigation-menu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,24 +191,24 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/parts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2020.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\OSPanel\domains\pizza.loc\resources\views\admin\parts" />
-      <recent name="C:\OSPanel\domains\pizza.loc\resources\img\common" />
-      <recent name="C:\OSPanel\domains\pizza.loc\resources\js\components" />
-      <recent name="C:\OSPanel\domains\pizza.loc\resources\js\components\parts" />
-      <recent name="C:\OSPanel\domains\pizza.loc\resources\views\front" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\OSPanel\domains\pizza.loc\public\js" />
       <recent name="C:\OSPanel\domains\pizza.loc\resources\views\errors" />
       <recent name="C:\OSPanel\domains\pizza.loc\resources\views\front" />
       <recent name="C:\OSPanel\domains\pizza.loc\resources\views\admin" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OSPanel\domains\pizza.loc\resources\views\admin" />
+      <recent name="C:\OSPanel\domains\pizza.loc\resources\views\admin\parts" />
+      <recent name="C:\OSPanel\domains\pizza.loc\resources\img\common" />
+      <recent name="C:\OSPanel\domains\pizza.loc\resources\js\components" />
+      <recent name="C:\OSPanel\domains\pizza.loc\resources\js\components\parts" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -290,14 +284,10 @@
       <workItem from="1614330141940" duration="6190000" />
       <workItem from="1614339118830" duration="25000" />
       <workItem from="1614339165107" duration="7071000" />
-      <workItem from="1614578911940" duration="18482000" />
-    </task>
-    <task id="LOCAL-00018" summary="add seo block. no success with store.">
-      <created>1613652732424</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1613652732424</updated>
+      <workItem from="1614578911940" duration="20336000" />
+      <workItem from="1614665233604" duration="54000" />
+      <workItem from="1614680385350" duration="170000" />
+      <workItem from="1614682064858" duration="4410000" />
     </task>
     <task id="LOCAL-00019" summary="discounts">
       <created>1613659597296</created>
@@ -635,7 +625,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614588727374</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="products">
+      <created>1614604746002</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1614604746002</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -669,7 +666,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="order routes" />
     <MESSAGE value="projecting orders db" />
     <MESSAGE value="add orders logic" />
     <MESSAGE value="payment&amp;delivery methods CRUD" />
@@ -694,21 +690,22 @@
     <MESSAGE value="product variants &amp; ingredients" />
     <MESSAGE value="admin file input" />
     <MESSAGE value="admin design" />
-    <option name="LAST_COMMIT_MESSAGE" value="admin design" />
+    <MESSAGE value="products" />
+    <option name="LAST_COMMIT_MESSAGE" value="products" />
   </component>
   <component name="WindowStateProjectService">
     <state x="780" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1613726572319">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="780" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613726572319" />
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614345035274">
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614686421968">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614345035274" />
-    <state x="662" y="89" key="CommitChangelistDialog2" timestamp="1614588726755">
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614686421968" />
+    <state x="662" y="89" key="CommitChangelistDialog2" timestamp="1614604744865">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="662" y="89" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1614588726755" />
+    <state x="662" y="89" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1614604744865" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1613723760475">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -757,10 +754,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613384763580" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1614588729455">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1614604747673">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614588729455" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614604747673" />
     <state x="720" y="253" key="VcsDiffUtil.ChangesDialog" timestamp="1613384498036">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

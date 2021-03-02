@@ -67,7 +67,7 @@ class MenuProductController extends Controller
 
         }
 
-        $menuProduct = new menuProduct($data);
+        $menuProduct = new MenuProduct($data);
         $menuProduct->save();
 
         if ($menuProduct) {
@@ -99,6 +99,7 @@ class MenuProductController extends Controller
     public function edit($id)
     {
         $menuProduct = $this->menuProduct->whereId($id)->firstOrFail();
+
         $menuCategories = MenuCategory::all();
         $menuFilters = MenuFilter::all();
         $menuIngredients = MenuIngredient::all();

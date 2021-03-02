@@ -66,13 +66,13 @@
                   </span>
               </td>
             </tr>
-            <tr>
+            <tr v-if="$store.state.minDeliverySum > $store.state.cartSum">
               <td>
                 <div class="info">
                   <img src="/../img/common/info.svg">
                   <div class="info__item">
                     <div class="info__item__inner">
-                      Для выбранной зоны <span>бесплатная доставка</span> доступна для заказов <span>от 50 руб</span>. Ознакомиться с зонами доставки можно на <router-link to="/map" class="link">Карте доставки</router-link>
+                      Для выбранной зоны <span>бесплатная доставка</span> доступна для заказов <span>от {{ $store.state.minDeliverySum }} руб</span>. Ознакомиться с зонами доставки можно на <router-link to="/map" class="link">Карте доставки</router-link>
                     </div>
                   </div>
                 </div>
@@ -82,10 +82,11 @@
             </tr>
             <tr>
               <th>Итого:</th>
-              <th>{{ formatPrice($store.state.cartSum + $store.state.deliveryPrice) }} руб.</th>
+              <th v-if="$store.state.minDeliverySum > $store.state.cartSum">{{ formatPrice($store.state.cartSum + $store.state.deliveryPrice) }} руб.</th>
+              <th v-else>{{ formatPrice($store.state.cartSum) }} руб.</th>
             </tr>
           </table>
-          <div class="cart__alert alert" v-if="$store.state.cartSum < $store.state.minDeliverySum">
+          <div class="cart__alert alert" v-if="$store.state.cartSum < 15">
             Минимальная сумма заказа - <strong>15 руб.</strong>
           </div>
           <a href="/order" class="button button-order "
@@ -137,13 +138,13 @@
               <div class="label-flex">
                   <label class="label-70">
                       Улица
-                      <input
+                      <!--<input
                           id="street"
                           type="text"
                           placeholder="Введите адрес"
                           v-model="deliveryStreet"
-                      >
-                      <!--<vue-dadata
+                      >-->
+                      <vue-dadata
                           token="dbb8b9afdebf2975f316810b2ba4b9ab066674cd"
                           placeholder="Введите адрес"
                           defaultClass="suggestion"
@@ -152,15 +153,11 @@
                           :fromBound="'street'"
                           :toBound="'street'"
                           :query="$store.state.deliveryStreet"
-                          :onChange="checkStreet(street)"
-                      ></vue-dadata>-->
+                      ></vue-dadata>
                   </label>
                   <label class="label-30">
                       Дом
-                      <select v-model="deliveryBuilding" id="house">
-                          <option>1</option>
-                          <option>2</option>
-                      </select>
+                      <input type="text" v-model="deliveryBuilding" id="house">
                       <!--<vue-dadata
                           token="dbb8b9afdebf2975f316810b2ba4b9ab066674cd"
                           placeholder="Дом"
@@ -215,6 +212,7 @@ export default {
             deliveryStreet: this.$store.state.deliveryStreet,
             deliveryBuilding: this.$store.state.deliveryBuilding,
             SuggestView: null,
+            ingredients: [],
             streetOptions: {
                 locations:
                     {
@@ -225,9 +223,6 @@ export default {
         }
     },
     methods: {
-        checkStreet(street) {
-            console.log(street)
-        },
         addStreet(deliveryStreet, deliveryBuilding) {
             this.$store.commit('addStreet', {deliveryStreet, deliveryBuilding});
         },
@@ -247,6 +242,9 @@ export default {
         axios
             .post('/api/deliveryMethods')
             .then(response => (this.deliveryMethods = response.data));
+        axios
+            .post('/api/ingredients')
+            .then(response => (this.ingredients = response.data));
 
 
     },

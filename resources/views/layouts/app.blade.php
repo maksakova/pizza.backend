@@ -36,6 +36,9 @@
                     {{ (request()->is('admin/menu-products') ||
                         request()->is('admin/menu-products/*/edit') ||
                         request()->is('admin/menu-products/create') ||
+                        request()->is('admin/menu-product-variants') ||
+                        request()->is('admin/menu-product-variants/*/edit') ||
+                        request()->is('admin/menu-product-variants/create') ||
                         request()->is('admin/menu-categories') ||
                         request()->is('admin/menu-categories/*/edit') ||
                         request()->is('admin/menu-filters') ||

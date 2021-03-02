@@ -6,7 +6,10 @@
                 <a href="{{route('admin.menu-products.index')}}"
                     {{ (request()->is('admin/menu-products') ||
                         request()->is('admin/menu-products/*/edit') ||
-                        request()->is('admin/menu-products/create'))
+                        request()->is('admin/menu-products/create') ||
+                        request()->is('admin/menu-product-variants') ||
+                        request()->is('admin/menu-product-variants/*/edit') ||
+                        request()->is('admin/menu-product-variants/create'))
                         ? 'class=active' : '' }}>Меню</a>
             </li>
             <li>
