@@ -134,6 +134,8 @@
           <template v-if="deliveryMethod === 1">
               <h3>Пожалуйста, укажите адрес, куда доставить еду:</h3>
 
+              {{deliveryStreet}}
+
               <div class="label-flex">
                   <label class="label-70">
                       Улица
@@ -152,6 +154,7 @@
                           :fromBound="'street'"
                           :toBound="'street'"
                           :query="$store.state.deliveryStreet"
+                          onChange="checkStreet()"
                       ></vue-dadata>
                   </label>
                   <label class="label-30">
@@ -227,6 +230,9 @@ export default {
         },
         changeDeliveryMethod(id) {
             this.$store.commit('changeDeliveryMethod', id);
+        },
+        checkStreet() {
+            console.log('ff');
         }
     },
     computed: {
