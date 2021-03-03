@@ -233,7 +233,7 @@ export default {
         checkStreet(val) {
             console.log(val);
             axios
-                .post('https://geocode-maps.yandex.ru/1.x/?apikey=035fdfb1-becf-436d-a7a7-6f38a995941e&geocode=' + val)
+                .get('https://geocode-maps.yandex.ru/1.x/?apikey=035fdfb1-becf-436d-a7a7-6f38a995941e&format=json&geocode=' + val)
                 .then(response => (console.log(response.data)));
 
         }
