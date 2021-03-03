@@ -1681,6 +1681,10 @@ footer .custom-logo {
   font-weight: 400;
 }
 
+.footer__nav a:hover {
+  color: #44C373;
+}
+
 .footer__menu {
   display: flex;
   justify-content: center;

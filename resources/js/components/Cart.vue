@@ -66,7 +66,7 @@
                   </span>
               </td>
             </tr>
-            <tr v-if="$store.state.minDeliverySum > $store.state.cartSum">
+            <tr v-if="$store.state.minDeliverySum > $store.state.cartSum && $store.state.paymentMethod !== 1">
               <td>
                 <div class="info">
                   <img src="/../img/common/info.svg">
@@ -82,7 +82,7 @@
             </tr>
             <tr>
               <th>Итого:</th>
-              <th v-if="$store.state.minDeliverySum > $store.state.cartSum">{{ formatPrice($store.state.cartSum + $store.state.deliveryPrice) }} руб.</th>
+              <th v-if="$store.state.minDeliverySum > $store.state.cartSum && $store.state.paymentMethod !== 1">{{ formatPrice($store.state.cartSum + $store.state.deliveryPrice) }} руб.</th>
               <th v-else>{{ formatPrice($store.state.cartSum) }} руб.</th>
             </tr>
           </table>
@@ -134,18 +134,17 @@
           <template v-if="deliveryMethod === 1">
               <h3>Пожалуйста, укажите адрес, куда доставить еду:</h3>
 
-              {{deliveryStreet}}
-
               <div class="label-flex">
                   <label class="label-70">
                       Улица
-                      <!--<input
+                      <input
                           id="street"
                           type="text"
                           placeholder="Введите адрес"
                           v-model="deliveryStreet"
-                      >-->
-                      <vue-dadata
+                          :change="checkStreet(deliveryStreet)"
+                      >
+                      <!--<vue-dadata
                           token="dbb8b9afdebf2975f316810b2ba4b9ab066674cd"
                           placeholder="Введите адрес"
                           defaultClass="suggestion"
@@ -154,8 +153,8 @@
                           :fromBound="'street'"
                           :toBound="'street'"
                           :query="$store.state.deliveryStreet"
-                          :onChange="checkStreet()"
-                      ></vue-dadata>
+                          :onChange="event => checkStreet(event)"
+                      ></vue-dadata>-->
                   </label>
                   <label class="label-30">
                       Дом
@@ -231,8 +230,12 @@ export default {
         changeDeliveryMethod(id) {
             this.$store.commit('changeDeliveryMethod', id);
         },
-        checkStreet() {
-            console.log('ff');
+        checkStreet(val) {
+            console.log(val);
+            axios
+                .post('https://geocode-maps.yandex.ru/1.x/?apikey=035fdfb1-becf-436d-a7a7-6f38a995941e&geocode=' + val)
+                .then(response => (console.log(response.data)));
+
         }
     },
     computed: {
