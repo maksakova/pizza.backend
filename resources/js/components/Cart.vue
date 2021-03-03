@@ -16,7 +16,7 @@
               <div class="cart__products-header__delete">Удалить</div>
             </div>
             <div class="cart__products">
-                <cart-product-card v-for="(product, key) in cart" v-bind:key="key" v-bind:item="product"/>
+                <cart-product-card v-for="(product, key) in cart" v-bind:key="key" v-bind:item="product" v-bind:ingredients="ingredients"/>
             </div>
             <h2>Не забудьте заказать</h2>
             <div class="cart__products scroll">
@@ -154,7 +154,7 @@
                           :fromBound="'street'"
                           :toBound="'street'"
                           :query="$store.state.deliveryStreet"
-                          onChange="checkStreet()"
+                          :onChange="checkStreet()"
                       ></vue-dadata>
                   </label>
                   <label class="label-30">

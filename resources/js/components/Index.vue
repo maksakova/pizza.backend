@@ -68,7 +68,7 @@
                                     У нас все очень вкусное.</p>
                             </div>
                             <div class="main__cart__items">
-                                <cart-product-card v-for="(product, key) in $store.state.cart" v-bind:key="key" v-bind:item="product"/>
+                                <cart-product-card v-for="(product, key) in $store.state.cart" v-bind:key="key" v-bind:item="product" v-bind:ingredients="ingredients"/>
                             </div>
                             <div class="main__cart__total">
                                 Сумма заказа:
@@ -168,8 +168,7 @@ export default {
         axios
             .post('/api/settings')
             .then(response => (this.settings = response.data));
-        this.show('demand-modal');
-        this.modals();
+        /*this.show('demand-modal');*/
     },
     methods: {
         activeFilter: function () {
@@ -178,9 +177,6 @@ export default {
         cleanCart() {
             this.$store.commit('cleanCart');
         },
-        modals() {
-            console.log(this.settings)
-        }
     },
     computed: {
         catProducts() {

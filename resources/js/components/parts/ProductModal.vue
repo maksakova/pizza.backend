@@ -76,7 +76,7 @@
               </div>
               <div class="product-modal__button">
                   <button class="button"
-                          @click="addToCart(currentItem, currentVariant1, currentVariant2, chooseAdditives);
+                          @click="addToCart(currentItem, currentVariant1, currentVariant2, chooseAdditives, formatPrice(currentItem.product_variants[currentVariant2].price + additivesSum));
                           hide('product-modal');">
                       Добавить в корзину за
                       {{formatPrice(currentItem.product_variants[currentVariant2].price + additivesSum)}}
@@ -88,6 +88,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
     name: "ProductModal",
     data() {
@@ -96,7 +98,8 @@ export default {
             currentVariant1: 1,
             currentVariant2: 3,
             chooseAdditives: [],
-            currentItem: this.$store.state.currentItem
+            currentItem: this.$store.state.currentItem,
+            ingredients: [],
         }
     },
     props: {
@@ -104,6 +107,11 @@ export default {
             type: Array,
             required: true
         },
+    },
+    mounted() {
+        axios
+            .post('/api/ingredients')
+            .then(response => (this.ingredients = response.data));
     },
     computed: {
         variantsList() {
@@ -139,9 +147,9 @@ export default {
         }
     },
     methods: {
-        addToCart(item, currentVariant1, currentVariant2) {
+        addToCart(item, currentVariant1, currentVariant2, additives, price) {
 
-            this.$store.commit('addToCart', {item, currentVariant1, currentVariant2});
+            this.$store.commit('addToCart', {item, currentVariant1, currentVariant2, additives, price});
         }
     }
 }

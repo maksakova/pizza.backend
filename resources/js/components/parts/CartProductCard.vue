@@ -10,27 +10,10 @@
               <template v-if="item.currentVariant2 !== undefined">{{item.product_variants[item.currentVariant2].name}}</template>
           </h4>
 
-
-          <!--<template v-if="item.variants_show === 1 && item.product_variants.length > 0">
-              {{item.product_variants[item.variant].weight}}
-          </template>
-
-          <template v-else-if="!item.variants_show && item.weight">
-              {{item.weight}}
-          </template>-->
-
-        <!--
-
-        <h4 v-else-if="typeof(this.item.variants) === 'object'">
-          <span v-for="thisVariant in this.item.variants" v-bind:key="thisVariant - 1">
-            {{products[item.product_id].variants[thisVariant - 1].name}}
-          </span>
-        </h4>-->
-
-        <p v-if="item.additives && item.additives.length > 0">
+        <p v-if="item.additives">
           <span class="added">Добавлено: </span>
           <template v-for="add in item.additives">
-            <span class="additive" :key="add - 1">{{additives[add - 1].name}}</span>
+            <span class="additive" :key="add">{{ingredients[add - 1].name}}</span>
           </template>
         </p>
       </div>
@@ -69,6 +52,10 @@ export default {
     props: {
         item: {
             type: Object,
+            required: true
+        },
+        ingredients: {
+            type: Array,
             required: true
         },
     },

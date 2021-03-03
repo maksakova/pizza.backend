@@ -31,7 +31,7 @@ let store = {
             state.currentItem = item
         },
 
-        addToCart(state, {item, currentVariant1, currentVariant2, additives}) {
+        addToCart(state, {item, currentVariant1, currentVariant2, additives, price}) {
 
             if (item.product_variants.length === 0) {
                 let found = state.cart.find(product => product.id === item.id && product.currentVariant1 === item.currentVariant1);
@@ -45,10 +45,11 @@ let store = {
                 }
             } else {
                 let found = state.cart.find(product => (product.id === item.id && product.currentVariant1 === currentVariant1));
+                if (currentVariant2) {
+                    found = state.cart.find(product => (product.id === item.id && product.currentVariant1 === currentVariant1));
+                }
 
                 if (found) {
-
-                    console.log(found)
 
                     found.quantity ++;
 
@@ -62,9 +63,13 @@ let store = {
                     if (!currentVariant2) {
                         item.price = item.product_variants[currentVariant1].price
                     } else {
+                        item.currentVariant2 = currentVariant2
                         item.price = item.product_variants[currentVariant2].price
                         if (additives) {
                             item.additives = additives
+                            item.price = price
+                        } else {
+                            item.price = item.product_variants[currentVariant2].price
                         }
                     }
 

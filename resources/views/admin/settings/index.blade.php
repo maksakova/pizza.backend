@@ -38,8 +38,8 @@
                             <td>
                                 @if($item->state === 1)
                                     активно
-                                @else
-                                    неак5тивно
+                                @elseif($item->state === 0)
+                                    неактивно
                                 @endif
                             </td>
                         </tr>
