@@ -66,7 +66,7 @@
                   </span>
               </td>
             </tr>
-            <tr v-if="$store.state.minDeliverySum > $store.state.cartSum && $store.state.paymentMethod !== 1">
+            <tr v-if="$store.state.deliveryFreeSum > $store.state.cartSum && $store.state.deliveryMethod !== 1">
               <td>
                 <div class="info">
                   <img src="/../img/common/info.svg">
@@ -78,7 +78,7 @@
                 </div>
                 Доставка:
               </td>
-              <td>5 руб.</td>
+              <td>{{ $store.state.deliveryPrice }} руб.</td>
             </tr>
             <tr>
               <th>Итого:</th>

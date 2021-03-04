@@ -15,6 +15,7 @@ let store = {
         paymentMethod: 1,
         deliveryMethod: 1,
         minDeliverySum: 15,
+        deliveryFreeSum: 50,
         deliveryPrice: 5,
         deliveryTime: '60-90 мин.',
         deliveryCoords: null,
@@ -136,8 +137,11 @@ let store = {
         changePaymentMethod(state, id) {
             state.paymentMethod = id
         },
-        changedeliveryCoords(state, value) {
-            state.deliveryCoords = value
+        changeDeliveryFreeSum(state, value) {
+            state.deliveryFreeSum = value
+        },
+        changeDeliveryTime(state, value) {
+            state.deliveryTime = value
         },
     },
 };

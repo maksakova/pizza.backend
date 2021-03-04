@@ -103,30 +103,100 @@ Vue.mixin({
             let val = (value/1).toFixed(2)
             return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
         },
+        changeDeliveryFreeSum(val) {
+            this.$store.commit('changeDeliveryFreeSum', val);
+        },
+        changeDeliveryTime(val) {
+            console.log('ggg')
+        },
         checkStreet(val) {
             axios
                 .get('/js/data.geojson')
                 .then(response => {
                     var json = response.data;
-                });
-            var deliveryZones = window.ymaps.geoQuery(json);
-            var myGeocoder = ymaps.geocode(val);
-            myGeocoder.then(
-                function (res) {
-                    // Выведем в консоль данные, полученные в результате геокодирования объекта.
-                    console.log(res.geoObjects.get(0).geometry.getCoordinates());
-                    // Сохраняем координаты переданного объекта.
-                    var coords = res.geoObjects.get(0).geometry.getCoordinates(),
-                        // Находим полигон, в который входят переданные координаты.
-                        polygon = deliveryZones.searchContaining(coords).get(0);
+                    var deliveryZones = window.ymaps.geoQuery(json);
+                    var myMap = new ymaps.Map('map', {
+                            center: [53.90274647009774, 27.55560136148148],
+                            zoom: 11,
+                            controls: ['geolocationControl', 'searchControl']
+                        }),
+                        deliveryPoint = new ymaps.GeoObject({
+                            geometry: {type: 'Point'},
+                            properties: {iconCaption: 'Адрес'}
+                        }, {
+                            preset: 'islands#blackDotIconWithCaption',
+                            draggable: true,
+                            iconCaptionMaxWidth: '215'
+                        }),
+                        searchControl = myMap.controls.get('searchControl');
 
-                    if (polygon) {
-                        console.log(polygon);
-                    } else {
-                        console.log('no')
+
+                    searchControl.options.set({noPlacemark: true, placeholderContent: 'Введите адрес доставки'});
+                    myMap.geoObjects.add(deliveryPoint);
+                    onZonesLoad(json, myMap)
+
+                    function onZonesLoad(json, myMap) {
+
+                        // Добавляем зоны на карту
+                        var deliveryZones = ymaps.geoQuery(json);
+
+                        deliveryZones.addToMap(myMap);
+
+                        /*deliveryZones.addToMap(myMap);*/
+
+                        // Задаём цвет и контент балунов полигонов.
+                        deliveryZones.each(function (obj) {
+                            obj.options.set({
+                                fillColor: obj.properties.get('fill'),
+                                fillOpacity: obj.properties.get('fill-opacity'),
+                                strokeColor: obj.properties.get('stroke'),
+                                strokeWidth: obj.properties.get('stroke-width'),
+                                strokeOpacity: obj.properties.get('stroke-opacity')
+                            });
+                            obj.properties.set('balloonContent', obj.properties.get('description'));
+                        });
+
+
+                        var myGeocoder = ymaps.geocode(val);
+                        myGeocoder.then(
+                            function (res) {
+                                var coords = res.geoObjects.get(0).geometry.getCoordinates()
+                                highlightResult(coords)
+
+                                function highlightResult(obj) {
+                                    // Сохраняем координаты переданного объекта.
+                                    var coords = obj,
+                                        // Находим полигон, в который входят переданные координаты.
+                                        polygon = deliveryZones.searchContaining(coords).get(0);
+
+                                    if (polygon) {
+                                        console.log(polygon.properties._data.time)
+                                        console.log(polygon.properties._data.price_from)
+
+                                        this.changeDeliveryFreeSum(polygon.properties._data.price_from)
+                                        this.changeDeliveryTime(polygon.properties._data.time)
+                                    } else {
+                                        console.log('no')
+                                    }
+
+                                    function setData(obj){
+                                        var address = [obj.getThoroughfare(), obj.getPremiseNumber(), obj.getPremise()].join(' ');
+                                        if (address.trim() === '') {
+                                            address = obj.getAddressLine();
+                                        }
+                                        var price = polygon.properties.get('description');
+                                        price = price.match(/<strong>(.+)<\/strong>/)[1];
+                                        deliveryPoint.properties.set({
+                                            iconCaption: address,
+                                            balloonContent: address,
+                                            balloonContentHeader: price
+                                        });
+                                    }
+                                }
+                            },
+                        );
                     }
-                },
-            );
+                });
         },
     },
 })

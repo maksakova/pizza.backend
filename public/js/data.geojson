@@ -27,6 +27,7 @@
             "properties": {
                 "description": "Бесплатно от 15 руб., среднее время доставки 60 мин",
                 "price_from": 15,
+                "time": "60 мин.",
                 "fill": "#44C373",
                 "fill-opacity": 0.5,
                 "stroke": "#008F28",
@@ -80,6 +81,7 @@
             "properties": {
                 "description": "Бесплатно от 30 руб., среднее время доставки 60 - 90 мин",
                 "price_from": 30,
+                "time": "60-90 мин.",
                 "fill": "#FFC413",
                 "fill-opacity": 0.5,
                 "stroke": "#E99500",
@@ -135,6 +137,7 @@
             "properties": {
                 "description": "Бесплатно от 50 руб., среднее время доставки 60 - 90 мин",
                 "price_from": 50,
+                "time": "60-90 мин.",
                 "fill": "#EB5757",
                 "fill-opacity": 0.5,
                 "stroke": "#EB5757",
