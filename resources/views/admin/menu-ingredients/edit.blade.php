@@ -31,9 +31,16 @@
                                     {{$menuIngredient->menu_ingredient_group_id}}
                                     <select name="menu_ingredient_group_id">
                                         @foreach($menuIngredientGroups as $menuIngredientGroup)
-                                            <option value="{{$menuIngredientGroup->id}}" @if($menuIngredient->menu_ingredient_group_id === $menuIngredientGroup->id) selected @endif>
-                                                {{$menuIngredientGroup->name}}
-                                            </option>
+                                            @if($menuIngredient->menu_ingredient_group_id === $menuIngredientGroup->id)
+                                                <option value="{{$menuIngredientGroup->id}}" selected>
+                                                    {{$menuIngredientGroup->name}}
+                                                </option>
+                                            @else
+
+                                                <option value="{{$menuIngredientGroup->id}}" selected>
+                                                    {{$menuIngredientGroup->name}}
+                                                </option>
+                                            @endif
                                         @endforeach
                                     </select>
                                 </label>
