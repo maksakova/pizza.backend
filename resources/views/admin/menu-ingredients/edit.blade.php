@@ -26,6 +26,7 @@
                                     Название
                                     <input type="text" name="name" value="{{$menuIngredient->name}}">
                                 </label>
+
                                 <label>
                                     Группа
                                     {{$menuIngredient->menu_ingredient_group_id}}
