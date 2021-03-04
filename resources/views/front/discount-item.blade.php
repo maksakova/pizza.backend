@@ -24,7 +24,6 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <h2>Другие акции</h2>
                     <div class="row">
                         @foreach($discounts as $discount)
                             @include('front.parts.discount-other')

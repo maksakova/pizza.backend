@@ -10,7 +10,7 @@
               <template v-if="item.currentVariant2 !== undefined">{{item.product_variants[item.currentVariant2].name}}</template>
           </h4>
 
-        <p v-if="item.additives">
+        <p v-if="item.additives && item.additives.length > 0">
           <span class="added">Добавлено: </span>
           <template v-for="add in item.additives">
             <span class="additive" :key="add">{{ingredients[add - 1].name}}</span>

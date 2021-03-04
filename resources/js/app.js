@@ -4,6 +4,8 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+import axios from "axios";
+
 require('./bootstrap');
 
 window.Vue = require('vue').default;
@@ -100,6 +102,31 @@ Vue.mixin({
         formatPrice(value) {
             let val = (value/1).toFixed(2)
             return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+        },
+        checkStreet(val) {
+            axios
+                .get('/js/data.geojson')
+                .then(response => {
+                    var json = response.data;
+                });
+            var deliveryZones = window.ymaps.geoQuery(json);
+            var myGeocoder = ymaps.geocode(val);
+            myGeocoder.then(
+                function (res) {
+                    // Выведем в консоль данные, полученные в результате геокодирования объекта.
+                    console.log(res.geoObjects.get(0).geometry.getCoordinates());
+                    // Сохраняем координаты переданного объекта.
+                    var coords = res.geoObjects.get(0).geometry.getCoordinates(),
+                        // Находим полигон, в который входят переданные координаты.
+                        polygon = deliveryZones.searchContaining(coords).get(0);
+
+                    if (polygon) {
+                        console.log(polygon);
+                    } else {
+                        console.log('no')
+                    }
+                },
+            );
         },
     },
 })

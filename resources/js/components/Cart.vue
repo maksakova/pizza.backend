@@ -142,7 +142,7 @@
                           type="text"
                           placeholder="Введите адрес"
                           v-model="deliveryStreet"
-                          :change="checkStreet(deliveryStreet)"
+                          @change="checkStreet(deliveryStreet)"
                       >
                       <!--<vue-dadata
                           token="dbb8b9afdebf2975f316810b2ba4b9ab066674cd"
@@ -190,6 +190,7 @@
           name="product-modal">
           <product-modal v-bind:currentItem="currentItem" v-bind:ingredients="ingredients"/>
       </modal>
+      <div id="map"></div>
   </main>
 </template>
 
@@ -230,13 +231,6 @@ export default {
         changeDeliveryMethod(id) {
             this.$store.commit('changeDeliveryMethod', id);
         },
-        checkStreet(val) {
-            console.log(val);
-            axios
-                .get('https://geocode-maps.yandex.ru/1.x/?apikey=035fdfb1-becf-436d-a7a7-6f38a995941e&format=json&geocode=' + val)
-                .then(response => (console.log(response.data)));
-
-        }
     },
     computed: {
         currentRouteName() {
