@@ -27,12 +27,6 @@
   <component name="ChangeListManager">
     <list default="true" id="55e38aa4-1e59-486e-b405-03ed58b0efaf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/data.geojson" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/data.geojson" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Cart.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/map.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/map.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -291,14 +285,7 @@
       <workItem from="1614774865494" duration="2048000" />
       <workItem from="1614779035002" duration="2792000" />
       <workItem from="1614837748823" duration="8463000" />
-      <workItem from="1614846367686" duration="5395000" />
-    </task>
-    <task id="LOCAL-00028" summary="add contacts page">
-      <created>1613741427335</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1613741427335</updated>
+      <workItem from="1614846367686" duration="5890000" />
     </task>
     <task id="LOCAL-00029" summary="refactor getting contacts, header&amp;footer blade">
       <created>1613976601929</created>
@@ -636,7 +623,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614848197360</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="find polygon">
+      <created>1614853070145</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1614853070146</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -670,7 +664,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="choosing variants" />
     <MESSAGE value="improved choosing variants" />
     <MESSAGE value="number input changing quantity" />
     <MESSAGE value="true count in cart" />
@@ -695,7 +688,8 @@
     <MESSAGE value="add geocoder" />
     <MESSAGE value="get request to geocoder is working" />
     <MESSAGE value="check address" />
-    <option name="LAST_COMMIT_MESSAGE" value="check address" />
+    <MESSAGE value="find polygon" />
+    <option name="LAST_COMMIT_MESSAGE" value="find polygon" />
   </component>
   <component name="WindowStateProjectService">
     <state x="780" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1613726572319">
@@ -706,10 +700,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614690079701" />
-    <state x="662" y="89" key="CommitChangelistDialog2" timestamp="1614848195727">
+    <state x="662" y="89" key="CommitChangelistDialog2" timestamp="1614853069177">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="662" y="89" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1614848195727" />
+    <state x="662" y="89" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1614853069177" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1613723760475">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -762,10 +756,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="807" y="433" key="VCS.ChangelistChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1614848974078" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1614848200212">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1614853071448">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614848200212" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614853071448" />
     <state x="720" y="253" key="VcsDiffUtil.ChangesDialog" timestamp="1613384498036">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
