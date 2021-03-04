@@ -138,6 +138,7 @@ let store = {
             state.paymentMethod = id
         },
         changeDeliveryFreeSum(state, value) {
+            console.log(value)
             state.deliveryFreeSum = value
         },
         changeDeliveryTime(state, value) {

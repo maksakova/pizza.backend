@@ -28,7 +28,7 @@
                                 </label>
                                 <label>
                                     Цена
-                                    <input type="number" name="price" value="{{$menuProductVariant->price}}">
+                                    <input type="text" name="price" value="{{$menuProductVariant->price}}">
                                 </label>
                             </div>
                             <div class="col-lg-6">
@@ -86,7 +86,7 @@
                                 </label>
                                 <label>
                                     Цена
-                                    <input type="number" name="price" value="{{$menuProductVariant->price}}">
+                                    <input type="text" name="price" value="{{$menuProductVariant->price}}">
                                 </label>
                             </div>
                         </div>

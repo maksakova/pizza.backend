@@ -49,7 +49,7 @@
                                 </label>
                                 <label>
                                     Минимальная цена
-                                    <input type="number" name="min_price" value="{{$menuProduct->min_price}}">
+                                    <input type="text" name="min_price" value="{{$menuProduct->min_price}}">
                                 </label>
                                 <label class="checkbox">
                                     <input type="checkbox" name="variants_show" value="1" {{ $menuProduct->variants_show ? 'checked="checked"' : '' }}>
@@ -173,7 +173,7 @@
                                 </label>
                                 <label>
                                     Минимальная цена
-                                    <input type="number" name="min_price" value="{{$menuProduct->min_price}}">
+                                    <input type="text" name="min_price" value="{{$menuProduct->min_price}}">
                                 </label>
                                 <label class="checkbox">
                                     <input type="checkbox" name="variants_show" value="{{$menuProduct->variants_show}}" @if($menuProduct->variants_show) checked @endif>

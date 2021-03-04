@@ -66,7 +66,7 @@
                   </span>
               </td>
             </tr>
-            <tr v-if="$store.state.deliveryFreeSum > $store.state.cartSum && $store.state.deliveryMethod !== 1">
+            <tr v-if="deliveryFreeSum > $store.state.cartSum && $store.state.deliveryMethod !== 1">
               <td>
                 <div class="info">
                   <img src="/../img/common/info.svg">
@@ -96,7 +96,7 @@
               <path d="M9.00004 2.20459C5.25287 2.20459 2.20459 5.25287 2.20459 9.00004C2.20459 12.7472 5.25287 15.7955 9.00004 15.7955C12.7472 15.7955 15.7955 12.7472 15.7955 9.00004C15.7955 5.25287 12.7472 2.20459 9.00004 2.20459ZM9.00004 14.4773C5.98004 14.4773 3.52278 12.02 3.52278 9.00004C3.52278 5.98004 5.98004 3.52278 9.00004 3.52278C12.02 3.52278 14.4773 5.98004 14.4773 9.00004C14.4773 12.02 12.02 14.4773 9.00004 14.4773Z" fill="white" stroke="white" stroke-width="0.5"/>
               <path d="M8.34082 9.16947V9.27302L8.41404 9.34624L10.6992 11.6314C10.9566 11.8888 11.3739 11.8888 11.6312 11.6314C11.8886 11.374 11.8886 10.9567 11.6312 10.6994L9.659 8.72713V5.31827C9.659 4.95427 9.36392 4.65918 8.99991 4.65918C8.63591 4.65918 8.34082 4.95427 8.34082 5.31827V9.16947Z" fill="white" stroke="white" stroke-width="0.5"/>
             </svg>
-            {{ $store.state.deliveryTime }}
+            {{ this.$store.state.deliveryTime }}
             </span>
             Оформить заказ
           </a>
@@ -142,7 +142,6 @@
                           type="text"
                           placeholder="Введите адрес"
                           v-model="deliveryStreet"
-                          @change="checkStreet(deliveryStreet)"
                       >
                       <!--<vue-dadata
                           token="dbb8b9afdebf2975f316810b2ba4b9ab066674cd"
@@ -170,7 +169,7 @@
                       ></vue-dadata>-->
                   </label>
               </div>
-              <button class="button" @click="addStreet(deliveryStreet, deliveryBuilding); hide('address-modal');">Подтвердить</button>
+              <button class="button" @click="addStreet(deliveryStreet, deliveryBuilding); checkStreet(deliveryStreet); hide('address-modal');">Подтвердить</button>
               <p>Ознакомьтесь с <router-link to="/map" class="link">Картой доставки</router-link>. Если Вашего адреса нет в списке, но он относится к зоне бесплатной доставки, сообщите об этом оператору и совершите заказ по телефону. Либо воспользуйтель услугой Самовывоз.</p>
           </template>
 
@@ -194,9 +193,13 @@
   </main>
 </template>
 
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;coordorder=latlong&amp;apikey=035fdfb1-becf-436d-a7a7-6f38a995941e" type="text/javascript"></script>
+<script type="text/javascript" src="https://yandex.st/jquery/2.2.3/jquery.min.js"></script>
+
 <script>
 import axios from "axios";
 import VueDadata from 'vue-dadata'
+import store from "../store/store";
 
 export default {
     name: "Cart",
@@ -208,6 +211,8 @@ export default {
             products: [],
             deliveryMethods: [],
             deliveryMethod: this.$store.state.deliveryMethod,
+            deliveryTime: this.$store.state.deliveryTime,
+            deliveryFreeSum: this.$store.state.deliveryFreeSum,
             currentItem: this.$store.state.currentItem,
             cartCount: this.$store.state.cartCount,
             cart: this.$store.state.cart,
@@ -231,10 +236,60 @@ export default {
         changeDeliveryMethod(id) {
             this.$store.commit('changeDeliveryMethod', id);
         },
-    },
-    computed: {
-        currentRouteName() {
-            return this.$route.name;
+        /*changeDeliveryFreeSum(value) {
+            console.log('ff')
+            this.$store.commit('changeDeliveryFreeSum', value);
+        },
+        changeDeliveryTime(value) {
+            this.$store.commit('changeDeliveryTime', value);
+        },*/
+        checkStreet(val) {
+            var myMap = new ymaps.Map('map', {
+                center: [53.90274647009774, 27.55560136148148],
+                zoom: 11,
+                controls: ['geolocationControl', 'searchControl']
+            });
+
+            function onZonesLoad(json, myMap) {
+
+                var deliveryZones = ymaps.geoQuery(json);
+
+                deliveryZones.addToMap(myMap);
+
+                var myGeocoder = ymaps.geocode(val);
+                myGeocoder.then(
+                    function (res) {
+                        var coords = res.geoObjects.get(0).geometry.getCoordinates()
+
+                        var polygon = deliveryZones.searchContaining(coords).get(0);
+
+                        let time = '60-90 мин.'
+                        let price_from = 50
+
+                        if (polygon) {
+                            time = polygon.properties._data.time
+                            price_from = polygon.properties._data.price_from
+                            console.log(time)
+                            console.log(price_from)
+
+                            /*this.deliveryTime = time
+                            this.deliveryFreeSum = price_from
+
+                            store.state.deliveryFreeSum = price_from
+                            store.state.deliveryTime = time*/
+
+                            Vue.updateDelivery(time)
+                        }
+                    }
+                )
+            }
+
+            axios
+                .get('/js/data.geojson')
+                .then(response => {
+                    var json = response.data;
+                    onZonesLoad(json, myMap)
+                });
         },
     },
     mounted() {
