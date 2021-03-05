@@ -143,34 +143,27 @@
                           type="text"
                           placeholder="Введите адрес"
                           v-model="deliveryStreet"
+                          :input="checkStreet(deliveryStreet)"
                       >
-                      <!--<vue-dadata
-                          token="dbb8b9afdebf2975f316810b2ba4b9ab066674cd"
-                          placeholder="Введите адрес"
-                          defaultClass="suggestion"
-                          v-model="deliveryStreet"
-                          :locationOptions="streetOptions"
-                          :fromBound="'street'"
-                          :toBound="'street'"
-                          :query="$store.state.deliveryStreet"
-                          :onChange="event => checkStreet(event)"
-                      ></vue-dadata>-->
+                      <div class="suggestion" ref="suggestionInput"
+                      v-if="deliveryStreet && deliveryStreet !== suggestions[0].data.street_with_type">
+                          <div class="suggestion__inner">
+                              <label class="radio" v-for="suggestion in suggestions">
+                                  <input
+                                      type="radio"
+                                      :value="suggestion.data.street_with_type"
+                                      v-model="deliveryStreet">
+                                  <div class="suggestion__text">{{suggestion.data.street_with_type}}</div>
+                              </label>
+                          </div>
+                      </div>
                   </label>
                   <label class="label-30">
                       Дом
                       <input type="text" v-model="deliveryBuilding" id="house">
-                      <!--<vue-dadata
-                          token="dbb8b9afdebf2975f316810b2ba4b9ab066674cd"
-                          placeholder="Дом"
-                          defaultClass="suggestion"
-                          v-model="deliveryBuilding"
-                          :fromBound="'house'"
-                          :toBound="'house'"
-                          :query="$store.state.deliveryBuilding"
-                      ></vue-dadata>-->
                   </label>
               </div>
-              <button class="button" @click="addStreet(deliveryStreet, deliveryBuilding); checkStreet(deliveryStreet); hide('address-modal');">Подтвердить</button>
+              <button class="button" @click="addStreet(deliveryStreet, deliveryBuilding); checkZone(deliveryStreet); hide('address-modal');">Подтвердить</button>
               <p>Ознакомьтесь с <router-link to="/map" class="link">Картой доставки</router-link>. Если Вашего адреса нет в списке, но он относится к зоне бесплатной доставки, сообщите об этом оператору и совершите заказ по телефону. Либо воспользуйтель услугой Самовывоз.</p>
           </template>
 
@@ -200,7 +193,6 @@
 <script>
 import axios from "axios";
 import VueDadata from 'vue-dadata'
-import store from "../store/store";
 
 export default {
     name: "Cart",
@@ -216,17 +208,13 @@ export default {
             currentItem: this.$store.state.currentItem,
             cartCount: this.$store.state.cartCount,
             cart: this.$store.state.cart,
+            suggestions: {},
             deliveryStreet: this.$store.state.deliveryStreet,
             deliveryBuilding: this.$store.state.deliveryBuilding,
             SuggestView: null,
             ingredients: [],
-            streetOptions: {
-                locations:
-                    {
-                        "country": "Беларусь",
-                        "city": 'Минск',
-                    },
-            },
+            url: "https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address",
+            token: "dbb8b9afdebf2975f316810b2ba4b9ab066674cd",
         }
     },
     methods: {
@@ -236,14 +224,40 @@ export default {
         changeDeliveryMethod(deliveryMethod) {
             this.$store.commit('changeDeliveryMethod', deliveryMethod);
         },
-        /*changeDeliveryFreeSum(value) {
-            console.log('ff')
-            this.$store.commit('changeDeliveryFreeSum', value);
+        checkStreet(deliveryStreet) {
+            if (deliveryStreet) {
+                console.log(deliveryStreet)
+                let query = deliveryStreet
+                var options = {
+                    method: "POST",
+                    mode: "cors",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json",
+                        "Authorization": "Token " + this.token
+                    },
+                    body: JSON.stringify({
+                        query: query,
+                        locations: {
+                            "country": "Беларусь",
+                            "city": 'Минск',
+                        },
+                        from_bound: {
+                            "value": "street"
+                        },
+                        to_bound: {
+                            "value": "street"
+                        },
+                    })
+                }
+
+                fetch(this.url, options)
+                    .then(response => response.json())
+                    .then(result => this.suggestions = result.suggestions)
+                    .catch(error => console.log("error", error));
+            }
         },
-        changeDeliveryTime(value) {
-            this.$store.commit('changeDeliveryTime', value);
-        },*/
-        checkStreet(val) {
+        checkZone(val) {
 
             let store = this.$store;
 
@@ -310,8 +324,6 @@ export default {
         axios
             .post('/api/ingredients')
             .then(response => (this.ingredients = response.data));
-
-
     },
 }
 </script>
@@ -367,6 +379,38 @@ export default {
         color: $main
   &__alert
     margin-bottom: 20px
+  .suggestion
+      position: relative
+      &__inner
+          position: absolute
+          top: 0
+          left: 0
+          border: 1px solid #E0E0E0
+          border-radius: 8px
+          background: #FFF
+          max-height: 100px
+          overflow-x: hidden
+          overflow-y: auto
+          width: 290px
+          label
+              height: auto
+              width: 100%
+              margin: 0
+              cursor: pointer
+              &:hover
+                  background: #f2f2f2
+          &::-webkit-scrollbar
+              width: 4px
+              background: $bg
+              border-radius: 4px
+          &::-webkit-scrollbar-thumb
+              background: $main
+              border-radius: 4px
+      &__text
+          width: 100%
+          padding: 0 14px
+
+
 
 @media (max-width: 575px)
   .cart
