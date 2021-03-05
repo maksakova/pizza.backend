@@ -66,13 +66,13 @@
                   </span>
               </td>
             </tr>
-            <tr v-if="deliveryFreeSum > $store.state.cartSum && $store.state.deliveryMethod !== 1">
+            <tr v-if="$store.state.deliveryFreeSum > $store.state.cartSum && $store.state.deliveryMethod === 1">
               <td>
                 <div class="info">
                   <img src="/../img/common/info.svg">
                   <div class="info__item">
                     <div class="info__item__inner">
-                      Для выбранной зоны <span>бесплатная доставка</span> доступна для заказов <span>от {{ $store.state.minDeliverySum }} руб</span>. Ознакомиться с зонами доставки можно на <router-link to="/map" class="link">Карте доставки</router-link>
+                      Для выбранной зоны <span>бесплатная доставка</span> доступна для заказов <span>от {{ $store.state.deliveryFreeSum }} руб</span>. Ознакомиться с зонами доставки можно на <a href="/map" class="link">Карте доставки</a>
                     </div>
                   </div>
                 </div>
@@ -82,7 +82,7 @@
             </tr>
             <tr>
               <th>Итого:</th>
-              <th v-if="$store.state.minDeliverySum > $store.state.cartSum && $store.state.paymentMethod !== 1">{{ formatPrice($store.state.cartSum + $store.state.deliveryPrice) }} руб.</th>
+              <th v-if="$store.state.deliveryFreeSum > $store.state.cartSum && $store.state.deliveryMethod === 1">{{ formatPrice($store.state.cartSum + $store.state.deliveryPrice) }} руб.</th>
               <th v-else>{{ formatPrice($store.state.cartSum) }} руб.</th>
             </tr>
           </table>
@@ -125,6 +125,7 @@
                              name="delivery_method"
                              :value="item.id"
                              v-model="deliveryMethod"
+                             :change="changeDeliveryMethod(deliveryMethod)"
                       />
                       <div class="radio__text">{{item.name}}</div>
                   </label>
@@ -212,7 +213,6 @@ export default {
             deliveryMethods: [],
             deliveryMethod: this.$store.state.deliveryMethod,
             deliveryTime: this.$store.state.deliveryTime,
-            deliveryFreeSum: this.$store.state.deliveryFreeSum,
             currentItem: this.$store.state.currentItem,
             cartCount: this.$store.state.cartCount,
             cart: this.$store.state.cart,
@@ -233,8 +233,8 @@ export default {
         addStreet(deliveryStreet, deliveryBuilding) {
             this.$store.commit('addStreet', {deliveryStreet, deliveryBuilding});
         },
-        changeDeliveryMethod(id) {
-            this.$store.commit('changeDeliveryMethod', id);
+        changeDeliveryMethod(deliveryMethod) {
+            this.$store.commit('changeDeliveryMethod', deliveryMethod);
         },
         /*changeDeliveryFreeSum(value) {
             console.log('ff')
