@@ -192,13 +192,9 @@
 
 <script>
 import axios from "axios";
-import VueDadata from 'vue-dadata'
 
 export default {
     name: "Cart",
-    components: {
-        VueDadata
-    },
     data() {
         return {
             products: [],
