@@ -6,9 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Models\MenuCategory;
 use App\Models\MenuFilter;
 use App\Models\MenuIngredient;
+use App\Models\MenuIngredientGroup;
 use App\Models\MenuProduct;
 use App\Models\MenuProductVariant;
 use App\Http\Controllers\Admin\MenuProductController;
+use App\Models\MenuVariant;
 use Illuminate\Http\Request;
 
 class MenuProductVariantController extends Controller
@@ -32,9 +34,11 @@ class MenuProductVariantController extends Controller
     public function create()
     {
         $menuProductVariant = new MenuProductVariant();
+        $menuVariants = MenuVariant::all();
 
         return view('admin.menu-product-variants.edit', [
-            'menuProductVariant' => $menuProductVariant
+            'menuProductVariant' => $menuProductVariant,
+            'menuVariants'       => $menuVariants
         ]);
     }
 
@@ -62,9 +66,11 @@ class MenuProductVariantController extends Controller
     public function edit($id)
     {
         $menuProductVariant = $this->menuProductVariant->whereId($id)->firstOrFail();
+        $menuVariants = MenuVariant::all();
 
         return view('admin.menu-product-variants.edit', [
-            'menuProductVariant' => $menuProductVariant
+            'menuProductVariant' => $menuProductVariant,
+            'menuVariants'       => $menuVariants
         ]);
     }
 

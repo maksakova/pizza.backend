@@ -23,6 +23,18 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <label>
+                                    Тип
+                                    <select name="menu_variant_id">
+                                        @foreach($menuVariants as $menuVariant)
+                                            @if($menuProductVariant->menu_variant_id === $menuVariant->id)
+                                                <option value="{{$menuVariant->id}}" selected>{{$menuVariant->name}}</option>
+                                            @else
+                                                <option value="{{$menuVariant->id}}">{{$menuVariant->name}}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                </label>
+                                <label>
                                     Название
                                     <input type="text" name="name" value="{{$menuProductVariant->name}}">
                                 </label>
@@ -81,6 +93,14 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <label>
+                                    Тип
+                                    <select name="menu_variant_id">
+                                        @foreach($menuVariants as $menuVariant)
+                                        <option value="{{$menuVariant->id}}">{{$menuVariant->name}}</option>
+                                        @endforeach
+                                    </select>
+                                </label>
+                                <label>
                                     Название
                                     <input type="text" name="name" value="{{$menuProductVariant->name}}">
                                 </label>
@@ -88,6 +108,7 @@
                                     Цена
                                     <input type="text" name="price" value="{{$menuProductVariant->price}}">
                                 </label>
+                                <input type="hidden" name="menu_product_id" value="{{app('request')->input('menu_product_id')}}">
                             </div>
                         </div>
                     </div>

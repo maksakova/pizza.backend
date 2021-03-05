@@ -76,8 +76,9 @@
                                 @if($menuProduct->img)
                                     <a href="{{ $menuProduct->img }}" data-fancybox="image"><img src="{{ $menuProduct->img }}"></a>
                                 @endif
+
                                 @if($menuProduct->productVariants)
-                                    <h2>Варианты (<a href="{{ route('admin.menu-product-variants.create') }}">добавить</a>)</h2>
+                                    <h2>Варианты (<a href="{{ route('admin.menu-product-variants.create') }}?menu_product_id={{$menuProduct->id}}">добавить</a>)</h2>
                                     <ul>
                                         @foreach($menuProduct->productVariants as $variant)
                                             <li>

@@ -37,7 +37,7 @@
                                                 </option>
                                             @else
 
-                                                <option value="{{$menuIngredientGroup->id}}" selected>
+                                                <option value="{{$menuIngredientGroup->id}}">
                                                     {{$menuIngredientGroup->name}}
                                                 </option>
                                             @endif
@@ -123,9 +123,15 @@
                                     Группа
                                     <select name="menu_ingredient_group_id">
                                         @foreach($menuIngredientGroups as $menuIngredientGroup)
-                                            <option value="{{$menuIngredientGroup->id}}">
-                                                {{$menuIngredientGroup->name}}
-                                            </option>
+                                            @if(app('request')->input('menu_ingredient_group_id') == $menuIngredientGroup->id)
+                                                <option value="{{$menuIngredientGroup->id}}" selected>
+                                                    {{$menuIngredientGroup->name}}
+                                                </option>
+                                            @else
+                                                <option value="{{$menuIngredientGroup->id}}">
+                                                    {{$menuIngredientGroup->name}}
+                                                </option>
+                                            @endif
                                         @endforeach
                                     </select>
                                 </label>
