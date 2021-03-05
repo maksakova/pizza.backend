@@ -29,7 +29,6 @@
 
                                 <label>
                                     Группа
-                                    {{$menuIngredient->menu_ingredient_group_id}}
                                     <select name="menu_ingredient_group_id">
                                         @foreach($menuIngredientGroups as $menuIngredientGroup)
                                             @if($menuIngredient->menu_ingredient_group_id === $menuIngredientGroup->id)
@@ -124,7 +123,7 @@
                                     Группа
                                     <select name="menu_ingredient_group_id">
                                         @foreach($menuIngredientGroups as $menuIngredientGroup)
-                                            <option value="{{$menuIngredientGroup->id}}" @if(app('request')->input('menu_ingredient_group_id') == $menuIngredientGroup->id) selected @endif>
+                                            <option value="{{$menuIngredientGroup->id}}">
                                                 {{$menuIngredientGroup->name}}
                                             </option>
                                         @endforeach

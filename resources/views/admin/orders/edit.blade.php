@@ -115,7 +115,11 @@
                                             Статус
                                             <select name="status_id">
                                                 @foreach($orderStatuses as $status)
-                                                    <option value="{{ $status->id }}" @if($order->status_id === $status->id) selected @endif>{{ $status->name }}</option>
+                                                    @if($order->status_id === $status->id)
+                                                        <option value="{{ $status->id }}" selected>{{ $status->name }}</option>
+                                                    @else
+                                                        <option value="{{ $status->id }}">{{ $status->name }}</option>
+                                                    @endif
                                                 @endforeach
                                             </select>
                                         </label>
