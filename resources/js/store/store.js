@@ -19,7 +19,6 @@ let store = {
         deliveryPrice: 5,
         deliveryTime: '60-90 мин.',
         deliveryCoords: null,
-        deliveryZone: null,
         deliveryStreet: null,
         deliveryBuilding: null,
         deliveryFlat: null,

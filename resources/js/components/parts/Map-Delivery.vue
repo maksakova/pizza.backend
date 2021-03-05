@@ -15,9 +15,6 @@ export default {
             geojson: null,
         }
     },
-    computed: {
-        ...mapGetters(['deliveryZones']),
-    },
 
     async mounted() {
         const settings = {

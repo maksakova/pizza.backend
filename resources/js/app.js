@@ -107,13 +107,6 @@ Vue.mixin({
     },
 })
 
-Vue.updateDelivery = function (time) {
-    console.log(store.changeDeliveryTime)
-    store.state.changeDeliveryTime = time
-    /*store.commit('changeDeliveryTime', time);*/
-    console.log(time)
-}
-
 const routes = [
     {
         path: '/',

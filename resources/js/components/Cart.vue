@@ -244,6 +244,9 @@ export default {
             this.$store.commit('changeDeliveryTime', value);
         },*/
         checkStreet(val) {
+
+            let store = this.$store;
+
             var myMap = new ymaps.Map('map', {
                 center: [53.90274647009774, 27.55560136148148],
                 zoom: 11,
@@ -272,13 +275,13 @@ export default {
                             console.log(time)
                             console.log(price_from)
 
+                            updateDelivery(store, time, price_from)
+
                             /*this.deliveryTime = time
                             this.deliveryFreeSum = price_from
 
                             store.state.deliveryFreeSum = price_from
                             store.state.deliveryTime = time*/
-
-                            Vue.updateDelivery(time)
                         }
                     }
                 )
@@ -290,6 +293,11 @@ export default {
                     var json = response.data;
                     onZonesLoad(json, myMap)
                 });
+
+            function updateDelivery(store, time, price_from) {
+                store.commit('changeDeliveryTime', time);
+                store.commit('changeDeliveryFreeSum', price_from);
+            }
         },
     },
     mounted() {
