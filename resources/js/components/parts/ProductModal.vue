@@ -128,19 +128,22 @@ export default {
 
         additivesSum() {
             var additivesSum = 0
+            console.log(this.chooseAdditives.length);
             for (let i = 0; i < this.chooseAdditives.length; i += 1) {
                 if (this.currentVariant2 === 2) {
-                    additivesSum += this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.min_price* 1
+                    additivesSum += this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.min_price * 1
+                    console.log(this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.min_price)
                 } else if (this.currentVariant2 === 3) {
-                    additivesSum += this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.mid_price* 1
+                    additivesSum += this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.mid_price * 1
+                    console.log(this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.mid_price)
                 } else if (this.currentVariant2 === 4) {
-                    additivesSum += this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.max_price* 1
+                    additivesSum += this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.max_price * 1
+                    console.log(this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.max_price)
                 }
+                additivesSum = additivesSum* 1
+                console.log(additivesSum);
             }
 
-            additivesSum = additivesSum* 1
-            console.log(this.chooseAdditives.length);
-            console.log(additivesSum);
             return additivesSum
         }
     },

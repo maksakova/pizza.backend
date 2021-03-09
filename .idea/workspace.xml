@@ -288,21 +288,7 @@
       <workItem from="1614846367686" duration="21422000" />
       <workItem from="1614924265897" duration="14667000" />
       <workItem from="1615269665284" duration="22017000" />
-      <workItem from="1615294058357" duration="2300000" />
-    </task>
-    <task id="LOCAL-00074" summary="add geocoder">
-      <created>1614762748280</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1614762748280</updated>
-    </task>
-    <task id="LOCAL-00075" summary="get request to geocoder is working">
-      <created>1614780629060</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1614780629060</updated>
+      <workItem from="1615294058357" duration="2463000" />
     </task>
     <task id="LOCAL-00076" summary="check address">
       <created>1614848197360</created>
@@ -633,7 +619,21 @@
       <option name="project" value="LOCAL" />
       <updated>1615296350659</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="fix product modal">
+      <created>1615296448864</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1615296448864</updated>
+    </task>
+    <task id="LOCAL-00124" summary="fix product modal">
+      <created>1615296522029</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1615296522029</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -707,10 +707,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1615289492291" />
-    <state x="662" y="89" key="CommitChangelistDialog2" timestamp="1615296349481">
+    <state x="662" y="89" key="CommitChangelistDialog2" timestamp="1615296514461">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="662" y="89" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1615296349481" />
+    <state x="662" y="89" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1615296514461" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1613723760475">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -763,10 +763,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="807" y="433" key="VCS.ChangelistChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1614848974078" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1615296352508">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1615296524714">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1615296352508" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1615296524714" />
     <state x="720" y="253" key="VcsDiffUtil.ChangesDialog" timestamp="1613384498036">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
