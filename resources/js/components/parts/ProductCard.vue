@@ -107,7 +107,6 @@ export default {
     padding: 15px 0
     border-bottom: 1px solid $bg
     border-radius: 8px
-    height: calc(100% - 15px)
     transition: .3s
     h3
         font-size: 16px
@@ -143,7 +142,7 @@ export default {
                 right: 7px
     &__text
         padding: 0 3px
-        height: calc(100% - 196px)
+        height: auto
         display: flex
         flex-direction: column
         justify-content: space-between
