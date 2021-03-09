@@ -33,9 +33,9 @@
                         </div>
                     </div>
 
-                    <div class="product-item__bottom">
+                    {{item.product_variants.length}}
 
-                        {{item.product_variants.length}}
+                    <div class="product-item__bottom">
 
                         <!--One type of variants Product-->
                         <template v-if="item.variants_show === 1 && item.product_variants.length > 0">
