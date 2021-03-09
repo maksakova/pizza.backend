@@ -43,11 +43,11 @@
                             </div>
 
                             <div class="row main__menu" v-if="menu_category_slug === 'pizza'">
-                                <product-card v-for="product in filterData" v-bind:key="product.id" v-bind:item="product" v-bind:ingredients="ingredients"/>
+                                <product-card v-for="product in filterData" v-bind:key="product.id" v-bind:item="product" />
                             </div>
 
                             <div class="row main__menu" v-else>
-                                <product-card v-for="product in products" v-bind:key="product.id" v-bind:item="product" v-bind:ingredients="ingredients"/>
+                                <product-card v-for="product in products" v-bind:key="product.id" v-bind:item="product" />
                             </div>
                         </div>
                     </div>
@@ -204,6 +204,9 @@ export default {
 
 <style lang="sass">
 @import "resources/sass/main"
+
+.swiper-container
+    height: 120px
 
 .swiper-item
     width: 100%

@@ -107,6 +107,7 @@ export default {
     padding: 15px 0
     border-bottom: 1px solid $bg
     border-radius: 8px
+    height: calc(100% - 15px)
     transition: .3s
     h3
         font-size: 16px
@@ -192,7 +193,6 @@ export default {
         background: $white
         padding: 0px 0 15px
         margin: 15px 0 0
-        height: 100%
         &__text
             padding: 0 20px
 
