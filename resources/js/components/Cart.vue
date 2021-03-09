@@ -145,18 +145,21 @@
                           v-model="deliveryStreet"
                           :input="checkStreet(deliveryStreet)"
                       >
-                      <div class="suggestion" ref="suggestionInput"
-                      v-if="deliveryStreet && deliveryStreet !== suggestions[0].data.street_with_type">
-                          <div class="suggestion__inner">
-                              <label class="radio" v-for="suggestion in suggestions">
-                                  <input
-                                      type="radio"
-                                      :value="suggestion.data.street_with_type"
-                                      v-model="deliveryStreet">
-                                  <div class="suggestion__text">{{suggestion.data.street_with_type}}</div>
-                              </label>
+                      <template v-if="suggestions">
+                          <div class="suggestion" ref="suggestionInput"
+                               v-if="deliveryStreet && deliveryStreet !== suggestions[0].data.street_with_type">
+                              <div class="suggestion__inner">
+                                  <label class="radio" v-for="suggestion in suggestions">
+                                      <input
+                                          type="radio"
+                                          :value="suggestion.data.street_with_type"
+                                          v-model="deliveryStreet">
+                                      <div class="suggestion__text">{{suggestion.data.street_with_type}}</div>
+                                  </label>
+                              </div>
                           </div>
-                      </div>
+
+                      </template>
                   </label>
                   <label class="label-30">
                       Дом
@@ -210,7 +213,7 @@ export default {
             SuggestView: null,
             ingredients: [],
             url: "https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address",
-            token: "dbb8b9afdebf2975f316810b2ba4b9ab066674cd",
+            token: "9af52f392c48bb34c8fb20bb53573b1ee923e871",
         }
     },
     methods: {

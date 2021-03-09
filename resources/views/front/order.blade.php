@@ -17,7 +17,12 @@
                         </label>
                         <label>
                             Телефон
-                            <input type="tel" name="phone" placeholder="+375 ( ) " v-model="deliveryPhone" required>
+                            <the-mask :type="'tel'"
+                                      :name="'phone'"
+                                      :placeholder="'+375 ( ) '"
+                                      v-model="deliveryPhone"
+                                      required
+                                      :mask="['+375 (##) ###-##-##']" />
                         </label>
                         <label>
                             Почта
@@ -58,9 +63,13 @@
         </div>
     </main>
 @endsection
+
 <script>
     import TableOrder from "../../js/components/parts/TableOrder";
+
     export default {
-        components: {TableOrder}
+        components: {
+            TableOrder,
+        }
     }
 </script>

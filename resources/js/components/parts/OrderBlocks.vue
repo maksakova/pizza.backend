@@ -41,18 +41,20 @@
                                     v-model="deliveryStreet"
                                     :input="checkStreet(deliveryStreet)"
                                 >
-                                <div class="suggestion" ref="suggestionInput"
-                                     v-if="deliveryStreet && deliveryStreet !== suggestions[0].data.street_with_type">
-                                    <div class="suggestion__inner">
-                                        <label class="radio" v-for="suggestion in suggestions">
-                                            <input
-                                                type="radio"
-                                                :value="suggestion.data.street_with_type"
-                                                v-model="deliveryStreet">
-                                            <div class="suggestion__text">{{suggestion.data.street_with_type}}</div>
-                                        </label>
+                                <template v-if="suggestions">
+                                    <div class="suggestion" ref="suggestionInput"
+                                         v-if="deliveryStreet && deliveryStreet !== suggestions[0].data.street_with_type">
+                                        <div class="suggestion__inner">
+                                            <label class="radio" v-for="suggestion in suggestions">
+                                                <input
+                                                    type="radio"
+                                                    :value="suggestion.data.street_with_type"
+                                                    v-model="deliveryStreet">
+                                                <div class="suggestion__text">{{suggestion.data.street_with_type}}</div>
+                                            </label>
+                                        </div>
                                     </div>
-                                </div>
+                                </template>
                             </label>
                             <label class="label-30">
                                 Дом
@@ -140,9 +142,9 @@
                 </div>
             </div>
         </div>
-        <input name="products" :value="this.products">
-        <input name="cart_total" :value="this.$store.state.cartSum">
-        <input name="delivery_price" :value="this.$store.state.deliveryPrice">
+        <input type="hidden" name="products" :value="this.products">
+        <input type="hidden" name="cart_total" :value="this.$store.state.cartSum">
+        <input type="hidden" name="delivery_price" :value="this.$store.state.deliveryPrice">
     </div>
 </template>
 
@@ -178,25 +180,7 @@ export default {
             deliveryTime: this.$store.state.deliveryTime,
             ingredients: [],
             url: "https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address",
-            token: "dbb8b9afdebf2975f316810b2ba4b9ab066674cd",
-            data: {
-                products: 'ggf',
-                cart_total: this.$store.state.cartSum,
-                delivery_method: this.deliveryMethod,
-                delivery_price: this.$store.state.deliveryPrice,
-                payment_method: this.paymentMethod,
-                cashback: this.cashBackValue,
-                name: this.deliveryName,
-                phone: this.deliveryPhone,
-                email: this.deliveryEmail,
-                street: this.deliveryStreet,
-                building: this.deliveryBuilding,
-                flat: this.deliveryFlat,
-                entrance: this.deliveryEntrance,
-                floor: this.deliveryFloor,
-                code: this.deliveryCode,
-                comment: this.comment
-            }
+            token: "9af52f392c48bb34c8fb20bb53573b1ee923e871",
         }
     },
     methods: {
@@ -209,41 +193,6 @@ export default {
         newOrder() {
             this.order()
         },
-        async order() {
-            axios
-                .post('api/orders')
-                .then(response => (console.log(response)))
-                .catch(error => (console.log(error)));
-            /*await window.axios({
-                url: '/api/orders/create',
-                method: 'post',
-                headers: { // объект в котором передаются заголовки запроса
-                    'X-CSRF-TOKEN': document.getElementById("post_token").getAttribute("content") // запрос который содержит ваш токен
-                },
-                data: {
-                    products: 'ggf',
-                    cart_total: this.$store.state.cartSum,
-                    delivery_method: this.deliveryMethod,
-                    delivery_price: this.$store.state.deliveryPrice,
-                    payment_method: this.paymentMethod,
-                    cashback: this.cashBackValue,
-                    name: this.deliveryName,
-                    phone: this.deliveryPhone,
-                    email: this.deliveryEmail,
-                    street: this.deliveryStreet,
-                    building: this.deliveryBuilding,
-                    flat: this.deliveryFlat,
-                    entrance: this.deliveryEntrance,
-                    floor: this.deliveryFloor,
-                    code: this.deliveryCode,
-                    comment: this.comment
-                }
-            }).then(response => (window.location.href = "/success?order=" + response.data))
-                .catch( error => {
-                    console.log(error)
-                });*/
-
-        }
     },
     mounted() {
         axios

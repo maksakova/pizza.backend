@@ -20,6 +20,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import YmapPlugin from 'vue-yandex-maps'
 import vmodal from 'vue-js-modal'
+import VueTheMask from 'vue-the-mask'
 
 window.Vuex = Vuex;
 Vue.use(Vuex);
@@ -39,6 +40,7 @@ Vue.use(vmodal)
 
 Vue.use(VueRouter)
 Vue.use(VueScrollactive);
+Vue.use(VueTheMask)
 
 
 import Index from "./components/Index";
@@ -107,7 +109,6 @@ Vue.mixin({
         },
         checkStreet(deliveryStreet) {
             if (deliveryStreet) {
-                console.log(deliveryStreet)
                 let query = deliveryStreet
                 var options = {
                     method: "POST",
