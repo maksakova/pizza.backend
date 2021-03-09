@@ -41,7 +41,7 @@
               {{ item.product_variants[currentVariant1].price }} руб.
             </span>
                             <button class="button" @click="addToCart(item, currentVariant1)">
-                                Выбрать
+                                Выбрать 1
                             </button>
                         </template>
 
@@ -63,7 +63,7 @@
               {{ item.min_price }} руб.
             </span>
                             <button class="button" @click="addToCart(item)">
-                                Выбрать
+                                Выбрать 3
                             </button>
                         </template>
                     </div>
