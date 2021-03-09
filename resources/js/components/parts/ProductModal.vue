@@ -137,6 +137,7 @@ export default {
                     additivesSum += this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.max_price* 1
                 }
             }
+
             additivesSum = additivesSum* 1
             console.log(this.chooseAdditives.length);
             console.log(additivesSum);
