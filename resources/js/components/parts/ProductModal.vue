@@ -47,6 +47,10 @@
                       </div>
                   </div>
 
+                  {{currentItem.menu_category_id}}
+
+                  {{ingredients}}
+
                   <div class="product-modal__add" v-if="currentItem.menu_category_id == 1 || currentItem.menu_category_id == 3">
                       <h3>Добавить в пиццу</h3>
 
