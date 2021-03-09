@@ -75,10 +75,10 @@
               </div>
               <div class="product-modal__button">
                   <button class="button"
-                          @click="addToCart(currentItem, currentVariant1, currentVariant2, chooseAdditives, formatPrice(currentItem.product_variants[currentVariant2].price + additivesSum));
+                          @click="addToCart(currentItem, currentVariant1, currentVariant2, chooseAdditives, formatPrice(additivesSum));
                           hide('product-modal');">
                       Добавить в корзину за
-                      {{formatPrice(Number(currentItem.product_variants[currentVariant2].price) + additivesSum)}}
+                      {{formatPrice(additivesSum)}}
                       руб.</button>
               </div>
           </div>
@@ -136,6 +136,7 @@ export default {
                 } else if (this.currentVariant2 === 4) {
                     additivesSum += Number(this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.max_price)
                 }
+                additivesSum += Number(currentItem.product_variants[currentVariant2].price)
                 console.log(additivesSum);
             }
             return additivesSum
