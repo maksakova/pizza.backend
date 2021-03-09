@@ -220,95 +220,6 @@ export default {
         changeDeliveryMethod(deliveryMethod) {
             this.$store.commit('changeDeliveryMethod', deliveryMethod);
         },
-        checkStreet(deliveryStreet) {
-            if (deliveryStreet) {
-                console.log(deliveryStreet)
-                let query = deliveryStreet
-                var options = {
-                    method: "POST",
-                    mode: "cors",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Accept": "application/json",
-                        "Authorization": "Token " + this.token
-                    },
-                    body: JSON.stringify({
-                        query: query,
-                        locations: {
-                            "country": "Беларусь",
-                            "city": 'Минск',
-                        },
-                        from_bound: {
-                            "value": "street"
-                        },
-                        to_bound: {
-                            "value": "street"
-                        },
-                    })
-                }
-
-                fetch(this.url, options)
-                    .then(response => response.json())
-                    .then(result => this.suggestions = result.suggestions)
-                    .catch(error => console.log("error", error));
-            }
-        },
-        checkZone(val) {
-
-            let store = this.$store;
-
-            var myMap = new ymaps.Map('map', {
-                center: [53.90274647009774, 27.55560136148148],
-                zoom: 11,
-                controls: ['geolocationControl', 'searchControl']
-            });
-
-            function onZonesLoad(json, myMap) {
-
-                var deliveryZones = ymaps.geoQuery(json);
-
-                deliveryZones.addToMap(myMap);
-
-                var myGeocoder = ymaps.geocode(val);
-                myGeocoder.then(
-                    function (res) {
-                        var coords = res.geoObjects.get(0).geometry.getCoordinates()
-
-                        var polygon = deliveryZones.searchContaining(coords).get(0);
-
-                        let time = '60-90 мин.'
-                        let price_from = 50
-
-                        if (polygon) {
-                            time = polygon.properties._data.time
-                            price_from = polygon.properties._data.price_from
-                            console.log(time)
-                            console.log(price_from)
-
-                            updateDelivery(store, time, price_from)
-
-                            /*this.deliveryTime = time
-                            this.deliveryFreeSum = price_from
-
-                            store.state.deliveryFreeSum = price_from
-                            store.state.deliveryTime = time*/
-                        }
-                    }
-                )
-            }
-
-            axios
-                .get('/js/data.geojson')
-                .then(response => {
-                    var json = response.data;
-                    onZonesLoad(json, myMap)
-                });
-
-            function updateDelivery(store, time, price_from) {
-                store.commit('changeDeliveryTime', time);
-                store.commit('changeDeliveryFreeSum', price_from);
-            }
-        },
     },
     mounted() {
         axios
@@ -375,36 +286,6 @@ export default {
         color: $main
   &__alert
     margin-bottom: 20px
-  .suggestion
-      position: relative
-      &__inner
-          position: absolute
-          top: 0
-          left: 0
-          border: 1px solid #E0E0E0
-          border-radius: 8px
-          background: #FFF
-          max-height: 100px
-          overflow-x: hidden
-          overflow-y: auto
-          width: 290px
-          label
-              height: auto
-              width: 100%
-              margin: 0
-              cursor: pointer
-              &:hover
-                  background: #f2f2f2
-          &::-webkit-scrollbar
-              width: 4px
-              background: $bg
-              border-radius: 4px
-          &::-webkit-scrollbar-thumb
-              background: $main
-              border-radius: 4px
-      &__text
-          width: 100%
-          padding: 0 14px
 
 
 

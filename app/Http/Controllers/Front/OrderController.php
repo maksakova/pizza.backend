@@ -26,7 +26,7 @@ class OrderController extends Controller
     public function create(Request $request)
     {
         $order = Order::create([
-            'products' => '',
+            'products' => $request->products,
             'cart_total' => $request->cart_total,
             'delivery_method' => $request->delivery_method,
             'delivery_price' => $request->delivery_price,
