@@ -196,6 +196,7 @@ export default {
     p
         color: $text-light
         font-weight: 400
+        text-transform: lowercase
     &__back
         color: $text-light
         font-size: 12px

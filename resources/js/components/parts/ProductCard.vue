@@ -118,6 +118,7 @@ export default {
         line-height: 17px
         color: $text-light
         margin-bottom: 15px
+        text-transform: lowercase
         span
             color: $text
     &__image
