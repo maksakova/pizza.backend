@@ -31,15 +31,29 @@
                                          v-if="variant.menu_variant_id == 1"
                                          :name="variant.menu_variant_id"
                                          :data-price="variant.price"
-                                         :value="key"
+                                         :value="variant.id"
                                          v-model="currentVariant1"
                                   />
                                   <input type="radio"
                                          v-if="variant.menu_variant_id == 2"
                                          :name="variant.menu_variant_id"
                                          :data-price="variant.price"
-                                         :value="key+2"
+                                         :value="variant.id"
                                          v-model="currentVariant2"
+                                  />
+                                  <input type="radio"
+                                         v-if="variant.menu_variant_id == 3"
+                                         :name="variant.menu_variant_id"
+                                         :data-price="variant.price"
+                                         :value="variant.id"
+                                         v-model="currentVariant2"
+                                  />
+                                  <input type="radio"
+                                         v-if="variant.menu_variant_id == 5"
+                                         :name="variant.menu_variant_id"
+                                         :data-price="variant.price"
+                                         :value="variant.id"
+                                         v-model="currentVariant1"
                                   />
                                   <div class="radio__text">{{variant.name}}</div>
                               </label>
@@ -73,6 +87,7 @@
                       </b-tabs>
                   </div>
               </div>
+
               <div class="product-modal__button">
                   <button class="button"
                           @click="addToCart(currentItem, currentVariant1, currentVariant2, chooseAdditives, formatPrice(currentItem.product_variants[currentVariant2].price + additivesSum));
@@ -298,6 +313,10 @@ export default {
         .button
             margin: 0 auto
             height: 50px
+
+    .tab-content > .active
+        display: flex
+        flex-wrap: wrap
 
 
 @media (min-width: 768px)
