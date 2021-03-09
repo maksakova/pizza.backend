@@ -14,7 +14,6 @@ let store = {
         cartSum: 0,
         paymentMethod: 1,
         deliveryMethod: 1,
-        minDeliverySum: 15,
         deliveryFreeSum: 50,
         deliveryPrice: 5,
         deliveryTime: '60-90 мин.',

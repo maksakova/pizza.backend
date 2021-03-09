@@ -85,9 +85,10 @@
                     </div>
                 </div>
                 <div class="col-xl-9">
-                    <map-address/>
+                    @include('front.parts.map-address')
                 </div>
             </div>
         </div>
     </main>
 @endsection
+

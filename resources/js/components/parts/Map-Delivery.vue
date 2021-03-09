@@ -4,7 +4,6 @@
 
 <script>
 import { loadYmap } from 'vue-yandex-maps'
-import {mapGetters} from "vuex";
 
 export default {
     name: "Map-Delivery",
