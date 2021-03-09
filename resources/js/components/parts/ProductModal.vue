@@ -136,6 +136,7 @@ export default {
                 }
             }
             additivesSum = additivesSum * 1
+            console.log(this.chooseAdditives.length);
             console.log(additivesSum);
             return additivesSum
         }
