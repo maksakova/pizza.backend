@@ -26,7 +26,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55e38aa4-1e59-486e-b405-03ed58b0efaf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/menu-products/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/menu-products/edit.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -288,14 +287,7 @@
       <workItem from="1614837748823" duration="8463000" />
       <workItem from="1614846367686" duration="21422000" />
       <workItem from="1614924265897" duration="14667000" />
-      <workItem from="1615269665284" duration="19662000" />
-    </task>
-    <task id="LOCAL-00049" summary="improved choosing variants">
-      <created>1614166599666</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1614166599666</updated>
+      <workItem from="1615269665284" duration="19716000" />
     </task>
     <task id="LOCAL-00050" summary="number input changing quantity">
       <created>1614172873179</created>
@@ -633,7 +625,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615291362009</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="select test">
+      <created>1615291610320</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1615291610320</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -667,7 +666,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="map with zones" />
     <MESSAGE value="doing admin panel design" />
     <MESSAGE value="product variants &amp; ingredients" />
     <MESSAGE value="admin file input" />
@@ -692,7 +690,8 @@
     <MESSAGE value="order" />
     <MESSAGE value="product card height" />
     <MESSAGE value="order works" />
-    <option name="LAST_COMMIT_MESSAGE" value="order works" />
+    <MESSAGE value="select test" />
+    <option name="LAST_COMMIT_MESSAGE" value="select test" />
   </component>
   <component name="WindowStateProjectService">
     <state x="712" y="321" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1615281285097">
@@ -707,10 +706,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1615289492291" />
-    <state x="662" y="89" key="CommitChangelistDialog2" timestamp="1615291361173">
+    <state x="662" y="89" key="CommitChangelistDialog2" timestamp="1615291609671">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="662" y="89" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1615291361173" />
+    <state x="662" y="89" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1615291609671" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1613723760475">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -763,10 +762,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="807" y="433" key="VCS.ChangelistChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1614848974078" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1615291363023">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1615291611341">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1615291363023" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1615291611341" />
     <state x="720" y="253" key="VcsDiffUtil.ChangesDialog" timestamp="1613384498036">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
