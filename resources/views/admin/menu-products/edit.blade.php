@@ -30,7 +30,7 @@
                                     Категория
                                     <select name="menu_category_id">
                                         @foreach($menuCategories as $menuCategory)
-                                            @if($menuProduct->menu_category_id === $menuCategory->id)
+                                            @if($menuProduct->menu_category_id == $menuCategory->id)
                                                 <option value="{{$menuCategory->id}}" selected>
                                                     {{$menuCategory->name}}
                                                 </option>
