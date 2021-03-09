@@ -168,8 +168,6 @@ Vue.mixin({
                         if (polygon) {
                             time = polygon.properties._data.time
                             price_from = polygon.properties._data.price_from
-                            console.log(time)
-                            console.log(price_from)
 
                             updateDelivery(store, time, price_from)
 

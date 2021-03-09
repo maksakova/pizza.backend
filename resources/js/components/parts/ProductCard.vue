@@ -94,7 +94,6 @@ export default {
             this.$store.commit('currentItem', item);
         },
         addToCart(item, currentVariant1) {
-            console.log(item);
             this.$store.commit('addToCart', {item, currentVariant1});
         }
     }

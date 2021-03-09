@@ -48,9 +48,9 @@
                   </div>
 
                   <div class="product-modal__add">
-                      <h3>Добавить в пиццу</h3>
+                      <h3>Добавить</h3>
                       <b-tabs>
-                          <b-tab v-for="(additives, cat_name) in catAdditives" v-bind:key="additives.id" :title="cat_name">
+                          <b-tab v-for="(additives, cat_name) in catAdditives" v-bind:key="additives.id" :title="cat_name" v-if="cat_name != 'Другое'">
                               <label class="checkbox" v-for="additiveItem in additives" v-bind:key="additiveItem.id">
                                   <input type="checkbox"
                                          :value="additiveItem.id"
@@ -134,7 +134,6 @@ export default {
                 } else if (this.currentVariant2 === 4) {
                     additivesSum += Number(this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.max_price)
                 }
-                console.log(additivesSum);
             }
             return additivesSum
         }
