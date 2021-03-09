@@ -33,6 +33,8 @@
                         </div>
                     </div>
 
+                    asd
+
                     <div class="product-item__bottom">
 
                         <!--One type of variants Product-->
