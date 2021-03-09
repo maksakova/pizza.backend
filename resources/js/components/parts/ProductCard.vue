@@ -33,6 +33,7 @@
                         </div>
                     </div>
 
+                    {{item.variants_show}}
                     {{item.product_variants.length}}
 
                     <div class="product-item__bottom">
