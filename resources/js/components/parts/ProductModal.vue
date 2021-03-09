@@ -47,7 +47,7 @@
                       </div>
                   </div>
 
-                  <div class="product-modal__add" v-if="currentItem.menu_category_id === 1">
+                  <div class="product-modal__add" v-if="currentItem.menu_category_id == 1 || currentItem.menu_category_id == 3">
                       <h3>Добавить в пиццу</h3>
 
                       <b-tabs>
@@ -99,13 +99,13 @@ export default {
             currentVariant2: 3,
             chooseAdditives: [],
             currentItem: this.$store.state.currentItem,
-            ingredients: [],
         }
     },
-    mounted() {
-        axios
-            .post('/api/ingredients')
-            .then(response => (this.ingredients = response.data));
+    props: {
+        ingredients: {
+            type: Array,
+            required: true
+        },
     },
     computed: {
         variantsList() {
