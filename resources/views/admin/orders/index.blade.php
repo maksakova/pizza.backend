@@ -11,9 +11,9 @@
                             <a href="{{route('admin')}}"><i class="fas fa-chevron-left"></i> Заказы</a>
                         </h2>
                     </div>
-                    <div class="col-sm-6 text-right">
+                    {{--<div class="col-sm-6 text-right">
                         <a class="btn btn-primary add" href="{{ route('admin.orders.create') }}">Добавить</a>
-                    </div>
+                    </div>--}}
                 </div>
                 <table class="table table-hover">
                     <thead>

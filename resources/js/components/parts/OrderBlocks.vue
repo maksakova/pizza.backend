@@ -140,6 +140,7 @@
                 </div>
             </div>
         </div>
+        <input name="products" :value="this.products">
         <input name="cart_total" :value="this.$store.state.cartSum">
         <input name="delivery_price" :value="this.$store.state.deliveryPrice">
     </div>
@@ -173,7 +174,7 @@ export default {
             deliveryCode: this.$store.state.deliveryCode,
             suggestions: {},
             SuggestView: null,
-            products: [],
+            products: JSON.stringify(this.$store.state.cart),
             deliveryTime: this.$store.state.deliveryTime,
             ingredients: [],
             url: "https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address",

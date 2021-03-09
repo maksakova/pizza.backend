@@ -27,6 +27,9 @@ class MenuVariantsSeeder extends Seeder
         $inputs[] = [
             'name' => 'Способ обжарки',
         ];
+        $inputs[] = [
+            'name' => 'Лапша',
+        ];
         DB::table('menu_variants')->insert($inputs);
     }
 }

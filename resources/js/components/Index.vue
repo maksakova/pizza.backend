@@ -327,7 +327,7 @@ export default {
         text-align: center
         padding: 45px 15px 15px
         color: #C4C4C4
-        height: calc(100% - 49px - 72px - 49px)
+        min-height: 387px
         img
             margin-bottom: 15px
 

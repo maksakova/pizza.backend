@@ -37,7 +37,7 @@ let store = {
                 let found = state.cart.find(product => product.id === item.id && product.currentVariant1 === item.currentVariant1);
                 if (found) {
                     found.quantity ++;
-                    found.totalPrice = found.quantity * found.price;
+                    found.totalPrice = this.formatPrice(found.quantity * found.price);
                 } else {
                     state.cart.push(item);
                     Vue.set(item, 'quantity', 1)

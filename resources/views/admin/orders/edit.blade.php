@@ -97,16 +97,39 @@
                                 </div>
                             </div>
                             <h2>Позиции</h2>
-                            <div class="composition">
-                                @foreach($menuProducts as $menuProduct)
-                                    <label class="checkbox">
-                                        <input
-                                            type="checkbox"
-                                            name="products[]" value="{{$menuProduct->id}}">
-                                        <div class="checkbox__text">{{$menuProduct->name}}</div>
-                                    </label>
-                                @endforeach
-                            </div>
+                        <table class="table table-hover">
+                            <tr>
+                                <th>№</th>
+                                <th>Название</th>
+                                <th>Выбрано</th>
+                                <th>Добавки</th>
+                                <th>Цена</th>
+                            </tr>
+                            @foreach($orderProducts as $key=>$orderProduct)
+                                <tr>
+                                    <td>{{$key + 1}}</td>
+                                    <td>{{$orderProduct->name}}</td>
+                                    <td>
+                                        @if(property_exists($orderProduct, 'currentVariant1'))
+                                            {{$orderProduct->product_variants[$orderProduct->currentVariant1]->name}}
+                                        @endif
+                                        @if(property_exists($orderProduct, 'currentVariant2'))
+                                                {{$orderProduct->product_variants[$orderProduct->currentVariant2]->name}}
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if(property_exists($orderProduct, 'additives'))
+                                            @foreach($orderProduct->additives as $additive)
+                                                {{$menuIngredients[$additive - 1]->name}}
+                                            @endforeach
+                                        @endif
+                                    </td>
+                                    <td>
+                                        {{$orderProduct->price}} x {{$orderProduct->quantity}} = {{$orderProduct->price * $orderProduct->quantity}}
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </table>
                         @else
                             @if($order->status_id < 4)
                                 <div class="row">
@@ -128,7 +151,40 @@
                             @else
                                 <p>Статус: {{ $order->status->name }}</p>
                             @endif
-                            <p>Товары: {{ $order->products }}</p>
+                                <table class="table table-hover">
+                                    <tr>
+                                        <th>№</th>
+                                        <th>Название</th>
+                                        <th>Выбрано</th>
+                                        <th>Добавки</th>
+                                        <th>Цена</th>
+                                    </tr>
+                                    @foreach($orderProducts as $key=>$orderProduct)
+                                        <tr>
+                                            <td>{{$key + 1}}</td>
+                                            <td>{{$orderProduct->name}}</td>
+                                            <td>
+                                                @if(property_exists($orderProduct, 'currentVariant1'))
+                                                    {{$orderProduct->product_variants[$orderProduct->currentVariant1]->name}}
+                                                @endif
+                                                @if(property_exists($orderProduct, 'currentVariant2'))
+                                                    {{$orderProduct->product_variants[$orderProduct->currentVariant2]->name}}
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if(property_exists($orderProduct, 'additives'))
+                                                    @foreach($orderProduct->additives as $additive)
+                                                        {{$menuIngredients[$additive - 1]->name}}
+                                                    @endforeach
+                                                @endif
+                                            </td>
+                                            <td>
+                                                {{$orderProduct->price}} x {{$orderProduct->quantity}} = {{$orderProduct->price * $orderProduct->quantity}}
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </table>
+                            <br>
                             <p>Сумма: {{ $order->cart_total }} BYN</p>
                             <p>Способ доставки: {{ $order->deliveryMethod->name }}</p>
                             <p>Способ оплаты: {{ $order->paymentMethod->name }}</p>

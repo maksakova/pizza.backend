@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\DeliveryMethod;
+use App\Models\MenuIngredient;
 use App\Models\MenuProduct;
 use App\Models\Order;
 use App\Models\OrderStatus;
@@ -80,13 +81,20 @@ class OrderController extends Controller
         $menuProducts = MenuProduct::get();
         $deliveryMethods = DeliveryMethod::get();
         $paymentMethods = PaymentMethod::get();
+        $menuIngredients = MenuIngredient::all();
+
+        if ($order->products) {
+            $orderProducts = json_decode($order->products);
+        }
 
         return view('admin.orders.edit', [
             'order'           => $order,
+            'orderProducts'   => $orderProducts,
             'orderStatuses'   => $orderStatuses,
             'menuProducts'    => $menuProducts,
             'deliveryMethods' => $deliveryMethods,
-            'paymentMethods'  => $paymentMethods
+            'paymentMethods'  => $paymentMethods,
+            'menuIngredients' => $menuIngredients,
         ]);
     }
 

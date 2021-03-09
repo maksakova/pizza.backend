@@ -23,7 +23,7 @@ class MenuIngredientsSeeder extends Seeder
         ];
         $inputs[] = [
             'name'                     => 'Говядина',
-            'menu_category_id'         => 1,
+            'menu_category_id'         => '1,3',
             'menu_ingredient_group_id' => 1,
             'img'                      => '/img/uploads/meat-2.jpg',
         ];
@@ -35,7 +35,13 @@ class MenuIngredientsSeeder extends Seeder
         ];
         $inputs[] = [
             'name'                     => 'Курица',
-            'menu_category_id'         => 1,
+            'menu_category_id'         => '1,3',
+            'menu_ingredient_group_id' => 1,
+            'img'                      => '/img/uploads/meat-4.jpg',
+        ];
+        $inputs[] = [
+            'name'                     => 'Свинина',
+            'menu_category_id'         => '3',
             'menu_ingredient_group_id' => 1,
             'img'                      => '/img/uploads/meat-4.jpg',
         ];

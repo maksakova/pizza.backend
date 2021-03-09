@@ -196,6 +196,11 @@ export default {
             padding: 0 20px
             height: calc(100% - 196px)
 
+@media (min-width: 992px)
+    .product-item
+        &__text
+            height: calc(100% - 196px)
+
 @media (min-width: 1200px)
     .product-item
         padding: 0px 0 24px
@@ -217,7 +222,7 @@ export default {
                     right: 6px
                     bottom: 0
         &__text
-            height: calc(100% - 206px)
+            height: calc(100% - 240px)
         &__variants
             height: 40px
             margin-bottom: 20px

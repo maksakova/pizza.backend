@@ -5,7 +5,7 @@
             <td>×{{ product.quantity }}</td>
             <td>{{formatPrice(product.price * product.quantity)}} руб.</td>
         </tr>
-        <tr>
+        <tr v-if="$store.state.deliveryFreeSum > $store.state.cartSum && $store.state.deliveryMethod === 1">
             <td colspan="2">
                 Доставка:
             </td>
@@ -13,7 +13,8 @@
         </tr>
         <tr>
             <th colspan="2">Итого:</th>
-            <th>{{ formatPrice($store.state.cartSum + $store.state.deliveryPrice) }} руб.</th>
+            <th v-if="$store.state.deliveryFreeSum > $store.state.cartSum && $store.state.deliveryMethod === 1">{{ formatPrice($store.state.cartSum + $store.state.deliveryPrice) }} руб.</th>
+            <th v-else>{{ formatPrice($store.state.cartSum) }} руб.</th>
         </tr>
     </table>
 </template>
