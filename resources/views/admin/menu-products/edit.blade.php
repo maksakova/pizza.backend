@@ -54,6 +54,8 @@
                                             @else
                                                 <option value="{{$menuFilter->id}}">
                                                     {{$menuFilter->name}}
+                                                    {{$menuProduct->menu_filter_id}}
+                                                    {{$menuFilter->id}}
                                                 </option>
                                             @endif
                                         @endforeach
@@ -92,7 +94,6 @@
                                 @endif
                             </div>
                         </div>
-                        {{$menuProduct->menuCategory->ingredients}}
                         @if(!$menuProduct->menuCategory->ingredients)
                             <label>
                                 Состав
