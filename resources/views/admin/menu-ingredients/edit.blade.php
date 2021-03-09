@@ -31,7 +31,7 @@
                                     Группа
                                     <select name="menu_ingredient_group_id">
                                         @foreach($menuIngredientGroups as $menuIngredientGroup)
-                                            @if($menuIngredient->menu_ingredient_group_id === $menuIngredientGroup->id)
+                                            @if($menuIngredient->menu_ingredient_group_id == $menuIngredientGroup->id)
                                                 <option value="{{$menuIngredientGroup->id}}" selected>
                                                     {{$menuIngredientGroup->name}}
                                                 </option>

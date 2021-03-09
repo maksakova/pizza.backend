@@ -37,8 +37,6 @@
                                             @else
                                                 <option value="{{$menuCategory->id}}" >
                                                     {{$menuCategory->name}}
-                                                    {{$menuProduct->menu_category_id}}
-                                                    {{$menuCategory->id}}
                                                 </option>
                                             @endif
                                         @endforeach
@@ -49,7 +47,7 @@
                                     <select name="menu_filter_id">
                                         <option value="">Нет</option>
                                         @foreach($menuFilters as $menuFilter)
-                                            @if($menuProduct->menu_filter_id === $menuFilter->id)
+                                            @if($menuProduct->menu_filter_id == $menuFilter->id)
                                             <option value="{{$menuFilter->id}}" selected>
                                                 {{$menuFilter->name}}
                                             </option>
@@ -169,7 +167,7 @@
                                     Категория
                                     <select name="menu_category_id">
                                         @foreach($menuCategories as $menuCategory)
-                                            @if($menuProduct->menu_category_id === $menuCategory->id)
+                                            @if($menuProduct->menu_category_id == $menuCategory->id)
                                                 <option value="{{$menuCategory->id}}" selected>
                                                     {{$menuCategory->name}}
                                                 </option>
@@ -187,7 +185,7 @@
                                     <select name="menu_filter_id">
                                         <option value="">Нет</option>
                                         @foreach($menuFilters as $menuFilter)
-                                            @if($menuProduct->menu_filter_id === $menuFilter->id)
+                                            @if($menuProduct->menu_filter_id == $menuFilter->id)
                                                 <option value="{{$menuFilter->id}}" selected>
                                                     {{$menuFilter->name}}
                                                 </option>

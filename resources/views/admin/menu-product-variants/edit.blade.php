@@ -26,7 +26,7 @@
                                     Тип
                                     <select name="menu_variant_id">
                                         @foreach($menuVariants as $menuVariant)
-                                            @if($menuProductVariant->menu_variant_id === $menuVariant->id)
+                                            @if($menuProductVariant->menu_variant_id == $menuVariant->id)
                                                 <option value="{{$menuVariant->id}}" selected>{{$menuVariant->name}}</option>
                                             @else
                                                 <option value="{{$menuVariant->id}}">{{$menuVariant->name}}</option>
