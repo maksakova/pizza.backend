@@ -192,7 +192,7 @@ export default {
         background: $white
         padding: 0px 0 15px
         margin: 15px 0 0
-        height: calc(100% - 15px)
+        height: 100%
         &__text
             padding: 0 20px
 
