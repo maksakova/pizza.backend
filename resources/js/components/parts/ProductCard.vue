@@ -53,7 +53,7 @@
                             <button class="button"
                                     @click="show('product-modal');
                                     currentItem(item)">
-                                Выбрать
+                                Выбрать 2
                             </button>
                         </template>
 
