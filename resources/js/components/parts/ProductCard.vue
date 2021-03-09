@@ -194,6 +194,7 @@ export default {
         margin: 15px 0 0
         &__text
             padding: 0 20px
+            height: calc(100% - 196px)
 
 @media (min-width: 1200px)
     .product-item
