@@ -47,11 +47,7 @@
                       </div>
                   </div>
 
-                  {{currentItem.menu_category_id}}
-
-                  {{ingredients}}
-
-                  <div class="product-modal__add" v-if="currentItem.menu_category_id == 1 || currentItem.menu_category_id == 3">
+                  <div class="product-modal__add">
                       <h3>Добавить в пиццу</h3>
 
                       <b-tabs>
