@@ -32,11 +32,13 @@
                                         @foreach($menuCategories as $menuCategory)
                                             @if($menuProduct->menu_category_id === $menuCategory->id)
                                                 <option value="{{$menuCategory->id}}" selected>
-                                                    asd{{$menuCategory->name}}
+                                                    {{$menuCategory->name}}
                                                 </option>
                                             @else
                                                 <option value="{{$menuCategory->id}}" >
                                                     {{$menuCategory->name}}
+                                                    {{$menuProduct->menu_category_id}}
+                                                    {{$menuCategory->id}}
                                                 </option>
                                             @endif
                                         @endforeach
@@ -54,8 +56,6 @@
                                             @else
                                                 <option value="{{$menuFilter->id}}">
                                                     {{$menuFilter->name}}
-                                                    {{$menuProduct->menu_filter_id}}
-                                                    {{$menuFilter->id}}
                                                 </option>
                                             @endif
                                         @endforeach
