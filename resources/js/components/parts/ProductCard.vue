@@ -33,9 +33,6 @@
                         </div>
                     </div>
 
-                    {{item.variants_show}}
-                    {{item.product_variants.length}}
-
                     <div class="product-item__bottom">
 
                         <!--One type of variants Product-->
@@ -45,7 +42,7 @@
               {{ item.product_variants[currentVariant1].price }} руб.
             </span>
                             <button class="button" @click="addToCart(item, currentVariant1)">
-                                Выбрать 1
+                                Выбрать
                             </button>
                         </template>
 
@@ -57,7 +54,7 @@
                             <button class="button"
                                     @click="show('product-modal');
                                     currentItem(item)">
-                                Выбрать 2
+                                Выбрать
                             </button>
                         </template>
 
@@ -67,7 +64,7 @@
               {{ item.min_price }} руб.
             </span>
                             <button class="button" @click="addToCart(item)">
-                                Выбрать 3
+                                Выбрать
                             </button>
                         </template>
                     </div>
