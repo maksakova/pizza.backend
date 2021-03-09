@@ -138,7 +138,6 @@ export default {
                 }
                 console.log(additivesSum);
             }
-
             return additivesSum
         }
     },
