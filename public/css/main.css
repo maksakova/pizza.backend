@@ -119,6 +119,10 @@ button:focus,
   padding: 20px 0;
 }
 
+.button-order div {
+  display: flex;
+}
+
 .button-order span {
   position: relative;
   font-size: 12px;

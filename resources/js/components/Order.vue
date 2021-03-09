@@ -180,7 +180,7 @@
                             <td>×{{ product.quantity }}</td>
                             <td>{{formatPrice(product.price * product.quantity)}} руб.</td>
                         </tr>
-                        <tr>
+                        <tr v-if="$store.state.deliveryFreeSum > $store.state.cartSum && $store.state.deliveryMethod === 1">
                             <td colspan="2">
                                 Доставка:
                             </td>
@@ -240,11 +240,29 @@ export default {
             ingredients: [],
             url: "https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address",
             token: "dbb8b9afdebf2975f316810b2ba4b9ab066674cd",
+            data: {
+                products: 'ggf',
+                cart_total: this.$store.state.cartSum,
+                delivery_method: this.deliveryMethod,
+                delivery_price: this.$store.state.deliveryPrice,
+                payment_method: this.paymentMethod,
+                cashback: this.cashBackValue,
+                name: this.deliveryName,
+                phone: this.deliveryPhone,
+                email: this.deliveryEmail,
+                street: this.deliveryStreet,
+                building: this.deliveryBuilding,
+                flat: this.deliveryFlat,
+                entrance: this.deliveryEntrance,
+                floor: this.deliveryFloor,
+                code: this.deliveryCode,
+                comment: this.comment
+            }
         }
     },
     methods: {
-        changeDeliveryMethod(id) {
-            this.$store.commit('changeDeliveryMethod', id);
+        changeDeliveryMethod(deliveryMethod) {
+            this.$store.commit('changeDeliveryMethod', deliveryMethod);
         },
         changePaymentMethod(id) {
             this.$store.commit('changePaymentMethod', id);
@@ -253,12 +271,16 @@ export default {
             this.order()
         },
         async order() {
-            await window.axios({
+            axios
+                .post('api/orders')
+                .then(response => (console.log(response)))
+                .catch(error => (console.log(error)));
+            /*await window.axios({
+                url: '/api/orders/create',
                 method: 'post',
                 headers: { // объект в котором передаются заголовки запроса
                     'X-CSRF-TOKEN': document.getElementById("post_token").getAttribute("content") // запрос который содержит ваш токен
                 },
-                url: '/api/orders/create',
                 data: {
                     products: 'ggf',
                     cart_total: this.$store.state.cartSum,
@@ -277,7 +299,10 @@ export default {
                     code: this.deliveryCode,
                     comment: this.comment
                 }
-            }).then(response => (window.location.href = "/success?order=" + response.data));
+            }).then(response => (window.location.href = "/success?order=" + response.data))
+                .catch( error => {
+                    console.log(error)
+                });*/
 
         }
     },

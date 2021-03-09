@@ -58,6 +58,8 @@ Vue.component('cart-count', require('./components/parts/CartCount.vue').default)
 Vue.component('cart-sum', require('./components/parts/CartSum.vue').default);
 Vue.component('delivery-time', require('./components/parts/DeliveryTime.vue').default);
 Vue.component('cart-product-card', require('./components/parts/CartProductCard.vue').default);
+Vue.component('order-blocks', require('./components/parts/OrderBlocks.vue').default);
+Vue.component('table-order', require('./components/parts/TableOrder.vue').default);
 
 Vue.directive('scroll', {
     inserted: function (el, binding) {

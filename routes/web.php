@@ -122,10 +122,7 @@ Route::get('/cart', function(){
     return view('front.index');
 });
 
-Route::get('/order', function(){
-    return view('front.index');
-});
+Route::resource('/order', 'Front\OrderController')
+    ->names('front.orders');
 
-Route::get('/success', function(){
-    return view('front.success');
-});
+Route::get('/success', function () {return view('front.success', );})->name('success');
