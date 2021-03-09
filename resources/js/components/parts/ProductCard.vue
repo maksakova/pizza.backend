@@ -38,7 +38,8 @@
                     <div class="product-item__bottom">
 
                         <!--One type of variants Product-->
-                        <template v-if="item.variants_show === 1 && item.product_variants.length > 0">
+                        <template
+                            v-if="item.variants_show == 1 && item.product_variants.length > 0">
             <span class="product-item__price">
               {{ item.product_variants[currentVariant1].price }} руб.
             </span>
