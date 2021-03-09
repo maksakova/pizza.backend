@@ -15,7 +15,7 @@
                 </div>
 
                 <div>
-                    <div class="product-item__variants" v-if="item.variants_show === 1 && item.product_variants.length > 0">
+                    <div class="product-item__variants" v-if="item.variants_show == 1 && item.product_variants.length > 0">
 
                         <div class="product-item__variants__item"
                              v-for="(variant, key) in item.product_variants"
@@ -49,7 +49,7 @@
                         </template>
 
                         <!--Product with Modal-->
-                        <template v-else-if="!item.variants_show && item.product_variants.length > 0">
+                        <template v-else-if="item.variants_show == 0 && item.product_variants.length > 0">
             <span class="product-item__price">
               от {{ item.min_price }} руб.
             </span>
