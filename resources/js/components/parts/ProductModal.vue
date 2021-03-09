@@ -116,6 +116,7 @@ export default {
                 return p;
             }, {});
         },
+
         catAdditives() {
             return this.ingredients.reduce((p,c) => {
                 const cat_name = c.menu_ingredient_group.name;
@@ -124,6 +125,7 @@ export default {
                 return p;
             }, {});
         },
+
         additivesSum() {
             var additivesSum = 0
             for (let i = 0; i < this.chooseAdditives.length; i += 1) {
