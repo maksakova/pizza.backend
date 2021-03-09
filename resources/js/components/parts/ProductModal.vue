@@ -99,13 +99,13 @@ export default {
             currentVariant2: 3,
             chooseAdditives: [],
             currentItem: this.$store.state.currentItem,
+            ingredients: [],
         }
     },
-    props: {
-        ingredients: {
-            type: Array,
-            required: true
-        },
+    mounted() {
+        axios
+            .post('/api/ingredients')
+            .then(response => (this.ingredients = response.data));
     },
     computed: {
         variantsList() {
