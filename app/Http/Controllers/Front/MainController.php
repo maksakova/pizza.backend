@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Contact;
 use App\Models\DeliveryMethod;
 use App\Models\MainBanner;
 use App\Models\MenuCategory;
@@ -71,6 +72,11 @@ class MainController extends Controller
     public function settings()
     {
         return Setting::all()->keyBy('key');
+    }
+
+    public function contacts()
+    {
+        return Contact::all()->keyBy('key');
     }
 
 }

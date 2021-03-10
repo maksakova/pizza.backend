@@ -115,9 +115,10 @@
                     </template>
                     <template v-else>
                         <h2>Прижайте к нам за едой по адресу:</h2>
-                        <p><img src="/../img/contacts/3-marker.svg"> г. Минск, Ложинская, 5</p>
-                        <p><img src="/../img/contacts/1-phone.svg"> <a href="tel:+ 375 (29) 112-11-77">+ 375 (29) 112-11-77</a></p>
-                        <p><img src="/../img/contacts/2-clock.svg"> с 10:00 до 22:00 </p>
+                        <p><img src="/../img/contacts/3-marker.svg"> {{contacts['address']['value']}}</p>
+                        <p><img src="/../img/contacts/1-phone.svg"> <a href="tel:+ 375 (29) 112-11-77"> {{contacts['phone']['value']}}
+                        </a></p>
+                        <p><img src="/../img/contacts/2-clock.svg"> {{contacts['time']['value']}}</p>
                     </template>
                 </div>
             </div>
@@ -208,6 +209,7 @@ export default {
             products: JSON.stringify(this.$store.state.cart),
             deliveryTime: this.$store.state.deliveryTime,
             ingredients: [],
+            contacts: [],
             url: "https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address",
             token: "9af52f392c48bb34c8fb20bb53573b1ee923e871",
         }
@@ -230,6 +232,9 @@ export default {
         axios
             .post('/api/paymentMethods')
             .then(response => (this.paymentMethods = response.data));
+        axios
+            .post('/api/contacts')
+            .then(response => (this.contacts = response.data));
     }
 }
 </script>
