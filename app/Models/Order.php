@@ -28,6 +28,7 @@ class Order extends Model
         'code',
         'comment',
         'status_id',
+        'callback',
     ];
 
     public function status()

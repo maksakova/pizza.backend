@@ -143,7 +143,7 @@ export default {
                 right: 7px
     &__text
         padding: 0 3px
-        height: auto
+        height: calc(100% - 196px)
         display: flex
         flex-direction: column
         justify-content: space-between
@@ -193,14 +193,9 @@ export default {
         background: $white
         padding: 0px 0 15px
         margin: 15px 0 0
+        height: calc(100% - 15px)
         &__text
             padding: 0 20px
-            height: calc(100% - 196px)
-
-@media (min-width: 992px)
-    .product-item
-        &__text
-            height: calc(100% - 196px)
 
 @media (min-width: 1200px)
     .product-item
@@ -223,7 +218,7 @@ export default {
                     right: 6px
                     bottom: 0
         &__text
-            height: calc(100% - 240px)
+            height: calc(100% - 214px)
         &__variants
             height: 40px
             margin-bottom: 20px

@@ -1,12 +1,14 @@
 <template>
     <div class="footer__menu">
-        <router-link
-            :to="{name: 'index', hash: '#' + item.slug}"
-            class="footer__menu__item"
-            v-for="item in menuCategories"
-            v-bind:key="item.id">
+        <router-link :to="item.slug"
+                     class="menu__item"
+                     v-for="item in menuCategories"
+                     v-bind:key="item.id">
             <h3>{{item.name}}</h3>
         </router-link>
+        <div id="to_top" @click="scrollToTop">
+            <img src="/img/common/arrow.svg">
+        </div>
     </div>
 </template>
 
@@ -28,6 +30,13 @@ export default {
                 el.classList.remove('fixed')
             }
         },
+        scrollToTop() {
+            window.scroll({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            })
+        }
     },
     mounted() {
         axios

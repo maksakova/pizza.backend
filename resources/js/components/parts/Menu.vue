@@ -68,9 +68,10 @@ export default {
         padding: 10px 15px 6px
         &::-webkit-scrollbar
             height: 4px
-            background: $main
+        &::-webkit-scrollbar-track
+            background: transparent
         &::-webkit-scrollbar-thumb
-            background: $bg
+            background: $main
     &__inner
         display: flex
         width: max-content

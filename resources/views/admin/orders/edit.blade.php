@@ -38,17 +38,20 @@
                                     </label>
                                     <label>
                                         Телефон
+                                        @if($order->callback)
+                                            (Не перезванивать)
+                                        @endif
                                         <input type="text" name="phone" value="{{$order->phone}}">
-                                    </label>
-                                    <label>
-                                        E-mail
-                                        <input type="text" name="email" value="{{$order->email}}">
                                     </label>
                                     <label>
                                         Способ доставки
                                         <select name="delivery_method">
                                             @foreach($deliveryMethods as $deliveryMethod)
-                                                <option value="{{ $deliveryMethod->id }}">{{ $deliveryMethod->name }}</option>
+                                                @if($order->delivery_method == $deliveryMethod->id)
+                                                <option value="{{ $deliveryMethod->id }}" selected>{{ $deliveryMethod->name }}</option>
+                                                @else
+                                                    <option value="{{ $deliveryMethod->id }}">{{ $deliveryMethod->name }}</option>
+                                                @endif
                                             @endforeach
                                         </select>
                                     </label>
@@ -56,7 +59,11 @@
                                         Способ оплаты
                                         <select name="payment_method">
                                             @foreach($paymentMethods as $paymentMethod)
-                                                <option value="{{ $paymentMethod->id }}">{{ $paymentMethod->name }}</option>
+                                                @if($order->payment_method == $paymentMethod->id)
+                                                    <option value="{{ $paymentMethod->id }}" selected>{{ $paymentMethod->name }}</option>
+                                                @else
+                                                    <option value="{{ $paymentMethod->id }}">{{ $paymentMethod->name }}</option>
+                                                @endif
                                             @endforeach
                                         </select>
                                     </label>
@@ -129,6 +136,10 @@
                                     </td>
                                 </tr>
                             @endforeach
+                            <tr>
+                                <th colspan="4">Итого</th>
+                                <th>{{$order->cart_total}}</th>
+                            </tr>
                         </table>
                         @else
                             @if($order->status_id < 4)

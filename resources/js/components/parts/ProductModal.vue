@@ -276,7 +276,6 @@ export default {
             border-radius: 8px
             text-align: center
             width: calc((100% - 9px) / 2)
-            height: 153px
             margin: 0 0 9px
             transition: .3s
             &:not(:nth-child(2n))

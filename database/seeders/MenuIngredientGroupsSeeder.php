@@ -50,6 +50,13 @@ class MenuIngredientGroupsSeeder extends Seeder
             'mid_price' => 2.00,
             'max_price' => 3.00
         ];
+        $inputs[] = [
+            'name'      => 'Другое',
+            'slug'      => 'other',
+            'min_price' => 1.50,
+            'mid_price' => 2.00,
+            'max_price' => 3.00
+        ];
         DB::table('menu_ingredient_groups')->insert($inputs);
     }
 }

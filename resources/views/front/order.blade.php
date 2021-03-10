@@ -9,26 +9,6 @@
                 <div class="col-xl-9">
                     <h1>Оформление заказа</h1>
                     <input type="hidden" name="status_id" value="1">
-                    <div class="order__block">
-                        <h2>1. Личные данные</h2>
-                        <label>
-                            Имя
-                            <input type="text" name="name" placeholder="Имя" v-model="deliveryName" required>
-                        </label>
-                        <label>
-                            Телефон
-                            <the-mask :type="'tel'"
-                                      :name="'phone'"
-                                      :placeholder="'+375 ( ) '"
-                                      v-model="deliveryPhone"
-                                      required
-                                      :mask="['+375 (##) ###-##-##']" />
-                        </label>
-                        <label>
-                            Почта
-                            <input type="email" name="email" v-model="deliveryEmail" placeholder="Email">
-                        </label>
-                    </div>
                     <order-blocks/>
                 </div>
                 <div class="col-xl-3 offset-xl-0 col-lg-6 offset-lg-3">

@@ -15,7 +15,7 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->string('products');
+            $table->longText('products');
             $table->float('cart_total')->default(0);
             $table->integer('delivery_method')->default(1);
             $table->float('delivery_price')->default(0);
@@ -25,13 +25,14 @@ class CreateOrdersTable extends Migration
             $table->text('name');
             $table->text('phone');
             $table->text('email')->nullable();
-            $table->text('street');
-            $table->text('building');
+            $table->text('street')->nullable();
+            $table->text('building')->nullable();
             $table->text('flat')->nullable();
             $table->text('entrance')->nullable();
             $table->text('floor')->nullable();
             $table->text('code')->nullable();
             $table->text('comment')->nullable();
+            $table->boolean('callback');
             $table->integer('status_id');
             $table->timestamps();
             $table->softDeletes();

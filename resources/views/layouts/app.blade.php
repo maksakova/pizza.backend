@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Laravel') }} Админ-панель</title>
 
     <!-- Fonts -->
     <link href="{{ asset('fonts/stylesheet.css') }}" rel="stylesheet">

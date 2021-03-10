@@ -335,9 +335,12 @@ input:focus {
 }
 
 .checkbox__text:after {
+  content: '';
   background-image: url("/../img/common/check.svg");
   position: absolute;
-  top: 3px;
+  width: 14px;
+  height: 14px;
+  top: 5px;
   left: 3px;
   opacity: 0;
 }
@@ -1065,6 +1068,13 @@ header .close {
   header.active .close {
     display: block;
   }
+  .pr .vm--modal {
+    top: 35px !important;
+    height: calc(100% - 35px) !important;
+  }
+  .pr .product-modal {
+    max-height: 100vh;
+  }
 }
 
 @media (max-width: 400px) {
@@ -1574,6 +1584,78 @@ header .close {
   margin-bottom: 20px;
 }
 
+.order {
+  padding: 0 0 60px;
+}
+
+.order__block {
+  background: #FFFFFF;
+  border-radius: 10px;
+  padding: 15px 15px 0;
+  margin-bottom: 20px;
+}
+
+.order__block h2 {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.order__delivery {
+  color: #828282;
+  margin-bottom: 24px;
+}
+
+.order__order {
+  margin-bottom: 20px;
+}
+
+.order .checkbox__text {
+  white-space: nowrap;
+}
+
+@media (min-width: 992px) {
+  .order__block-delivery {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .order__block-delivery .product-item__variants {
+    width: 258px;
+    margin: 0 30px 0 0;
+  }
+  .order__block-pay .product-item__variants {
+    width: 384px;
+  }
+  .order__block-pay p {
+    width: 396px;
+    font-size: 16px;
+    line-height: 19px;
+    color: #828282;
+  }
+  .order__delivery {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .order__block {
+    padding: 28px 30px;
+    margin-bottom: 35px;
+  }
+  .order__block h2 {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 16px;
+  }
+  .order__block h2:nth-child(3) {
+    font-size: 16px;
+    line-height: 19px;
+  }
+  .order__block-delivery {
+    margin-bottom: 38px;
+  }
+}
+
 .success {
   text-align: center;
   min-height: 460px;
@@ -1767,6 +1849,27 @@ footer .custom-logo {
 
 .footer__pay img {
   margin: 0 5px 10px;
+}
+
+#to_top {
+  width: 40px;
+  height: 40px;
+  background: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(90deg);
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 4px rgba(64, 94, 72, 0.1);
+  cursor: pointer;
+  opacity: .7;
+}
+
+#to_top:hover {
+  opacity: 1;
 }
 
 @media (min-width: 1200px) {

@@ -3,9 +3,24 @@
 </template>
 
 <script>
+
 export default {
     name: "Cart-Sum",
-    computed: {}
+    created() {
+        this.watchCart()
+    },
+    computed: {},
+    watch: {
+        $route: 'watchCart'
+    },
+    methods: {
+        watchCart() {
+            console.log(this.$route.params.slug)
+            if (this.$route.params.slug == 'success') {
+                this.$store.commit('cleanCart');
+            }
+        }
+    },
 }
 </script>
 

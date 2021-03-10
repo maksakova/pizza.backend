@@ -143,7 +143,6 @@ export default {
             filters: [],
             products: [],
             ingredients: [],
-            settings: [],
             currentItem: this.$store.state.currentItem,
             cartCount: this.$store.state.cartCount,
             cart: this.$store.state.cart
@@ -162,9 +161,6 @@ export default {
         axios
             .post('/api/ingredients')
             .then(response => (this.ingredients = response.data));
-        axios
-            .post('/api/settings')
-            .then(response => (this.settings = response.data));
     },
     created() {
         this.fetchData()

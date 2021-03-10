@@ -42,7 +42,8 @@ class OrderController extends Controller
             'floor' => $request->floor,
             'code' => $request->code,
             'comment' => $request->comment,
-            'status_id' => 1
+            'status_id' => 1,
+            'callback' => $request->callback
         ]);
         $order->save();
 

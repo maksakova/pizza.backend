@@ -36,7 +36,11 @@
                                 <a href="{{route('admin.orders.edit', $item->id)}}">{{ $item->created_at }}</a>
                             </td>
                             <td>
-                                {{ $item->street }} {{ $item->building }} {{ $item->flat }}
+                                @if($item->delivery_method == 1)
+                                    {{ $item->street }} {{ $item->building }} {{ $item->flat }}
+                                @else
+                                    Самовывоз
+                                @endif
                             </td>
                         </tr>
                     @endforeach

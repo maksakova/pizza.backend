@@ -22,6 +22,9 @@ class OrderStatusesSeeder extends Seeder
             'name' => 'Принят',
         ];
         $inputs[] = [
+            'name' => 'Оплачен',
+        ];
+        $inputs[] = [
             'name' => 'Передан курьеру',
         ];
         $inputs[] = [

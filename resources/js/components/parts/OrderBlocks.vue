@@ -1,6 +1,26 @@
 <template>
     <div>
         <div class="order__block">
+            <h2>1. Личные данные</h2>
+            <label>
+                Имя
+                <input type="text" name="name" placeholder="Имя" v-model="deliveryName" required>
+            </label>
+            <label>
+                Телефон
+                <the-mask :type="'tel'"
+                          :name="'phone'"
+                          :placeholder="'+375 ( ) '"
+                          v-model="deliveryPhone"
+                          required
+                          :mask="['+375 (##) ###-##-##']" />
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" v-model="callback" name="callback" value="1" />
+                <div class="checkbox__text">Не перезванивать</div>
+            </label>
+        </div>
+        <div class="order__block">
             <div class="row">
                 <div class="col-lg-10">
                     <h2>2. Доставка </h2>
@@ -161,6 +181,7 @@ export default {
             paymentMethod: this.$store.state.paymentMethod,
             cashBack: false,
             cashBackValue: null,
+            callback: false,
             currentItem: this.$store.state.currentItem,
             cartCount: this.$store.state.cartCount,
             cart: this.$store.state.cart,
@@ -204,7 +225,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-
-</style>

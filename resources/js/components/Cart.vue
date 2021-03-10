@@ -49,48 +49,49 @@
               Заказ принят
             </div>
           </div>
-          <h2>Мой заказ</h2>
-          <table class="cart__order">
-            <tr>
-              <td>Сумма заказа:</td>
-              <td>{{ formatPrice($store.state.cartSum) }} руб.</td>
-            </tr>
-            <tr>
-              <td>Адрес доставки:</td>
-              <td>
+          <div class="cart__my-order">
+              <h2>Мой заказ</h2>
+              <table class="cart__order">
+                  <tr>
+                      <td>Сумма заказа:</td>
+                      <td>{{ formatPrice($store.state.cartSum) }} руб.</td>
+                  </tr>
+                  <tr>
+                      <td>Адрес доставки:</td>
+                      <td>
                   <span class="cart__order__link"  @click="show('address-modal')">
                       <template v-if="$store.state.deliveryStreet && deliveryMethod === 1">{{$store.state.deliveryStreet}}, {{$store.state.deliveryBuilding}}</template>
                       <template v-else-if="deliveryMethod === 1">Укажите адрес</template>
                       <template v-else-if="deliveryMethod === 2">Самовывоз</template>
 
                   </span>
-              </td>
-            </tr>
-            <tr v-if="$store.state.deliveryFreeSum > $store.state.cartSum && $store.state.deliveryMethod === 1">
-              <td>
-                <div class="info">
-                  <img src="/../img/common/info.svg">
-                  <div class="info__item">
-                    <div class="info__item__inner">
-                      Для выбранной зоны <span>бесплатная доставка</span> доступна для заказов <span>от {{ $store.state.deliveryFreeSum }} руб</span>. Ознакомиться с зонами доставки можно на <a href="/map" class="link">Карте доставки</a>
-                    </div>
-                  </div>
-                </div>
-                Доставка:
-              </td>
-              <td>{{ $store.state.deliveryPrice }} руб.</td>
-            </tr>
-            <tr>
-              <th>Итого:</th>
-              <th v-if="$store.state.deliveryFreeSum > $store.state.cartSum && $store.state.deliveryMethod === 1">{{ formatPrice($store.state.cartSum + $store.state.deliveryPrice) }} руб.</th>
-              <th v-else>{{ formatPrice($store.state.cartSum) }} руб.</th>
-            </tr>
-          </table>
-          <div class="cart__alert alert" v-if="$store.state.cartSum < $store.state.deliveryFreeSum && deliveryMethod === 1">
-            Минимальная сумма заказа для бесплатной доставки - <strong>{{$store.state.deliveryFreeSum}} руб.</strong>
-          </div>
-          <a href="/order" class="button button-order "
-             v-bind:class="{ disabled: $store.state.cartCount < 1 || (deliveryMethod === 1 && !$store.state.deliveryStreet) }">
+                      </td>
+                  </tr>
+                  <tr v-if="$store.state.deliveryFreeSum > $store.state.cartSum && $store.state.deliveryMethod === 1">
+                      <td>
+                          <div class="info">
+                              <img src="/../img/common/info.svg">
+                              <div class="info__item">
+                                  <div class="info__item__inner">
+                                      Для выбранной зоны <span>бесплатная доставка</span> доступна для заказов <span>от {{ $store.state.deliveryFreeSum }} руб</span>. Ознакомиться с зонами доставки можно на <a href="/map" class="link">Карте доставки</a>
+                                  </div>
+                              </div>
+                          </div>
+                          Доставка:
+                      </td>
+                      <td>{{ $store.state.deliveryPrice }} руб.</td>
+                  </tr>
+                  <tr>
+                      <th>Итого:</th>
+                      <th v-if="$store.state.deliveryFreeSum > $store.state.cartSum && $store.state.deliveryMethod === 1">{{ formatPrice($store.state.cartSum + $store.state.deliveryPrice) }} руб.</th>
+                      <th v-else>{{ formatPrice($store.state.cartSum) }} руб.</th>
+                  </tr>
+              </table>
+              <div class="cart__alert alert" v-if="$store.state.cartSum < $store.state.deliveryFreeSum && deliveryMethod === 1">
+                  Минимальная сумма заказа для бесплатной доставки - <strong>{{$store.state.deliveryFreeSum}} руб.</strong>
+              </div>
+              <a href="/order" class="button button-order "
+                 v-bind:class="{ disabled: $store.state.cartCount < 1 || (deliveryMethod === 1 && !$store.state.deliveryStreet) }">
             <span>
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M9.00004 2.20459C5.25287 2.20459 2.20459 5.25287 2.20459 9.00004C2.20459 12.7472 5.25287 15.7955 9.00004 15.7955C12.7472 15.7955 15.7955 12.7472 15.7955 9.00004C15.7955 5.25287 12.7472 2.20459 9.00004 2.20459ZM9.00004 14.4773C5.98004 14.4773 3.52278 12.02 3.52278 9.00004C3.52278 5.98004 5.98004 3.52278 9.00004 3.52278C12.02 3.52278 14.4773 5.98004 14.4773 9.00004C14.4773 12.02 12.02 14.4773 9.00004 14.4773Z" fill="white" stroke="white" stroke-width="0.5"/>
@@ -98,8 +99,9 @@
             </svg>
             {{ this.$store.state.deliveryTime }}
             </span>
-            Оформить заказ
-          </a>
+                  Оформить заказ
+              </a>
+          </div>
         </div>
       </div>
     </div>
@@ -242,54 +244,56 @@ export default {
 @import "resources/sass/main"
 
 .cart
-  padding: 0 0 60px
-  h1
-    margin-bottom: 0
-    span
-      font-size: 12px
-      font-weight: 400
-      color: $text-light
-  &__header
-    display: flex
-    justify-content: space-between
-    align-items: center
-    margin-bottom: 10px
-  &__remove
-    color: $text-light
-    font-size: 12px
-    font-weight: 500
-    text-decoration: underline
-    cursor: pointer
-    &:hover
-      color: $main
-  &__products-header
-    width: 100%
-    padding: 0 15px
-    justify-content: flex-end
-    font-size: 12px
-    color: $text-light
-    text-align: center
-    margin-bottom: 16px
-    &__price
-      width: 140px
-    &__count
-      width: 98px
-    &__total
-      width: 140px
-    &__delete
-      width: 60px
-  &__products
-    margin-bottom: 44px
-  &__order
-    margin: -6px 0 16px
-    &__link
-      text-decoration: underline
-      cursor: pointer
-      &:hover
-        color: $main
-  &__alert
-    margin-bottom: 20px
-
+    padding: 0 0 60px
+    h1
+        margin-bottom: 0
+        span
+            font-size: 12px
+            font-weight: 400
+            color: $text-light
+    &__header
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-bottom: 10px
+    &__remove
+        color: $text-light
+        font-size: 12px
+        font-weight: 500
+        text-decoration: underline
+        cursor: pointer
+        &:hover
+            color: $main
+    &__products-header
+        width: 100%
+        padding: 0 15px
+        justify-content: flex-end
+        font-size: 12px
+        color: $text-light
+        text-align: center
+        margin-bottom: 16px
+        &__price
+            width: 140px
+        &__count
+            width: 98px
+        &__total
+            width: 140px
+        &__delete
+            width: 60px
+    &__products
+        margin-bottom: 44px
+    &__order
+        margin: -6px 0 16px
+        &__link
+            text-decoration: underline
+            cursor: pointer
+            &:hover
+                color: $main
+    &__alert
+        margin-bottom: 20px
+    &__my-order
+        position: sticky
+        top: 74px
 
 
 @media (max-width: 575px)

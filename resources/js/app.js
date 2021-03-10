@@ -45,7 +45,6 @@ Vue.use(VueTheMask)
 
 import Index from "./components/Index";
 import Cart from "./components/Cart";
-import Order from "./components/Order";
 
 Vue.component('the-header', require('./components/parts/Header.vue').default);
 Vue.component('the-menu', require('./components/parts/Menu.vue').default);
@@ -201,11 +200,6 @@ const routes = [
         path: '/cart',
         name: 'cart',
         component: Cart,
-    },
-    {
-        path: '/order',
-        name: 'order',
-        component: Order,
     },
     {
         path: '/:slug',
