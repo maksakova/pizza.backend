@@ -66,14 +66,6 @@ export default {
         background: $white
         margin: 0 -15px
         padding: 10px 15px 6px
-        -ms-overflow-style: none
-        &::-webkit-scrollbar
-            height: 4px
-            background: $bg
-            border-radius: 4px
-        &::-webkit-scrollbar-thumb
-            background: $main
-            border-radius: 4px
     &__inner
         display: flex
         width: max-content
