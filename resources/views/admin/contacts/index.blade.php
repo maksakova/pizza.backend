@@ -12,6 +12,7 @@
                         </h2>
                     </div>
                 </div>
+                <div class="table-outer">
                 <table class="table table-hover">
                     <thead>
                     <tr>
@@ -42,6 +43,7 @@
                     @endforeach
                     </tbody>
                 </table>
+                </div>
             </div>
         </div>
     </div>

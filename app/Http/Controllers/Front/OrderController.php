@@ -15,7 +15,7 @@ class OrderController extends Controller
         $wsb_storeid = 378032762;
         $wsb_order_num = strtotime("now");
         $wsb_test = $mode == 'sandbox' ? 1 : 0;
-        $wsb_notify_url = route('success');
+        $wsb_notify_url = route('front.orders.store');
         $wsb_currency_id = $currency;
         $wsb_total = 20;
         $secretKey = 'CLoQTqNiRnLpjkJW1rdS';

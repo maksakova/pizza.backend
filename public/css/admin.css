@@ -98,7 +98,8 @@ h3 {
 }
 
 .button-logout {
-  padding: 3px 16px;
+  padding: 3px;
+  width: 44px;
   background: rgba(68, 195, 115, 0.2);
   box-shadow: inset 0px -2px 2px rgba(68, 195, 115, 0.3);
   border: none;
@@ -129,6 +130,7 @@ h3 {
   flex-direction: column;
   justify-content: space-between;
   filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.05));
+  z-index: 2;
 }
 
 .admin-navbar .custom-logo {
@@ -288,6 +290,10 @@ h3 {
 }
 
 .table td:nth-child(2) {
+  white-space: nowrap;
+}
+
+.table td:last-child {
   white-space: nowrap;
 }
 
@@ -495,6 +501,55 @@ ul {
 }
 
 @media (max-width: 1199px) {
+  .admin-navbar {
+    width: 100%;
+    height: 60px;
+    padding: 10px 15px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .admin-navbar .custom-logo {
+    width: 100px;
+    margin: 0 10px 0 0;
+  }
+  .admin-navbar__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .admin-navbar__menu ul {
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
+  .admin-navbar__link {
+    padding: 8px;
+    background-image: none;
+    text-align: center;
+  }
+  .admin-navbar__link.active {
+    background-image: none;
+  }
+  .admin-navbar__link span {
+    position: static;
+  }
+  .admin-navbar__link svg {
+    display: none;
+  }
+  .admin-navbar__user {
+    padding: 0;
+    border: none;
+  }
+  .admin-navbar__user ul {
+    margin: 0;
+  }
+  .admin-navbar .user-logout span {
+    display: none;
+  }
+  .admin-panel {
+    padding: 0;
+  }
   .composition .checkbox {
     width: 33%;
   }
@@ -506,9 +561,63 @@ ul {
   }
 }
 
+@media (max-width: 767px) {
+  h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  h2 {
+    font-size: 18px;
+  }
+  .container-sm,
+  .container {
+    max-width: 100%;
+  }
+  .admin-navigation {
+    padding: 70px 0 0;
+  }
+  .admin-navigation ul a {
+    margin: 0 30px 12px 0;
+  }
+  .admin-navbar::-webkit-scrollbar {
+    height: 4px;
+  }
+  .admin-navbar__menu {
+    padding: 0;
+    margin-right: 20px;
+  }
+  .admin-navbar__link {
+    white-space: nowrap;
+  }
+  .admin-navbar__user {
+    padding-right: 20px;
+  }
+  .admin-panel {
+    font-size: 14px;
+  }
+}
+
 @media (max-width: 575px) {
   .composition .checkbox {
     width: 100%;
+  }
+  .admin-navigation ul a {
+    padding: 0 6px 12px 0;
+  }
+  .table-outer {
+    overflow-x: auto;
+  }
+  .table-outer::-webkit-scrollbar {
+    height: 4px;
+    background: #f2f2f2;
+    border-radius: 4px;
+  }
+  .table-outer::-webkit-scrollbar-thumb {
+    background: #44c373;
+    border-radius: 4px;
+  }
+  .table td {
+    white-space: nowrap;
   }
 }
 

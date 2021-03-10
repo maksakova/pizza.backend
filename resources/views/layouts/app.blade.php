@@ -205,7 +205,7 @@
                         @endif--}}
                     @else
                         <div class="user-logout">
-                            {{ Auth::user()->name }}
+                            <span>{{ Auth::user()->name }}</span>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST">
                                 @csrf
                                 <button href="{{ route('logout') }}"

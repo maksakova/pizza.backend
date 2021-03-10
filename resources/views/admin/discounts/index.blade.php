@@ -15,6 +15,7 @@
                         <a class="btn btn-primary add" href="{{ route('admin.discounts.create') }}">Добавить</a>
                     </div>
                 </div>
+                <div class="table-outer">
                 <table class="table table-hover">
                     <thead>
                     <tr>
@@ -47,6 +48,7 @@
                     @endforeach
                     </tbody>
                 </table>
+                </div>
             </div>
         </div>
     </div>

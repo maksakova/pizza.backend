@@ -104,6 +104,7 @@
                                 </div>
                             </div>
                             <h2>Позиции</h2>
+                            <div class="table-outer">
                         <table class="table table-hover">
                             <tr>
                                 <th>№</th>
@@ -141,6 +142,7 @@
                                 <th>{{$order->cart_total}}</th>
                             </tr>
                         </table>
+                            </div>
                         @else
                             @if($order->status_id < 4)
                                 <div class="row">
@@ -162,6 +164,7 @@
                             @else
                                 <p>Статус: {{ $order->status->name }}</p>
                             @endif
+                            <div class="table-outer">
                                 <table class="table table-hover">
                                     <tr>
                                         <th>№</th>
@@ -195,6 +198,7 @@
                                         </tr>
                                     @endforeach
                                 </table>
+                            </div>
                             <br>
                             <p>Сумма: {{ $order->cart_total }} BYN</p>
                             <p>Способ доставки: {{ $order->deliveryMethod->name }}</p>
