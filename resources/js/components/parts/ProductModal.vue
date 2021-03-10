@@ -31,28 +31,28 @@
                                          v-if="variant.menu_variant_id == 1"
                                          :name="variant.menu_variant_id"
                                          :data-price="variant.price"
-                                         :value="variant.id"
+                                         :value="key"
                                          v-model="currentVariant1"
                                   />
                                   <input type="radio"
                                          v-if="variant.menu_variant_id == 2"
                                          :name="variant.menu_variant_id"
                                          :data-price="variant.price"
-                                         :value="variant.id"
+                                         :value="key+2"
                                          v-model="currentVariant2"
                                   />
                                   <input type="radio"
                                          v-if="variant.menu_variant_id == 3"
                                          :name="variant.menu_variant_id"
                                          :data-price="variant.price"
-                                         :value="variant.id"
+                                         :value="key"
                                          v-model="currentVariant2"
                                   />
                                   <input type="radio"
                                          v-if="variant.menu_variant_id == 5"
                                          :name="variant.menu_variant_id"
                                          :data-price="variant.price"
-                                         :value="variant.id"
+                                         :value="key+2"
                                          v-model="currentVariant1"
                                   />
                                   <div class="radio__text">{{variant.name}}</div>
