@@ -82,13 +82,3 @@
         </div>
     </main>
 @endsection
-
-<script>
-    import TableOrder from "../../js/components/parts/TableOrder";
-
-    export default {
-        components: {
-            TableOrder,
-        }
-    }
-</script>

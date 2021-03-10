@@ -15,7 +15,6 @@ export default {
     },
     methods: {
         watchCart() {
-            console.log(this.$route.params.slug)
             if (this.$route.params.slug == 'success') {
                 this.$store.commit('cleanCart');
             }

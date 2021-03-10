@@ -16,6 +16,7 @@
 <body>
 <div id="app">
     @include('front.parts.header')
+    <router-view></router-view>
     @yield('content')
     @include('front.parts.footer')
 </div>

@@ -202,8 +202,43 @@ const routes = [
         component: Cart,
     },
     {
-        path: '/:slug',
-        name: 'index',
+        path: '/pizza',
+        name: 'pizza',
+        component: Index,
+    },
+    {
+        path: '/sushi',
+        name: 'sushi',
+        component: Index,
+    },
+    {
+        path: '/wok',
+        name: 'wok',
+        component: Index,
+    },
+    {
+        path: '/dinner',
+        name: 'dinner',
+        component: Index,
+    },
+    {
+        path: '/khachapuri',
+        name: 'khachapuri',
+        component: Index,
+    },
+    {
+        path: '/pies',
+        name: 'pies',
+        component: Index,
+    },
+    {
+        path: '/cake',
+        name: 'cake',
+        component: Index,
+    },
+    {
+        path: '/drink',
+        name: 'drink',
         component: Index,
     },
 ]

@@ -4,5 +4,4 @@
 <script type="text/javascript" src="https://yandex.st/jquery/2.2.3/jquery.js"></script>
 
 @section('content')
-    <router-view></router-view>
 @endsection

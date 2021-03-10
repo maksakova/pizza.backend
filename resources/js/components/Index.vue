@@ -176,6 +176,8 @@ export default {
             this.$store.commit('cleanCart');
         },
         fetchData() {
+            console.log(this.$route.hash)
+            console.log(this.$route.params.slug)
             axios
                 .post('/api/products', {
                     category: this.$route.params.slug

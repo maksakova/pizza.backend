@@ -67,7 +67,7 @@
                   </span>
                       </td>
                   </tr>
-                  <tr v-if="$store.state.deliveryFreeSum > $store.state.cartSum && $store.state.deliveryMethod === 1">
+                  <tr v-if="$store.state.deliveryFreeSum > $store.state.cartSum && $store.state.deliveryMethod === 1 && $store.state.deliveryStreet">
                       <td>
                           <div class="info">
                               <img src="/../img/common/info.svg">
@@ -83,7 +83,7 @@
                   </tr>
                   <tr>
                       <th>Итого:</th>
-                      <th v-if="$store.state.deliveryFreeSum > $store.state.cartSum && $store.state.deliveryMethod === 1">{{ formatPrice($store.state.cartSum + $store.state.deliveryPrice) }} руб.</th>
+                      <th v-if="$store.state.deliveryFreeSum > $store.state.cartSum && $store.state.deliveryMethod === 1 && $store.state.deliveryStreet">{{ formatPrice($store.state.cartSum + $store.state.deliveryPrice) }} руб.</th>
                       <th v-else>{{ formatPrice($store.state.cartSum) }} руб.</th>
                   </tr>
               </table>
@@ -175,7 +175,8 @@
           <template v-else>
               <h3>Прижайте к нам за едой по адресу:</h3>
               <p>г. Минск, Ложинская, 5</p>
-              <map-address/>
+              <a href="/contacts"><img src="/../img/contacts/map.jpg"></a>
+              <button class="button" @click="hide('address-modal');">Подтвердить</button>
           </template>
 
       </modal>

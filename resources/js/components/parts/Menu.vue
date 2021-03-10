@@ -3,7 +3,7 @@
         <div class="container">
             <div class="menu__outer">
                 <div class="menu__inner">
-                    <router-link :to="item.slug"
+                    <router-link :to="{ name: item.slug, params: {slug: item.slug} }"
                                  class="menu__item"
                                  v-for="item in menuCategories"
                                  v-bind:key="item.id">
