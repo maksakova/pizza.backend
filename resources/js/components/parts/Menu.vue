@@ -108,7 +108,7 @@ export default {
             border-radius: 0
         .menu__item
             &.active,
-            &.is-active
+            &.router-link-active
                 &:after
                     width: 100%
 

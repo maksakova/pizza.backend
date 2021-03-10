@@ -160,9 +160,6 @@ export default {
             .post('/api/filters')
             .then(response => (this.filters = response.data));
         axios
-            .post('/api/products')
-            .then(response => (this.products = response.data));
-        axios
             .post('/api/ingredients')
             .then(response => (this.ingredients = response.data));
         axios
@@ -193,6 +190,7 @@ export default {
     },
     computed: {
         catProducts() {
+            console.log(this.$route.params.slug);
             return this.products.reduce((p,c) => {
                 const menu_category_name = c.menu_category.name;
                 const menu_category_slug = c.menu_category.slug;
