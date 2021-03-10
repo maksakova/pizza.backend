@@ -155,7 +155,15 @@
                             <textarea name="comment" v-model="comment"></textarea>
                         </label>
                     </template>
-                    <template v-else>
+                    <template v-else-if="paymentMethod === 2">
+                        <!--<input type='hidden' name='wsb_storeid'
+                               value='543108307'>-->
+                        <p>После нажатия кнопки Оформить, не будет
+                            возможности изменить заказ или способ оплаты.</p>
+                    </template>
+                    <template v-else-if="paymentMethod === 3">
+                        <!--<input type='hidden' name='wsb_storeid'
+                               value='390964697'>-->
                         <p>После нажатия кнопки Оформить, не будет
                             возможности изменить заказ или способ оплаты.</p>
                     </template>

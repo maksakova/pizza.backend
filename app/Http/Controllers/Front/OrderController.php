@@ -9,9 +9,34 @@ use Illuminate\Http\Response;
 
 class OrderController extends Controller
 {
-    public function index()
+    public function index($mode = 'sandbox', $currency = 'BYN')
     {
-        return view('front.order');
+        $wsb_seed = time();
+        $wsb_storeid = 378032762;
+        $wsb_order_num = strtotime("now");
+        $wsb_test = $mode == 'sandbox' ? 1 : 0;
+        $wsb_notify_url = route('success');
+        $wsb_currency_id = $currency;
+        $wsb_total = 20;
+        $secretKey = 'CLoQTqNiRnLpjkJW1rdS';
+
+        $wsb_signature = sha1($wsb_seed . $wsb_storeid . $wsb_order_num . $wsb_test . $wsb_currency_id . $wsb_total . $secretKey);
+        return view('front.order', [
+            'url' => config('payment.webpay.' . $mode . '.url'),
+            'mode' => $mode,
+            'wsb_seed' => $wsb_seed,
+            'wsb_storeid' => $wsb_storeid,
+            'wsb_order_num' => $wsb_order_num,
+            'wsb_test' => $wsb_test,
+            'wsb_notify_url' => $wsb_notify_url,
+            'wsb_currency_id' => $wsb_currency_id,
+            'wsb_total' => $wsb_total,
+            'secretKey' => $secretKey,
+            'wsb_signature' => $wsb_signature,
+
+            'returnUrl' => route('front.orders.store')
+
+        ])->render();
     }
 
     public function create(Request $request)

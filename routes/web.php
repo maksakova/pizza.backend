@@ -125,7 +125,9 @@ Route::get('/cart', function(){
 Route::resource('/order', 'Front\OrderController')
     ->names('front.orders');
 
-Route::get('/success', function () {return view('front.success', );})->name('success');
+Route::get('/success', function () {
+    return view('front.success', );
+})->name('success');
 
 Route::get('/{vue_capture?}', function () {
     return view('front.index');
