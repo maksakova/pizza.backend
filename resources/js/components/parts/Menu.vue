@@ -66,6 +66,11 @@ export default {
         background: $white
         margin: 0 -15px
         padding: 10px 15px 6px
+        &::-webkit-scrollbar
+            height: 4px
+            background: $main
+        &::-webkit-scrollbar-thumb
+            background: $bg
     &__inner
         display: flex
         width: max-content

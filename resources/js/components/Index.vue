@@ -180,7 +180,6 @@ export default {
             this.$store.commit('cleanCart');
         },
         fetchData() {
-            console.log(this.$route.params.slug);
             axios
                 .post('/api/products', {
                     category: this.$route.params.slug
@@ -190,7 +189,6 @@ export default {
     },
     computed: {
         catProducts() {
-            console.log(this.$route.params.slug);
             return this.products.reduce((p,c) => {
                 const menu_category_name = c.menu_category.name;
                 const menu_category_slug = c.menu_category.slug;
