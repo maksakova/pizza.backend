@@ -34,6 +34,8 @@ class CreateOrdersTable extends Migration
             $table->text('comment')->nullable();
             $table->boolean('callback');
             $table->integer('status_id');
+            $table->integer('unique')->nullable();
+            $table->integer('payment_status')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

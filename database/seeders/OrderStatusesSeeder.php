@@ -14,25 +14,55 @@ class OrderStatusesSeeder extends Seeder
      */
     public function run()
     {
-        $inputs = [];
-        $inputs[] = [
-            'name' => 'Новый',
-        ];
-        $inputs[] = [
-            'name' => 'Принят',
-        ];
-        $inputs[] = [
-            'name' => 'Оплачен',
-        ];
-        $inputs[] = [
-            'name' => 'Передан курьеру',
-        ];
-        $inputs[] = [
-            'name' => 'Доставлен',
-        ];
-        $inputs[] = [
-            'name' => 'Отменен',
-        ];
-        DB::table('order_statuses')->insert($inputs);
+
+
+        \DB::table('order_statuses')->delete();
+
+        \DB::table('order_statuses')->insert(array (
+            0 =>
+                array (
+                    'id' => 1,
+                    'name' => 'Новый',
+                    'created_at' => NULL,
+                    'updated_at' => NULL,
+                ),
+            1 =>
+                array (
+                    'id' => 2,
+                    'name' => 'Принят',
+                    'created_at' => NULL,
+                    'updated_at' => NULL,
+                ),
+            2 =>
+                array (
+                    'id' => 3,
+                    'name' => 'Оплачен',
+                    'created_at' => NULL,
+                    'updated_at' => NULL,
+                ),
+            3 =>
+                array (
+                    'id' => 4,
+                    'name' => 'Передан курьеру',
+                    'created_at' => NULL,
+                    'updated_at' => NULL,
+                ),
+            4 =>
+                array (
+                    'id' => 5,
+                    'name' => 'Доставлен',
+                    'created_at' => NULL,
+                    'updated_at' => NULL,
+                ),
+            5 =>
+                array (
+                    'id' => 6,
+                    'name' => 'Отменен',
+                    'created_at' => NULL,
+                    'updated_at' => NULL,
+                ),
+        ));
+
+
     }
 }

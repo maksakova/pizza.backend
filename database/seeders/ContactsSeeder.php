@@ -66,13 +66,13 @@ class ContactsSeeder extends Seeder
         $inputs[] = [
             'name'  => 'VK',
             'key'   => 'vk',
-            'value' => '',
+            'value' => 'https://vk.com/pizzamarket_by',
             'img'   => null
         ];
         $inputs[] = [
             'name'  => 'Instagram',
             'key'   => 'instagram',
-            'value' => '',
+            'value' => 'https://www.instagram.com/pizzamarket.by/',
             'img'   => null
         ];
         DB::table('contacts')->insert($inputs);

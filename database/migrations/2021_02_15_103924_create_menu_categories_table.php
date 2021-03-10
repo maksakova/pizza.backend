@@ -19,6 +19,8 @@ class CreateMenuCategoriesTable extends Migration
             $table->string('slug');
             $table->boolean('ingredients')->default(0);
             $table->string('img')->nullable();
+            $table->longText('seo_1')->nullable();
+            $table->longText('seo_2')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

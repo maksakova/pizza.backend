@@ -68,7 +68,9 @@ class OrderController extends Controller
             'code' => $request->code,
             'comment' => $request->comment,
             'status_id' => 1,
-            'callback' => $request->callback
+            'callback' => $request->callback,
+            'unique' => null,
+            'payment_status' => null
         ]);
         $order->save();
 

@@ -14,22 +14,48 @@ class MenuVariantsSeeder extends Seeder
      */
     public function run()
     {
-        $inputs = [];
-        $inputs[] = [
-            'name' => 'Толщина теста',
-        ];
-        $inputs[] = [
-            'name' => 'Диаметр пиццы',
-        ];
-        $inputs[] = [
-            'name' => 'Вес',
-        ];
-        $inputs[] = [
-            'name' => 'Способ обжарки',
-        ];
-        $inputs[] = [
-            'name' => 'Лапша',
-        ];
-        DB::table('menu_variants')->insert($inputs);
+
+
+        \DB::table('menu_variants')->delete();
+
+        \DB::table('menu_variants')->insert(array (
+            0 =>
+                array (
+                    'id' => 1,
+                    'name' => 'Толщина теста',
+                    'created_at' => NULL,
+                    'updated_at' => NULL,
+                ),
+            1 =>
+                array (
+                    'id' => 2,
+                    'name' => 'Диаметр пиццы',
+                    'created_at' => NULL,
+                    'updated_at' => NULL,
+                ),
+            2 =>
+                array (
+                    'id' => 3,
+                    'name' => 'Вес',
+                    'created_at' => NULL,
+                    'updated_at' => NULL,
+                ),
+            3 =>
+                array (
+                    'id' => 4,
+                    'name' => 'Способ обжарки',
+                    'created_at' => NULL,
+                    'updated_at' => NULL,
+                ),
+            4 =>
+                array (
+                    'id' => 5,
+                    'name' => 'Лапша',
+                    'created_at' => NULL,
+                    'updated_at' => NULL,
+                ),
+        ));
+
+
     }
 }
