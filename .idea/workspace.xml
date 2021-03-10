@@ -27,8 +27,16 @@
   <component name="ChangeListManager">
     <list default="true" id="55e38aa4-1e59-486e-b405-03ed58b0efaf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Front/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Front/MainController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/parts/ProductModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/parts/ProductModal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/parts/Menu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/parts/Menu.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/main.sass" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/main.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/contacts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/contacts/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/parts/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/parts/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/parts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/parts/header.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,24 +192,24 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/components" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2020.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OSPanel\domains\pizza.loc\resources\js\components" />
+      <recent name="C:\OSPanel\domains\pizza.loc\public\img" />
+      <recent name="C:\OSPanel\domains\pizza.loc\public\js" />
+      <recent name="C:\OSPanel\domains\pizza.loc\resources\views\front" />
+      <recent name="C:\OSPanel\domains\pizza.loc\resources\views\admin\parts" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\OSPanel\domains\pizza.loc\public\js" />
       <recent name="C:\OSPanel\domains\pizza.loc\resources\views\errors" />
       <recent name="C:\OSPanel\domains\pizza.loc\resources\views\front" />
       <recent name="C:\OSPanel\domains\pizza.loc\resources\views\admin" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\OSPanel\domains\pizza.loc\public\img" />
-      <recent name="C:\OSPanel\domains\pizza.loc\public\js" />
-      <recent name="C:\OSPanel\domains\pizza.loc\resources\views\front" />
-      <recent name="C:\OSPanel\domains\pizza.loc\resources\views\admin\parts" />
-      <recent name="C:\OSPanel\domains\pizza.loc\app\Http\Controllers\Admin" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -291,14 +299,7 @@
       <workItem from="1614924265897" duration="14667000" />
       <workItem from="1615269665284" duration="22017000" />
       <workItem from="1615294058357" duration="6955000" />
-      <workItem from="1615356184687" duration="537000" />
-    </task>
-    <task id="LOCAL-00087" summary="delivery fucking works">
-      <created>1614949995026</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1614949995026</updated>
+      <workItem from="1615356184687" duration="6890000" />
     </task>
     <task id="LOCAL-00088" summary="maps fixed">
       <created>1615272071969</created>
@@ -636,7 +637,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615299924632</updated>
     </task>
-    <option name="localTasksCounter" value="136" />
+    <task id="LOCAL-00136" summary="woks works">
+      <created>1615356738953</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1615356738954</updated>
+    </task>
+    <option name="localTasksCounter" value="137" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -670,7 +678,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="find polygon" />
     <MESSAGE value="app key" />
     <MESSAGE value="store.commit don't work" />
     <MESSAGE value="fixing bugs" />
@@ -695,7 +702,8 @@
     <MESSAGE value="remove 'other' from additives, add images" />
     <MESSAGE value="wok doesn't work" />
     <MESSAGE value="lowercase composition" />
-    <option name="LAST_COMMIT_MESSAGE" value="lowercase composition" />
+    <MESSAGE value="woks works" />
+    <option name="LAST_COMMIT_MESSAGE" value="woks works" />
   </component>
   <component name="WindowStateProjectService">
     <state x="712" y="321" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1615281285097">
@@ -710,10 +718,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1615289492291" />
-    <state x="662" y="89" key="CommitChangelistDialog2" timestamp="1615299923511">
+    <state x="662" y="89" key="CommitChangelistDialog2" timestamp="1615356737420">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="662" y="89" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1615299923511" />
+    <state x="662" y="89" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1615356737420" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1613723760475">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -766,10 +774,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="807" y="433" key="VCS.ChangelistChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1614848974078" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1615299952991">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1615356741011">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1615299952991" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1615356741011" />
     <state x="720" y="253" key="VcsDiffUtil.ChangesDialog" timestamp="1613384498036">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -786,10 +794,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="559" y="125" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1614943723095" />
-    <state x="667" y="253" width="591" height="592" key="find.popup" timestamp="1615295451986">
+    <state x="667" y="253" width="591" height="592" key="find.popup" timestamp="1615359798506">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="667" y="253" width="591" height="592" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1615295451986" />
+    <state x="667" y="253" width="591" height="592" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1615359798506" />
     <state x="801" y="250" key="ftp.server.browser" timestamp="1614766000327">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

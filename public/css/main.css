@@ -850,7 +850,7 @@ header {
   padding: 10px 0;
   background: #f2f2f2;
   position: fixed;
-  width: 100%;
+  width: 100vw;
   top: 0;
   z-index: 10;
 }

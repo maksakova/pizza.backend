@@ -2,26 +2,15 @@
     <section class="menu" :class="simple" v-scroll="handleScroll">
         <div class="container">
             <div class="menu__outer">
-                <scrollactive class="menu__inner" :offset="170">
-                    <router-link :to="{name: 'index', hash: '#' + item.slug}" class="menu__item scrollactive-item"
+                <div class="menu__inner">
+                    <router-link :to="item.slug"
+                                 class="menu__item"
                                  v-for="item in menuCategories"
-                                 v-bind:key="item.id"
-                                 :scrollOptions='{
-                container: "body",
-                duration: 700,
-                easing: "ease",
-                offset: -170,
-                cancelable: true,
-                onStart: false,
-                onDone: false,
-                onCancel: false,
-                x: false,
-                y: true
-               }'>
+                                 v-bind:key="item.id">
                         <img :src=item.img>
                         <h3>{{item.name}}</h3>
                     </router-link>
-                </scrollactive>
+                </div>
             </div>
         </div>
     </section>
@@ -80,8 +69,11 @@ export default {
         -ms-overflow-style: none
         &::-webkit-scrollbar
             height: 4px
+            background: $bg
+            border-radius: 4px
         &::-webkit-scrollbar-thumb
-            background: transparent
+            background: $main
+            border-radius: 4px
     &__inner
         display: flex
         width: max-content

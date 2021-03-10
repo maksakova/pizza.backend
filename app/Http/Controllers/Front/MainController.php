@@ -38,9 +38,14 @@ class MainController extends Controller
         return MenuFilter::all();
     }
 
-    public function products()
+    public function products(Request $request)
     {
-        return MenuProduct::with('menuCategory')->with('menuFilter')->with('productVariants')->get();
+        if ($request->category) {
+            $menuCategory = MenuCategory::where('slug', $request->category)->first();
+            return MenuProduct::with('menuCategory')->with('menuFilter')->with('productVariants')->where('menu_category_id', $menuCategory->id)->get();
+        } else {
+            return MenuProduct::with('menuCategory')->with('menuFilter')->with('productVariants')->where('menu_category_id', 1)->get();
+        }
     }
 
     public function randomProducts()

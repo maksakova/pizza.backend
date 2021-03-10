@@ -30,9 +30,6 @@
                                 <a href="{{route('admin.contacts.edit', $item->id)}}">
                                     {{ $item->name }}
                                 </a>
-                                <a href="{{route('admin.contacts.edit', $item->id)}}">
-                                    {{ $item->name }}
-                                </a>
                             </td>
                             <td>
                                 @if($item->img)

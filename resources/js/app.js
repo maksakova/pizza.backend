@@ -170,12 +170,6 @@ Vue.mixin({
                             price_from = polygon.properties._data.price_from
 
                             updateDelivery(store, time, price_from)
-
-                            /*this.deliveryTime = time
-                            this.deliveryFreeSum = price_from
-
-                            store.state.deliveryFreeSum = price_from
-                            store.state.deliveryTime = time*/
                         }
                     }
                 )
@@ -213,16 +207,17 @@ const routes = [
         name: 'order',
         component: Order,
     },
+    {
+        path: '/:slug',
+        name: 'index',
+        component: Index,
+    },
 ]
 
 const router = new VueRouter({
     mode: 'history',
     routes,
     store: store,
-    scrollBehavior () {
-        window.scrollTo(0, 0)
-        return { x: 0, y: 0 }
-    }
 })
 
 new Vue({
