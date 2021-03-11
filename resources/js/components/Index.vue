@@ -176,11 +176,16 @@ export default {
             this.$store.commit('cleanCart');
         },
         fetchData() {
-            console.log(this.$route.hash)
-            console.log(this.$route.params.slug)
+            let slug = this.$route.name;
+            if (this.$route.params.slug != undefined) {
+                slug = this.$route.params.slug
+            }
+            if (slug == 'index') {
+                slug = 'pizza'
+            }
             axios
                 .post('/api/products', {
-                    category: this.$route.params.slug
+                    category: slug
                 })
                 .then(response => (this.products = response.data))
         }

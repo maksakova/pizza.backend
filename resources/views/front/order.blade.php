@@ -2,7 +2,7 @@
 
 @section('content')
     <main class="order">
-        <Menu simple="simple"/>
+        <the-menu simple="simple"></the-menu>
         <div class="container">
             <form class="row" method="POST" action="{{url()->to('https://securesandbox.webpay.by')}}" enctype="multipart/form-data">
                 @csrf
