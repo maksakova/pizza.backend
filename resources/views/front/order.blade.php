@@ -4,11 +4,11 @@
     <main class="order">
         <the-menu simple="simple"></the-menu>
         <div class="container">
-            <form class="row" method="POST" action="{{url()->to('https://securesandbox.webpay.by')}}" enctype="multipart/form-data">
+
+            <form class="row" method="POST" action="{{ route('front.orders.store') }}" enctype="multipart/form-data">
+            {{--<form class="row" method="POST" action="{{url()->to('https://securesandbox.webpay.by')}}" enctype="multipart/form-data">--}}
                 @csrf
                 <div class="col-xl-9">
-                    <h1>Оформление заказа</h1>
-                    <input type="hidden" name="status_id" value="1">
                     <order-blocks/>
                 </div>
                 <div class="col-xl-3 offset-xl-0 col-lg-6 offset-lg-3">

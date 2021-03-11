@@ -32,11 +32,11 @@ let store = {
         },
 
         addToCart(state, {item, currentVariant1, currentVariant2, additives, price}) {
-
             if (item.product_variants.length === 0) {
-                let found = state.cart.find(product => product.id === item.id && product.currentVariant1 === item.currentVariant1);
+                let found = state.cart.find(product => product.id === item.id);
                 if (found) {
-                    found.quantity ++;
+                    found.quantity++;
+                    console.log(found.quantity)
                     found.totalPrice = found.quantity * found.price;
                 } else {
                     state.cart.push(item);
@@ -44,39 +44,38 @@ let store = {
                     Vue.set(item, 'price', item.min_price)
                 }
             } else {
-                console.log(item.id)
-                console.log(currentVariant1)
-                console.log(currentVariant2)
                 let found = state.cart.find(product => (product.id === item.id && product.currentVariant1 === currentVariant1));
                 if (currentVariant2) {
                     found = state.cart.find(product => (product.id === item.id && product.currentVariant1 === currentVariant1 && product.currentVariant2 === currentVariant2));
                 }
-
                 if (found) {
-
+                    console.log(currentVariant1)
+                    console.log(found.currentVariant1)
                     found.quantity ++;
-
                     found.totalPrice = found.quantity * found.price;
-
                 } else {
+                    state.cart.push(item)
+                    Vue.set(item, 'quantity', 1)
 
                     item.quantity = 1
                     item.currentVariant1 = currentVariant1
 
-                    if (!currentVariant2) {
-                        item.price = item.product_variants[currentVariant1].price
-                    } else {
+                    let itemPrice = item.product_variants[currentVariant1].price
+
+                    if (currentVariant2) {
                         item.currentVariant2 = currentVariant2
-                        item.price = item.product_variants[currentVariant2].price
+                        if (item.product_variants[currentVariant2].price) {
+                            console.log('gg');
+                            itemPrice = item.product_variants[currentVariant2].price
+                        }
                         if (additives) {
                             item.additives = additives
-                            item.price = price
+                            Vue.set(item, 'price', price)
                         } else {
-                            item.price = item.product_variants[currentVariant2].price
+                            Vue.set(item, 'price', itemPrice)
                         }
                     }
-
-                    state.cart.push(item)
+                    Vue.set(item, 'price', itemPrice)
                 }
 
             }
@@ -92,6 +91,7 @@ let store = {
         },
 
         cartItemQuantity(state, {item, quantity}) {
+            console.log(item.currentVariant1)
             item.quantity = quantity;
 
             state.cartCount = 0

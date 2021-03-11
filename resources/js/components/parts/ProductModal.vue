@@ -46,14 +46,14 @@
                                          :name="variant.menu_variant_id"
                                          :data-price="variant.price"
                                          :value="key"
-                                         v-model="currentVariant2"
+                                         v-model="currentVariant1"
                                   />
                                   <input type="radio"
                                          v-if="variant.menu_variant_id == 5"
                                          :name="variant.menu_variant_id"
                                          :data-price="variant.price"
                                          :value="key+2"
-                                         v-model="currentVariant1"
+                                         v-model="currentVariant2"
                                   />
                                   <div class="radio__text">{{variant.name}}</div>
                               </label>
@@ -69,7 +69,7 @@
                                   <input type="checkbox"
                                          :value="additiveItem.id"
                                          v-model="chooseAdditives"/>
-                                  <div class="checkbox__text">
+                                  <div class="checkbox__text" v-if="currentItem.menu_category_id === 1">
                                       <img :src="additiveItem.img">
                                       <h4>{{additiveItem.name}}</h4>
                                       <span v-if="currentVariant2 === 2">
@@ -82,13 +82,32 @@
                                           {{additiveItem.menu_ingredient_group.max_price}} руб.
                                       </span>
                                   </div>
+                                  <div class="checkbox__text" v-else-if="currentItem.menu_category_id === 3">
+                                      <img :src="additiveItem.img">
+                                      <h4>{{additiveItem.name}}</h4>
+                                      <span v-if="currentVariant1 === 0">
+                                          {{additiveItem.menu_ingredient_group.min_price}} руб.
+                                      </span>
+                                      <span v-else-if="currentVariant1 === 1">
+                                          {{additiveItem.menu_ingredient_group.mid_price}} руб.
+                                      </span>
+                                  </div>
                               </label>
                           </b-tab>
                       </b-tabs>
                   </div>
               </div>
 
-              <div class="product-modal__button">
+              <div class="product-modal__button" v-if="currentItem.product_variants[currentVariant1].price">
+                  <button class="button"
+                          @click="addToCart(currentItem, currentVariant1, currentVariant2, chooseAdditives, formatPrice(currentItem.product_variants[currentVariant1].price + additivesSum));
+                          hide('product-modal');">
+                      Добавить в корзину за
+                      {{currentItem.product_variants[currentVariant1].price + additivesSum}}
+                      руб.</button>
+              </div>
+
+              <div class="product-modal__button" v-if="currentItem.product_variants[currentVariant2].price">
                   <button class="button"
                           @click="addToCart(currentItem, currentVariant1, currentVariant2, chooseAdditives, formatPrice(currentItem.product_variants[currentVariant2].price + additivesSum));
                           hide('product-modal');">
@@ -141,13 +160,22 @@ export default {
 
         additivesSum() {
             var additivesSum = 0
+            console.log(this.currentItem.menu_category_id)
             for (let i = 0; i < this.chooseAdditives.length; i += 1) {
-                if (this.currentVariant2 === 2) {
-                    additivesSum += Number(this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.min_price)
-                } else if (this.currentVariant2 === 3) {
-                    additivesSum += Number(this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.mid_price)
-                } else if (this.currentVariant2 === 4) {
-                    additivesSum += Number(this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.max_price)
+                if (this.currentItem.menu_category_id === 1) {
+                    if (this.currentVariant2 === 2) {
+                        additivesSum += Number(this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.min_price)
+                    } else if (this.currentVariant2 === 3) {
+                        additivesSum += Number(this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.mid_price)
+                    } else if (this.currentVariant2 === 4) {
+                        additivesSum += Number(this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.max_price)
+                    }
+                } else if (this.currentItem.menu_category_id === 3) {
+                    if (this.currentVariant1 === 0) {
+                        additivesSum += Number(this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.min_price)
+                    } if (this.currentVariant1 === 1) {
+                        additivesSum += Number(this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.mid_price)
+                    }
                 }
             }
             return additivesSum

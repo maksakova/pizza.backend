@@ -74,7 +74,7 @@ class OrderController extends Controller
         ]);
         $order->save();
 
-        if ($order) {
+        if ($request->payment_method === 1) {
             return redirect()->route('success', ['order=' . $order->id])
                 ->with(['success' => 'Успешно сохранено']);
         } else {

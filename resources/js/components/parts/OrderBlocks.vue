@@ -212,6 +212,7 @@ export default {
             contacts: [],
             url: "https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address",
             token: "9af52f392c48bb34c8fb20bb53573b1ee923e871",
+            csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
         }
     },
     methods: {

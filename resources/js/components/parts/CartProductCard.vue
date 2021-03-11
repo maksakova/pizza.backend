@@ -65,9 +65,15 @@ export default {
             this.$store.commit('removeFromCart', item);
         },
         cartItemQuantity(item, quantity) {
+            this.item.quantity = quantity;
             this.$store.commit('cartItemQuantity', {item, quantity});
         }
-    }
+    },
+    watch: {
+        item: function(newVal, oldVal) { // watch it
+            console.log('Prop changed: ', newVal, ' | was: ', oldVal)
+        }
+    },
 }
 </script>
 
