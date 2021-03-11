@@ -23,9 +23,9 @@
         </span>
 
         <div class="cart-item__bottom">
-            <vue-numeric-input v-model="quantity" :min="1" :max="100" :step="1" @input="cartItemQuantity(item, quantity)"></vue-numeric-input>
+            <vue-numeric-input v-model="item.quantity" :min="1" :max="100" :step="1" @input="cartItemQuantity(item, item.quantity)"></vue-numeric-input>
             <span class="cart-item__price">
-          {{formatPrice(item.price * quantity)}} руб.
+          {{formatPrice(item.price * item.quantity)}} руб.
           </span>
         </div>
 
@@ -48,7 +48,6 @@ export default {
         return {
             value: 1,
             remove: 'img/common/remove.svg',
-            quantity: this.item.quantity
         };
     },
     props: {

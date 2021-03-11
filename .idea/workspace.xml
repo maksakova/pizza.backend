@@ -28,10 +28,8 @@
     <list default="true" id="55e38aa4-1e59-486e-b405-03ed58b0efaf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/parts/CartProductCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/parts/CartProductCard.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/order.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/order.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -296,14 +294,7 @@
       <workItem from="1615269665284" duration="22017000" />
       <workItem from="1615294058357" duration="6955000" />
       <workItem from="1615356184687" duration="29119000" />
-      <workItem from="1615442826717" duration="2251000" />
-    </task>
-    <task id="LOCAL-00098" summary="select test">
-      <created>1615291610320</created>
-      <option name="number" value="00098" />
-      <option name="presentableId" value="LOCAL-00098" />
-      <option name="project" value="LOCAL" />
-      <updated>1615291610320</updated>
+      <workItem from="1615442826717" duration="5196000" />
     </task>
     <task id="LOCAL-00099" summary="select test">
       <created>1615291662381</created>
@@ -641,7 +632,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615386813618</updated>
     </task>
-    <option name="localTasksCounter" value="147" />
+    <task id="LOCAL-00147" summary="bug fixies, route to categories">
+      <created>1615445132230</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
+      <option name="project" value="LOCAL" />
+      <updated>1615445132231</updated>
+    </task>
+    <option name="localTasksCounter" value="148" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -715,10 +713,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1615289492291" />
-    <state x="662" y="89" key="CommitChangelistDialog2" timestamp="1615386812836">
+    <state x="662" y="89" key="CommitChangelistDialog2" timestamp="1615445129258">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="662" y="89" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1615386812836" />
+    <state x="662" y="89" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1615445129258" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1615380628552">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -771,10 +769,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="807" y="433" key="VCS.ChangelistChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1614848974078" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1615386814727">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1615445143766">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1615386814727" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1615445143766" />
     <state x="720" y="253" key="VcsDiffUtil.ChangesDialog" timestamp="1613384498036">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

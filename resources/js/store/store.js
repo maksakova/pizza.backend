@@ -44,9 +44,12 @@ let store = {
                     Vue.set(item, 'price', item.min_price)
                 }
             } else {
+                console.log(item.id)
+                console.log(currentVariant1)
+                console.log(currentVariant2)
                 let found = state.cart.find(product => (product.id === item.id && product.currentVariant1 === currentVariant1));
                 if (currentVariant2) {
-                    found = state.cart.find(product => (product.id === item.id && product.currentVariant1 === currentVariant1));
+                    found = state.cart.find(product => (product.id === item.id && product.currentVariant1 === currentVariant1 && product.currentVariant2 === currentVariant2));
                 }
 
                 if (found) {
