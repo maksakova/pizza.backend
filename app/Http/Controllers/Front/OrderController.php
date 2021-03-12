@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use GuzzleHttp;
 
 class OrderController extends Controller
 {
@@ -74,12 +75,63 @@ class OrderController extends Controller
         ]);
         $order->save();
 
-        if ($request->payment_method === 1) {
+        if ($request->payment_method == 1) {
             return redirect()->route('success', ['order=' . $order->id])
                 ->with(['success' => 'Успешно сохранено']);
         } else {
-            return back()->withErrors(['msg' => 'Ошибка сохранения'])
-                ->withInput();
+            $mode = 'sandbox';
+            $currency = 'BYN';
+            $wsb_seed = time();
+            $wsb_storeid = 378032762;
+            $wsb_order_num = strtotime("now");
+            $wsb_test = $mode == 'sandbox' ? 1 : 0;
+            $returnUrl = '/success';
+            $wsb_notify_url = '/success';
+            $wsb_currency_id = $currency;
+            $wsb_total = 20;
+            $secretKey = 'CLoQTqNiRnLpjkJW1rdS';
+
+            $wsb_signature = sha1($wsb_seed . $wsb_storeid . $wsb_order_num . $wsb_test . $wsb_currency_id . $wsb_total . $secretKey);
+
+            $client = new GuzzleHttp\Client();
+
+            /*$response = $client->request('POST', 'https://securesandbox.webpay.by', [
+                'form_params' => [
+                    'wsb_storeid' => $wsb_storeid,
+                    'wsb_notify_url' => $wsb_notify_url,
+                    'wsb_order_num' => $wsb_order_num,
+                    'wsb_total' => $request->cart_total,
+                    'wsb_currency_id' => $wsb_currency_id,
+                    'wsb_version' => '2',
+                    'wsb_seed' => $wsb_seed,
+                    'wsb_signature' => $wsb_signature,
+                    'wsb_return_url' => $returnUrl,
+                    'wsb_cancel_return_url' => $returnUrl,
+                    'wsb_invoice_item_name[0]' => 'Оплата заказа №' . $wsb_order_num,
+                    'wsb_invoice_item_quantity[0]' => '1',
+                    'wsb_invoice_item_price[0]' => $request->cart_total,
+                    'wsb_test' => $wsb_test,
+                ]
+            ]);*/
+
+            $form_params = [
+                'wsb_storeid' => $wsb_storeid,
+                'wsb_notify_url' => $wsb_notify_url,
+                'wsb_order_num' => $wsb_order_num,
+                'wsb_total' => $request->cart_total,
+                'wsb_currency_id' => $wsb_currency_id,
+                'wsb_version' => '2',
+                'wsb_seed' => $wsb_seed,
+                'wsb_signature' => $wsb_signature,
+                'wsb_return_url' => $returnUrl,
+                'wsb_cancel_return_url' => $returnUrl,
+                'wsb_invoice_item_name[0]' => 'Оплата заказа №' . $wsb_order_num,
+                'wsb_invoice_item_quantity[0]' => '1',
+                'wsb_invoice_item_price[0]' => $request->cart_total,
+                'wsb_test' => $wsb_test,
+            ];
+
+            return redirect()->away('https://securesandbox.webpay.by')->withInputs($form_params);
         }
     }
 }

@@ -45,6 +45,9 @@ export default {
         axios
             .post('/api/menuCategories')
             .then(response => (this.menuCategories = response.data));
+        if (this.$route.path === '/success') {
+            this.$store.commit('cleanCart');
+        }
     },
 }
 </script>

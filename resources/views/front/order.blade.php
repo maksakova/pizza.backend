@@ -6,51 +6,11 @@
         <div class="container">
 
             <form class="row" method="POST" action="{{ route('front.orders.store') }}" enctype="multipart/form-data">
-            {{--<form class="row" method="POST" action="{{url()->to('https://securesandbox.webpay.by')}}" enctype="multipart/form-data">--}}
                 @csrf
                 <div class="col-xl-9">
                     <order-blocks/>
                 </div>
                 <div class="col-xl-3 offset-xl-0 col-lg-6 offset-lg-3">
-
-                    <input type='hidden' name='*scart'>
-
-                    <input type='hidden' name='wsb_storeid'
-                           value='{{$wsb_storeid}}'>
-
-                    <input type='hidden' name=wsb_notify_url
-                           value='{{$wsb_notify_url}}'>
-
-                    <input type='hidden' name='wsb_order_num'
-                           value='{{$wsb_order_num}}'>
-
-                    <input type='hidden' name='wsb_total'
-                           value='{{$wsb_total}}'>
-
-                    <input type='hidden' name='wsb_currency_id'
-                           value='{{$wsb_currency_id}}'>
-
-                    <input type='hidden' name='wsb_version'
-                           value='2'>
-
-                    <input type='hidden' name='wsb_seed'
-                           value='{{$wsb_seed}}'>
-
-                    <input type='hidden' name='wsb_signature'
-                           value='{{$wsb_signature}}'>
-
-                    <input type='hidden' name='wsb_return_url'
-                           value='{{$returnUrl}}'>
-
-                    <input type='hidden' name='wsb_cancel_return_url' value='{{$returnUrl}}'>
-
-
-                    <input type='hidden' name='wsb_invoice_item_name[0]' value='Оплата заказа #{{$wsb_order_num}}'>
-                    <input type='hidden' name='wsb_invoice_item_quantity[0]' value='1'>
-                    <input type='hidden' name='wsb_invoice_item_price[0]' value='{{$wsb_total}}'>
-
-
-                    <input type='hidden' name='wsb_test' value='{{$wsb_test}}'>
                     <div class="steps-order d-none d-xl-flex">
                         <div class="steps-order__item active">
                             <div class="steps-order__item__number">1</div>

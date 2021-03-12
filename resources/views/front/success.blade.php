@@ -2,7 +2,7 @@
 
 @section('content')
     <main class="success">
-        <Menu simple="simple"/>
+        <the-menu simple="simple"></the-menu>
         <div class="container">
             <img src="/img/common/success.svg" class="success__img">
             <h1>Благодарим, что выбрали нас!</h1>
