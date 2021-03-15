@@ -10,6 +10,7 @@ use App\Models\Order;
 use App\Models\OrderStatus;
 use App\Models\PaymentMethod;
 use Illuminate\Http\Request;
+use Webpayby\WsbApi\Request\GetTransactionStatusRequest;
 
 class OrderController extends Controller
 {
@@ -86,6 +87,15 @@ class OrderController extends Controller
         if ($order->products) {
             $orderProducts = json_decode($order->products);
         }
+
+        $response = (new GetTransactionStatusRequest('https://sandbox.webpay.by/WSBApi', 'pizzamarket', 'QHF+xJlDwV', 378032762))
+            ->setStartYear('2021')
+            ->setStartMonth('01')
+            ->send();
+
+        dd($response);
+
+        905901670;
 
         return view('admin.orders.edit', [
             'order'           => $order,

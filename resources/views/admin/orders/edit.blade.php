@@ -67,10 +67,17 @@
                                             @endforeach
                                         </select>
                                     </label>
-                                    <label>
-                                        Сдача
-                                        <input type="text" name="cashback" value="{{$order->cashback}}">
-                                    </label>
+                                    @if($order->payment_method === 1)
+                                        <label>
+                                            Сдача
+                                            <input type="text" name="cashback" value="{{$order->cashback}}">
+                                        </label>
+                                    @else
+                                        <label>
+                                            Номер оплаты
+                                            <input type="text" name="cashback" value="{{$order->payment_status}}" disabled>
+                                        </label>
+                                    @endif
                                 </div>
                                 <div class="col-lg-6">
                                     <label>

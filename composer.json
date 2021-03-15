@@ -17,7 +17,8 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.2",
         "orangehill/iseed": "^3.0",
-        "spatie/laravel-server-side-rendering": "^1.4"
+        "spatie/laravel-server-side-rendering": "^1.4",
+        "webpayby/wsb_api": "^1.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",

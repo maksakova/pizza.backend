@@ -45,4 +45,6 @@ Route::any('newOrder', '\App\Http\Controllers\Front\MainController@newOrder');
 
 Route::post('orders', '\App\Http\Controllers\Front\OrderController@create');
 
-/*Route::post('/orders', '\App\Http\Controllers\Front\OrderController@create');*/
+Route::post('webpay', '\App\Http\Controllers\Front\MainController@webpay');
+
+Route::post('orders/success', '\App\Http\Controllers\Front\OrderController@callback')->name('front.orders.store');

@@ -4,9 +4,9 @@
     <main class="order">
         <the-menu simple="simple"></the-menu>
         <div class="container">
-
             <form class="row" method="POST" action="{{ route('front.orders.store') }}" enctype="multipart/form-data">
                 @csrf
+                <input type='hidden' name='unique' value='{{$wsb_storeid}}'>
                 <div class="col-xl-9">
                     <order-blocks/>
                 </div>
@@ -41,4 +41,5 @@
             </form>
         </div>
     </main>
+
 @endsection

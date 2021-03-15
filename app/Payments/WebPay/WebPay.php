@@ -86,25 +86,3 @@ class WebPay extends Payment
         return $response;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

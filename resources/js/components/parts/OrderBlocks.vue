@@ -145,11 +145,11 @@
                     <template v-if="paymentMethod === 1">
                         <label v-if="cashBack === false">
                             Нужна сдача
-                            <input type="text" name="cashback" placeholder="Сдача с">
+                            <input type="text" name="cashback" v-model="cashBackValue" placeholder="Сдача с">
                         </label>
                         <label class="checkbox">
                             <input type="checkbox" v-model="cashBack" />
-                            <div class="checkbox__text" v-model="cashBackValue">Без сдачи</div>
+                            <div class="checkbox__text">Без сдачи</div>
                         </label>
                         <label class="label-textarea">
                             Комментарий к заказу

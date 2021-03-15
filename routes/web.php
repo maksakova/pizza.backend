@@ -121,14 +121,37 @@ Discount::all()->each(function ($discount) {
 Route::get('/cart', function(){
     return view('front.index');
 });
+Route::get('/pizza', function(){
+    return view('front.index');
+});
+Route::get('/sushi', function(){
+    return view('front.index');
+});
+Route::get('/wok', function(){
+    return view('front.index');
+});
+Route::get('/dinner', function(){
+    return view('front.index');
+});
+Route::get('/khachapuri', function(){
+    return view('front.index');
+});
+Route::get('/pies', function(){
+    return view('front.index');
+});
+Route::get('/cake', function(){
+    return view('front.index');
+});
+Route::get('/drink', function(){
+    return view('front.index');
+});
 
 Route::resource('/order', 'Front\OrderController')
     ->names('front.orders');
 
-Route::get('/success', function () {
-    return view('front.success', );
-})->name('success');
 
-Route::get('/{vue_capture?}', function () {
-    return view('front.index');
-})->where('vue_capture', '[\/\w\.-]*');
+Route::get('success', 'Front\OrderController@callback')->name('front.success');
+
+Route::get('/waiting', function(){
+    return view('front.waiting');
+});
