@@ -6,7 +6,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55e38aa4-1e59-486e-b405-03ed58b0efaf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/parts/ProductModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/parts/ProductModal.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -278,14 +277,7 @@
       <workItem from="1615529034529" duration="17795000" />
       <workItem from="1615549982521" duration="5056000" />
       <workItem from="1615555509635" duration="425000" />
-      <workItem from="1615788727253" duration="10991000" />
-    </task>
-    <task id="LOCAL-00112" summary="fix product modal">
-      <created>1615295119510</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1615295119510</updated>
+      <workItem from="1615788727253" duration="11011000" />
     </task>
     <task id="LOCAL-00113" summary="fix product modal">
       <created>1615295280994</created>
@@ -623,7 +615,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615799819644</updated>
     </task>
-    <option name="localTasksCounter" value="161" />
+    <task id="LOCAL-00161" summary="fix additives">
+      <created>1615799890953</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
+      <option name="project" value="LOCAL" />
+      <updated>1615799890953</updated>
+    </task>
+    <option name="localTasksCounter" value="162" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -737,10 +736,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1615789458798" />
-    <state x="662" y="89" key="CommitChangelistDialog2" timestamp="1615799819132">
+    <state x="662" y="89" key="CommitChangelistDialog2" timestamp="1615799889936">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="662" y="89" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1615799819132" />
+    <state x="662" y="89" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1615799889936" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1615537791236">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -793,10 +792,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="807" y="433" key="VCS.ChangelistChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1614848974078" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1615799820872">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1615799892184">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1615799820872" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1615799892184" />
     <state x="720" y="253" key="VcsDiffUtil.ChangesDialog" timestamp="1613384498036">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
