@@ -10,7 +10,7 @@
                     </svg>
                 </div>
             </div>
-            <div class="col-xl-2 col-lg-3 col-sm-4 col-7" v-on:click="isActive = false">
+            <div class="col-xl-2 col-lg-3 col-sm-4 col-7">
                 <a href="/" class="custom-logo">
                     <img src="{{$contacts['logo']->img}}">
                 </a>
@@ -18,22 +18,23 @@
             <div class="col-xl-5 col-lg-5 col-sm-8 nav" v-bind:class="{ active: isActive }">
                 <ul>
                     <li>
-                        <a href="/"><span>Меню</span></a>
+                        <a href="/" {{ (request()->is('/')) ? 'class=active' : '' }}><span>Меню</span></a>
                     </li>
-                    <li v-on:click="isActive = false">
-                        <a href="/map">Карта доставки</a>
+                    <li>
+                        <a href="/map" {{ (request()->is('map')) ? 'class=active' : '' }}>Карта доставки</a>
                     </li>
-                    <li v-on:click="isActive = false">
-                        <a href="/howto">Как заказать</a>
+                    <li>
+                        <a href="/howto" {{ (request()->is('howto')) ? 'class=active' : '' }}>Как заказать</a>
                     </li>
-                    <li v-on:click="isActive = false">
-                        <a href="/payment">Оплата</a>
+                    <li>
+                        <a href="/payment" {{ (request()->is('payment')) ? 'class=active' : '' }}>Оплата</a>
                     </li>
-                    <li v-on:click="isActive = false">
-                        <a href="/discounts">Акции</a>
+                    <li>
+                        <a href="/discounts" {{ (request()->is('discounts') ||
+                        request()->is('/discounts/.*')) ? 'class=active' : '' }}>Акции</a>
                     </li>
-                    <li v-on:click="isActive = false">
-                        <a href="/contacts">Контакты</a>
+                    <li>
+                        <a href="/contacts" {{ (request()->is('contacts')) ? 'class=active' : '' }}>Контакты</a>
                     </li>
                 </ul>
                 <div class="nav__mobile">

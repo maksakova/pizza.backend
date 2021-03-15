@@ -7,7 +7,7 @@
           <template v-if="$store.state.cartCount > 0">
             <div class="cart__header">
               <h1>Корзина <span>({{ $store.state.cartCount }})</span></h1>
-              <div class="cart__remove" v-if="$store.state.cartCount > 0" @click="show('clear-modal');">Очистить корзину</div>
+              <div class="cart__remove" v-if="$store.state.cartCount > 0" @click="cleanCart()">Очистить корзину</div>
             </div>
             <div class="cart__products-header d-none d-xl-flex">
               <div class="cart__products-header__price">Цена</div>
@@ -223,6 +223,9 @@ export default {
         changeDeliveryMethod(deliveryMethod) {
             this.$store.commit('changeDeliveryMethod', deliveryMethod);
         },
+        cleanCart() {
+            this.$store.commit('cleanCart');
+        }
     },
     mounted() {
         axios

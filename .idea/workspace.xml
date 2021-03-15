@@ -7,7 +7,14 @@
   <component name="ChangeListManager">
     <list default="true" id="55e38aa4-1e59-486e-b405-03ed58b0efaf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Front/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Front/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Cart.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/parts/OrderBlocks.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/parts/OrderBlocks.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/main.sass" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/main.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/parts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/parts/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/success.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/success.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -278,14 +285,7 @@
       <workItem from="1615529034529" duration="17795000" />
       <workItem from="1615549982521" duration="5056000" />
       <workItem from="1615555509635" duration="425000" />
-      <workItem from="1615788727253" duration="20258000" />
-    </task>
-    <task id="LOCAL-00155" summary="fix additives">
-      <created>1615793843175</created>
-      <option name="number" value="00155" />
-      <option name="presentableId" value="LOCAL-00155" />
-      <option name="project" value="LOCAL" />
-      <updated>1615793843175</updated>
+      <workItem from="1615788727253" duration="21984000" />
     </task>
     <task id="LOCAL-00156" summary="fix additives">
       <created>1615793911399</created>
@@ -623,7 +623,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615811242621</updated>
     </task>
-    <option name="localTasksCounter" value="204" />
+    <task id="LOCAL-00204" summary="mobile fixies">
+      <created>1615811591876</created>
+      <option name="number" value="00204" />
+      <option name="presentableId" value="LOCAL-00204" />
+      <option name="project" value="LOCAL" />
+      <updated>1615811591876</updated>
+    </task>
+    <option name="localTasksCounter" value="205" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -737,10 +744,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1615789458798" />
-    <state x="662" y="89" key="CommitChangelistDialog2" timestamp="1615811241175">
+    <state x="662" y="89" key="CommitChangelistDialog2" timestamp="1615811590932">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="662" y="89" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1615811241175" />
+    <state x="662" y="89" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1615811590932" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1615537791236">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -793,10 +800,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="807" y="433" key="VCS.ChangelistChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1614848974078" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1615811243784">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1615811693749">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1615811243784" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1615811693749" />
     <state x="720" y="253" key="VcsDiffUtil.ChangesDialog" timestamp="1613384498036">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

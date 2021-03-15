@@ -624,6 +624,10 @@ textarea:focus {
   left: 0;
 }
 
+.text-page img {
+  margin-bottom: 20px;
+}
+
 .vm--modal {
   border-radius: 8px;
 }

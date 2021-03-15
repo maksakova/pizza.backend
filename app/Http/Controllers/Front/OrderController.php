@@ -84,8 +84,8 @@ class OrderController extends Controller
         $order->save();
 
         if ($request->payment_method == 1) {
-            return redirect()->route('success', ['order=' . $order->id])
-                ->with(['success' => 'Успешно сохранено']);
+            return redirect()->route('front.success', ['order=' . $order->id])
+                ->with(['front.success' => 'Успешно сохранено']);
         } else {
             $mode = 'sandbox';
             $currency = 'BYN';

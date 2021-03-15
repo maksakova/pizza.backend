@@ -60,7 +60,7 @@
                                     placeholder="Введите адрес"
                                     v-model="deliveryStreet"
                                     :input="checkStreet(deliveryStreet)"
-                                >
+                                    required>
                                 <template v-if="suggestions">
                                     <div class="suggestion" ref="suggestionInput"
                                          v-if="deliveryStreet && deliveryStreet !== suggestions[0].data.street_with_type">
@@ -81,7 +81,8 @@
                                 <input
                                     type="text"
                                     name="building"
-                                    v-model="deliveryBuilding">
+                                    v-model="deliveryBuilding"
+                                    required>
                             </label>
                             <label class="label-50">
                                 Квартира / офис

@@ -4,7 +4,7 @@
     <main class="success">
         <the-menu simple="simple"></the-menu>
         <div class="container">
-            @if(app('request')->input('wsb_tid'))
+            @if(app('request')->input('wsb_tid') || app('request')->input('order'))
                 <img src="/img/common/success.svg" class="success__img">
                 <h1>Благодарим, что выбрали нас!</h1>
                 <p>Ваш заказ <span>№{{app('request')->input('order')}}{{app('request')->input('wsb_order_num')}}</span> будет приготовлен и доставлен в течение <delivery-time/></p>
