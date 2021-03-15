@@ -311,7 +311,6 @@ export default {
           .product-item
             padding: 0 0 15px
             background: $white
-            height: 100%
             h3
               font-size: 14px
             p
