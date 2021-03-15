@@ -993,7 +993,8 @@ header .close {
   header .nav ul {
     flex-direction: column;
     align-items: center;
-    margin: 0 0 20px;
+    margin: 0 0 150px;
+    transition: .3s;
   }
   header .nav ul li {
     margin-bottom: 5px;
@@ -1023,6 +1024,9 @@ header .close {
   }
   header .nav.active {
     left: 0;
+  }
+  header .nav.active ul {
+    margin: 0 0 20px;
   }
   header .nav.active .nav__mobile {
     display: block;
@@ -1178,7 +1182,7 @@ header .close {
   background: #FFFFFF;
   border-radius: 8px;
   margin-bottom: 30px;
-  height: calc(100% - 30px);
+  height: auto;
   transition: .3s;
 }
 
@@ -1211,6 +1215,9 @@ header .close {
 }
 
 @media (min-width: 576px) {
+  .discount-item {
+    height: calc(100% - 30px);
+  }
   .discount-item__info {
     height: 84px;
   }

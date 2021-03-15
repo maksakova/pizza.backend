@@ -855,7 +855,8 @@ header
             ul
                 flex-direction: column
                 align-items: center
-                margin: 0 0 20px
+                margin: 0 0 150px
+                transition: .3s
                 li
                     margin-bottom: 5px
                 span
@@ -879,6 +880,8 @@ header
                         display: block
             &.active
                 left: 0
+                ul
+                    margin: 0 0 20px
                 .nav__mobile
                     display: block
         .phone
@@ -1008,7 +1011,7 @@ header
     background: $white
     border-radius: 8px
     margin-bottom: 30px
-    height: calc(100% - 30px)
+    height: auto
     transition: .3s
 
     h2
@@ -1036,6 +1039,7 @@ header
 
 @media (min-width: 576px)
     .discount-item
+        height: calc(100% - 30px)
         &__info
             height: 84px
 

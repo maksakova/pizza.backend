@@ -3,7 +3,6 @@
 @section('content')
     <main class="howto">
         <the-menu simple="simple"></the-menu>
-        <Menu simple="simple"/>
         <div class="container">
             <h1>{{ $page->name }}</h1>
             <div class="row">

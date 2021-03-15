@@ -334,8 +334,6 @@ export default {
                 &:before,
                 &:after
                     opacity: 0
-            &:hover
-                transform: translateY(-5px)
     &__button
         text-align: center
         padding: 10px
@@ -365,6 +363,8 @@ export default {
                 margin: 0 0 9px
             &:not(:nth-child(3n))
                 margin: 0 9px 9px 0
+            &:hover
+                transform: translateY(-5px)
 
 @media (min-width: 1200px)
     .product-modal
@@ -410,7 +410,7 @@ export default {
     .product-modal
         top: 0
         max-width: 100vw
-        padding: 30px 10px 10px
+        padding: 0 10px 10px
         overflow-y: auto
         overflow-x: hidden
         h2
@@ -434,6 +434,7 @@ export default {
             padding: 0
             &__inner
                 padding: 0
+                overflow-y: hidden
         &__add
             padding-bottom: 70px
             &__scroll

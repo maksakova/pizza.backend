@@ -46,7 +46,6 @@ Vue.use(VueTheMask)
 import Index from "./components/Index";
 import Cart from "./components/Cart";
 
-Vue.component('the-header', require('./components/parts/Header.vue').default);
 Vue.component('the-menu', require('./components/parts/Menu.vue').default);
 Vue.component('footer-menu', require('./components/parts/Footer-Menu.vue').default);
 Vue.component('footer-pay', require('./components/parts/Footer-Pay.vue').default);
