@@ -435,6 +435,7 @@ export default {
             &__inner
                 padding: 0
                 overflow-y: hidden
+                height: auto
         &__add
             padding-bottom: 70px
             &__scroll

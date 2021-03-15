@@ -968,6 +968,7 @@ header .close {
   header .hamburger {
     margin-left: -5px;
     position: relative;
+    padding-top: 3px;
   }
   header .custom-logo {
     height: 30px;
@@ -987,14 +988,12 @@ header .close {
     font-size: 16px;
     font-weight: 700;
     padding: 0;
-    transition: .3s;
     z-index: 2;
   }
   header .nav ul {
     flex-direction: column;
     align-items: center;
     margin: 0 0 150px;
-    transition: .3s;
   }
   header .nav ul li {
     margin-bottom: 5px;
@@ -1035,6 +1034,7 @@ header .close {
     display: block;
     margin: -1px 0 0 -2px;
     position: relative;
+    padding-top: 6px;
   }
   header .phone span {
     display: none;
@@ -1880,6 +1880,7 @@ footer .custom-logo {
   box-shadow: 1px 1px 4px rgba(64, 94, 72, 0.1);
   cursor: pointer;
   opacity: .7;
+  z-index: 1;
 }
 
 #to_top:hover {

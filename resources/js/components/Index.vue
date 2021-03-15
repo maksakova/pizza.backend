@@ -232,6 +232,8 @@ export default {
         display: inline-block
         font-size: 15px
         font-weight: 700
+        width: min-content
+        min-width: 128px
         border-radius: 6px
         padding: 2px 8px
         margin-bottom: 4px
@@ -360,6 +362,7 @@ export default {
             font-size: 50px
             line-height: 1.3
             padding: 8px 18px
+            min-width: 407px
         .text3
             font-size: 46px
             text-transform: uppercase
