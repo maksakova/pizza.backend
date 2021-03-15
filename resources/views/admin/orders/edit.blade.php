@@ -77,6 +77,12 @@
                                             Номер оплаты
                                             <input type="text" name="cashback" value="{{$order->payment_status}}" disabled>
                                         </label>
+                                        @if($transaction !== null)
+                                            <label>
+                                                Статус
+                                                <input type="text" name="cashback" value="{{$transaction}}" disabled>
+                                            </label>
+                                        @endif
                                     @endif
                                 </div>
                                 <div class="col-lg-6">

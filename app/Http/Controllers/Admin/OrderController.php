@@ -11,6 +11,7 @@ use App\Models\OrderStatus;
 use App\Models\PaymentMethod;
 use Illuminate\Http\Request;
 use Webpayby\WsbApi\Request\GetTransactionStatusRequest;
+use Carbon\Carbon;
 
 class OrderController extends Controller
 {
@@ -88,14 +89,28 @@ class OrderController extends Controller
             $orderProducts = json_decode($order->products);
         }
 
+        $year = Carbon::createFromFormat('Y-m-d H:i:s', $order->created_at)->year;
+        $month = Carbon::createFromFormat('Y-m-d H:i:s', $order->created_at)->month;
         $response = (new GetTransactionStatusRequest('https://sandbox.webpay.by/WSBApi', 'pizzamarket', 'QHF+xJlDwV', 378032762))
-            ->setStartYear('2021')
-            ->setStartMonth('01')
+            ->setStartYear($year)
+            ->setStartMonth($month)
             ->send();
 
-        dd($response);
+        $transactions = $response->getTransaction();
 
-        905901670;
+        $currentTransaction = null;
+
+        foreach ($transactions as $transaction) {
+            if ($transaction->getTransactionId() == $order->payment_status) {
+                $currentTransaction = $transaction->getStatus();
+            }
+        }
+
+        if ($currentTransaction === 'Completed' || $currentTransaction === 'Authorized') {
+            $currentTransaction = 'Успешно';
+        } else {
+            $currentTransaction = 'Не оплачен';
+        }
 
         return view('admin.orders.edit', [
             'order'           => $order,
@@ -105,6 +120,7 @@ class OrderController extends Controller
             'deliveryMethods' => $deliveryMethods,
             'paymentMethods'  => $paymentMethods,
             'menuIngredients' => $menuIngredients,
+            'transaction'     => $currentTransaction,
         ]);
     }
 

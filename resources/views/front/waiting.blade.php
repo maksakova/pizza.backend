@@ -4,7 +4,6 @@
     <main class="success">
         <the-menu simple="simple"></the-menu>
         <div class="container">
-            <img src="/img/common/success.svg" class="success__img">
             <h1>Перейти к оплате</h1>
             <form action="https://securesandbox.webpay.by/" method="post">
                 @csrf
