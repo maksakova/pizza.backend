@@ -6,41 +6,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55e38aa4-1e59-486e-b405-03ed58b0efaf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/Ананасы консерв.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/Базилик.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/Брокколи.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/Говядина.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/Кальмар.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/Креветки тигровые.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/Кунжут.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/Курица.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/Лосось.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/Лук зеленый.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/Лук репчатый.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/Лук репчатый1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/Мидии.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/Морковь.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/Ореховый соус.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/Осминоги.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/Перец болгарский.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/Перец черный молотый.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/Перец чили.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/Половинка яйца.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/Помидоры.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/Свинина.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/Сливочный соус.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/Соево-имбирный соус.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/Соевый соус.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/Соус Кимчи.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/Тунец.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/Унаги.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/Устричный соус.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/Фасоль стручковая.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/Цукини.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/Чеснок.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/Шампиньоны.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/uploads/Шпинат.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/uploads/hachapuri-po-megrelski.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/parts/ProductModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/parts/ProductModal.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -311,14 +279,7 @@
       <workItem from="1615529034529" duration="17795000" />
       <workItem from="1615549982521" duration="5056000" />
       <workItem from="1615555509635" duration="425000" />
-      <workItem from="1615788727253" duration="13567000" />
-    </task>
-    <task id="LOCAL-00123" summary="fix product modal">
-      <created>1615296448864</created>
-      <option name="number" value="00123" />
-      <option name="presentableId" value="LOCAL-00123" />
-      <option name="project" value="LOCAL" />
-      <updated>1615296448864</updated>
+      <workItem from="1615788727253" duration="13702000" />
     </task>
     <task id="LOCAL-00124" summary="fix product modal">
       <created>1615296522029</created>
@@ -656,7 +617,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615803530547</updated>
     </task>
-    <option name="localTasksCounter" value="172" />
+    <task id="LOCAL-00172" summary="fix additives">
+      <created>1615804699628</created>
+      <option name="number" value="00172" />
+      <option name="presentableId" value="LOCAL-00172" />
+      <option name="project" value="LOCAL" />
+      <updated>1615804699628</updated>
+    </task>
+    <option name="localTasksCounter" value="173" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -770,10 +738,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1615789458798" />
-    <state x="662" y="89" key="CommitChangelistDialog2" timestamp="1615803529480">
+    <state x="662" y="89" key="CommitChangelistDialog2" timestamp="1615804698328">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="662" y="89" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1615803529480" />
+    <state x="662" y="89" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1615804698328" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1615537791236">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -826,10 +794,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="807" y="433" key="VCS.ChangelistChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1614848974078" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1615803531718">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1615804701924">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1615803531718" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1615804701924" />
     <state x="720" y="253" key="VcsDiffUtil.ChangesDialog" timestamp="1613384498036">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
