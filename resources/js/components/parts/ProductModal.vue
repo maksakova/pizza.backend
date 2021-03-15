@@ -69,8 +69,9 @@
                                   <input type="checkbox"
                                          :value="additiveItem.id"
                                          v-model="chooseAdditives"/>
+                                  <img :src="additiveItem.img">
+                                  <h4>{{additiveItem.name}}</h4>
                                   <div class="checkbox__text" v-if="currentItem.menu_category_id === 1">
-                                      {{additiveItem}}
                                       <img :src="additiveItem.img">
                                       <h4>{{additiveItem.name}}</h4>
                                       <span v-if="currentVariant2 === 2">
