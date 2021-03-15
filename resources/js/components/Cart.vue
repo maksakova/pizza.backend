@@ -321,7 +321,7 @@ export default {
               margin-bottom: 10px
             &__text
               padding: 0 10px
-              height: calc(100% - 138px)
+              min-height: 168px
             .button
               font-size: 0
               width: 32px
