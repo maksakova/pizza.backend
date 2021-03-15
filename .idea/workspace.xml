@@ -8,6 +8,7 @@
     <list default="true" id="55e38aa4-1e59-486e-b405-03ed58b0efaf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/parts/ProductModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/parts/ProductModal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -278,35 +279,7 @@
       <workItem from="1615529034529" duration="17795000" />
       <workItem from="1615549982521" duration="5056000" />
       <workItem from="1615555509635" duration="425000" />
-      <workItem from="1615788727253" duration="15319000" />
-    </task>
-    <task id="LOCAL-00139" summary="front page vue routing">
-      <created>1615364914272</created>
-      <option name="number" value="00139" />
-      <option name="presentableId" value="LOCAL-00139" />
-      <option name="project" value="LOCAL" />
-      <updated>1615364914272</updated>
-    </task>
-    <task id="LOCAL-00140" summary="menu scrollbar">
-      <created>1615365327647</created>
-      <option name="number" value="00140" />
-      <option name="presentableId" value="LOCAL-00140" />
-      <option name="project" value="LOCAL" />
-      <updated>1615365327647</updated>
-    </task>
-    <task id="LOCAL-00141" summary="don't call me baby">
-      <created>1615372667632</created>
-      <option name="number" value="00141" />
-      <option name="presentableId" value="LOCAL-00141" />
-      <option name="project" value="LOCAL" />
-      <updated>1615372667632</updated>
-    </task>
-    <task id="LOCAL-00142" summary="add payment">
-      <created>1615377722863</created>
-      <option name="number" value="00142" />
-      <option name="presentableId" value="LOCAL-00142" />
-      <option name="project" value="LOCAL" />
-      <updated>1615377722863</updated>
+      <workItem from="1615788727253" duration="15793000" />
     </task>
     <task id="LOCAL-00143" summary="add payment">
       <created>1615380587192</created>
@@ -623,7 +596,35 @@
       <option name="project" value="LOCAL" />
       <updated>1615806437579</updated>
     </task>
-    <option name="localTasksCounter" value="188" />
+    <task id="LOCAL-00188" summary="fix additives">
+      <created>1615806533044</created>
+      <option name="number" value="00188" />
+      <option name="presentableId" value="LOCAL-00188" />
+      <option name="project" value="LOCAL" />
+      <updated>1615806533044</updated>
+    </task>
+    <task id="LOCAL-00189" summary="fix additives">
+      <created>1615806634605</created>
+      <option name="number" value="00189" />
+      <option name="presentableId" value="LOCAL-00189" />
+      <option name="project" value="LOCAL" />
+      <updated>1615806634606</updated>
+    </task>
+    <task id="LOCAL-00190" summary="fix additives">
+      <created>1615806764606</created>
+      <option name="number" value="00190" />
+      <option name="presentableId" value="LOCAL-00190" />
+      <option name="project" value="LOCAL" />
+      <updated>1615806764606</updated>
+    </task>
+    <task id="LOCAL-00191" summary="fix additives">
+      <created>1615806808571</created>
+      <option name="number" value="00191" />
+      <option name="presentableId" value="LOCAL-00191" />
+      <option name="project" value="LOCAL" />
+      <updated>1615806808571</updated>
+    </task>
+    <option name="localTasksCounter" value="192" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -737,10 +738,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1615789458798" />
-    <state x="662" y="89" key="CommitChangelistDialog2" timestamp="1615806436536">
+    <state x="662" y="89" key="CommitChangelistDialog2" timestamp="1615806796666">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="662" y="89" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1615806436536" />
+    <state x="662" y="89" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1615806796666" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1615537791236">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -793,10 +794,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="807" y="433" key="VCS.ChangelistChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1614848974078" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1615806439307">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1615806809872">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1615806439307" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1615806809872" />
     <state x="720" y="253" key="VcsDiffUtil.ChangesDialog" timestamp="1613384498036">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -813,10 +814,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="559" y="125" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1614943723095" />
-    <state x="667" y="253" width="591" height="592" key="find.popup" timestamp="1615797966798">
+    <state x="667" y="253" width="591" height="592" key="find.popup" timestamp="1615806875976">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="667" y="253" width="591" height="592" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1615797966798" />
+    <state x="667" y="253" width="591" height="592" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1615806875976" />
     <state x="801" y="250" key="ftp.server.browser" timestamp="1614766000327">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -825,10 +826,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="749" y="421" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613632493204" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1614690549712">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1615806689013">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1614690549712" />
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1615806689013" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1615292020211">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

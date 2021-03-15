@@ -103,7 +103,7 @@
               <div class="product-modal__button" v-if="currentItem.product_variants[currentVariant1].price">
                   <button class="button"
                           @click="addToCart(currentItem, currentVariant1, currentVariant2, chooseAdditives, formatPrice(currentItem.product_variants[currentVariant1].price + additivesSum));
-                          hide('product-modal');">
+                          hide('product-modal');">1
                       Добавить в корзину за
                       {{currentItem.product_variants[currentVariant1].price + additivesSum}}
                       руб.</button>
@@ -112,7 +112,7 @@
               <div class="product-modal__button" v-if="currentItem.product_variants[currentVariant2].price">
                   <button class="button"
                           @click="addToCart(currentItem, currentVariant1, currentVariant2, chooseAdditives, formatPrice(currentItem.product_variants[currentVariant2].price + additivesSum));
-                          hide('product-modal');">
+                          hide('product-modal');">2
                       Добавить в корзину за
                       {{formatPrice(currentItem.product_variants[currentVariant2].price + additivesSum)}}
                       руб.</button>
@@ -167,9 +167,6 @@ export default {
                     if (this.currentVariant2 == 2) {
                         additivesSum += Number(this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.min_price)
                     } else if (this.currentVariant2 == 3) {
-                        console.log(additivesSum, Number(this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.mid_price))
-                        console.log(additivesSum + Number(this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.mid_price))
-                        console.log(additivesSum += Number(this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.mid_price))
                         additivesSum += Number(this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.mid_price)
                     } else if (this.currentVariant2 == 4) {
                         additivesSum += Number(this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.max_price)
@@ -182,6 +179,7 @@ export default {
                     }
                 }
             }
+            console.log(additivesSum)
             return additivesSum
         }
     },

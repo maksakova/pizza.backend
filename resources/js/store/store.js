@@ -36,7 +36,6 @@ let store = {
                 let found = state.cart.find(product => product.id === item.id);
                 if (found) {
                     found.quantity++;
-                    console.log(found.quantity)
                     found.totalPrice = found.quantity * found.price;
                 } else {
                     state.cart.push(item);
@@ -49,8 +48,6 @@ let store = {
                     found = state.cart.find(product => (product.id === item.id && product.currentVariant1 === currentVariant1 && product.currentVariant2 === currentVariant2));
                 }
                 if (found) {
-                    console.log(currentVariant1)
-                    console.log(found.currentVariant1)
                     found.quantity ++;
                     found.totalPrice = found.quantity * found.price;
                 } else {
@@ -65,7 +62,6 @@ let store = {
                     if (currentVariant2) {
                         item.currentVariant2 = currentVariant2
                         if (item.product_variants[currentVariant2].price) {
-                            console.log('gg');
                             itemPrice = item.product_variants[currentVariant2].price
                         }
                         if (additives) {
@@ -91,7 +87,6 @@ let store = {
         },
 
         cartItemQuantity(state, {item, quantity}) {
-            console.log(item.currentVariant1)
             item.quantity = quantity;
 
             state.cartCount = 0
