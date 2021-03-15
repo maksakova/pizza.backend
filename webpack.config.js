@@ -1,12 +1,15 @@
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     module: {
         rules: [
             {
                 test: /\.vue$/,
-                loader: 'vue-loader'
+                loader: 'vue-loader',
+                options: {
+                    extractCSS: true
+                }
             },
             // это будет применяться к файлам `.js`
             // А ТАКЖЕ к секциям `<script>` внутри файлов `.vue`

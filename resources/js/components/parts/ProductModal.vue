@@ -90,7 +90,7 @@
                                           {{additiveItem.menu_ingredient_group.max_price}} руб.
                                       </span>
                                   </div>
-                                  <div class="checkbox__text" v-else-if="currentItem.menu_category_id === 3">
+                                  <div class="checkbox__text" v-else-if="currentItem.menu_category_id === 3 || additiveItem.menu_category_id.length > 1">
                                       <img :src="additiveItem.img">
                                       <h4>{{additiveItem.name}}</h4>
                                       <span v-if="currentVariant1 === 0">
