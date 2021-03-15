@@ -6,8 +6,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55e38aa4-1e59-486e-b405-03ed58b0efaf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/parts/ProductModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/parts/ProductModal.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -279,21 +277,7 @@
       <workItem from="1615529034529" duration="17795000" />
       <workItem from="1615549982521" duration="5056000" />
       <workItem from="1615555509635" duration="425000" />
-      <workItem from="1615788727253" duration="14682000" />
-    </task>
-    <task id="LOCAL-00132" summary="fix additives">
-      <created>1615297547716</created>
-      <option name="number" value="00132" />
-      <option name="presentableId" value="LOCAL-00132" />
-      <option name="project" value="LOCAL" />
-      <updated>1615297547716</updated>
-    </task>
-    <task id="LOCAL-00133" summary="remove 'other' from additives, add images">
-      <created>1615298399890</created>
-      <option name="number" value="00133" />
-      <option name="presentableId" value="LOCAL-00133" />
-      <option name="project" value="LOCAL" />
-      <updated>1615298399890</updated>
+      <workItem from="1615788727253" duration="14745000" />
     </task>
     <task id="LOCAL-00134" summary="wok doesn't work">
       <created>1615299460128</created>
@@ -624,7 +608,21 @@
       <option name="project" value="LOCAL" />
       <updated>1615805749231</updated>
     </task>
-    <option name="localTasksCounter" value="181" />
+    <task id="LOCAL-00181" summary="fix additives">
+      <created>1615805862048</created>
+      <option name="number" value="00181" />
+      <option name="presentableId" value="LOCAL-00181" />
+      <option name="project" value="LOCAL" />
+      <updated>1615805862048</updated>
+    </task>
+    <task id="LOCAL-00182" summary="fix additives">
+      <created>1615805879704</created>
+      <option name="number" value="00182" />
+      <option name="presentableId" value="LOCAL-00182" />
+      <option name="project" value="LOCAL" />
+      <updated>1615805879704</updated>
+    </task>
+    <option name="localTasksCounter" value="183" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -738,10 +736,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1615789458798" />
-    <state x="662" y="89" key="CommitChangelistDialog2" timestamp="1615805748662">
+    <state x="662" y="89" key="CommitChangelistDialog2" timestamp="1615805875957">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="662" y="89" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1615805748662" />
+    <state x="662" y="89" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1615805875957" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1615537791236">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -794,10 +792,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="807" y="433" key="VCS.ChangelistChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1614848974078" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1615805751229">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1615805881604">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1615805751229" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1615805881604" />
     <state x="720" y="253" key="VcsDiffUtil.ChangesDialog" timestamp="1613384498036">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
