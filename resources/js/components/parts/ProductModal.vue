@@ -65,12 +65,10 @@
                       <h3>Добавить</h3>
                       <b-tabs>
                           <b-tab v-for="(additives, cat_name) in catAdditives" v-bind:key="additives.id" :title="cat_name" v-if="cat_name != 'Другое'">
-                              <label class="checkbox" v-for="additiveItem in additives" v-bind:key="additiveItem.id">
+                              <label class="checkbox" v-for="additiveItem in additives" v-if="additiveItem.menu_category_id == currentItem.menu_category_id || additiveItem.menu_category_id.length > 1" v-bind:key="additiveItem.id">
                                   <input type="checkbox"
                                          :value="additiveItem.id"
                                          v-model="chooseAdditives"/>
-                                  <img :src="additiveItem.img">
-                                  <h4>{{additiveItem.name}}</h4>
                                   <div class="checkbox__text" v-if="currentItem.menu_category_id === 1">
                                       <img :src="additiveItem.img">
                                       <h4>{{additiveItem.name}}</h4>
