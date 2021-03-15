@@ -63,7 +63,9 @@
 
                   <div class="product-modal__add">
                       <h3>Добавить</h3>
-                      {{catAdditives}}
+                      <div v-for="(additives, cat_name) in catAdditives" v-bind:key="additives.id">
+                          {{cat_name}}
+                      </div>
                       <b-tabs>
                           <b-tab v-for="(additives, cat_name) in catAdditives" v-bind:key="additives.id" :title="cat_name" v-if="cat_name != 'Другое'">
                               {{additives}}
