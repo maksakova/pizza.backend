@@ -168,6 +168,8 @@ export default {
                         additivesSum += Number(this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.min_price)
                     } else if (this.currentVariant2 == 3) {
                         console.log(additivesSum, Number(this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.mid_price))
+                        console.log(additivesSum + Number(this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.mid_price))
+                        console.log(additivesSum += Number(this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.mid_price))
                         additivesSum += Number(this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.mid_price)
                     } else if (this.currentVariant2 == 4) {
                         additivesSum += Number(this.ingredients[this.chooseAdditives[i]].menu_ingredient_group.max_price)
