@@ -162,7 +162,7 @@ export default {
 
         additivesSum() {
             var additivesSum = 0
-            console.log(this.currentItem.menu_category_id)
+            console.log(this.chooseAdditives.length)
             for (let i = 0; i < this.chooseAdditives.length; i += 1) {
                 if (this.currentItem.menu_category_id === 1) {
                     if (this.currentVariant2 === 2) {
