@@ -1,7 +1,7 @@
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
-    mode: 'production',
+    mode: 'develop',
     module: {
         rules: [
             {

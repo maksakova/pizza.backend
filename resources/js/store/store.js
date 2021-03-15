@@ -64,14 +64,18 @@ let store = {
                         if (item.product_variants[currentVariant2].price) {
                             itemPrice = item.product_variants[currentVariant2].price
                         }
-                        if (additives) {
-                            item.additives = additives
-                            Vue.set(item, 'price', price)
-                        } else {
-                            Vue.set(item, 'price', itemPrice)
-                        }
                     }
-                    Vue.set(item, 'price', itemPrice)
+
+                    console.log(price);
+                    console.log(itemPrice);
+
+
+                    if (additives) {
+                        item.additives = additives
+                        Vue.set(item, 'price', price)
+                    } else {
+                        Vue.set(item, 'price', itemPrice)
+                    }
                 }
 
             }

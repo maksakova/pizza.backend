@@ -113,6 +113,82 @@
                 Вы можете сделать заказ на завтра</p>
             <button class="button" @click="hide('closed-modal')">Хорошо</button>
         </modal>
+
+        <modal class="modaladdress"
+               :width="623"
+               :height="406"
+               :adaptive="true"
+               name="address-modal">
+            <button class="modal-close" @click="hide('address-modal')">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.91628 5.00007L9.81017 1.10608C10.0636 0.852787 10.0636 0.443255 9.81017 0.189966C9.55688 -0.0633221 9.14735 -0.0633221 8.89406 0.189966L5.00005 4.08396L1.10617 0.189966C0.852759 -0.0633221 0.443344 -0.0633221 0.190056 0.189966C-0.0633519 0.443255 -0.0633519 0.852787 0.190056 1.10608L4.08394 5.00007L0.190056 8.89407C-0.0633519 9.14736 -0.0633519 9.55689 0.190056 9.81018C0.316285 9.93653 0.482257 10 0.648111 10C0.813965 10 0.979819 9.93653 1.10617 9.81018L5.00005 5.91618L8.89406 9.81018C9.0204 9.93653 9.18626 10 9.35211 10C9.51797 10 9.68382 9.93653 9.81017 9.81018C10.0636 9.55689 10.0636 9.14736 9.81017 8.89407L5.91628 5.00007Z" fill="#828282"/>
+                </svg>
+            </button>
+            <h2>Подтвердите адрес</h2>
+            <div class="product-item__variants">
+
+                <div class="product-item__variants__item"
+                     v-for="item in deliveryMethods"
+                     :style="{ width: 'calc(100% / ' + deliveryMethods.length + ')' }">
+                    <label class="radio">
+                        <input type="radio"
+                               name="delivery_method"
+                               :value="item.id"
+                               v-model="deliveryMethod"
+                               :change="changeDeliveryMethod(deliveryMethod)"
+                        />
+                        <div class="radio__text">{{item.name}}</div>
+                    </label>
+                </div>
+            </div>
+
+            <template v-if="deliveryMethod === 1">
+                <h3>Пожалуйста, укажите адрес, куда доставить еду:</h3>
+
+                <div class="label-flex">
+                    <label class="label-70">
+                        Улица
+                        <input
+                            id="street"
+                            type="text"
+                            placeholder="Введите адрес"
+                            v-model="deliveryStreet"
+                            :input="checkStreet(deliveryStreet)"
+                        >
+                        <template v-if="suggestions">
+                            <div class="suggestion" ref="suggestionInput"
+                                 v-if="deliveryStreet && deliveryStreet !== suggestions[0].data.street_with_type">
+                                <div class="suggestion__inner">
+                                    <label class="radio" v-for="suggestion in suggestions">
+                                        <input
+                                            type="radio"
+                                            :value="suggestion.data.street_with_type"
+                                            v-model="deliveryStreet">
+                                        <div class="suggestion__text">{{suggestion.data.street_with_type}}</div>
+                                    </label>
+                                </div>
+                            </div>
+
+                        </template>
+                    </label>
+                    <label class="label-30">
+                        Дом
+                        <input type="text" v-model="deliveryBuilding" id="house">
+                    </label>
+                </div>
+                <button class="button" @click="addStreet(deliveryStreet, deliveryBuilding); checkZone(deliveryStreet); hide('address-modal');">Подтвердить</button>
+                <p>Ознакомьтесь с <router-link to="/map" class="link">Картой доставки</router-link>. Если Вашего адреса нет в списке, но он относится к зоне бесплатной доставки, сообщите об этом оператору и совершите заказ по телефону. Либо воспользуйтель услугой Самовывоз.</p>
+            </template>
+
+            <template v-else>
+                <h3>Прижайте к нам за едой по адресу:</h3>
+                <p>г. Минск, Ложинская, 5</p>
+                <a href="/contacts"><img src="/../img/contacts/map.jpg"></a>
+                <button class="button" @click="hide('address-modal');">Подтвердить</button>
+            </template>
+
+        </modal>
+        <div id="map"></div>
     </div>
 </template>
 
@@ -145,7 +221,16 @@ export default {
             ingredients: [],
             currentItem: this.$store.state.currentItem,
             cartCount: this.$store.state.cartCount,
-            cart: this.$store.state.cart
+            cart: this.$store.state.cart,
+            deliveryMethods: [],
+            deliveryMethod: this.$store.state.deliveryMethod,
+            deliveryTime: this.$store.state.deliveryTime,
+            suggestions: {},
+            deliveryStreet: this.$store.state.deliveryStreet,
+            deliveryBuilding: this.$store.state.deliveryBuilding,
+            SuggestView: null,
+            url: "https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address",
+            token: "9af52f392c48bb34c8fb20bb53573b1ee923e871",
         }
     },
     directives: {
@@ -161,6 +246,13 @@ export default {
         axios
             .post('/api/ingredients')
             .then(response => (this.ingredients = response.data));
+        axios
+            .post('/api/deliveryMethods')
+            .then(response => (this.deliveryMethods = response.data));
+
+        if(this.$store.state.deliveryStreet == null && this.$store.state.paymentMethod == 1) {
+            this.$modal.show('address-modal')
+        };
     },
     created() {
         this.fetchData()
@@ -172,8 +264,17 @@ export default {
         activeFilter: function () {
             this.isActive = !this.isActive;
         },
+        hide (el) {
+            this.$modal.hide(el);
+        },
         cleanCart() {
             this.$store.commit('cleanCart');
+        },
+        addStreet(deliveryStreet, deliveryBuilding) {
+            this.$store.commit('addStreet', {deliveryStreet, deliveryBuilding});
+        },
+        changeDeliveryMethod(deliveryMethod) {
+            this.$store.commit('changeDeliveryMethod', deliveryMethod);
         },
         fetchData() {
             let slug = this.$route.name;
