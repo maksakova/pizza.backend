@@ -105,7 +105,7 @@
                           @click="addToCart(currentItem, currentVariant1, currentVariant2, chooseAdditives, formatPrice(currentItem.product_variants[currentVariant1].price + additivesSum));
                           hide('product-modal');">1
                       Добавить в корзину за
-                      {{currentItem.product_variants[currentVariant1].price + additivesSum}}
+                      {{Number(currentItem.product_variants[currentVariant1].price) + additivesSum}}
                       руб.</button>
               </div>
 
@@ -114,7 +114,7 @@
                           @click="addToCart(currentItem, currentVariant1, currentVariant2, chooseAdditives, formatPrice(currentItem.product_variants[currentVariant2].price + additivesSum));
                           hide('product-modal');">2
                       Добавить в корзину за
-                      {{formatPrice(currentItem.product_variants[currentVariant2].price + additivesSum)}}
+                      {{formatPrice(Number(currentItem.product_variants[currentVariant2].price) + additivesSum)}}
                       руб.</button>
               </div>
           </div>
