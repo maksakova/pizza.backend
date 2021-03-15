@@ -168,12 +168,7 @@
                       <input type="text" v-model="deliveryBuilding" id="house">
                   </label>
               </div>
-              <button class="button" @click="
-              hide('address-modal');
-              addStreet(deliveryStreet, deliveryBuilding);
-              checkZone(deliveryStreet); ">
-                  Подтвердить
-              </button>
+              <button class="button" @click="addStreet(deliveryStreet, deliveryBuilding); checkZone(deliveryStreet); hide('address-modal');">Подтвердить</button>
               <p>Ознакомьтесь с <router-link to="/map" class="link">Картой доставки</router-link>. Если Вашего адреса нет в списке, но он относится к зоне бесплатной доставки, сообщите об этом оператору и совершите заказ по телефону. Либо воспользуйтель услугой Самовывоз.</p>
           </template>
 
@@ -181,10 +176,7 @@
               <h3>Прижайте к нам за едой по адресу:</h3>
               <p>г. Минск, Ложинская, 5</p>
               <a href="/contacts"><img src="/../img/contacts/map.jpg"></a>
-              <button class="button"
-                      @click="hide('address-modal');">
-                  Подтвердить
-              </button>
+              <button class="button" @click="hide('address-modal');">Подтвердить</button>
           </template>
 
       </modal>
