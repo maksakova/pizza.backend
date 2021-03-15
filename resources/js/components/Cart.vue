@@ -320,7 +320,7 @@ export default {
               margin-bottom: 10px
             &__text
               padding: 0 10px
-              height: 168px
+              height: 208px
             .button
               font-size: 0
               width: 32px
