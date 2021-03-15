@@ -68,13 +68,10 @@
                               <label class="checkbox"
                                      v-for="additiveItem in additives"
                                      v-if="additiveItem.menu_category_id == currentItem.menu_category_id || additiveItem.menu_category_id.length > 1" v-bind:key="additiveItem.id">
-                                  {{additiveItem.menu_category_id}}
-                                  {{currentItem.menu_category_id}}
-                                  {{additiveItem.menu_category_id.length}}
                                   <input type="checkbox"
                                          :value="additiveItem.id"
                                          v-model="chooseAdditives"/>
-                                  <div class="checkbox__text" v-if="currentItem.menu_category_id === 1">
+                                  <div class="checkbox__text" v-if="currentItem.menu_category_id == 1">
                                       <img :src="additiveItem.img">
                                       <h4>{{additiveItem.name}}</h4>
                                       <span v-if="currentVariant2 === 2">
@@ -87,7 +84,7 @@
                                           {{additiveItem.menu_ingredient_group.max_price}} руб.
                                       </span>
                                   </div>
-                                  <div class="checkbox__text" v-else-if="currentItem.menu_category_id === 3 || additiveItem.menu_category_id.length > 1">
+                                  <div class="checkbox__text" v-else-if="currentItem.menu_category_id == 3 || additiveItem.menu_category_id.length > 1">
                                       <img :src="additiveItem.img">
                                       <h4>{{additiveItem.name}}</h4>
                                       <span v-if="currentVariant1 === 0">
