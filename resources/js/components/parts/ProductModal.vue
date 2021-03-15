@@ -72,17 +72,7 @@
                                          :value="additiveItem.id"
                                          v-model="chooseAdditives"/>
                                   <div class="checkbox__text" v-if="currentItem.menu_category_id === 1">
-                                      <img :src="additiveItem.img" v-if="additiveItem.img">
-                                      <h4>{{additiveItem.name}}</h4>
-                                      <span v-if="currentVariant2 === 2">
-                                          {{additiveItem.menu_ingredient_group.min_price}} руб.
-                                      </span>
-                                      <span v-else-if="currentVariant2 === 3">
-                                          {{additiveItem.menu_ingredient_group.mid_price}} руб.
-                                      </span>
-                                      <span v-else-if="currentVariant2 === 4">
-                                          {{additiveItem.menu_ingredient_group.max_price}} руб.
-                                      </span>
+                                      <h4>{{additiveItem.id}}</h4>
                                   </div>
                                   <div class="checkbox__text" v-else-if="currentItem.menu_category_id === 3 || additiveItem.menu_category_id.length > 1">
                                       <img :src="additiveItem.img" v-if="additiveItem.img">
@@ -360,7 +350,6 @@ export default {
             border-radius: 8px
             text-align: center
             width: calc((100% - 18px) / 3)
-            height: 160px
             margin: 0 0 9px
             transition: .3s
             &:not(:nth-child(2n))
