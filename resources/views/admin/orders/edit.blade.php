@@ -21,7 +21,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        @if($order->status_id === 1)
+                        @if($order->status_id == 1)
                             <div class="row">
                                 <div class="col-lg-6">
                                     <label>
@@ -67,7 +67,7 @@
                                             @endforeach
                                         </select>
                                     </label>
-                                    @if($order->payment_method === 1)
+                                    @if($order->payment_method == 1)
                                         <label>
                                             Сдача
                                             <input type="text" name="cashback" value="{{$order->cashback}}">

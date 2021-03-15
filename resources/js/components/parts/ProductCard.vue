@@ -143,7 +143,7 @@ export default {
                 right: 7px
     &__text
         padding: 0 3px
-        height: calc(100% - 196px)
+        height: auto
         display: flex
         flex-direction: column
         justify-content: space-between
@@ -195,6 +195,7 @@ export default {
         margin: 15px 0 0
         height: calc(100% - 15px)
         &__text
+            height: calc(100% - 196px)
             padding: 0 20px
 
 @media (min-width: 1200px)
