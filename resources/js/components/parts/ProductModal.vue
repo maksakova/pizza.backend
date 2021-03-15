@@ -66,8 +66,7 @@
                       <b-tabs>
                           <b-tab v-for="(additives, cat_name) in catAdditives" v-bind:key="additives.id" :title="cat_name" v-if="cat_name != 'Другое'">
                               <label class="checkbox"
-                                     v-for="additiveItem in additives"
-                                     v-if="additiveItem.menu_category_id == currentItem.menu_category_id || additiveItem.menu_category_id.length > 1" v-bind:key="additiveItem.id">
+                                     v-for="additiveItem in additives">
                                   <input type="checkbox"
                                          :value="additiveItem.id"
                                          v-model="chooseAdditives"/>
